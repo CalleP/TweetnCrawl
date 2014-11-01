@@ -3,7 +3,8 @@ using System.Collections;
 
 public abstract class BaseWeapon : MonoBehaviour {
 
-    public GameObject wielder;
+    public Vector3 AimPoint;
+    public GameObject wielder = GameObject.Find("Player");
     protected int damage;
     protected float coolDown = 1f;
     protected float timeStamp = 0f;
@@ -16,7 +17,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	     AimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 
     public virtual void Fire()

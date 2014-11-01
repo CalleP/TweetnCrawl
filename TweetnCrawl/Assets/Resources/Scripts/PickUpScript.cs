@@ -6,7 +6,9 @@ public class PickUpScript : MonoBehaviour {
     public BaseWeapon weapon;
 	// Use this for initialization
 	void Start () {
-        weapon = new OrbitalWeapon();
+        weapon = new ShotgunWeapon();
+        
+
 	}
 	
 	// Update is called once per frame

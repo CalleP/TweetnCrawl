@@ -39,6 +39,8 @@ public abstract class BaseEnemy : MonoBehaviour {
         }
     }
 
+
+
     protected void Move()
     { }
 

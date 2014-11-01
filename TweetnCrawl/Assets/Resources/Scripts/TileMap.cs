@@ -33,28 +33,59 @@ public class TileMap : MonoBehaviour {
 
 
 
-        var map2 = CropMap(map, 0, 0, map.Length / 2, map.Length);
-        var map3 = CropMap(map, map.Length / 2, 0, map.Length, map.Length);
+        //////var map2 = CropMap(map, 0, 0, map.Length / 2, map.Length);
+        //////var map3 = CropMap(map, map.Length / 2, 0, map.Length, map.Length);
 
 
-        var corridorSize = 3;
+        //////var corridorSize = 3;
 
-        BSTgen.addRoom(map2, 0, 5, 0, TileType.Rock, TileType.Dirt);
-        BSTgen.addRoom(map3, 0, 5, 0, TileType.Rock, TileType.Dirt);
-
-
+        //////BSTgen.addRoom(map2, 0, 5, 0, TileType.Rock, TileType.Dirt);
+        //////BSTgen.addRoom(map3, 0, 5, 0, TileType.Rock, TileType.Dirt);
 
 
-        var map4 = BSTgen.horizontalMerge(map2, map3);
 
-        TileMap.CropMap2(map4, 10, 10, 20, 20, TileType.Dirt);
 
-        map = map4;
+        //////var map4 = BSTgen.horizontalMerge(map2, map3);
+
+        //////TileMap.CropMap2(map4, 10, 10, 20, 20, TileType.Dirt);
+
+        //////map = map4;
 
 
         //map = map4;
+        var test = new MapHandler();
+        
+        test.MakeCaverns();
 
 
+        TileStruct[][] convertedArray;
+        convertedArray = new TileStruct[test.Map.GetLength(0)][];
+        for (int i = 0; i < convertedArray.Length; i++)
+        {
+            convertedArray[i] = new TileStruct[test.Map.GetLength(1)];
+        }
+
+        for (int i = 0; i < test.Map.GetLength(0); i++)
+        {
+
+            for (int y = 0; y < test.Map.GetLength(1); y++)
+			{
+                if (test.Map[i, y] == 0)
+                {
+                    convertedArray[i][y] = new TileStruct(i,y,TileType.Dirt);
+                }
+                else if (test.Map[i, y] == 1)
+                {
+                    convertedArray[i][y] = new TileStruct(i, y, TileType.Rock);
+                }
+                
+			}
+        }
+
+
+
+        map = convertedArray;
+        //DrawMap(convertedArray);
 
         //VerticalTest
         //var map2 = CropMap(0, 0, map.Length, map.Length / 2, map.Length / 2);

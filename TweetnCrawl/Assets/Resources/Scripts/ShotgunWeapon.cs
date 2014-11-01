@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
+
+
+class ShotgunWeapon : BaseProjectileWeapon
+{
+
+    public int ProjectileAmount;
+    public int Spread;
+    public float BulletSpeed;
+
+    System.Random rand = new System.Random();
+
+    public ShotgunWeapon()
+    {
+        BulletSpeed = 35f;
+        Spread = 20;
+        ProjectileAmount = 8;
+
+    }
+
+    void Start()
+    {
+        
+    }
+
+
+
+    public override void Fire()
+    {
+        var mousePos = AimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var rotation = Vector3.Angle(wielder.transform.position, mousePos);
+        var velocity = Vector3.up;
+        
+
+
+        if (canFire())
+        {
+            projectiles = new List<BaseProjectile>();
+
+            for (int i = 0; i < ProjectileAmount; i++)
+            {
+                projectiles.Add(SpawnProjectile(BulletSpeed, "ShotgunProjectile"));
+                projectiles[i].transform.Rotate(new Vector3(0, 0, rand.Next(0-Spread,Spread)));
+            }
+
+
+
+            base.Fire();
+            
+        }
+
+    }
+
+
+
+
+}

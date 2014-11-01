@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\BSTgen.cs" />
      <Compile Include="Assets\Resources\Scripts\BaseEnemy.cs" />
+     <Compile Include="Assets\Resources\Scripts\BaseProjectile.cs" />
+     <Compile Include="Assets\Resources\Scripts\BaseProjectileWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\BaseWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\Dummy.cs" />
@@ -55,10 +57,12 @@
      <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
+     <Compile Include="Assets\Resources\Scripts\MapHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\OrbitalWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
      <Compile Include="Assets\Resources\Scripts\Room.cs" />
+     <Compile Include="Assets\Resources\Scripts\ShotgunWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Tile.cs" />
      <Compile Include="Assets\Resources\Scripts\TileMap.cs" />
      <Compile Include="Assets\Resources\Scripts\TileStruct.cs" />
