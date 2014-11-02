@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B4376061-9E73-37D2-7E2A-80F154FE8030}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Web v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,25 +49,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\BSTgen.cs" />
-    <Compile Include="Assets\Resources\Scripts\BaseEnemy.cs" />
-    <Compile Include="Assets\Resources\Scripts\BaseProjectile.cs" />
-    <Compile Include="Assets\Resources\Scripts\BaseProjectileWeapon.cs" />
-    <Compile Include="Assets\Resources\Scripts\BaseWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
-    <Compile Include="Assets\Resources\Scripts\Dummy.cs" />
-    <Compile Include="Assets\Resources\Scripts\EnemyScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemies\BaseEnemy.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemies\Dummy.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemies\EnemyScript.cs" />
     <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
     <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
     <Compile Include="Assets\Resources\Scripts\MapHandler.cs" />
-    <Compile Include="Assets\Resources\Scripts\OrbitalWeapon.cs" />
-    <Compile Include="Assets\Resources\Scripts\PickUpScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
+    <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
     <Compile Include="Assets\Resources\Scripts\Room.cs" />
-    <Compile Include="Assets\Resources\Scripts\ShotgunWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\Tile.cs" />
     <Compile Include="Assets\Resources\Scripts\TileMap.cs" />
     <Compile Include="Assets\Resources\Scripts\TileStruct.cs" />
+    <Compile Include="Assets\Resources\Scripts\Weapons\BaseProjectileWeapon.cs" />
+    <Compile Include="Assets\Resources\Scripts\Weapons\BaseWeapon.cs" />
+    <Compile Include="Assets\Resources\Scripts\Weapons\OrbitalWeapon.cs" />
+    <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
+    <Compile Include="Assets\Resources\Scripts\pickup\PickupBase.cs" />
+    <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

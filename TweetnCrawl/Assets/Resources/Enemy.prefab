@@ -65,14 +65,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9fc728c735c804dac8f58a685988da, type: 3}
+  m_Script: {fileID: 11500000, guid: b542b2e37989dc04e9f62e22a79cdf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
-  speed: 1
+  Health: 1
+  speed: 0
   chaseRange: 5
   player: {fileID: 0}
-  Follower: {fileID: 400000}
+  Follower: {fileID: 0}
   distance: 0
 --- !u!212 &21200000
 SpriteRenderer:

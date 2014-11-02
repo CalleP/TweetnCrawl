@@ -47,25 +47,26 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\BSTgen.cs" />
-     <Compile Include="Assets\Resources\Scripts\BaseEnemy.cs" />
-     <Compile Include="Assets\Resources\Scripts\BaseProjectile.cs" />
-     <Compile Include="Assets\Resources\Scripts\BaseProjectileWeapon.cs" />
-     <Compile Include="Assets\Resources\Scripts\BaseWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
-     <Compile Include="Assets\Resources\Scripts\Dummy.cs" />
-     <Compile Include="Assets\Resources\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Enemies\BaseEnemy.cs" />
+     <Compile Include="Assets\Resources\Scripts\Enemies\Dummy.cs" />
+     <Compile Include="Assets\Resources\Scripts\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
      <Compile Include="Assets\Resources\Scripts\MapHandler.cs" />
-     <Compile Include="Assets\Resources\Scripts\OrbitalWeapon.cs" />
-     <Compile Include="Assets\Resources\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
+     <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Room.cs" />
-     <Compile Include="Assets\Resources\Scripts\ShotgunWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Tile.cs" />
      <Compile Include="Assets\Resources\Scripts\TileMap.cs" />
      <Compile Include="Assets\Resources\Scripts\TileStruct.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\BaseProjectileWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\BaseWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\OrbitalWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\pickup\PickupBase.cs" />
+     <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
