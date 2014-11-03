@@ -39,7 +39,6 @@ public class Tile : MonoBehaviour {
         }
         if (TileData.Type == TileType.Dirt)
         {
-
             gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
         }
         else if (TileData.Type == TileType.Rock)

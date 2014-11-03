@@ -17,15 +17,16 @@ MonoBehaviour {
 
 	//Test the connection
 	void TestSocketConnection(){
-		setupSocket ();
-		writeSocket ("test");
-		Debug.Log(readSocket());
-		closeSocket ();
+
 	}
 
 	// Use this for initialization
 	void Start() {
-
+        //Security.PrefetchSocketPolicy(Host, Port);
+        setupSocket();
+        writeSocket("test");
+        Debug.Log(readSocket());
+        closeSocket();
 	}
 	
 	// Update is called once per frame
