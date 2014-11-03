@@ -7,16 +7,17 @@ using System.Collections;
 /// </summary>
 public class Tile : MonoBehaviour {
 
+    public TileType Type;
     public TileStruct TileData;
     public bool CollidingWithPlayer = false;
     public static Sprite dirt = Resources.Load<Sprite>("Minecraft_dirt");
     public static Sprite rock = Resources.Load<Sprite>("rock");
     private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
+    public int surroundingTiles = 0;
 
     //TODO: add texture and stuff later
     public Tile(int x, int y) {
-        TileData.X = x;
-        TileData.Y = y;
+        TileData = map.GetTileData(x, y);
     }
 
 	void Start () {
@@ -31,7 +32,10 @@ public class Tile : MonoBehaviour {
 
     void Update() 
     {
-        //TileData = map.GetTileData(TileData.X, TileData.Y);
+        TileData = map.GetTileData(TileData.X, TileData.Y);
+        Type = TileData.Type;
+        trim();
+        
 
         if (transform.position.x != TileData.X*3.2)
         {
@@ -39,11 +43,13 @@ public class Tile : MonoBehaviour {
         }
         if (TileData.Type == TileType.Dirt)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.getSpriteWithName("YellowCaveFloor_5", TileType.Dirt);//SpriteHandler.GetTexture(TileData, map.map);
+            //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
         }
         else if (TileData.Type == TileType.Rock)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = rock;
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture("YellowCave", TileData, map);
+            //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
         }
         else if (TileData.Type == TileType.Wood)
         {
@@ -88,4 +94,39 @@ public class Tile : MonoBehaviour {
         transform.position = transform.position += new Vector3((float)Pooling.TileWidth / (float)(100 * dir / Mathf.Abs(dir)), 0f);
         TileData = map.GetTileData(TileData.X + (dir / Mathf.Abs(dir)), TileData.Y);
     }
+
+
+
+    public void trim()
+    {
+
+
+       
+                var currentTile = map.map[TileData.X][TileData.Y];
+                var x = currentTile.X;
+                var y = currentTile.Y;
+                int surroundingTiles = 0;
+                if (map.GetTileData(x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
+
+                if (map.GetTileData(x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
+                if (map.GetTileData(x, y + 1).Type == TileType.Dirt) {surroundingTiles++;}
+                if (map.GetTileData(x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
+
+                this.surroundingTiles = surroundingTiles;
+                if (surroundingTiles == 3 && TileData.Type == TileType.Rock)
+                {
+                    setType(TileType.Dirt);
+
+                }
+
+
+
+    }
+        
+    public void setType(TileType type)
+    {
+        map.map[TileData.X][TileData.Y].Type = type;
+        TileData.Type = type;
+    }
+
 }

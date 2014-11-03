@@ -460,7 +460,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: orthographic size
-      value: 9.60000038
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_Sprite
@@ -471,7 +471,8 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_RootGameObject: {fileID: 316957756}
   m_IsPrefabParent: 0
@@ -486,9 +487,9 @@ GameObject:
   - 4: {fileID: 316957760}
   - 212: {fileID: 316957759}
   - 50: {fileID: 316957758}
-  - 114: {fileID: 316957757}
   - 61: {fileID: 316957761}
   - 114: {fileID: 316957762}
+  - 114: {fileID: 316957757}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -499,13 +500,12 @@ GameObject:
 --- !u!114 &316957757
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 7d650a80703600a41b767aeda98b1957,
-    type: 2}
-  m_PrefabInternal: {fileID: 290281791}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316957756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85319aeec50689e41a807656b7a2a69f, type: 3}
+  m_Script: {fileID: 11500000, guid: 44b13509be5f9d74a8fc7806525674fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &316957758
@@ -626,11 +626,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Height
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Width
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
@@ -1242,7 +1242,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.60000038
+  orthographic size: 16
   m_Depth: 7
   m_CullingMask:
     serializedVersion: 2
@@ -1394,8 +1394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 30
-  Width: 30
+  Height: 40
+  Width: 40
 --- !u!4 &1421592419
 Transform:
   m_ObjectHideFlags: 0

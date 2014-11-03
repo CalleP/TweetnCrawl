@@ -6,7 +6,8 @@ public enum TileType
 {
     Dirt,
     Rock,
-    Wood
+    Wood,
+    None
 }
 
 
@@ -18,6 +19,7 @@ public class TileStruct{
     public TileType Type;
     public int Y;
     public int X;
+    public int surroundingDirts = 0;
 
     public TileStruct(int x, int y, TileType type) {
         this.X = x;

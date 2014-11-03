@@ -84,7 +84,18 @@ public class TileMap : MonoBehaviour {
 
 
 
+
+        convertedArray[0][0].Type = TileType.Dirt;
+
+        //foreach (var item in TrimWalls())
+        //{
+
+        //    convertedArray[item.X][item.Y].Type = item.Type;
+        //} 
+
         map = convertedArray;
+
+
         //DrawMap(convertedArray);
 
         //VerticalTest
@@ -132,7 +143,7 @@ public class TileMap : MonoBehaviour {
     public void SetTileStruct(int x, int y, TileType type)
     {
         Array values = Enum.GetValues(typeof(TileType));
-        TileType randomBar = (TileType)values.GetValue(rand.Next(values.Length));
+        TileType randomBar = (TileType)values.GetValue(rand.Next(values.Length-1));
         map[x][y] = new TileStruct(x, y, randomBar);
     }
 
@@ -226,7 +237,22 @@ public class TileMap : MonoBehaviour {
     /// <returns>TileStruct.</returns>
     public TileStruct GetTileData(int x, int y)
     {
-        return map[x][y];
+        var outType = new TileStruct(x, y, TileType.None);
+        if (x < 0 || x >= map[0].Length)
+        {
+            outType.Type = TileType.None;
+            
+        }
+        else if (y < 0 || y >= map.Length)
+        {
+            outType.Type = TileType.None;
+        }
+        else
+        {
+            return map[x][y];
+        }
+        return outType;
+
     }
 
 
@@ -335,5 +361,32 @@ public class TileMap : MonoBehaviour {
                 script.TileData = item2;
             }
         }
+    }
+
+
+    public bool TrimWalls() 
+    {
+
+        var output = false;
+        for (int i = 0; i < map.Length; i++)
+        {
+            for (int y = 0; y < map[i].Length; y++)
+            {
+                var currentTile = map[i][y];
+                int surroundingTiles = 0;
+                if (GetTileData(y-1, i).Type == TileType.Dirt) surroundingTiles++;
+                if (GetTileData(y + 1, i).Type == TileType.Dirt) surroundingTiles++;
+                if (GetTileData(y, i + 1).Type == TileType.Dirt) surroundingTiles++;
+                if (GetTileData(y, i - 1).Type == TileType.Dirt) surroundingTiles++;
+
+                
+                currentTile.surroundingDirts = surroundingTiles;
+                output = true;
+
+                
+
+            }
+        }
+        return output;
     }
 }

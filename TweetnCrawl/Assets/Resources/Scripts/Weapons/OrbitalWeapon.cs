@@ -5,7 +5,6 @@ public class OrbitalWeapon : BaseWeapon {
 
 
     public float damageRadius = 1.5f;
-    public int damage = 3;
 	void Start () {
         
         coolDown = 1f;

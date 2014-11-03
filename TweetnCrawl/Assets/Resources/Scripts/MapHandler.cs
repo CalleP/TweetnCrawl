@@ -16,8 +16,8 @@ public class MapHandler
 
     public MapHandler()
     {
-        MapWidth = 80;
-        MapHeight = 41;
+        MapWidth = 40;
+        MapHeight = 40;
         PercentAreWalls = 48;
 
         RandomFillMap();
