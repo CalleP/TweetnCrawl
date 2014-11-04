@@ -247,7 +247,7 @@ public class SpriteHandler : MonoBehaviour {
         if (center != upLeft && center == upRight && center == downLeft && center != downRight) return "T_5";
 
 
-        return "T_7";
+        return "_T7";
     }
 
     private static string getNumber(TileType center, TileType left, TileType right, TileType up, TileType down,

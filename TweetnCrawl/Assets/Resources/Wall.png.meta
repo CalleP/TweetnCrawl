@@ -56,7 +56,7 @@ TextureImporter:
     21300102: YellowCaveT_5
     21300104: YellowCaveT_6
     21300106: YellowCaveT_2
-    21300108: Wall_54
+    21300108: YellowCave_T7
     21300110: Wall_55
     21300112: Wall_56
     21300114: Wall_57
@@ -1532,6 +1532,16 @@ TextureImporter:
         serializedVersion: 2
         x: 288
         y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YellowCave_T7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 800
         width: 16
         height: 16
       alignment: 0
