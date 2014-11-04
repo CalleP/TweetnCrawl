@@ -122,6 +122,23 @@ public class SpriteHandler : MonoBehaviour {
         if (center != up && center != down && center == left && center == right) return "X_2";
 
 
+
+        //HighPrio
+
+        //  ++-
+        //  +c-
+        //  -+-
+       if(center == upLeft && center == up && center != upRight && center == left && center != right && center != downLeft && center == down && center != downRight) return "T_6";
+
+
+       //  --+
+       //  +c+
+       //  ++-
+       if (center != upLeft && center != up && center == upRight && center == left && center == right && center == downLeft && center == down && center != downRight) return "T_6";
+
+
+
+
         //----------------------------------------------------------------------------------//
         // UP
         //      +

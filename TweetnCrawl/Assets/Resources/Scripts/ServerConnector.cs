@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Text;
 
 public class ServerConnector : 
 MonoBehaviour {
@@ -22,11 +23,42 @@ MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-        //Security.PrefetchSocketPolicy(Host, Port);
-        setupSocket();
-        writeSocket("test");
-        Debug.Log(readSocket());
-        closeSocket();
+
+        //---data to send to the server---
+        string textToSend = "GetTestData";
+
+        //---create a TCPClient object at the IP and port no.---
+        TcpClient client = new TcpClient(Host, Port);
+        NetworkStream nwStream = client.GetStream();
+        byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+
+        //---send the text---
+        Console.WriteLine("Sending : " + textToSend);
+        nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+
+        //---read back the text---
+        byte[] bytesToRead = new byte[client.ReceiveBufferSize];
+        int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+        Debug.Log("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+        Console.ReadLine();
+        client.Close();
+
+
+        ////Security.PrefetchSocketPolicy(Host, Port);
+        //setupSocket();
+
+
+
+        //writeSocket("GetTestData");
+
+        //var test = readSocket();
+        //Debug.Log(test.ToString());
+
+
+
+        //closeSocket();
+        //test = readSocket();
+        //Debug.Log(test);
 	}
 	
 	// Update is called once per frame
@@ -34,6 +66,8 @@ MonoBehaviour {
 		
 	}
 	
+
+    //remove following functions?
 	public void setupSocket() {
 		try {
 			mySocket = new TcpClient(Host, Port);
@@ -50,7 +84,7 @@ MonoBehaviour {
 	public void writeSocket(string theLine) {
 		if (!socketReady)
 			return;
-		String tmpString = theLine + "\r\n";
+		String tmpString = theLine;
 		theWriter.Write(tmpString);
 		theWriter.Flush();
 	}
