@@ -6,6 +6,8 @@ public class PickupBase : MonoBehaviour {
     public Object Item;
 	// Use this for initialization
 
+
+
 	
 	// Update is called once per frame
 	void Update () {

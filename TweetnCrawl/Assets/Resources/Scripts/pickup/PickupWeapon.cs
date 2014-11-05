@@ -7,17 +7,33 @@ using UnityEngine;
 
 class PickupWeapon : PickupBase
 {
+    public enum weaponTypes
+    {
+        shotgun,
+        machineGun,
+        revolver
+    }
 
-    
+    public weaponTypes selectedWeapon = weaponTypes.revolver;
     private static int test = 0;
+    
     void Start()
     {
-        if (test == 0) { Item = new ShotgunWeapon(); }
-        else if(test == 1)
+        
+        if (selectedWeapon == weaponTypes.revolver)
+        {
+            Item = new Revolver();
+        }
+
+        else if (selectedWeapon == weaponTypes.machineGun)
         {
             Item = new MachineGun();
         }
-        test++;
+
+        else if (selectedWeapon == weaponTypes.shotgun)
+        {
+            Item = new ShotgunWeapon();
+        }
     }
 
     protected override void OnTriggerStay2D(Collider2D coll)

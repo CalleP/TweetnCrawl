@@ -20,6 +20,7 @@ class ShotgunWeapon : BaseProjectileWeapon
         BulletSpeed = 35f;
         Spread = 20;
         ProjectileAmount = 8;
+        damage = 35;
 
     }
 

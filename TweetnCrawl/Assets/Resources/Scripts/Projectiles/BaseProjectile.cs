@@ -11,9 +11,9 @@ public class BaseProjectile : MonoBehaviour {
     public int Damage = 50;
 	// Use this for initialization
 
-    public void Init(Vector2 direction, Quaternion rotation, float speed)
+    public void Init(Vector2 direction, Quaternion rotation, float speed, int damage)
     {
-
+        Damage = damage;
         this.direction = direction;
         this.rotation = rotation;
         

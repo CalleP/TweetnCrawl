@@ -7,7 +7,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
     public Vector3 AimPoint;
     public GameObject wielder = GameObject.Find("Player");
-    protected int damage;
+    protected int damage = 20;
     protected float coolDown = 1f;
     protected float timeStamp = 0f;
 

@@ -11,6 +11,7 @@ class BaseProjectileWeapon : BaseWeapon
     public List<BaseProjectile> projectiles = new List<BaseProjectile>();
 
     public float BulletSpeed;
+   
 
     public BaseProjectile SpawnProjectile(Vector3 direction, Quaternion rotation, string projectilePrefab, float speed)
     {
@@ -18,7 +19,7 @@ class BaseProjectileWeapon : BaseWeapon
         var projectile = (GameObject)Instantiate(prefab, wielder.transform.position, rotation);
         var projectileScript = projectile.GetComponent<BaseProjectile>();
 
-        projectileScript.Init(direction, rotation, speed);
+        projectileScript.Init(direction, rotation, speed, damage);
 
         return projectileScript;
 
