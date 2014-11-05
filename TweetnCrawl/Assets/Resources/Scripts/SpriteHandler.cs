@@ -123,19 +123,6 @@ public class SpriteHandler : MonoBehaviour {
 
 
 
-        //HighPrio
-
-        //  ++-
-        //  +c-
-        //  -+-
-       if(center == upLeft && center == up && center != upRight && center == left && center != right && center != downLeft && center == down && center != downRight) return "T_6";
-
-
-       //  --+
-       //  +c+
-       //  ++-
-       if (center != upLeft && center != up && center == upRight && center == left && center == right && center == downLeft && center == down && center != downRight) return "T_6";
-
 
 
 
@@ -264,7 +251,37 @@ public class SpriteHandler : MonoBehaviour {
         if (center != upLeft && center == upRight && center == downLeft && center != downRight) return "T_5";
 
 
-        return "_T7";
+
+        //    - + -
+        //    + c +
+        //    + + +
+        if (center != upLeft && center != upRight && center == downLeft && center == downRight) return "T_2";
+
+        //    + + -
+        //    + c +
+        //    + + -
+        if (center == upLeft && center != upRight && center == downLeft && center != downRight) return "T_4";
+
+        //    + + +
+        //    + c +
+        //    - + -
+        if (center == upLeft && center == upRight && center != downLeft && center != downRight) return "T_8";
+
+        //    - + +
+        //    + c +
+        //    - + +
+        if (center != upLeft && center == upRight && center != downLeft && center == downRight) return "T_6";
+
+
+        //    - + -
+        //    + c +
+        //    - + -
+        if (center != upLeft && center != upRight && center != downLeft && center != downRight) return "T_6";
+
+
+
+
+        return "T_7";
     }
 
     private static string getNumber(TileType center, TileType left, TileType right, TileType up, TileType down,
@@ -293,6 +310,46 @@ public class SpriteHandler : MonoBehaviour {
         if (center != up && center != down && center == left && center == right) return "_8";
 
 
+        ////HighPrio
+
+        ////  ++-
+        ////  +c-
+        ////  -+-
+        //if (center == upLeft && center == up && center != upRight && center == left && center != right && center != downLeft && center == down && center != downRight) return "T_6";
+
+
+        ////  --+
+        ////  +c+
+        ////  ++-
+        //if (center != upLeft && center != up && center == upRight && center == left && center == right && center == downLeft && center == down && center != downRight) return "T_6";
+
+        ////  ++-
+        ////  +c-
+        ////  -++
+        //if (center == upLeft && center == up && center != upRight && center == left && center != right && center != downLeft && center == down && center == downRight) return "T_6";
+
+        ////  ++-
+        ////  -c+
+        ////  -+-
+        //if (center == upLeft && center == up && center != upRight && center != left && center == right && center != downLeft && center == down && center == downRight) return "T_4";
+
+        ////  +--
+        ////  +c+
+        ////  -++
+        //if (center == upLeft && center != up && center != upRight && center == left && center == right && center != downLeft && center == down && center == downRight) return "T_8";
+
+        ////  +-+
+        ////  +c+
+        ////  -++
+        //if (center == upLeft && center != up && center == upRight && center == left && center == right && center != downLeft && center == down && center == downRight) return "T_8";
+
+        ////  +-+
+        ////  +c+
+        ////  -++
+        //if (center == upLeft && center != up && center == upRight && center == left && center == right && center != downLeft && center == down && center == downRight) return "T_8";
+
+
+
         //----------------------------------------------------------------------------------//
         // UP
         //      +
@@ -308,7 +365,7 @@ public class SpriteHandler : MonoBehaviour {
         //      +
         //     +c
         //      +
-        if (center == up && center == down && center == left && center != right) return "_4";
+        if (center == up && center == down && center == left && center != right) return getDirectional1(center, upLeft, upRight, downLeft,downRight);
 
         //      +  
         //     -c+
@@ -318,7 +375,7 @@ public class SpriteHandler : MonoBehaviour {
         //      +  
         //     -c+
         //      +
-        if (center == up && center == down && center != left && center == right) return "_4";
+        if (center == up && center == down && center != left && center == right) return getDirectional2(center, upLeft, upRight, downLeft, downRight);
 
         //DOWN
         //      -
@@ -346,10 +403,11 @@ public class SpriteHandler : MonoBehaviour {
         //     +c-
         //      -
         if (center == up && center != down && center == left && center != right) return "_3";
+       
         //      +
         //     +c+
         //      -
-        if (center == up && center != down && center == left && center == right) return "_8";
+        if (center == up && center != down && center == left && center == right) return getDirectional4(center, upLeft, upRight, downLeft, downRight);
 
         //      -
         //     +c-
@@ -359,7 +417,7 @@ public class SpriteHandler : MonoBehaviour {
         //      -
         //     +c+
         //      +
-        if (center != up && center == down && center == left && center == right) return "_8";
+        if (center != up && center == down && center == left && center == right) return getDirectional3(center, upLeft, upRight, downLeft, downRight);
 
         //right
         //      -
@@ -383,6 +441,62 @@ public class SpriteHandler : MonoBehaviour {
 
     }
 
+    //      +
+    //     +c-
+    //      +
+    private static string getDirectional1(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    { 
+        //     ++?
+        //     +c-
+        //     ++?
+        if (center == upLeft && center == downLeft) return "_4";
+        else return "T_6";
+
+
+    }
+
+    //      +
+    //     -c+
+    //      +
+    private static string getDirectional2(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    {
+        //     ?++
+        //     -c+
+        //     ?++
+        if (center == upRight && center == downRight) return "_4";
+        else return "T_4";
+
+
+    }
+
+    //      -
+    //     +c+
+    //      +
+    private static string getDirectional3(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    {
+        //     ?-?
+        //     +c+
+        //     +++
+        if (center == downLeft && center == downRight) return "_8";
+        else return "T_8";
+
+
+    }
+
+    //      +
+    //     +c+
+    //      -
+    private static string getDirectional4(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    {
+        //     +++
+        //     +c+
+        //     ?-?
+        if (center == upRight && center == upLeft) return "_8";
+        else return "T_2";
+
+
+    }
+
 
 
     public static Sprite getSpriteWithName(string spriteName, TileType type)
@@ -391,9 +505,9 @@ public class SpriteHandler : MonoBehaviour {
         {
             case TileType.Dirt:
                 var test = Array.IndexOf(NamesFloors, spriteName);
-                if (test < 0 || test >= NamesFloors.Length)
+                if (test == -1||(test < 0 || test >= NamesFloors.Length))
                 {
-                    ;
+                    Debug.Log("test");
                 }
 
                 try
