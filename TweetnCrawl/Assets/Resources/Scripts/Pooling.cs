@@ -28,7 +28,7 @@ public class Pooling : MonoBehaviour {
     //TODO REPLACE 3.2 AND 100 WITH SOMETHING LESS STUPID
 	void Start () {
 
-
+        
 
         //creates a 2D array from the map 
         var StartingViewPort = 

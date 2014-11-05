@@ -66,7 +66,9 @@
      <Compile Include="Assets\Resources\Scripts\TileStruct.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\BaseProjectileWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\BaseWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\MachineGun.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\OrbitalWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\Revolver.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\pickup\PickupBase.cs" />
      <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />

@@ -10,21 +10,22 @@ class ShotgunWeapon : BaseProjectileWeapon
 
     public int ProjectileAmount;
     public int Spread;
-    public float BulletSpeed;
+
 
     System.Random rand = new System.Random();
 
     public ShotgunWeapon()
     {
+        coolDown = 0.9f;
         BulletSpeed = 35f;
         Spread = 20;
         ProjectileAmount = 8;
 
     }
 
-    void Start()
+    public override void Start()
     {
-        
+        base.Start();
     }
 
 

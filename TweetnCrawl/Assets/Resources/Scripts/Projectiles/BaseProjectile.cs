@@ -16,9 +16,12 @@ public class BaseProjectile : MonoBehaviour {
 
         this.direction = direction;
         this.rotation = rotation;
+        
         this.speed = speed;
         transform.rotation = rotation;
+        var rand = new System.Random();
         transform.Rotate(new Vector3(0, 0, -90));
+
         this.direction = direction;
         //rigidbody2D.velocity = direction * speed;
         //rigidbody2D.velocity = direction;
@@ -45,6 +48,7 @@ public class BaseProjectile : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
 
 
 }

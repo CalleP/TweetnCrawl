@@ -9,6 +9,9 @@ class BaseProjectileWeapon : BaseWeapon
 {
     UnityEngine.Object projectile;
     public List<BaseProjectile> projectiles = new List<BaseProjectile>();
+
+    public float BulletSpeed;
+
     public BaseProjectile SpawnProjectile(Vector3 direction, Quaternion rotation, string projectilePrefab, float speed)
     {
         var prefab = Resources.Load(projectilePrefab);
@@ -39,6 +42,8 @@ class BaseProjectileWeapon : BaseWeapon
         return SpawnProjectile(outDirection, outRotation, projectilePrefab, speed);
 
     }
+
+    
 
 
 

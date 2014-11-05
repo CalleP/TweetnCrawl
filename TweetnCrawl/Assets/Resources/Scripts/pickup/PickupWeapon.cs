@@ -7,13 +7,15 @@ using UnityEngine;
 
 class PickupWeapon : PickupBase
 {
+
+    
     private static int test = 0;
     void Start()
     {
         if (test == 0) { Item = new ShotgunWeapon(); }
         else if(test == 1)
         {
-            Item = new OrbitalWeapon();
+            Item = new MachineGun();
         }
         test++;
     }

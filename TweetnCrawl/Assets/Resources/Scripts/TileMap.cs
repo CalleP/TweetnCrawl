@@ -96,7 +96,7 @@ public class TileMap : MonoBehaviour {
         map = convertedArray;
 
 
-        //DrawMap(convertedArray);
+        //DrawMap(map);
 
         //VerticalTest
         //var map2 = CropMap(0, 0, map.Length, map.Length / 2, map.Length / 2);
