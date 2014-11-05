@@ -28,7 +28,7 @@ public class OrbitalWeapon : BaseWeapon {
             {
                 if (target.gameObject.tag == "Enemy")
                 {
-                    target.gameObject.GetComponent<BaseEnemy>().TakeDamage(damage);
+                    target.gameObject.GetComponent<EnemyScript>().receiveDamage(damage);
                 }
             }
         }

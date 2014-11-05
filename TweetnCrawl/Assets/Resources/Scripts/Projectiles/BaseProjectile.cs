@@ -8,7 +8,7 @@ public class BaseProjectile : MonoBehaviour {
     public Quaternion rotation;
     public float speed;
 
-    public int Damage = 1;
+    public int Damage = 50;
 	// Use this for initialization
 
     public void Init(Vector2 direction, Quaternion rotation, float speed)
@@ -44,7 +44,7 @@ public class BaseProjectile : MonoBehaviour {
     {
         if (coll.gameObject.name == "Enemy")
         {
-            coll.GetComponent<BaseEnemy>().TakeDamage(Damage);
+            coll.GetComponent<EnemyScript>().receiveDamage(Damage);
             Destroy(gameObject);
         }
     }
