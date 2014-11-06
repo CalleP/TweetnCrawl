@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  HB: {fileID: 2800000, guid: eb8a7edc568b77b438132aadf9a51610, type: 3}
+  HB: {fileID: 2800000, guid: 5f9cc70e8977f89499ab9ae987f89453, type: 3}
   Player: {fileID: 0}
   x: 10
   y: 10
