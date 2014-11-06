@@ -942,7 +942,7 @@ MonoBehaviour:
   x: 10
   y: 10
   w: 150
-  h: 150
+  h: 100
   mat: {fileID: 2100000, guid: a533ff7b8740aba4a9e225793f564834, type: 2}
 --- !u!1001 &342389479
 Prefab:
