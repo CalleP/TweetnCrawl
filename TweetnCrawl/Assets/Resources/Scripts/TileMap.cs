@@ -95,6 +95,56 @@ public class TileMap : MonoBehaviour {
 
         map = convertedArray;
 
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+        ObjectPlacer.spawnEnemy();
+
+
+        var obj = Resources.Load("TemporaryPrefabs/smallRocks");
+
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+
+
+        obj = Resources.Load("TemporaryPrefabs/smallRocks2");
+
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+
+
+
+        obj = Resources.Load("TemporaryPrefabs/Bones1");
+
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+        ObjectPlacer.spawnObject(obj);
+
+        ObjectPlacer.testStart();
+
+        
 
         //DrawMap(map);
 

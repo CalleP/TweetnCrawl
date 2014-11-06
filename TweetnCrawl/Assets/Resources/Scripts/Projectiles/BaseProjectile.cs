@@ -42,7 +42,7 @@ public class BaseProjectile : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "Enemy")
+        if (coll.gameObject.tag == "Enemy")
         {
             coll.GetComponent<EnemyScript>().receiveDamage(Damage);
             Destroy(gameObject);

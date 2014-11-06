@@ -91,7 +91,7 @@ public class Pooling : MonoBehaviour {
             if (distanceX > 0) StepRight();
             else StepLeft();
         }
-        if (CenterPointY != y && CenterPointY + ((ViewPortHeight / 2) + ViewPortHeight % 2) >= y)
+        if (CenterPointY != y)
         {
             if (distanceY > 0) StepUp();
             else StepDown();
@@ -179,10 +179,10 @@ public class Pooling : MonoBehaviour {
     void OnGUI() {
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         p.z = 0;
-        var mapPos = map.GetTileDataCoords(p.x, p.y);
+        //var mapPos = map.GetTileDataCoords(p.x, p.y);
         var rect = new Rect(10, 10, 100, 20);
         var rect2 = new Rect(10, 30, 1000, 20);
-        GUI.Label(rect, mapPos.X.ToString() + ",  " + mapPos.Y.ToString());
+        //GUI.Label(rect, mapPos.X.ToString() + ",  " + mapPos.Y.ToString());
         GUI.Label(rect2, p.x/3.2 + ",  " + p.y/3.2);
     }
 }

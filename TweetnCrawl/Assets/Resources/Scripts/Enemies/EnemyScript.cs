@@ -17,6 +17,7 @@ public class EnemyScript : MonoBehaviour {
 	
 	void Start() 
 	{
+        player = GameObject.Find("Player").transform;
 		attackTime = Time.time;
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> ();
 		chaseRange = 20.0f;
