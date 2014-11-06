@@ -105,8 +105,8 @@ MonoBehaviour:
   map: {fileID: 1421592418}
   CenterPointX: 6
   CenterPointY: 6
-  ViewPortHeight: 15
-  ViewPortWidth: 15
+  ViewPortHeight: 16
+  ViewPortWidth: 16
 --- !u!4 &159456328
 Transform:
   m_ObjectHideFlags: 0
@@ -752,6 +752,14 @@ Prefab:
       propertyPath: map
       value: 
       objectReference: {fileID: 1421592418}
+    - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
+      propertyPath: ViewPortHeight
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
+      propertyPath: ViewPortWidth
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
   m_RootGameObject: {fileID: 159456326}
