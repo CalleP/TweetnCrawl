@@ -47,6 +47,12 @@ public class BaseProjectile : MonoBehaviour {
             coll.GetComponent<EnemyScript>().receiveDamage(Damage);
             Destroy(gameObject);
         }
+
+        if (coll.gameObject.tag == "Wall")
+        {
+            
+            Destroy(gameObject);
+        }
     }
 
 

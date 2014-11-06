@@ -169,7 +169,7 @@ Prefab:
         type: 3}
     - target: {fileID: 6100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_BackGroundColor.r
@@ -304,7 +304,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 316957756}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Size: {x: 2, y: 1.44000006}
   m_Center: {x: 0, y: -.839999974}
 --- !u!114 &316957762

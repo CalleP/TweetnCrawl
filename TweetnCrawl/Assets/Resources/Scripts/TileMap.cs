@@ -85,7 +85,7 @@ public class TileMap : MonoBehaviour {
 
 
 
-        convertedArray[0][0].Type = TileType.Dirt;
+       //convertedArray[0][0].Type = TileType.Dirt;
 
         //foreach (var item in TrimWalls())
         //{

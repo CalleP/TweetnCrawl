@@ -7,12 +7,16 @@ public class OldCharacterController : MonoBehaviour {
 	void Start () {
 	
 	}
-	
 
-    
+
+    void Update()
+    {
+        transform.rotation = Quaternion.identity;
+        rigidbody2D.velocity = new Vector2(0,0);
+    }
 	// Update is called once per frame
 	void FixedUpdate () {
-
+        transform.rotation = Quaternion.identity;
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(new Vector3(0, 0.32f));
