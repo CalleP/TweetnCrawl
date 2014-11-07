@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using System.Collections.Generic;
 
 public class ServerConnector : 
 MonoBehaviour {
@@ -15,6 +16,10 @@ MonoBehaviour {
 	StreamReader theReader;
 	String Host = "195.178.179.176";
 	Int32 Port = 8080; 
+
+    public static List<string> Hashtags = new List<string>();
+    public static List<string> TwitterNAmes = new List<string>();
+    public static string TweetData;
 
 	//Test the connection
 	void TestSocketConnection(){
@@ -39,11 +44,14 @@ MonoBehaviour {
         //---read back the text---
         byte[] bytesToRead = new byte[client.ReceiveBufferSize];
         int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+
+        var outputString = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
         Debug.Log("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+        TweetData = outputString;
         Console.ReadLine();
         client.Close();
 
-
+        
         ////Security.PrefetchSocketPolicy(Host, Port);
         //setupSocket();
 
