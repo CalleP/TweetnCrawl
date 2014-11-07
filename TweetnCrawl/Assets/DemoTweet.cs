@@ -5,12 +5,13 @@ using System.Collections;
 public class DemoTweet : MonoBehaviour {
 	
 	// Use this for initialization
+    public static string Hash;
 	void Start () {
 		var N = JSON.Parse(ServerConnector.TweetData);
-		
-		Debug.Log ("k1"+N.ToString ());
-		var hashtag = N["statuses"].AsObject;// text will be a string containing "sub object"
-		
+
+
+        Hash = N["statuses"].ToString();// text will be a string containing "sub object"
+        //Debug.Log("k1" + hashtag);
 		//string name = N["screen_name"];
 		//Debug.Log ("k1"+N["statuses"]["text"]);
 		//ServerConnector.Hashtags.Add(hashtag["text"]);
@@ -23,7 +24,7 @@ public class DemoTweet : MonoBehaviour {
 	System.Random rand = new System.Random();
 	// Update is called once per frame
 	void Update () {
-		
+		guiText.text = Hash;
 		
 		
 		if (timeStamp <= Time.time)

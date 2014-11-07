@@ -30,7 +30,7 @@ MonoBehaviour {
 	void Start() {
 
         //---data to send to the server---
-        string textToSend = "GetTestData";
+        string textToSend = "GetRandomTweet";
 
         //---create a TCPClient object at the IP and port no.---
         TcpClient client = new TcpClient(Host, Port);
@@ -45,9 +45,13 @@ MonoBehaviour {
         byte[] bytesToRead = new byte[client.ReceiveBufferSize];
         int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
 
-        var outputString = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
-        Debug.Log("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
-        TweetData = outputString;
+        var outputString = Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
+        Debug.Log("Received : " + Encoding.UTF8.GetString(bytesToRead, 0, bytesRead));
+
+        var newString = outputString.Replace("\n", "");
+
+
+        TweetData = newString;
         Console.ReadLine();
         client.Close();
 
@@ -68,7 +72,9 @@ MonoBehaviour {
         //test = readSocket();
         //Debug.Log(test);
 	}
-	
+
+    
+
 	// Update is called once per frame
 	void Update() {
 		
