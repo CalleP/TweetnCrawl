@@ -53,36 +53,36 @@ public class TileMap : MonoBehaviour {
 
 
         //map = map4;
-        var test = new MapHandler();
+        var test = new MapHandler(Width,Height,48);
         
         test.MakeCaverns();
 
 
         TileStruct[][] convertedArray;
-        convertedArray = new TileStruct[test.Map.GetLength(0)][];
+        convertedArray = new TileStruct[test.Map.GetLength(1)][];
         for (int i = 0; i < convertedArray.Length; i++)
         {
-            convertedArray[i] = new TileStruct[test.Map.GetLength(1)];
+            convertedArray[i] = new TileStruct[test.Map.GetLength(0)];
         }
 
-        for (int i = 0; i < test.Map.GetLength(0); i++)
+        for (int x = 0; x < test.Map.GetLength(0); x++)
         {
 
             for (int y = 0; y < test.Map.GetLength(1); y++)
 			{
-                if (test.Map[i, y] == 0)
+                if (test.Map[x, y] == 0)
                 {
-                    convertedArray[i][y] = new TileStruct(i,y,TileType.Dirt);
+                    convertedArray[y][x] = new TileStruct(x,y,TileType.Dirt);
                 }
-                else if (test.Map[i, y] == 1)
+                else if (test.Map[x, y] == 1)
                 {
-                    convertedArray[i][y] = new TileStruct(i, y, TileType.Rock);
+                    convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
                 }
                 
 			}
         }
 
-
+     //   convertedArray = TrimWalls(convertedArray);
 
 
        //convertedArray[0][0].Type = TileType.Dirt;
@@ -93,24 +93,32 @@ public class TileMap : MonoBehaviour {
         //    convertedArray[item.X][item.Y].Type = item.Type;
         //} 
 
+        //NewTile.map = this;
+        //DrawMap3(convertedArray);
         map = convertedArray;
 
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
-        ObjectPlacer.spawnEnemy();
+        map[0][0].Type = TileType.Dirt;
+
+
+
+
+        PlaceBorders(TileType.Rock);
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
+        //ObjectPlacer.spawnEnemy();
 
 
         var obj = Resources.Load("TemporaryPrefabs/smallRocks");
@@ -168,10 +176,13 @@ public class TileMap : MonoBehaviour {
         //   CropMap(0, 0, map.Length / 2, map.Length, 5)
         //   , 0, 2, 1)
         //   );
+
+
     }
 	
 	void Update () {
-        //new MapGen(5, Height, Width);
+
+
 	}
 
     /// <summary>
@@ -299,7 +310,10 @@ public class TileMap : MonoBehaviour {
         }
         else
         {
-            return map[x][y];
+
+                return map[y][x];
+
+
         }
         return outType;
 
@@ -360,7 +374,6 @@ public class TileMap : MonoBehaviour {
             {
                 if (collider.gameObject.tag == "Tile")
                 {
-                    Debug.Log("GotTileStruct");
                     return collider.gameObject.GetComponent<Tile>();
                     
                 }
@@ -397,6 +410,33 @@ public class TileMap : MonoBehaviour {
         }
     }
 
+
+
+    public void DrawMap3(TileStruct[][] map)
+    {
+        var prefab = Resources.Load("TileNoScript");
+        foreach (var item in map)
+        {
+            foreach (var item2 in item)
+            {
+                
+                var tile = (GameObject)Instantiate(prefab, new Vector3(((float)item2.X * 3.2f), ((float)item2.Y * 3.2f)), Quaternion.identity);
+                if (item2.Type == TileType.Rock)
+                {
+                    tile.GetComponent<SpriteRenderer>().sprite = Tile.rock;
+                }
+                else
+                {
+                    tile.GetComponent<SpriteRenderer>().sprite = Tile.dirt;
+                }
+                tile.transform.parent = gameObject.transform;
+                var script = (NewTile)tile.GetComponent<NewTile>();
+                script.TileData = item2;
+                
+            }
+        }
+    }
+
     //Remove?
     public void DrawMap2()
     {
@@ -414,29 +454,26 @@ public class TileMap : MonoBehaviour {
     }
 
 
-    public bool TrimWalls() 
+    
+
+
+
+    public void PlaceBorders(TileType type)
     {
-
-        var output = false;
-        for (int i = 0; i < map.Length; i++)
+        for (int y = 0; y < map.Length; y++)
         {
-            for (int y = 0; y < map[i].Length; y++)
+            for (int x = 0; x < map[0].Length; x++)
             {
-                var currentTile = map[i][y];
-                int surroundingTiles = 0;
-                if (GetTileData(y-1, i).Type == TileType.Dirt) surroundingTiles++;
-                if (GetTileData(y + 1, i).Type == TileType.Dirt) surroundingTiles++;
-                if (GetTileData(y, i + 1).Type == TileType.Dirt) surroundingTiles++;
-                if (GetTileData(y, i - 1).Type == TileType.Dirt) surroundingTiles++;
-
-                
-                currentTile.surroundingDirts = surroundingTiles;
-                output = true;
-
-                
+                if (y == 0 || y == map.Length-1)
+	            {
+                    map[y][x].Type = type;
+	            }
+                else if (x == 0 || x == map[0].Length-1)
+                {
+                    map[y][x].Type = type;
+                }
 
             }
         }
-        return output;
     }
 }

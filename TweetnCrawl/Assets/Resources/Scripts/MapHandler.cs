@@ -14,11 +14,11 @@ public class MapHandler
     public int MapHeight { get; set; }
     public int PercentAreWalls { get; set; }
 
-    public MapHandler()
+    public MapHandler(int mapWidth, int mapHeight, int wallPercentage)
     {
-        MapWidth = 40;
-        MapHeight = 40;
-        PercentAreWalls = 48;
+        MapWidth = mapWidth;
+        MapHeight = mapHeight;
+        PercentAreWalls = wallPercentage;
 
         RandomFillMap();
     }

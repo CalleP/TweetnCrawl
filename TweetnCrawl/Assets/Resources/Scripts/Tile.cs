@@ -7,6 +7,8 @@ using System.Collections;
 /// </summary>
 public class Tile : MonoBehaviour {
 
+    public int x;
+    public int y;
     public TileType Type;
     public TileStruct TileData;
     public bool CollidingWithPlayer = false;
@@ -26,6 +28,8 @@ public class Tile : MonoBehaviour {
         SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = dirt;
 
+        
+
         BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
         collider.size = sr.sprite.bounds.size;
 	}
@@ -34,6 +38,8 @@ public class Tile : MonoBehaviour {
     {
         TileData = map.GetTileData(TileData.X, TileData.Y);
         Type = TileData.Type;
+        x = TileData.X;
+        y = TileData.Y;
         trim();
         
 
@@ -85,6 +91,7 @@ public class Tile : MonoBehaviour {
     {
         transform.position = transform.position += new Vector3(0f, (float)Pooling.TileHeight / (float)(100 * dir / Mathf.Abs(dir)));
         TileData = map.GetTileData(TileData.X, TileData.Y + (dir / Mathf.Abs(dir)));
+        
        
     }
 
@@ -105,23 +112,22 @@ public class Tile : MonoBehaviour {
     {
 
 
-       
-                var currentTile = map.map[TileData.X][TileData.Y];
-                var x = currentTile.X;
-                var y = currentTile.Y;
-                int surroundingTiles = 0;
-                if (map.GetTileData(x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
+        var currentTile = map.map[TileData.Y][TileData.X];
+        var x = currentTile.X;
+        var y = currentTile.Y;
+        int surroundingTiles = 0;
+        if (map.GetTileData(x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
 
-                if (map.GetTileData(x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
-                if (map.GetTileData(x, y + 1).Type == TileType.Dirt) {surroundingTiles++;}
-                if (map.GetTileData(x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
+        if (map.GetTileData(x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
+        if (map.GetTileData(x, y + 1).Type == TileType.Dirt) { surroundingTiles++; }
+        if (map.GetTileData(x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
 
-                this.surroundingTiles = surroundingTiles;
-                if (surroundingTiles == 3 && TileData.Type == TileType.Rock)
-                {
-                    setType(TileType.Dirt);
+        this.surroundingTiles = surroundingTiles;
+        if (surroundingTiles == 3 && TileData.Type == TileType.Rock)
+        {
+            setType(TileType.Dirt);
 
-                }
+        }
 
 
 
@@ -129,7 +135,7 @@ public class Tile : MonoBehaviour {
         
     public void setType(TileType type)
     {
-        map.map[TileData.X][TileData.Y].Type = type;
+        map.map[TileData.Y][TileData.X].Type = type;
         TileData.Type = type;
     }
 

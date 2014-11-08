@@ -143,7 +143,7 @@ public class Pooling : MonoBehaviour {
     /// </summary>
     public void StepUp()
     {
-        var upperMostTile = obj[0][obj[0].Length-1].GetComponent<Tile>();
+        var upperMostTile = obj[obj.Length-1][0].GetComponent<Tile>();
         if (upperMostTile.TileData.Y < map.Height-1)
         {
             foreach (var item in obj)

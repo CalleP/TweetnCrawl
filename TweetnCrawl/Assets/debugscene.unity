@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 1421592418}
-  CenterPointX: 6
-  CenterPointY: 6
-  ViewPortHeight: 16
-  ViewPortWidth: 16
+  CenterPointX: 9
+  CenterPointY: 9
+  ViewPortHeight: 20
+  ViewPortWidth: 20
 --- !u!4 &159456328
 Transform:
   m_ObjectHideFlags: 0
@@ -496,11 +496,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Height
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Width
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
@@ -793,11 +793,19 @@ Prefab:
       objectReference: {fileID: 1421592418}
     - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
       propertyPath: ViewPortHeight
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
       propertyPath: ViewPortWidth
-      value: 16
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
+      propertyPath: CenterPointY
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
+      propertyPath: CenterPointX
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
@@ -920,8 +928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 40
-  Width: 40
+  Height: 30
+  Width: 50
 --- !u!4 &1421592419
 Transform:
   m_ObjectHideFlags: 0

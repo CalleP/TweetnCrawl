@@ -423,7 +423,7 @@ public class SpriteHandler : MonoBehaviour {
         //      -
         //     -c+
         //      -
-        if (center != up && center != down && center != left && center == right) return "_5";
+        if (center != up && center != down && center != left && center == right) return "_1";
 
         //      -
         //     -c+
