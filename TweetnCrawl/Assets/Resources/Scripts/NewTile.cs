@@ -24,14 +24,15 @@ public class NewTile : MonoBehaviour {
         if (TileData.Type == TileType.Dirt)
         {
             //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture("YellowCaveFloor", TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
             gameObject.tag = "Tile";
             //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
         }
         else if (TileData.Type == TileType.Rock)
         {
+
             //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
-            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture("YellowCave", TileData, map);
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture(TileData, map);
             gameObject.tag = "Wall";
             //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
         }

@@ -10,12 +10,22 @@ public enum TileType
     None
 }
 
+public enum TerrainType
+{ 
+    YellowCave,
+    BlackCaste
+}
+
+
+
 
 /// <summary>
 /// The data a tile is composed of
 /// </summary>
 public class TileStruct{
 
+    public string WallTerrainType = "BlackCastle";
+    public string FloorTerrainType = "BlackCastle";
     public TileType Type;
     public int Y;
     public int X;
@@ -26,4 +36,38 @@ public class TileStruct{
         this.Y = y;
         this.Type = type;
     }
+
+
+    public void SetWall(TerrainType WallTerrain)
+    {
+        switch (WallTerrain)
+        {
+            case TerrainType.YellowCave:
+                WallTerrainType = "YellowCave";
+                break;
+            case TerrainType.BlackCaste:
+                WallTerrainType = "BlackCastle";
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void SetFloor(TerrainType floorTerrain)
+    {
+        switch (floorTerrain)
+        {
+            case TerrainType.YellowCave:
+                FloorTerrainType = "YellowCave";
+                break;
+            case TerrainType.BlackCaste:
+                FloorTerrainType = "BlackCastle";
+                break;
+            default:
+                break;
+        }
+    }
+
+
+  
 }

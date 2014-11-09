@@ -57,18 +57,18 @@ TextureImporter:
     21300104: YellowCaveT_6
     21300106: YellowCaveT_2
     21300108: YellowCave_T7
-    21300110: Wall_55
-    21300112: Wall_56
-    21300114: Wall_57
-    21300116: Wall_58
-    21300118: Wall_59
-    21300120: Wall_60
-    21300122: Wall_61
-    21300124: Wall_62
-    21300126: Wall_63
-    21300128: Wall_64
-    21300130: Wall_65
-    21300132: Wall_66
+    21300110: BlackCastle_7
+    21300112: BlackCastle_9
+    21300114: BlackCastle_5
+    21300116: BlackCastle_4
+    21300118: BlackCastle_1
+    21300120: BlackCastle_3
+    21300122: BlackCastleT_7
+    21300124: BlackCastleT_4
+    21300126: BlackCastleT_8
+    21300128: BlackCastleT_2
+    21300130: BlackCastleT_5
+    21300132: BlackCastleT_6
     21300134: Wall_67
     21300136: Wall_68
     21300138: Wall_69
@@ -956,6 +956,7 @@ TextureImporter:
     21301902: Wall_951
     21301904: Wall_324
     21301906: Wall_337
+    21301908: BlackCastle_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1072,16 +1073,6 @@ TextureImporter:
         serializedVersion: 2
         x: 112
         y: 624
-        width: 112
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Wall_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 576
         width: 112
         height: 48
       alignment: 0
@@ -1542,6 +1533,136 @@ TextureImporter:
         serializedVersion: 2
         x: 144
         y: 800
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastle_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackCastleT_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 592
         width: 16
         height: 16
       alignment: 0

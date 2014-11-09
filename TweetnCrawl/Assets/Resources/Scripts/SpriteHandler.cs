@@ -51,14 +51,14 @@ public class SpriteHandler : MonoBehaviour {
     public static Sprite[] Walls = Resources.LoadAll<Sprite>("Wall");
     public static Sprite[] Floors = Resources.LoadAll<Sprite>("Floor");
 
-    public static Sprite GetTexture(string name, TileStruct tile, TileMap map)
+    public static Sprite GetTexture(TileStruct tile, TileMap map)
     {
 
 
 
         if (tile.Type == TileType.Rock)
         {
-            return getSpriteWithName(name + getNumber(
+            return getSpriteWithName(tile.WallTerrainType + getNumber(
             tile.Type,
             map.GetTileData(tile.X - 1, tile.Y).Type,
             map.GetTileData(tile.X + 1, tile.Y).Type,
@@ -76,7 +76,7 @@ public class SpriteHandler : MonoBehaviour {
         }
         if (tile.Type == TileType.Dirt)
         {
-            return getSpriteWithName(name + getNumberFloors(
+            return getSpriteWithName(tile.FloorTerrainType+"Floor" + getNumberFloors(
             tile.Type,
             map.GetTileData(tile.X - 1, tile.Y).Type,
             map.GetTileData(tile.X + 1, tile.Y).Type,
