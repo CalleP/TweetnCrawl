@@ -41,6 +41,10 @@ class MapChecker
 
         while (x != EndPoint.X || y != EndPoint.Y)
         {
+            if (map.GetTileData(x, y).Type == TileType.None)
+            {
+                return false;
+            }
             if ((x == startPoint.X &&  y == startPoint.Y) && !firstTime)
             {
                 return false;
