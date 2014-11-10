@@ -39,6 +39,7 @@ public abstract class BaseWeapon : MonoBehaviour {
         if (fireSound != null)
         {
             audios[0].clip = fireSound;
+            
             audios[0].Play();
             PlayCooldownSound();
 

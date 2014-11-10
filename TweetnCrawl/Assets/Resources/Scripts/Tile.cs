@@ -46,7 +46,6 @@ public class Tile : MonoBehaviour {
         Type = TileData.Type;
         x = TileData.X;
         y = TileData.Y;
-        trim();
         
 
         if (transform.position.x != TileData.X*3.2)
@@ -114,30 +113,7 @@ public class Tile : MonoBehaviour {
 
 
 
-    public void trim()
-    {
 
-
-        var currentTile = map.map[TileData.Y][TileData.X];
-        var x = currentTile.X;
-        var y = currentTile.Y;
-        int surroundingTiles = 0;
-        if (map.GetTileData(x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
-
-        if (map.GetTileData(x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
-        if (map.GetTileData(x, y + 1).Type == TileType.Dirt) { surroundingTiles++; }
-        if (map.GetTileData(x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
-
-        this.surroundingTiles = surroundingTiles;
-        if (surroundingTiles == 3 && TileData.Type == TileType.Rock)
-        {
-            setType(TileType.Dirt);
-
-        }
-
-
-
-    }
         
     public void setType(TileType type)
     {

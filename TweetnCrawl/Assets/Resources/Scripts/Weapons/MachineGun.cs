@@ -9,7 +9,7 @@ class MachineGun : Revolver
 {
     public MachineGun() : base()
     {
-        fireSound = Resources.Load<AudioClip>("Sounds/MachineGunSound");
+        fireSound = null;
         coolDown = 0.12f;
         Spread = 8;
     }

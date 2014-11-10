@@ -92,6 +92,11 @@ public class TileMap : MonoBehaviour {
 
             map = convertedArray;
 
+            TrimMap();
+            TrimMap();
+            TrimMap();
+            TrimMap();
+            TrimMap();
 
             PlaceBorders(TileType.Rock);
 
@@ -609,6 +614,37 @@ public class TileMap : MonoBehaviour {
 
 
 
+        }
+
+
+    }
+
+
+
+    public void TrimMap()
+    {
+        foreach (var y2 in map)
+        {
+            
+            foreach (var x2 in y2)
+            {
+                int surroundingTiles = 0;
+                var currentTile = x2;
+                var x = currentTile.X;
+                var y = currentTile.Y;
+                
+                if (GetTileData(x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
+
+                if (GetTileData(x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
+                if (GetTileData(x, y + 1).Type == TileType.Dirt) { surroundingTiles++; }
+                if (GetTileData(x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
+
+                if (surroundingTiles == 3 && currentTile.Type == TileType.Rock)
+                {
+                    currentTile.Type = TileType.Dirt;
+
+                }
+            }
         }
 
 
