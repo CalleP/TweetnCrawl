@@ -24,12 +24,16 @@ public enum TerrainType
 /// </summary>
 public class TileStruct{
 
-    public string WallTerrainType = "BlackCastle";
-    public string FloorTerrainType = "BlackCastle";
+    public string WallTerrainType = "YellowCave";
+    public string FloorTerrainType = "YellowCave";
     public TileType Type;
     public int Y;
     public int X;
     public int surroundingDirts = 0;
+
+
+    //remove when finished testing
+    public int test = 0;
 
     public TileStruct(int x, int y, TileType type) {
         this.X = x;
@@ -65,6 +69,26 @@ public class TileStruct{
                 break;
             default:
                 break;
+        }
+    }
+
+
+    public void SetBoth(TerrainType type)
+    {
+        SetFloor(type);
+        SetWall(type);
+    }
+
+    public string GetTerrainType()
+    {
+        if (Type == TileType.Rock)
+        {
+            return WallTerrainType;
+
+        }
+        else
+        {
+            return FloorTerrainType + "Floor";
         }
     }
 

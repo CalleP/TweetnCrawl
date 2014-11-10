@@ -17,6 +17,10 @@ public class Tile : MonoBehaviour {
     private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
     public int surroundingTiles = 0;
 
+    public string TerrainType;
+
+    
+
     //TODO: add texture and stuff later
     public Tile(int x, int y) {
         TileData = map.GetTileData(x, y);
@@ -36,6 +40,8 @@ public class Tile : MonoBehaviour {
 
     void Update() 
     {
+        surroundingTiles = TileData.test;
+        TerrainType = TileData.GetTerrainType();
         TileData = map.GetTileData(TileData.X, TileData.Y);
         Type = TileData.Type;
         x = TileData.X;

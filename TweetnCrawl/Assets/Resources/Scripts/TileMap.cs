@@ -23,7 +23,7 @@ public class TileMap : MonoBehaviour {
             map[i] = new TileStruct[Width];
         }
         
-        FloodMap(TileType.Dirt);
+        //FloodMap(TileType.Dirt);
 
         //BSTgen.GenMap(map, 5, 10, 2, 3, 0, true);
 
@@ -53,56 +53,65 @@ public class TileMap : MonoBehaviour {
 
 
         //map = map4;
-        var test = new MapHandler(Width,Height,48);
-        
-        test.MakeCaverns();
 
-
-        TileStruct[][] convertedArray;
-        convertedArray = new TileStruct[test.Map.GetLength(1)][];
-        for (int i = 0; i < convertedArray.Length; i++)
-        {
-            convertedArray[i] = new TileStruct[test.Map.GetLength(0)];
-        }
-
-        for (int x = 0; x < test.Map.GetLength(0); x++)
+        while (true)
         {
 
-            for (int y = 0; y < test.Map.GetLength(1); y++)
-			{
-                if (test.Map[x, y] == 0)
+            var test = new MapHandler(Width, Height, 48);
+
+            test.MakeCaverns();
+
+
+            TileStruct[][] convertedArray;
+            convertedArray = new TileStruct[test.Map.GetLength(1)][];
+            for (int i = 0; i < convertedArray.Length; i++)
+            {
+                convertedArray[i] = new TileStruct[test.Map.GetLength(0)];
+            }
+
+            for (int x = 0; x < test.Map.GetLength(0); x++)
+            {
+
+                for (int y = 0; y < test.Map.GetLength(1); y++)
                 {
-                    convertedArray[y][x] = new TileStruct(x,y,TileType.Dirt);
+                    if (test.Map[x, y] == 0)
+                    {
+                        convertedArray[y][x] = new TileStruct(x, y, TileType.Dirt);
+                    }
+                    else if (test.Map[x, y] == 1)
+                    {
+                        convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
+                    }
+
                 }
-                else if (test.Map[x, y] == 1)
-                {
-                    convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
-                }
-                
-			}
+            }
+
+
+
+
+
+            map = convertedArray;
+
+
+            PlaceBorders(TileType.Rock);
+
+            var closest = ClosestToBorderX(TileType.Dirt);
+            DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+
+            var closest2 = ClosestToBorderXReverse(TileType.Dirt);
+            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+            DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+            MapChecker checker = new MapChecker(this);
+
+            if (checker.CheckMap(closest, closest2))
+            {
+                break;
+            }
+
         }
 
-     //   convertedArray = TrimWalls(convertedArray);
-
-
-       //convertedArray[0][0].Type = TileType.Dirt;
-
-        //foreach (var item in TrimWalls())
-        //{
-
-        //    convertedArray[item.X][item.Y].Type = item.Type;
-        //} 
-
-        //NewTile.map = this;
-        //DrawMap3(convertedArray);
-        map = convertedArray;
-
-        map[0][0].Type = TileType.Dirt;
-
-
-
-
-        PlaceBorders(TileType.Rock);
         //ObjectPlacer.spawnEnemy();
         //ObjectPlacer.spawnEnemy();
         //ObjectPlacer.spawnEnemy();
@@ -478,4 +487,133 @@ public class TileMap : MonoBehaviour {
             }
         }
     }
+
+
+    public TileStruct ClosestToBorderX(TileType type)
+    {
+        int bestValue = map[0].Length;
+        TileStruct bestMatch = null;
+        foreach (var y in map)
+        {
+            foreach (var x in y)
+            {
+                if (x.Type == type && x.X < bestValue)
+                {
+                    bestValue = x.X;
+                    bestMatch = x;
+                }
+            }
+        }
+        return bestMatch;
+    }
+
+
+    public TileStruct ClosestToBorderXReverse(TileType type)
+    {
+        int bestValue = 0;
+        TileStruct bestMatch = null;
+        for (int y = map.Length-1; y >= 0; y--)
+		{
+			for (int x = map[0].Length-1; x >= 0; x--)
+			{
+                if (map[y][x].Type == type && map[y][x].X > bestValue)
+                {
+                    bestValue = map[y][x].X;
+                    bestMatch = map[y][x];
+                }
+            }
+        }
+        return bestMatch;
+    }
+
+
+    public void SpawnStartExitPoint(TileStruct location, bool exit)
+    { 
+        if (!exit)
+	    {
+            int count = -1;
+            TileStruct x = GetTileData(location.X, location.Y);
+
+            int distance = 0 - location.X;
+
+            for (int i = distance; i <= 0; i++)
+            {
+                x = GetTileData(location.X+i, location.Y);
+                x.SetBoth(TerrainType.BlackCaste);
+                x.Type = TileType.Dirt;
+
+                var downWalls = GetTileData(location.X + i, location.Y-1);
+                downWalls.SetBoth(TerrainType.BlackCaste);
+                downWalls.Type = TileType.Rock;
+                var upWalls = GetTileData(location.X + i, location.Y+1);
+                upWalls.SetBoth(TerrainType.BlackCaste);
+                upWalls.Type = TileType.Rock;
+
+
+                if (i == 0)
+                {
+                    var Wall = GetTileData(location.X + i + 1, location.Y);
+                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.Type = TileType.Dirt;
+
+                    Wall = GetTileData(location.X + i +1, location.Y-1);
+                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.Type = TileType.Dirt;
+
+                    Wall = GetTileData(location.X + i + 1, location.Y + 1);
+                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.Type = TileType.Dirt;
+
+                    Wall = GetTileData(location.X + i + 2, location.Y);
+                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.Type = TileType.Dirt;
+
+                    //Wall = GetTileData(location.X + i + 1, location.Y +1);
+                    //Wall.SetBoth(TerrainType.BlackCaste);
+                    //Wall.Type = TileType.Dirt;
+
+                    //Wall = GetTileData(location.X + i + 1, location.Y - 3);
+                    //Wall.SetBoth(TerrainType.BlackCaste);
+                    //Wall.Type = TileType.Dirt;
+
+                    //Wall = GetTileData(location.X + i + 2, location.Y - 3);
+                    //Wall.SetBoth(TerrainType.BlackCaste);
+                    //Wall.Type = TileType.Dirt;
+                }
+            }
+	    }
+        
+    }
+
+    public void DrawCorridorHorizontal(int x1, int x2, int y, TileType wallType, TileType floorType, TerrainType wallTerrainType, TerrainType floorTerrainType)
+    {
+        int length = Mathf.Abs(x1 - x2)+1;
+
+        int distanceA = x1 - x2;
+        int distanceB = x1 - x2;
+
+
+        for (int i = 0; i < length; i++)
+        {
+            TileStruct pointA;
+            if (distanceA <= 0)
+            {
+              pointA = GetTileData(x1 + i, y);
+            }
+            else
+            {
+                pointA = GetTileData(x1 - i, y);
+            }
+            pointA.Type = floorType;
+            pointA.SetFloor(floorTerrainType);
+
+
+
+        }
+
+
+    }
+
+
+
 }

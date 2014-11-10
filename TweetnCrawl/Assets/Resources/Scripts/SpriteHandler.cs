@@ -59,15 +59,15 @@ public class SpriteHandler : MonoBehaviour {
         if (tile.Type == TileType.Rock)
         {
             return getSpriteWithName(tile.WallTerrainType + getNumber(
-            tile.Type,
-            map.GetTileData(tile.X - 1, tile.Y).Type,
-            map.GetTileData(tile.X + 1, tile.Y).Type,
-            map.GetTileData(tile.X, tile.Y + 1).Type,
-            map.GetTileData(tile.X, tile.Y - 1).Type,
-            map.GetTileData(tile.X - 1, tile.Y + 1).Type,
-            map.GetTileData(tile.X + 1, tile.Y + 1).Type,
-            map.GetTileData(tile.X - 1, tile.Y - 1).Type,
-            map.GetTileData(tile.X + 1, tile.Y - 1).Type
+            tile.WallTerrainType,
+            map.GetTileData(tile.X - 1, tile.Y).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y).GetTerrainType(),
+            map.GetTileData(tile.X, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X, tile.Y - 1).GetTerrainType(),
+            map.GetTileData(tile.X - 1, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X - 1, tile.Y - 1).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y - 1).GetTerrainType()
             ),
 
 
@@ -76,16 +76,16 @@ public class SpriteHandler : MonoBehaviour {
         }
         if (tile.Type == TileType.Dirt)
         {
-            return getSpriteWithName(tile.FloorTerrainType+"Floor" + getNumberFloors(
-            tile.Type,
-            map.GetTileData(tile.X - 1, tile.Y).Type,
-            map.GetTileData(tile.X + 1, tile.Y).Type,
-            map.GetTileData(tile.X, tile.Y + 1).Type,
-            map.GetTileData(tile.X, tile.Y - 1).Type,
-            map.GetTileData(tile.X - 1, tile.Y + 1).Type,
-            map.GetTileData(tile.X + 1, tile.Y + 1).Type,
-            map.GetTileData(tile.X - 1, tile.Y - 1).Type,
-            map.GetTileData(tile.X + 1, tile.Y - 1).Type
+            return getSpriteWithName(tile.GetTerrainType() + getNumberFloors(
+            tile.GetTerrainType(),
+            map.GetTileData(tile.X - 1, tile.Y).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y).GetTerrainType(),
+            map.GetTileData(tile.X, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X, tile.Y - 1).GetTerrainType(),
+            map.GetTileData(tile.X - 1, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y + 1).GetTerrainType(),
+            map.GetTileData(tile.X - 1, tile.Y - 1).GetTerrainType(),
+            map.GetTileData(tile.X + 1, tile.Y - 1).GetTerrainType()
             ),
 
 
@@ -96,8 +96,8 @@ public class SpriteHandler : MonoBehaviour {
 
     }
 
-    private static string getNumberFloors(TileType center, TileType left, TileType right, TileType up, TileType down,
-        TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getNumberFloors(string center, string left, string right, string up, string down,
+        string upLeft, string upRight, string downLeft, string downRight)
     {
 
 
@@ -216,7 +216,7 @@ public class SpriteHandler : MonoBehaviour {
 
     }
 
-    private static string getHorizontalNumber(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getHorizontalNumber(string center, string upLeft, string upRight, string downLeft, string downRight)
     {
         //    + + +
         //    + c +
@@ -284,8 +284,8 @@ public class SpriteHandler : MonoBehaviour {
         return "T_7";
     }
 
-    private static string getNumber(TileType center, TileType left, TileType right, TileType up, TileType down,
-    TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getNumber(string center, string left, string right, string up, string down,
+    string upLeft, string upRight, string downLeft, string downRight)
     {
 
 
@@ -444,7 +444,7 @@ public class SpriteHandler : MonoBehaviour {
     //      +
     //     +c-
     //      +
-    private static string getDirectional1(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getDirectional1(string center, string upLeft, string upRight, string downLeft, string downRight)
     { 
         //     ++?
         //     +c-
@@ -458,7 +458,7 @@ public class SpriteHandler : MonoBehaviour {
     //      +
     //     -c+
     //      +
-    private static string getDirectional2(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getDirectional2(string center, string upLeft, string upRight, string downLeft, string downRight)
     {
         //     ?++
         //     -c+
@@ -472,7 +472,7 @@ public class SpriteHandler : MonoBehaviour {
     //      -
     //     +c+
     //      +
-    private static string getDirectional3(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getDirectional3(string center, string upLeft, string upRight, string downLeft, string downRight)
     {
         //     ?-?
         //     +c+
@@ -486,7 +486,7 @@ public class SpriteHandler : MonoBehaviour {
     //      +
     //     +c+
     //      -
-    private static string getDirectional4(TileType center, TileType upLeft, TileType upRight, TileType downLeft, TileType downRight)
+    private static string getDirectional4(string center, string upLeft, string upRight, string downLeft, string downRight)
     {
         //     +++
         //     +c+
