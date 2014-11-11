@@ -496,7 +496,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Height
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Width
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 25
+  Height: 30
   Width: 100
 --- !u!4 &1421592419
 Transform:

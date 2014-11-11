@@ -61,6 +61,45 @@ public class Pooling : MonoBehaviour {
             }
             count++;
         }
+
+        GameObject player = GameObject.Find("Player");
+        int x = (int)(player.transform.position.x / 3.2f);
+        int y = (int)(player.transform.position.y / 3.2f);
+
+        var distanceX = CenterPointX - x;
+        var distanceY = CenterPointY - y;
+
+        if (distanceX >= 0)
+        {
+            for (int i = 0; i < distanceX; i++)
+            {
+                StepLeft();
+            }
+        }
+        else
+        {
+            for (int i = 0; i > distanceX; i--)
+            {
+                StepRight();
+            }
+        }
+
+
+
+        if (distanceY >= 0)
+        {
+            for (int i = 0; i < distanceY; i++)
+            {
+                StepDown();
+            }
+        }
+        else
+        {
+            for (int i = 0; i > distanceY; i--)
+            {
+                StepUp();
+            }
+        }
     }
 
     void Update()
