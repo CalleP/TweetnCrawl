@@ -7,7 +7,7 @@ public class ObjectPlacer : MonoBehaviour {
     //TODO: class sf not done. it was hastily scrounged together to make the demo look nicer
 
     private static System.Random rand = new System.Random();
-    private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>(); 
+    private static TileMap map = GameObject.Find("CenterMap").GetComponent<TileMap>(); 
 	// Use this for initialization
 	void Start () {
 	    

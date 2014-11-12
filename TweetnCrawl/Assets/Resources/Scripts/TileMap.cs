@@ -16,7 +16,14 @@ public class TileMap : MonoBehaviour {
 
     public TileStruct[][] map;
 
-	void Start () {
+    public int StartPointX;
+    public int StartPointY;
+
+    public int EndPointX;
+    public int EndPointY;
+
+
+	public virtual void Start () {
         map = new TileStruct[Height][];
         for (int i = 0; i < map.Length; i++)
         {
@@ -103,10 +110,18 @@ public class TileMap : MonoBehaviour {
             var closest = ClosestToBorderX(TileType.Dirt);
             DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
 
+            StartPointX = 0;
+            StartPointY = closest.Y;
+
 
             var closest2 = ClosestToBorderXReverse(TileType.Dirt);
             //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
             DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+            EndPointX = map[0].Length-1;
+            EndPointY = closest2.Y;
+            
+
 
             MapChecker checker = new MapChecker(this);
 
@@ -117,54 +132,13 @@ public class TileMap : MonoBehaviour {
 
         }
 
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-
-
-        var obj = Resources.Load("TemporaryPrefabs/smallRocks");
-
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-
-
-        obj = Resources.Load("TemporaryPrefabs/smallRocks2");
-
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
+        if (gameObject.name == "NorthMap")
+        {
+            Debug.Log("here");
+        }
 
 
 
-        obj = Resources.Load("TemporaryPrefabs/Bones1");
-
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-
-        ObjectPlacer.testStart();
 
         
 
@@ -608,6 +582,36 @@ public class TileMap : MonoBehaviour {
             else
             {
                 pointA = GetTileData(x1 - i, y);
+            }
+            pointA.Type = floorType;
+            pointA.SetFloor(floorTerrainType);
+
+
+
+        }
+
+
+    }
+
+
+    public void DrawCorridorHVertical(int y1, int y2, int x, TileType wallType, TileType floorType, TerrainType wallTerrainType, TerrainType floorTerrainType)
+    {
+        int length = Mathf.Abs(y1 - y2) + 1;
+
+        int distanceA = y1 - y2;
+        int distanceB = y1 - y2;
+
+
+        for (int i = 0; i < length; i++)
+        {
+            TileStruct pointA;
+            if (distanceA <= 0)
+            {
+                pointA = GetTileData(x, y1 + i);
+            }
+            else
+            {
+                pointA = GetTileData(x, y1 - i);
             }
             pointA.Type = floorType;
             pointA.SetFloor(floorTerrainType);

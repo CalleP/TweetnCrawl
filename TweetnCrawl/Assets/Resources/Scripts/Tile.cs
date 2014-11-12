@@ -14,7 +14,8 @@ public class Tile : MonoBehaviour {
     public bool CollidingWithPlayer = false;
     public static Sprite dirt = Resources.Load<Sprite>("Minecraft_dirt");
     public static Sprite rock = Resources.Load<Sprite>("rock");
-    private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
+    //private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
+    private static TileMap map = GameObject.Find("World").GetComponent<Pooling>().map;
     public int surroundingTiles = 0;
 
     public string TerrainType;
@@ -72,6 +73,7 @@ public class Tile : MonoBehaviour {
         }
         else
         {
+            int k = 666;
             //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
     }
