@@ -9,8 +9,9 @@ public class ScaleGUIButton : MonoBehaviour
 	void OnGUI()
 	{
 		AutoResize(1920, 1080);
-		
 		GUI.Button(new Rect(x, y, Image.width, Image.height), Image);
+
+
 	}
 	
 	public static void AutoResize(int screenWidth, int screenHeight)
