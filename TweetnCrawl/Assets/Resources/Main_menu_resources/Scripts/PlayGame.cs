@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ScaleGUIButton : MonoBehaviour 
+public class PlayGame : MonoBehaviour 
 {
 	public Texture2D Image;
 	public float x;
@@ -9,9 +9,13 @@ public class ScaleGUIButton : MonoBehaviour
 	void OnGUI()
 	{
 		AutoResize(1920, 1080);
-		GUI.Button(new Rect(x, y, Image.width, Image.height), Image);
+		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
 
+			print("Play game pressed");
 
+				}
+		
+		
 	}
 	
 	public static void AutoResize(int screenWidth, int screenHeight)

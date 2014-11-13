@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DemoTweet.cs" />
+     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Credits.cs" />
+     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Exit.cs" />
+     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs" />
+     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\ScaleGUI.cs" />
-     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\ScaleGUIButton.cs" />
      <Compile Include="Assets\Resources\Scripts\BSTgen.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterHealth.cs" />
