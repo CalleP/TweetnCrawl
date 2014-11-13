@@ -179,7 +179,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: m_Name
-      value: CenterMap
+      value: Hub
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
@@ -1215,6 +1215,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!1 &1659050253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+  m_PrefabInternal: {fileID: 2072640604}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1659050255}
+  - 114: {fileID: 1659050254}
+  m_Layer: 0
+  m_Name: CenterMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1659050254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 2072640604}
+  m_GameObject: {fileID: 1659050253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Height: 30
+  Width: 30
+  StartPointX: 0
+  StartPointY: 0
+  EndPointX: 0
+  EndPointY: 0
+--- !u!4 &1659050255
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+  m_PrefabInternal: {fileID: 2072640604}
+  m_GameObject: {fileID: 1659050253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &1837530536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1413,7 @@ GameObject:
   - 4: {fileID: 2014471615}
   - 114: {fileID: 2014471614}
   m_Layer: 0
-  m_Name: CenterMap
+  m_Name: Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1397,6 +1443,7 @@ MonoBehaviour:
   WestMap: {fileID: 1421592418}
   SouthMap: {fileID: 325165670}
   EastMap: {fileID: 1157340191}
+  CenterMap: {fileID: 1659050254}
 --- !u!4 &2014471615
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,6 +1456,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1001 &2072640604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: Height
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: Width
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: m_Name
+      value: CenterMap
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+  m_RootGameObject: {fileID: 1659050253}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2080686169
 GameObject:
   m_ObjectHideFlags: 0

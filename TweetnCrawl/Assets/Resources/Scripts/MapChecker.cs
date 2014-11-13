@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+public enum direction
+{
+    up = 0,
+    down = 1,
+    left = 2,
+    right = 3
+}
 
 class MapChecker
 {
 
-    private enum direction
-    {
-        up =0,
-        down = 1,
-        left = 2,
-        right = 3
-    }
 
     TileMap map;
     TileStruct startPoint;
@@ -102,6 +102,16 @@ class MapChecker
         }
 
         return true;
+    }
+
+    public bool CheckHub(TileStruct Point1, TileStruct Point2, TileStruct Point3, TileStruct Point4)
+    {
+        if (CheckMap(Point1, Point2) && CheckMap(Point2,Point3) && CheckMap(Point3,Point4))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     //private void HugWall()

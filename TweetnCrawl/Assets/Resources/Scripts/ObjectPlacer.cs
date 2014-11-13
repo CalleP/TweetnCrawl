@@ -7,7 +7,7 @@ public class ObjectPlacer : MonoBehaviour {
     //TODO: class sf not done. it was hastily scrounged together to make the demo look nicer
 
     private static System.Random rand = new System.Random();
-    private static TileMap map = GameObject.Find("CenterMap").GetComponent<TileMap>(); 
+    private static TileMap map = GameObject.Find("Hub").GetComponent<TileMap>(); 
 	// Use this for initialization
 	void Start () {
 	    
@@ -47,7 +47,9 @@ public class ObjectPlacer : MonoBehaviour {
     {
         var tile = findAvailableTile();
 
-        GameObject.Find("Player").transform.position = new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1);
+        var height = (map.Height / 2)*3.2f;
+        var width = (map.Width / 2)*3.2f;
+        GameObject.Find("Player").transform.position = new Vector3(width,height, -1);
         GameObject.Find("Pickup1").transform.position = new Vector3((tile.X-1) * 3.2f, tile.Y * 3.2f, -1);
         GameObject.Find("Pickup2").transform.position = new Vector3((tile.X+1) * 3.2f, tile.Y * 3.2f, -1);
     }
