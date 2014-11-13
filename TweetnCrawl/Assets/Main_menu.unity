@@ -1252,12 +1252,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 417300246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b94736ef0da8b45a9b6597261898aa, type: 3}
+  m_Script: {fileID: 11500000, guid: b75c209dbd060544d80e6ad22cfc3eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 2800000, guid: 8c48294028b8e254db87fcf72056e25f, type: 3}
-  x: 65
-  y: 330
+  Image: {fileID: 2800000, guid: bc61df8e3b2702c428d4566a19cc40fd, type: 3}
+  x: 275
+  y: 490
 --- !u!131 &417300248
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2417,12 +2417,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 805661299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b94736ef0da8b45a9b6597261898aa, type: 3}
+  m_Script: {fileID: 11500000, guid: b75c209dbd060544d80e6ad22cfc3eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 2800000, guid: 75fe498912124b943a38bccbc0f572ee, type: 3}
-  x: 65
-  y: 250
+  Image: {fileID: 2800000, guid: 61c2c9c60de98b643bac2e58458a6a01, type: 3}
+  x: 275
+  y: 420
 --- !u!131 &805661301
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2706,12 +2706,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2045786251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b94736ef0da8b45a9b6597261898aa, type: 3}
+  m_Script: {fileID: 11500000, guid: b75c209dbd060544d80e6ad22cfc3eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 2800000, guid: e0a0ef7a5a1c1584095b7aaac456ca9a, type: 3}
-  x: 65
-  y: 410
+  Image: {fileID: 2800000, guid: 04486fc733b7da643abab81d8325c7d3, type: 3}
+  x: 275
+  y: 560
 --- !u!131 &2045786253
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2768,12 +2768,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2083743440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b94736ef0da8b45a9b6597261898aa, type: 3}
+  m_Script: {fileID: 11500000, guid: b75c209dbd060544d80e6ad22cfc3eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 2800000, guid: eaac0862d67572f4aa7d51d73f0435db, type: 3}
-  x: 65
-  y: 490
+  Image: {fileID: 2800000, guid: bd3c950815766674e8de28df1a693e93, type: 3}
+  x: 275
+  y: 630
 --- !u!131 &2083743442
 GUITexture:
   m_ObjectHideFlags: 0
