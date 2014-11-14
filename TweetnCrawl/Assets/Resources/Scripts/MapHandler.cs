@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-//We did not make this class we followed the tutorial http://csharpcodewhisperer.blogspot.se/2013/07/Rouge-like-dungeon-generation.html
+//We followed the tutorial http://csharpcodewhisperer.blogspot.se/2013/07/Rouge-like-dungeon-generation.html for most of the class
 public class MapHandler
 {
     Random rand = new Random();
@@ -192,6 +192,46 @@ public class MapHandler
         this.PercentAreWalls = percentWalls;
         this.Map = new int[this.MapWidth, this.MapHeight];
         this.Map = map;
+    }
+
+
+
+    public TileStruct[][] createMap()
+    {
+
+
+        MakeCaverns();
+
+
+        TileStruct[][] convertedArray;
+        convertedArray = new TileStruct[Map.GetLength(1)][];
+        for (int i = 0; i < convertedArray.Length; i++)
+        {
+            convertedArray[i] = new TileStruct[Map.GetLength(0)];
+        }
+            
+        for (int x = 0; x < Map.GetLength(0); x++)
+        {
+
+            for (int y = 0; y < Map.GetLength(1); y++)
+            {
+                if (Map[x, y] == 0)
+                {
+                    convertedArray[y][x] = new TileStruct(x, y, TileType.Dirt);
+                }
+                else if (Map[x, y] == 1)
+                {
+                    convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
+                }
+
+            }
+        }
+
+
+
+        return convertedArray;
+    
+    
     }
 }
 

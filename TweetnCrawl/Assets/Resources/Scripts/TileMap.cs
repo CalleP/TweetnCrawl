@@ -61,116 +61,11 @@ public class TileMap : MonoBehaviour {
 
         //map = map4;
 
-        while (true)
-        {
-
-            var test = new MapHandler(Width, Height, 48);
-
-            test.MakeCaverns();
-
-
-            TileStruct[][] convertedArray;
-            convertedArray = new TileStruct[test.Map.GetLength(1)][];
-            for (int i = 0; i < convertedArray.Length; i++)
-            {
-                convertedArray[i] = new TileStruct[test.Map.GetLength(0)];
-            }
-
-            for (int x = 0; x < test.Map.GetLength(0); x++)
-            {
-
-                for (int y = 0; y < test.Map.GetLength(1); y++)
-                {
-                    if (test.Map[x, y] == 0)
-                    {
-                        convertedArray[y][x] = new TileStruct(x, y, TileType.Dirt);
-                    }
-                    else if (test.Map[x, y] == 1)
-                    {
-                        convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
-                    }
-
-                }
-            }
 
 
 
 
-
-            map = convertedArray;
-
-            TrimMap();
-            TrimMap();
-            TrimMap();
-            TrimMap();
-            TrimMap();
-
-            PlaceBorders(TileType.Rock);
-
-
-
-            if (Width >= Height)
-            {
-
-
-
-                var closest = ClosestToBorderX(TileType.Dirt);
-                DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                StartPointX = 0;
-                StartPointY = closest.Y;
-
-
-                var closest2 = ClosestToBorderXReverse(TileType.Dirt);
-                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-                DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                EndPointX = map[0].Length - 1;
-                EndPointY = closest2.Y;
-
-                MapChecker checker = new MapChecker(this);
-
-                if (checker.CheckMap(closest, closest2))
-                {
-                    break;
-                }
-
-            }
-            else
-            {
-                var closest = ClosestToBorderY(TileType.Dirt);
-                DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                StartPointX = closest.X;
-                StartPointY = 0;
-
-
-                var closest2 = ClosestToBorderYReverse(TileType.Dirt);
-                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-                DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                EndPointX = closest2.X;
-                EndPointY = map.Length-1;
-
-                MapChecker checker = new MapChecker(this);
-
-                if (checker.CheckMap(closest, closest2))
-                {
-                    break;
-                }
-            }
-        
-        
-        }
-
-        if (gameObject.name == "NorthMap")
-        {
-            Debug.Log("here");
-        }
-
-
-
-
+        createMap();
         
 
         //DrawMap(map);
@@ -245,6 +140,97 @@ public class TileMap : MonoBehaviour {
             }
         }
     }
+
+
+    public TileStruct[][] createMap() {
+
+
+        while (true)
+        {
+
+            
+
+            MapHandler maphandler = new MapHandler(Width,Height,48);
+
+            var convertedArray = maphandler.createMap();
+
+            map = convertedArray;
+
+            TrimMap();
+            TrimMap();
+            TrimMap();
+            TrimMap();
+            TrimMap();
+
+            PlaceBorders(TileType.Rock);
+
+
+
+            if (Width >= Height)
+            {
+
+
+
+                var closest = ClosestToBorderX(TileType.Dirt);
+                DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+                StartPointX = 0;
+                StartPointY = closest.Y;
+
+
+                var closest2 = ClosestToBorderXReverse(TileType.Dirt);
+                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+                DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+                EndPointX = map[0].Length - 1;
+                EndPointY = closest2.Y;
+
+                MapChecker checker = new MapChecker(this);
+
+                if (checker.CheckMap(closest, closest2,direction.right))
+                {
+                    return convertedArray;
+                }
+
+            }
+            else
+            {
+                var closest = ClosestToBorderY(TileType.Dirt);
+                DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+                StartPointX = closest.X;
+                StartPointY = 0;
+
+
+                var closest2 = ClosestToBorderYReverse(TileType.Dirt);
+                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+                DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+                EndPointX = closest2.X;
+                EndPointY = map.Length - 1;
+
+                MapChecker checker = new MapChecker(this);
+
+                if (checker.CheckMap(closest, closest2,direction.right))
+                {
+                    return convertedArray;
+                }
+            }
+
+
+        }
+
+        if (gameObject.name == "NorthMap")
+        {
+            Debug.Log("here");
+        }
+        return null;
+    }
+
+
+
+
+    
 
     /// <summary>
     /// Crops the map between the specified map coordinates

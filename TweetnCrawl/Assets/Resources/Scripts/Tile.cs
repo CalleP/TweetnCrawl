@@ -73,7 +73,8 @@ public class Tile : MonoBehaviour {
         }
         else
         {
-            int k = 666;
+            gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
     }

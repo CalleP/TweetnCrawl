@@ -31,9 +31,9 @@ class MapChecker
     private direction currentDirection;
     private int x;
     private int y;
-    public bool CheckMap(TileStruct startPoint, TileStruct EndPoint)
+    public bool CheckMap(TileStruct startPoint, TileStruct EndPoint, direction startingDirection)
     {
-        currentDirection = direction.right;
+        currentDirection = startingDirection;
         x = startPoint.X;
         y = startPoint.Y;
         bool firstTime = true;
@@ -77,26 +77,26 @@ class MapChecker
                     }
                     
                     goForward();
-                    map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                    //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 else
                 {
                     
                     turnLeft();
                     goForward();
-                    map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                  //  map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 
 
 
-                map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
                 
                 
             }
 
             map.GetTileData(x, y).test =  (int)currentDirection;
             firstTime = false;
-            map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+            //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
             count++;
 
         }
@@ -104,15 +104,7 @@ class MapChecker
         return true;
     }
 
-    public bool CheckHub(TileStruct Point1, TileStruct Point2, TileStruct Point3, TileStruct Point4)
-    {
-        if (CheckMap(Point1, Point2) && CheckMap(Point2,Point3) && CheckMap(Point3,Point4))
-        {
-            return true;
-        }
 
-        return false;
-    }
 
     //private void HugWall()
     //{
