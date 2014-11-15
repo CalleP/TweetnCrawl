@@ -92,6 +92,14 @@ public class TileStruct{
         }
     }
 
+    public TileStruct Clone()
+    {
+        var outTile = new TileStruct(X,Y,Type);
 
+        outTile.FloorTerrainType = FloorTerrainType;
+        outTile.WallTerrainType = FloorTerrainType;
+
+        return outTile;
+    }
   
 }

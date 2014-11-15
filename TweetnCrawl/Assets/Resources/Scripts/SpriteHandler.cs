@@ -501,6 +501,7 @@ public class SpriteHandler : MonoBehaviour {
 
     public static Sprite getSpriteWithName(string spriteName, TileType type)
     {
+        
         switch (type)
         {
             case TileType.Dirt:

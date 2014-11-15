@@ -34,6 +34,9 @@ public class Pooling : MonoBehaviour {
         var StartingViewPort = 
             TileMap.CropMap(map.map, CenterPointX - ((ViewPortWidth / 2) + ViewPortWidth % 2), CenterPointY - ((ViewPortHeight / 2) + ViewPortHeight % 2), CenterPointX + (ViewPortWidth / 2), CenterPointY + (ViewPortHeight / 2));
 
+
+
+
         obj = new GameObject[StartingViewPort.Length][];
         for (int i = 0; i < obj.Length; i++)
         {
@@ -62,6 +65,8 @@ public class Pooling : MonoBehaviour {
             count++;
         }
 
+
+
         GameObject player = GameObject.Find("Player");
         int x = (int)(player.transform.position.x / 3.2f);
         int y = (int)(player.transform.position.y / 3.2f);
@@ -69,37 +74,44 @@ public class Pooling : MonoBehaviour {
         var distanceX = CenterPointX - x;
         var distanceY = CenterPointY - y;
 
-        if (distanceX >= 0)
+
+        Debug.Log("pooling start " + Time.realtimeSinceStartup);
+
+        if (distanceX == 0)
         {
-            for (int i = 0; i < distanceX; i++)
-            {
-                StepLeft();
-            }
+
+        }
+        if (distanceX > 0)
+        {
+
+            StepLeft(distanceX);
+
         }
         else
         {
-            for (int i = 0; i > distanceX; i--)
-            {
-                StepRight();
-            }
+
+            StepRight(Mathf.Abs(distanceX));
+
         }
 
 
-
-        if (distanceY >= 0)
+        if (distanceY == 0)
         {
-            for (int i = 0; i < distanceY; i++)
-            {
-                StepDown();
-            }
+
+        }
+        else if (distanceY > 0)
+        {
+
+            StepDown(distanceY);
+
         }
         else
         {
-            for (int i = 0; i > distanceY; i--)
-            {
-                StepUp();
-            }
+
+            StepUp(Mathf.Abs(distanceY));
         }
+
+        Debug.Log("pooling after" + Time.realtimeSinceStartup);
     }
 
     void Update()
@@ -110,7 +122,7 @@ public class Pooling : MonoBehaviour {
         //TODO This is inefficent, change
         GameObject player = GameObject.Find("Player");
         MoveToMapPos(((int)(player.transform.position.x / 3.2f)) , (int)(player.transform.position.y / 3.2f));
-        
+
     }
 
 
@@ -127,13 +139,13 @@ public class Pooling : MonoBehaviour {
 
         if (CenterPointX != x)
         {
-            if (distanceX > 0) StepRight();
-            else StepLeft();
+            if (distanceX > 0) StepRight(1);
+            else StepLeft(1);
         }
         if (CenterPointY != y)
         {
-            if (distanceY > 0) StepUp();
-            else StepDown();
+            if (distanceY > 0) StepUp(1);
+            else StepDown(1);
         }
     }
 
@@ -141,7 +153,7 @@ public class Pooling : MonoBehaviour {
     /// <summary>
     /// Move the Viewport one tile to the right
     /// </summary>
-    public void StepRight() 
+    public void StepRight(int times) 
     {
         var rightMostTile = obj[obj.Length-1][obj[0].Length-1].GetComponent<Tile>();
         if (rightMostTile.TileData.X < map.Width-1)
@@ -150,17 +162,17 @@ public class Pooling : MonoBehaviour {
             {
                 foreach (var item2 in item)
                 {
-                    item2.GetComponent<Tile>().MoveHorizontally(1);
+                    item2.GetComponent<Tile>().MoveHorizontally(1, times);
                 }
             }
-            CenterPointX++;
+            CenterPointX += times;
         }
     }
 
     /// <summary>
     /// Move Viewport one tile to the left
     /// </summary>
-    public void StepLeft()
+    public void StepLeft(int times)
     {
         var leftMostTile = obj[0][0].GetComponent<Tile>();
         if (leftMostTile.TileData.X > 0)
@@ -170,17 +182,17 @@ public class Pooling : MonoBehaviour {
 
                 foreach (var item2 in item)
                 {
-                    item2.GetComponent<Tile>().MoveHorizontally(-1);
+                    item2.GetComponent<Tile>().MoveHorizontally(-1, times);
                 }
             }
-            CenterPointX--;
+            CenterPointX-= (times);
         }
     }
 
     /// <summary>
     /// Move the Viewport one tile up
     /// </summary>
-    public void StepUp()
+    public void StepUp(int times)
     {
         var upperMostTile = obj[obj.Length-1][0].GetComponent<Tile>();
         if (upperMostTile.TileData.Y < map.Height-1)
@@ -189,10 +201,10 @@ public class Pooling : MonoBehaviour {
             {
                 foreach (var item2 in item)
                 {
-                    item2.GetComponent<Tile>().MoveVertically(1);
+                    item2.GetComponent<Tile>().MoveVertically(1, times);
                 }
             }
-            CenterPointY++;
+            CenterPointY+= times;
         }
     }
 
@@ -200,7 +212,7 @@ public class Pooling : MonoBehaviour {
     /// <summary>
     /// Move the Viewport one tile down
     /// </summary>
-    public void StepDown()
+    public void StepDown(int times)
     {
         var upperMostTile = obj[0][0].GetComponent<Tile>();
         if (upperMostTile.TileData.Y > 0){
@@ -208,10 +220,10 @@ public class Pooling : MonoBehaviour {
             {
                 foreach (var item2 in item)
                 {
-                    item2.GetComponent<Tile>().MoveVertically(-1);
+                    item2.GetComponent<Tile>().MoveVertically(-1, times);
                 }
             }
-            CenterPointY--;
+            CenterPointY-= times;
         }
     }
 

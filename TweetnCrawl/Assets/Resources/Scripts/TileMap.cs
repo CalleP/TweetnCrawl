@@ -24,6 +24,7 @@ public class TileMap : MonoBehaviour {
 
 
 	public virtual void Start () {
+
         map = new TileStruct[Height][];
         for (int i = 0; i < map.Length; i++)
         {
@@ -65,8 +66,7 @@ public class TileMap : MonoBehaviour {
 
 
 
-        createMap();
-        
+
 
         //DrawMap(map);
 
@@ -142,90 +142,91 @@ public class TileMap : MonoBehaviour {
     }
 
 
-    public TileStruct[][] createMap() {
+    //public TileStruct[][] createMap() {
 
 
-        while (true)
-        {
+    //    while (true)
+    //    {
 
             
 
-            MapHandler maphandler = new MapHandler(Width,Height,48);
+    //        MapHandler maphandler = new MapHandler(Width,Height,48);
 
-            var convertedArray = maphandler.createMap();
+    //        var convertedArray = maphandler.createMap();
 
-            map = convertedArray;
+    //        map = convertedArray;
+    //        Copy(map, convertedArray);
 
-            TrimMap();
-            TrimMap();
-            TrimMap();
-            TrimMap();
-            TrimMap();
+    //        TrimMap();
+    //        TrimMap();
+    //        TrimMap();
+    //        TrimMap();
+    //        TrimMap();
 
-            PlaceBorders(TileType.Rock);
-
-
-
-            if (Width >= Height)
-            {
+    //        PlaceBorders(TileType.Rock);
 
 
 
-                var closest = ClosestToBorderX(TileType.Dirt);
-                DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                StartPointX = 0;
-                StartPointY = closest.Y;
+    //        if (Width >= Height)
+    //        {
 
 
-                var closest2 = ClosestToBorderXReverse(TileType.Dirt);
-                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-                DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
 
-                EndPointX = map[0].Length - 1;
-                EndPointY = closest2.Y;
+    //            var closest = ClosestToBorderX(TileType.Dirt);
+    //            DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
 
-                MapChecker checker = new MapChecker(this);
-
-                if (checker.CheckMap(closest, closest2,direction.right))
-                {
-                    return convertedArray;
-                }
-
-            }
-            else
-            {
-                var closest = ClosestToBorderY(TileType.Dirt);
-                DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-                StartPointX = closest.X;
-                StartPointY = 0;
+    //            StartPointX = 0;
+    //            StartPointY = closest.Y;
 
 
-                var closest2 = ClosestToBorderYReverse(TileType.Dirt);
-                //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-                DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+    //            var closest2 = ClosestToBorderXReverse(TileType.Dirt);
+    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+    //            DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
 
-                EndPointX = closest2.X;
-                EndPointY = map.Length - 1;
+    //            EndPointX = map[0].Length - 1;
+    //            EndPointY = closest2.Y;
 
-                MapChecker checker = new MapChecker(this);
+    //            MapChecker checker = new MapChecker(this);
 
-                if (checker.CheckMap(closest, closest2,direction.right))
-                {
-                    return convertedArray;
-                }
-            }
+    //            if (checker.CheckMap(closest, closest2,direction.right))
+    //            {
+    //                return convertedArray;
+    //            }
+
+    //        }
+    //        else
+    //        {
+    //            var closest = ClosestToBorderY(TileType.Dirt);
+    //            DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+    //            StartPointX = closest.X;
+    //            StartPointY = 0;
 
 
-        }
+    //            var closest2 = ClosestToBorderYReverse(TileType.Dirt);
+    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+    //            DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
 
-        if (gameObject.name == "NorthMap")
-        {
-            Debug.Log("here");
-        }
-        return null;
-    }
+    //            EndPointX = closest2.X;
+    //            EndPointY = map.Length - 1;
+
+    //            MapChecker checker = new MapChecker(this);
+
+    //            if (checker.CheckMap(closest, closest2,direction.right))
+    //            {
+    //                return convertedArray;
+    //            }
+    //        }
+
+
+    //    }
+
+    //    if (gameObject.name == "NorthMap")
+    //    {
+    //        Debug.Log("here");
+    //    }
+    //    return null;
+    //}
 
 
 
@@ -515,17 +516,20 @@ public class TileMap : MonoBehaviour {
     {
         int bestValue = map[0].Length;
         TileStruct bestMatch = null;
-        foreach (var y in map)
-        {
-            foreach (var x in y)
-            {
-                if (x.Type == type && x.X < bestValue)
+        for (int y = 0; y < map.Length; y++)
+		{
+			 for (int x = 0; x < map[0].Length; x++)
+			{
+
+			    if (map[y][x].Type == type && x < bestValue)
                 {
-                    bestValue = x.X;
-                    bestMatch = x;
+                    bestValue = x;
+                    bestMatch = map[y][x];
                 }
-            }
-        }
+			}
+		}
+
+        
         return bestMatch;
     }
 
@@ -538,7 +542,7 @@ public class TileMap : MonoBehaviour {
 		{
 			for (int x = map[0].Length-1; x >= 0; x--)
 			{
-                if (map[y][x].Type == type && map[y][x].X > bestValue)
+                if (map[y][x].Type == type && x > bestValue)
                 {
                     bestValue = map[y][x].X;
                     bestMatch = map[y][x];
@@ -781,6 +785,20 @@ public class TileMap : MonoBehaviour {
 
     }
 
+    public void Copy(TileStruct[][] original, TileStruct[][] newCopy)
+    {
+        for (int y = 0; y < original.Length; y++)
+        {
+            for (int x = 0; x < original[0].Length; x++)
+            {
+                var tile = newCopy[y][x];
+                original[y][x].Type = tile.Type;
 
+
+            }
+        }
+
+
+    }
 
 }

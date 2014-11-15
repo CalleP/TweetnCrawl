@@ -37,10 +37,14 @@ public class Tile : MonoBehaviour {
 
         BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
         collider.size = sr.sprite.bounds.size;
+
+
 	}
 
     void Update() 
     {
+
+
         surroundingTiles = TileData.test;
         TerrainType = TileData.GetTerrainType();
         TileData = map.GetTileData(TileData.X, TileData.Y);
@@ -95,10 +99,10 @@ public class Tile : MonoBehaviour {
     /// Moves the tile vertically.
     /// </summary>
     /// <param name="dir">The direction to move, Positive numbers move you down one tile, negative numbers move you up one tile.</param>
-    public void MoveVertically(int dir)
+    public void MoveVertically(int dir, int times)
     {
-        transform.position = transform.position += new Vector3(0f, (float)Pooling.TileHeight / (float)(100 * dir / Mathf.Abs(dir)));
-        TileData = map.GetTileData(TileData.X, TileData.Y + (dir / Mathf.Abs(dir)));
+        transform.position = transform.position += new Vector3(0f, (float)Pooling.TileHeight / (float)(100 * dir / Mathf.Abs(dir)))*times;
+        TileData = map.GetTileData(TileData.X, TileData.Y + ((dir / Mathf.Abs(dir))* times));
         
        
     }
@@ -108,10 +112,10 @@ public class Tile : MonoBehaviour {
     /// Moves the tile horizontally
     /// </summary>
     /// <param name="dir">The direction to move, Positive numbers move you to the right one tile, negative numbers move you left one tile.</param>
-    public void MoveHorizontally(int dir)
+    public void MoveHorizontally(int dir, int times)
     {
-        transform.position = transform.position += new Vector3((float)Pooling.TileWidth / (float)(100 * dir / Mathf.Abs(dir)), 0f);
-        TileData = map.GetTileData(TileData.X + (dir / Mathf.Abs(dir)), TileData.Y);
+        transform.position = transform.position += new Vector3((float)Pooling.TileWidth / (float)(100 * dir / Mathf.Abs(dir)), 0f) * times;
+        TileData = map.GetTileData(TileData.X + ((dir / Mathf.Abs(dir))*times), TileData.Y);
     }
 
 

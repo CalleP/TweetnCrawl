@@ -15,12 +15,14 @@ class MapChecker
 {
 
 
-    TileMap map;
+    public TileStruct[][] map;
     TileStruct startPoint;
     TileStruct endPoint;
-    public MapChecker(TileMap map)
+    MapHandler generator;
+    public MapChecker(MapHandler generator, TileStruct[][] map)
     {
         this.map = map;
+        this.generator = generator;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
@@ -41,7 +43,9 @@ class MapChecker
 
         while (x != EndPoint.X || y != EndPoint.Y)
         {
-            if (map.GetTileData(x, y).Type == TileType.None)
+            
+
+            if (generator.GetTileData(map,x, y).Type == TileType.None)
             {
                 return false;
             }
@@ -54,7 +58,7 @@ class MapChecker
             if (canGoForward())
             {
                 goForward();
-                map.GetTileData(x, y).test = (int)currentDirection;
+                //generator.GetTileData(map,x, y).test = (int)currentDirection;
             }
             else
             {
@@ -77,26 +81,26 @@ class MapChecker
                     }
                     
                     goForward();
-                    //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                    //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 else
                 {
                     
                     turnLeft();
                     goForward();
-                  //  map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                   //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 
 
 
-                //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+                //generator.GetTileData(map, x, y).SetBoth(TerrainType.BlackCaste);
                 
                 
             }
 
-            map.GetTileData(x, y).test =  (int)currentDirection;
+            generator.GetTileData(map,x, y).test =  (int)currentDirection;
             firstTime = false;
-            //map.GetTileData(x, y).SetBoth(TerrainType.BlackCaste);
+            //generator.GetTileData(map, x, y).SetBoth(TerrainType.BlackCaste);
             count++;
 
         }
@@ -160,19 +164,19 @@ class MapChecker
     {
         if (currentDirection == direction.down)
         { 
-            if (map.GetTileData(x, y - 1).Type == TileType.Rock) return true; 
+            if (generator.GetTileData(map, x, y - 1).Type == TileType.Rock) return true; 
         }
         else if (currentDirection == direction.right)
         {
-            if (map.GetTileData(x + 1, y).Type == TileType.Rock) return true;
+            if (generator.GetTileData(map, x + 1, y).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (map.GetTileData(x, y + 1).Type == TileType.Rock) return true;
+            if (generator.GetTileData(map, x, y + 1).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (map.GetTileData(x - 1, y).Type == TileType.Rock) return true;
+            if (generator.GetTileData(map, x - 1, y).Type == TileType.Rock) return true;
         }  
 
         return false;
@@ -182,19 +186,19 @@ class MapChecker
     {
         if (currentDirection == direction.down)
         {
-            if (map.GetTileData(x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (generator.GetTileData(map, x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         } 
         else if (currentDirection == direction.right)
         {
-            if (map.GetTileData(x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (generator.GetTileData(map, x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (map.GetTileData(x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (generator.GetTileData(map, x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (map.GetTileData(x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (generator.GetTileData(map, x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
 
         return false;

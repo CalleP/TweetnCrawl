@@ -35,72 +35,17 @@ public class Hub :TileMap {
 
 
 
-
-        
-
-
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
-        //ObjectPlacer.spawnEnemy();
+        SouthMap.map = newMap(SouthMap);
+        NorthMap.map = newMap(NorthMap);
 
 
-        var obj = Resources.Load("TemporaryPrefabs/smallRocks");
+        EastMap.map = newMap(EastMap);
 
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
+        WestMap.map = newMap(WestMap);
 
+        CenterMap.map = newHub(CenterMap);
 
-        obj = Resources.Load("TemporaryPrefabs/smallRocks2");
-
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-
-
-
-        obj = Resources.Load("TemporaryPrefabs/Bones1");
-
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-        ObjectPlacer.spawnObject(obj);
-
-
-        //CenterMap = new TileStruct[WestMap.Height][];
-        //for (int i = 0; i < WestMap.Height; i++)
-        //{
-        //    CenterMap[i] = new TileStruct[SouthMap.Width];
-        //    for (int y = 0; y < CenterMap[0].Length; y++)
-        //    {
-        //        CenterMap[i][y] = new TileStruct(y, i, TileType.Dirt);
-        //    }
-        //}
-
-
-
-
-        newHub();
+        //newHub();
 
 
         //MergeHorizontal(WestMap.map, CenterMap.map);
@@ -128,14 +73,18 @@ public class Hub :TileMap {
 
         //Debug.Log(CenterMap.TilesBeside(0,WestMap.EndPointY,direction.right,TileType.Rock));
 
+
+
         MergeAll();
         started = true;
+
 
         //DrawMap(arr);
 
 
-
         ObjectPlacer.testStart();
+
+
 	}
 	
 	// Update is called once per frame
@@ -144,126 +93,174 @@ public class Hub :TileMap {
 
         if (Input.GetKey(KeyCode.K))
         {
-                Copy(WestMap.map, EastMap.map);
-           
+            Copy(WestMap.map, newMap(WestMap));
+            Copy(EastMap.map, newMap(EastMap));
+            Copy(NorthMap.map, newMap(NorthMap));
+            Copy(SouthMap.map, newMap(SouthMap));
+            Copy(CenterMap.map, newHub(CenterMap));
                 
-                
-                Copy(EastMap.map, EastMap.createMap());
 
-                newHub();
+
+                
 
         }
 
 
             
             
-     }
+    }
 
 
 
+    public void StepUp()
+    {
+        Copy(WestMap.map, newMap(WestMap));
+        Copy(EastMap.map, newMap(EastMap));
+        Copy(SouthMap.map, NorthMap.map);
+        Copy(NorthMap.map, newMap(SouthMap));
+        Copy(CenterMap.map, newHub(CenterMap));
+    }
 
-    public void newHub()
+    public void StepDown()
+    {
+        Copy(WestMap.map, newMap(WestMap));
+        Copy(EastMap.map, newMap(EastMap));
+        Copy(NorthMap.map, SouthMap.map);
+        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(CenterMap.map, newHub(CenterMap));
+    }
+
+    public void StepLeft()
     {
 
+        //
+    }
 
-        int count = 0;
-        while (true)
-        {
-            var mapGen = new MapHandler(CenterMap.Width, CenterMap.Height, 48);
-            var arr = mapGen.createMap();
-
-            Copy(CenterMap.map, arr);
-
-       
-
-            CenterMap.TrimMap();
-            CenterMap.TrimMap();
-            CenterMap.TrimMap();
-            CenterMap.TrimMap();
-            CenterMap.TrimMap();
-            
-            CenterMap.PlaceBorders(TileType.Rock);
-
-
-
-
-
-            var NorthPoint = CenterMap.map[CenterMap.Height - 1][NorthMap.StartPointX];
-            var SouthPoint = CenterMap.map[0][SouthMap.EndPointX];
-            var WestPoint = CenterMap.map[WestMap.EndPointY][0];
-            var EastPoint = CenterMap.map[EastMap.StartPointY][CenterMap.Width - 1];
-            if (started)
-            {
-                NorthPoint = CenterMap.map[CenterMap.Height - 1][NorthMap.StartPointX];
-                SouthPoint = CenterMap.map[0][SouthMap.EndPointX];
-                WestPoint = CenterMap.map[WestMap.EndPointY][0];
-                EastPoint = CenterMap.map[EastMap.StartPointY][CenterMap.Width - 1];
-            }
-
-
-
+    public void StepRight()
+    { 
     
-
-            //Draw Corridor connecting centerMap and EastMap
-            CenterMap.DrawCorridorHorizontal(
-                (CenterMap.Width) - CenterMap.TilesBeside(CenterMap.Width, EastMap.StartPointY, direction.left, TileType.Rock),
-                CenterMap.Width,
-                EastMap.StartPointY,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.YellowCave);
-
-            //Draw Corridor connecting centerMap and SouthMap
-            CenterMap.DrawCorridorHVertical(
-                0,
-                CenterMap.TilesBeside(SouthMap.EndPointX, 0, direction.up, TileType.Rock),
-                SouthMap.EndPointX,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.YellowCave);
-
-            MapChecker checker = new MapChecker(CenterMap);
-            EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
+    //
+    }
 
 
-            //Draw Corridor connecting centerMap and WestMap
-            CenterMap.DrawCorridorHorizontal(
-                0,
-                CenterMap.TilesBeside(0, WestMap.EndPointY, direction.right, TileType.Rock),
-                WestMap.EndPointY,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.YellowCave);
+    public TileStruct[][] newMap(TileMap map)
+    {
+        var gen = new MapHandler(map.Width, map.Height, 48);
+        return gen.createMap(ref map.StartPointX, ref map.StartPointY, ref map.EndPointX, ref map.EndPointY);
+    }
 
-            checker = new MapChecker(CenterMap);
-            SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
+    public TileStruct[][] newHub(TileMap centerMap)
+    {
 
-
-            //Draw Corridor connecting centerMap and NorthMap
-            CenterMap.DrawCorridorHVertical(
-                (CenterMap.Height) - CenterMap.TilesBeside(NorthMap.StartPointX, CenterMap.Height, direction.down, TileType.Rock),
-                CenterMap.Height,
-                NorthMap.StartPointX,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.YellowCave);
-
-            checker = new MapChecker(CenterMap);
-            WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
-
-            if ((WestToNorth && SouthToWest && EastToSouth)||count > 5)
-            {
-                break;
-            }
-
-            count++;
-        }
+        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48);
+        return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
     
     }
+
+
+
+
+    //public void createMap(TileMap sideMap)
+    //{
+
+
+    //    while (true)
+    //    {
+
+
+
+    //        MapHandler maphandler = new MapHandler(sideMap.Width, sideMap.Height, 48);
+
+    //        var convertedArray = maphandler.createMap();
+
+    //        Copy(sideMap.map, convertedArray);
+
+    //        sideMap.TrimMap();
+    //        sideMap.TrimMap();
+    //        sideMap.TrimMap();
+    //        sideMap.TrimMap();
+    //        sideMap.TrimMap();
+
+    //        sideMap.PlaceBorders(TileType.Rock);
+
+
+
+    //        if (Width >= Height)
+    //        {
+
+
+
+    //            var closest = sideMap.ClosestToBorderX(TileType.Dirt);
+    //            sideMap.DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+    //            sideMap.StartPointX = 0;
+    //            sideMap.StartPointY = closest.Y;
+
+
+    //            var closest2 = sideMap.ClosestToBorderXReverse(TileType.Dirt);
+    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+    //            sideMap.DrawCorridorHorizontal(sideMap.map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+    //            sideMap.EndPointX = map[0].Length - 1;
+    //            sideMap.EndPointY = closest2.Y;
+
+    //            MapChecker checker = new MapChecker(sideMap);
+
+
+                
+                
+    //            if (started)
+    //            {
+
+    //                //Closest.X = NorthPoint.X - WestMap.Width;
+    //                //NorthPoint.Y = NorthPoint.Y - SouthMap.Height;
+
+
+                    
+
+    //            }
+
+    //            if (checker.CheckMap(closest, closest2, direction.right))
+    //            {
+    //                break;
+    //            }
+
+    //        }
+    //        else
+    //        {
+    //            var closest = ClosestToBorderY(TileType.Dirt);
+    //            DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+    //            StartPointX = closest.X;
+    //            StartPointY = 0;
+
+
+    //            var closest2 = ClosestToBorderYReverse(TileType.Dirt);
+    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
+    //            DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
+
+    //            EndPointX = closest2.X;
+    //            EndPointY = map.Length - 1;
+
+    //            MapChecker checker = new MapChecker(this);
+
+    //            if (checker.CheckMap(closest, closest2, direction.right))
+    //            {
+    //                break;
+    //            }
+    //        }
+
+
+    //    }
+
+    //    if (gameObject.name == "NorthMap")
+    //    {
+    //        Debug.Log("here");
+    //    }
+  
+    //}
+
+
 
 
     //public void SetCenter();
@@ -459,21 +456,21 @@ public class Hub :TileMap {
     }
 
 
-    public void Copy(TileStruct[][] original, TileStruct[][] newCopy)
-    {
-        for (int y = 0; y < original.Length; y++)
-        {
-            for (int x = 0; x < original[0].Length; x++)
-            {
-                var tile = newCopy[y][x];
-                original[y][x].Type = tile.Type;
+    //public void Copy(TileStruct[][] original, TileStruct[][] newCopy)
+    //{
+    //    for (int y = 0; y < original.Length; y++)
+    //    {
+    //        for (int x = 0; x < original[0].Length; x++)
+    //        {
+    //            var tile = newCopy[y][x];
+    //            original[y][x].Type = tile.Type;
                 
             
-            }
-        }
+    //        }
+    //    }
 
         
-    }
+    //}
 
 
 
