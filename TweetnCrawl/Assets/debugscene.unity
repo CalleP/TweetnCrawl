@@ -1449,6 +1449,7 @@ MonoBehaviour:
   SouthToWest: 0
   EastToSouth: 0
   started: 0
+  player: {fileID: 316957756}
 --- !u!4 &2014471615
 Transform:
   m_ObjectHideFlags: 0

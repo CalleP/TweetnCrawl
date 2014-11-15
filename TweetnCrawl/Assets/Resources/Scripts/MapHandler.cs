@@ -328,7 +328,7 @@ public class MapHandler
                 TileType.Rock,
                 TileType.Dirt,
                 TerrainType.YellowCave,
-                TerrainType.YellowCave);
+                TerrainType.BlackCaste);
 
             //Draw Corridor connecting map and SouthMap
             DrawCorridorHVertical(
@@ -339,7 +339,7 @@ public class MapHandler
                 TileType.Rock,
                 TileType.Dirt,
                 TerrainType.YellowCave,
-                TerrainType.YellowCave);
+                TerrainType.BlackCaste);
 
             MapChecker checker = new MapChecker(this, map);
             EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
@@ -354,7 +354,7 @@ public class MapHandler
                 TileType.Rock,
                 TileType.Dirt,
                 TerrainType.YellowCave,
-                TerrainType.YellowCave);
+                TerrainType.BlackCaste);
             
             checker = new MapChecker(this, map);
             SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
@@ -369,7 +369,7 @@ public class MapHandler
                 TileType.Rock,
                 TileType.Dirt,
                 TerrainType.YellowCave,
-                TerrainType.YellowCave);
+                TerrainType.BlackCaste);
             checker = new MapChecker(this,map);
             WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
     }

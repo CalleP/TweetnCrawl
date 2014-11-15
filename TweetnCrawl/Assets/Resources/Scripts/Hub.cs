@@ -17,6 +17,8 @@ public class Hub :TileMap {
     public TileMap EastMap;
     public TileMap CenterMap;
 
+
+
     public TileStruct[][] FullMap;
 
     public bool WestToNorth;  
@@ -44,6 +46,10 @@ public class Hub :TileMap {
         WestMap.map = newMap(WestMap);
 
         CenterMap.map = newHub(CenterMap);
+
+
+
+
 
         //newHub();
 
@@ -88,18 +94,49 @@ public class Hub :TileMap {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+    public GameObject player;
+    void Update () 
     {
+        var playerX = TileStruct.UnityUnitToTileUnit(player.transform.position.x);
+        var playerY = TileStruct.UnityUnitToTileUnit(player.transform.position.y);
+
+        int East = EastMap.GetTileData(EastMap.Width / 2, 0).X;
+        int West = WestMap.GetTileData(WestMap.Width / 2, 0).X;
+        int North = NorthMap.GetTileData(0, NorthMap.Height / 2).Y;
+        int South = SouthMap.GetTileData(0, SouthMap.Height / 2).Y;
+
+        if (playerX > East)
+        {
+            StepRight();
+            player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(West), player.transform.position.y, player.transform.position.z);
+        }
+        else if (playerX < West)
+        {
+            StepLeft();
+            player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(East), player.transform.position.y, player.transform.position.z);
+        }
+
+        if (playerY > North)
+        {
+            StepUp();
+            player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(South), player.transform.position.z);
+        
+        }
+        else if (playerY < South)
+        {
+            StepDown();
+            player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(North), player.transform.position.z);
+        }
 
         if (Input.GetKey(KeyCode.K))
         {
-            Copy(WestMap.map, newMap(WestMap));
-            Copy(EastMap.map, newMap(EastMap));
-            Copy(NorthMap.map, newMap(NorthMap));
-            Copy(SouthMap.map, newMap(SouthMap));
-            Copy(CenterMap.map, newHub(CenterMap));
-                
+            StepUp();
 
+            //Copy(WestMap.map, newMap(WestMap));
+            //Copy(EastMap.map, newMap(EastMap));
+            //Copy(NorthMap.map, newMap(NorthMap));
+            //Copy(SouthMap.map, newMap(SouthMap));
+            //Copy(CenterMap.map, newHub(CenterMap));
 
                 
 
@@ -116,8 +153,11 @@ public class Hub :TileMap {
     {
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
-        Copy(SouthMap.map, NorthMap.map);
-        Copy(NorthMap.map, newMap(SouthMap));
+
+        //Copy(SouthMap.map, newMap(SouthMap));
+        CopyWithStartPoints(SouthMap, NorthMap);
+
+        Copy(NorthMap.map, newMap(NorthMap));
         Copy(CenterMap.map, newHub(CenterMap));
     }
 
@@ -125,20 +165,31 @@ public class Hub :TileMap {
     {
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
-        Copy(NorthMap.map, SouthMap.map);
+
+        CopyWithStartPoints(NorthMap, SouthMap);
+
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
     }
 
     public void StepLeft()
     {
+        CopyWithStartPoints(EastMap, WestMap);
 
-        //
+        Copy(WestMap.map, newMap(WestMap));
+        Copy(NorthMap.map, newMap(NorthMap));
+        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(CenterMap.map, newHub(CenterMap));
     }
 
     public void StepRight()
-    { 
-    
+    {
+        CopyWithStartPoints(WestMap, EastMap);
+        Copy(EastMap.map, newMap(EastMap));
+        Copy(NorthMap.map, newMap(NorthMap));
+        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(CenterMap.map, newHub(CenterMap));
+                
     //
     }
 
@@ -158,121 +209,6 @@ public class Hub :TileMap {
     }
 
 
-
-
-    //public void createMap(TileMap sideMap)
-    //{
-
-
-    //    while (true)
-    //    {
-
-
-
-    //        MapHandler maphandler = new MapHandler(sideMap.Width, sideMap.Height, 48);
-
-    //        var convertedArray = maphandler.createMap();
-
-    //        Copy(sideMap.map, convertedArray);
-
-    //        sideMap.TrimMap();
-    //        sideMap.TrimMap();
-    //        sideMap.TrimMap();
-    //        sideMap.TrimMap();
-    //        sideMap.TrimMap();
-
-    //        sideMap.PlaceBorders(TileType.Rock);
-
-
-
-    //        if (Width >= Height)
-    //        {
-
-
-
-    //            var closest = sideMap.ClosestToBorderX(TileType.Dirt);
-    //            sideMap.DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            sideMap.StartPointX = 0;
-    //            sideMap.StartPointY = closest.Y;
-
-
-    //            var closest2 = sideMap.ClosestToBorderXReverse(TileType.Dirt);
-    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-    //            sideMap.DrawCorridorHorizontal(sideMap.map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            sideMap.EndPointX = map[0].Length - 1;
-    //            sideMap.EndPointY = closest2.Y;
-
-    //            MapChecker checker = new MapChecker(sideMap);
-
-
-                
-                
-    //            if (started)
-    //            {
-
-    //                //Closest.X = NorthPoint.X - WestMap.Width;
-    //                //NorthPoint.Y = NorthPoint.Y - SouthMap.Height;
-
-
-                    
-
-    //            }
-
-    //            if (checker.CheckMap(closest, closest2, direction.right))
-    //            {
-    //                break;
-    //            }
-
-    //        }
-    //        else
-    //        {
-    //            var closest = ClosestToBorderY(TileType.Dirt);
-    //            DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            StartPointX = closest.X;
-    //            StartPointY = 0;
-
-
-    //            var closest2 = ClosestToBorderYReverse(TileType.Dirt);
-    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-    //            DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            EndPointX = closest2.X;
-    //            EndPointY = map.Length - 1;
-
-    //            MapChecker checker = new MapChecker(this);
-
-    //            if (checker.CheckMap(closest, closest2, direction.right))
-    //            {
-    //                break;
-    //            }
-    //        }
-
-
-    //    }
-
-    //    if (gameObject.name == "NorthMap")
-    //    {
-    //        Debug.Log("here");
-    //    }
-  
-    //}
-
-
-
-
-    //public void SetCenter();
-
-    //public void SetNorth(int userID);
-
-    //public void SetSouth(int userID);
-    //public void SetWest(int userID);
-    //public void SetEast(int userID);
-
-
-    //public void MergeAll();
     public void MergeHorizontal(TileStruct[][] map2, TileStruct[][] map1) {
         var outArr = new TileStruct[map1.Length][];
         for (int i = 0; i < map1.Length; i++)
@@ -472,7 +408,15 @@ public class Hub :TileMap {
         
     //}
 
-
+    public void CopyWithStartPoints(TileMap target, TileMap template)
+    {
+        Copy(target.map, template.map);
+        target.StartPointX = template.StartPointX;
+        target.StartPointY = template.StartPointY;
+        target.EndPointX = template.EndPointX;
+        target.EndPointY = template.EndPointY;
+    
+    }
 
     public void SwapVertical()
     { 

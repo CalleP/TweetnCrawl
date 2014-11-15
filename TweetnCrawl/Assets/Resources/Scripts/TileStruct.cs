@@ -101,5 +101,16 @@ public class TileStruct{
 
         return outTile;
     }
+
+
+    public static int UnityUnitToTileUnit(float position)
+    {
+        return (int)(position / 3.2f);
+    }
+
+    public static float TileUnityToUnityUnit(int position)
+    {
+        return position * 3.2f;
+    }
   
 }

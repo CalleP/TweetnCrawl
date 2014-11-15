@@ -139,13 +139,13 @@ public class Pooling : MonoBehaviour {
 
         if (CenterPointX != x)
         {
-            if (distanceX > 0) StepRight(1);
-            else StepLeft(1);
+            if (distanceX > 0) StepRight(distanceX);
+            else StepLeft(Mathf.Abs(distanceX));
         }
         if (CenterPointY != y)
         {
-            if (distanceY > 0) StepUp(1);
-            else StepDown(1);
+            if (distanceY > 0) StepUp(distanceY);
+            else StepDown(Mathf.Abs(distanceY));
         }
     }
 
