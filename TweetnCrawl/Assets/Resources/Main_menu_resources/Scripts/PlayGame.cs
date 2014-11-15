@@ -7,6 +7,8 @@ public class PlayGame : MonoBehaviour
 	public float x;
 	public float y;
 	WWW www; 
+	public GUIText guitext;
+	public GUIText loading;
 	
 	void OnGUI()
 	{
@@ -30,16 +32,21 @@ public class PlayGame : MonoBehaviour
 
 	IEnumerator checkConnection()
 	{
+		www = new WWW("www.google.com");
 		yield return www;
-		
+		guitext.enabled = false;
+
 		if(www.error != null)
 		{
+			guitext.enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
 			yield return new WaitForSeconds(2);// trying again after 2 sec
+			guitext.enabled = false;
 			StartCoroutine(checkConnection());
 		}else
 		{
 			print("connected to internet");
+			loading.enabled = true;
 			Application.LoadLevel("debugscene");
 			
 		}
