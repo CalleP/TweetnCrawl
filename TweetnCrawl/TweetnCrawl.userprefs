@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs">
     <Files>
-      <File FileName="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" Line="35" Column="35" />
+      <File FileName="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs" Line="10" Column="2" />
+      <File FileName="Assets\Resources\Main_menu_resources\Scripts\ScaleHowToPlay.cs" Line="19" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

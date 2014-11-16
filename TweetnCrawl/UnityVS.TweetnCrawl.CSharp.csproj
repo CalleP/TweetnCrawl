@@ -54,6 +54,7 @@
     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs" />
     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" />
     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\ScaleGUI.cs" />
+    <Compile Include="Assets\Resources\Main_menu_resources\Scripts\ScaleHowToPlay.cs" />
     <Compile Include="Assets\Resources\Scripts\BSTgen.cs" />
     <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Resources\Scripts\CharacterHealth.cs" />

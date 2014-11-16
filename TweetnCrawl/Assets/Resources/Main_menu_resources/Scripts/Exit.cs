@@ -10,9 +10,8 @@ public class Exit : MonoBehaviour
 	{
 		AutoResize(1920, 1080);
 		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
-			
 			print("Exit game pressed");
-			
+			Application.Quit();
 		}
 		
 		

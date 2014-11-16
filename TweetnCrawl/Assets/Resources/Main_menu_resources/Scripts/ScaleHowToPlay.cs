@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class HowToPlay : MonoBehaviour 
-{   
+public class ScaleHowToPlay : MonoBehaviour 
+{
 	public Texture2D Image;
+	public Texture2D CloseImage;
 	public float x;
 	public float y;
+	public float x2;
+	public float y2;
 	public GameObject HowTo;
+
 
 	void OnGUI()
 	{
 		AutoResize(1920, 1080);
-		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
+		if (GUI.Button (new Rect (x2, y2, CloseImage.width, CloseImage.height), CloseImage)) {
 
-			print("HowToPlay pressed");
-			HowTo.GetComponent<ScaleHowToPlay>().enabled = true;
-			print("done");
-		}	
-		
+			print ("closing");
+			HowTo.GetComponent<ScaleHowToPlay>().enabled = false;
+		}
+
+		GUI.DrawTexture(new Rect(x, y, Image.width - 50, Image.height - 50), Image);
+
+
 	}
 	
 	public static void AutoResize(int screenWidth, int screenHeight)
