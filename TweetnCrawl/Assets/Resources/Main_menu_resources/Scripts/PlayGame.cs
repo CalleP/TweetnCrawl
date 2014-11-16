@@ -10,6 +10,7 @@ public class PlayGame : MonoBehaviour
 	public GUITexture guitext;
 	public GUITexture loading;
 	public AudioClip Error;
+	public AudioClip ModemConnect;
 	
 	void OnGUI()
 	{
@@ -41,7 +42,7 @@ public class PlayGame : MonoBehaviour
 		{
 			guitext.GetComponent<MessageScaling>().enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
-			this.audio.Play ();
+			audio.PlayOneShot(Error);
 			yield return new WaitForSeconds(2);// trying again after 2 sec
 			guitext.GetComponent<MessageScaling>().enabled = false;
 			StartCoroutine(checkConnection());
@@ -49,6 +50,8 @@ public class PlayGame : MonoBehaviour
 		{
 			print("connected to internet");
 			loading.GetComponent<MessageScaling>().enabled = true;
+			audio.PlayOneShot(ModemConnect);
+			yield return new WaitForSeconds(5);
 			Application.LoadLevel("debugscene");
 			
 		}
