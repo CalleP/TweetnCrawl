@@ -9,6 +9,7 @@ public class PlayGame : MonoBehaviour
 	WWW www; 
 	public GUITexture guitext;
 	public GUITexture loading;
+	public AudioClip Error;
 	
 	void OnGUI()
 	{
@@ -40,6 +41,7 @@ public class PlayGame : MonoBehaviour
 		{
 			guitext.GetComponent<MessageScaling>().enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
+			this.audio.Play ();
 			yield return new WaitForSeconds(2);// trying again after 2 sec
 			guitext.GetComponent<MessageScaling>().enabled = false;
 			StartCoroutine(checkConnection());

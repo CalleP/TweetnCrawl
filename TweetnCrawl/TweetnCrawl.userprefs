@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Main_menu_resources\Scripts\MessageScaling.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs">
     <Files>
-      <File FileName="Assets\Resources\Main_menu_resources\Scripts\MessageScaling.cs" Line="13" Column="69" />
+      <File FileName="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" Line="44" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
