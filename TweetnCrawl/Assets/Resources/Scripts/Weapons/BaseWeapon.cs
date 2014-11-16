@@ -33,6 +33,12 @@ public abstract class BaseWeapon : MonoBehaviour {
         PlayFireSound();
     }
 
+    public virtual void AltFire()
+    {
+        timeStamp = Time.time + coolDown;
+        PlayAltFireSound();
+    }
+
     protected AudioClip fireSound = Resources.Load<AudioClip>("Sounds/ShotGunFire");
     public virtual void PlayFireSound()
     {
@@ -54,6 +60,20 @@ public abstract class BaseWeapon : MonoBehaviour {
             audios[1].clip = reloadSound;
             audios[1].PlayDelayed(fireSound.length - 0.8f);
 
+
+        }
+
+    }
+
+    protected AudioClip altFireSound = Resources.Load<AudioClip>("Sounds/ShotGunFire");
+    public virtual void PlayAltFireSound()
+    {
+        if (altFireSound != null)
+        {
+            audios[0].clip = altFireSound;
+
+            audios[0].Play();
+            PlayCooldownSound();
 
         }
 

@@ -20,6 +20,11 @@ public class Inventory : MonoBehaviour {
         {
             currentWeapon.Fire();
         }
+
+        if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0)
+        {
+            currentWeapon.AltFire();
+        }
 	}
 
     public void EquipWeapon(int index) 
