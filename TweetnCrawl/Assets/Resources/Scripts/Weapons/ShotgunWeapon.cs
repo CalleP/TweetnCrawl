@@ -57,6 +57,21 @@ class ShotgunWeapon : BaseProjectileWeapon
 
     }
 
+    public override void AltFire()
+    {
+        var mousePos = AimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var rotation = Vector3.Angle(wielder.transform.position, mousePos);
+        var velocity = Vector3.up;
+        if (canFire())
+        {
+            projectiles.Add(SpawnProjectile(BulletSpeed, "ShotgunAltProjectile"));
+            projectiles[projectiles.Count-1].transform.Rotate(new Vector3(0, 0, 0));
+            
+            base.AltFire();
+        }
+
+    }
+
 
 
 

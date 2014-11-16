@@ -8,6 +8,8 @@ public class BaseProjectile : MonoBehaviour {
     public Quaternion rotation;
     public float speed;
 
+
+
     public int Damage = 50;
 	// Use this for initialization
 
@@ -33,14 +35,14 @@ public class BaseProjectile : MonoBehaviour {
    
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	public virtual void FixedUpdate () {
         rigidbody2D.velocity = transform.up*speed;
         
         
 
 	}
 
-    void OnTriggerEnter2D(Collider2D coll)
+    public virtual void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Enemy")
         {
