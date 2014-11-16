@@ -69,6 +69,7 @@
      <Compile Include="Assets\Resources\Scripts\OldCharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
      <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
+     <Compile Include="Assets\Resources\Scripts\Projectiles\ScatterProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Room.cs" />
      <Compile Include="Assets\Resources\Scripts\ServerConnector.cs" />
      <Compile Include="Assets\Resources\Scripts\SimpleJSON.cs" />
