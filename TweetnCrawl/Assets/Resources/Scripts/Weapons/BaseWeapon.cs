@@ -8,7 +8,9 @@ public abstract class BaseWeapon : MonoBehaviour {
     public Vector3 AimPoint;
     public GameObject wielder = GameObject.Find("Player");
     protected int damage = 20;
+    protected int altDamage = 20;
     protected float coolDown = 1f;
+    protected float altCoolDown = 1f;
     protected float timeStamp = 0f;
 
 
@@ -35,7 +37,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
     public virtual void AltFire()
     {
-        timeStamp = Time.time + coolDown;
+        timeStamp = Time.time + altCoolDown;
         PlayAltFireSound();
     }
 

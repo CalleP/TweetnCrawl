@@ -36,7 +36,7 @@ public class ScatterProjectile : BaseProjectile {
 
     void Update()
     {
-        if (speed <= 2)
+        if (speed <= 5)
         {
             Scatter();
             Destroy(gameObject);
@@ -52,7 +52,7 @@ public class ScatterProjectile : BaseProjectile {
 
                 var projectileScript = proj.GetComponent<BaseProjectile>();
 
-                projectileScript.Init(transform.position, proj.transform.rotation, 50, 30);
+                projectileScript.Init(transform.position, proj.transform.rotation, 35, 30);
                 proj.transform.Rotate(new Vector3(0, 0, i * 30f + rand.Next(spread*-1, spread)));
 
 

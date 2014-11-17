@@ -12,6 +12,7 @@ public class BaseProjectile : MonoBehaviour {
 
     public int Damage = 50;
 	// Use this for initialization
+    public int SpriteRotation = -90;
 
     public void Init(Vector2 direction, Quaternion rotation, float speed, int damage)
     {
