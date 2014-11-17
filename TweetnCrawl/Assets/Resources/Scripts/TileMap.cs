@@ -446,30 +446,30 @@ public class TileMap : MonoBehaviour {
 
 
 
-    public void DrawMap3(TileStruct[][] map)
-    {
-        var prefab = Resources.Load("TileNoScript");
-        foreach (var item in map)
-        {
-            foreach (var item2 in item)
-            {
+    //public void DrawMap3(TileStruct[][] map)
+    //{
+    //    var prefab = Resources.Load("TileNoScript");
+    //    foreach (var item in map)
+    //    {
+    //        foreach (var item2 in item)
+    //        {
                 
-                var tile = (GameObject)Instantiate(prefab, new Vector3(((float)item2.X * 3.2f), ((float)item2.Y * 3.2f)), Quaternion.identity);
-                if (item2.Type == TileType.Rock)
-                {
-                    tile.GetComponent<SpriteRenderer>().sprite = Tile.rock;
-                }
-                else
-                {
-                    tile.GetComponent<SpriteRenderer>().sprite = Tile.dirt;
-                }
-                tile.transform.parent = gameObject.transform;
-                var script = (NewTile)tile.GetComponent<NewTile>();
-                script.TileData = item2;
+    //            var tile = (GameObject)Instantiate(prefab, new Vector3(((float)item2.X * 3.2f), ((float)item2.Y * 3.2f)), Quaternion.identity);
+    //            if (item2.Type == TileType.Rock)
+    //            {
+    //                tile.GetComponent<SpriteRenderer>().sprite = Tile.rock;
+    //            }
+    //            else
+    //            {
+    //                tile.GetComponent<SpriteRenderer>().sprite = Tile.dirt;
+    //            }
+    //            tile.transform.parent = gameObject.transform;
+    //            var script = (NewTile)tile.GetComponent<NewTile>();
+    //            script.TileData = item2;
                 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 
     //Remove?
     public void DrawMap2()
@@ -793,6 +793,7 @@ public class TileMap : MonoBehaviour {
             {
                 var tile = newCopy[y][x];
                 original[y][x].Type = tile.Type;
+                original[y][x].SetBoth(tile.terrainType);
 
 
             }

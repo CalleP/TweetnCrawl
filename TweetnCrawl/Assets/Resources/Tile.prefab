@@ -52,9 +52,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9b248e8d8c06141bb9de6bef67b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
   Type: 0
   CollidingWithPlayer: 0
+  dirt: {fileID: 21300160, guid: 48d9b17eab515ed4d9367b6cc73cd5e2, type: 3}
+  rock: {fileID: 21300160, guid: 48d9b17eab515ed4d9367b6cc73cd5e2, type: 3}
   surroundingTiles: 0
+  TerrainType: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

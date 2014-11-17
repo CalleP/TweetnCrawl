@@ -120,7 +120,7 @@ public class Pooling : MonoBehaviour {
         var test = TileMap.CropMap(map.map,CenterPointX - ((ViewPortWidth / 2) + ViewPortWidth % 2), CenterPointY - ((ViewPortHeight / 2) + ViewPortHeight % 2), CenterPointX + (ViewPortWidth / 2), CenterPointY + (ViewPortHeight / 2));
 
         //TODO This is inefficent, change
-        GameObject player = GameObject.Find("Player");
+        GameObject player = GameObject.Find("Camera");
         MoveToMapPos(((int)(player.transform.position.x / 3.2f)) , (int)(player.transform.position.y / 3.2f));
 
     }

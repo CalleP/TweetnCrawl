@@ -156,8 +156,8 @@ public class SpriteHandler : MonoBehaviour {
         //DOWN
         //      -
         //     -c-
-        //      +             TODO: here
-        if (center != up && center == down && center != left && center != right) return "Y_3";
+        //      +           
+        if (center != up && center == down && center != left && center != right) return "_4";
 
         //      -
         //     +c-
@@ -380,8 +380,8 @@ public class SpriteHandler : MonoBehaviour {
         //DOWN
         //      -
         //     -c-
-        //      +             TODO: here
-        if (center != up && center == down && center != left && center != right) return "T_7";
+        //      +            
+        if (center != up && center == down && center != left && center != right) return "_4";
 
         //      -
         //     +c-

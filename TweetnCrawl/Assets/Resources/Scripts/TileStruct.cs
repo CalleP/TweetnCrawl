@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 
 public enum TileType
@@ -13,7 +14,12 @@ public enum TileType
 public enum TerrainType
 { 
     YellowCave,
-    BlackCaste
+    BlackCaste,
+    RedCave,
+    GreyCave,
+    BlackCave,
+    BlueCastle,
+    IceCave
 }
 
 
@@ -26,6 +32,9 @@ public class TileStruct{
 
     public string WallTerrainType = "YellowCave";
     public string FloorTerrainType = "YellowCave";
+
+    public TerrainType terrainType;
+
     public TileType Type;
     public int Y;
     public int X;
@@ -34,6 +43,15 @@ public class TileStruct{
 
     //remove when finished testing
     public int test = 0;
+
+    public TileStruct(int x, int y, TileType type, TerrainType terrainType)
+    {
+        SetBoth(terrainType);
+        this.X = x;
+        this.Y = y;
+        this.Type = type;
+    }
+
 
     public TileStruct(int x, int y, TileType type) {
         this.X = x;
@@ -75,8 +93,42 @@ public class TileStruct{
 
     public void SetBoth(TerrainType type)
     {
-        SetFloor(type);
-        SetWall(type);
+        Enum.GetName(typeof(TerrainType), type);
+        terrainType = type;
+        switch (type)
+        {
+            case TerrainType.YellowCave:
+                FloorTerrainType = "YellowCave";
+                WallTerrainType = "YellowCave";
+                break;
+            case TerrainType.BlackCaste:
+                FloorTerrainType = "BlackCastle";
+                WallTerrainType = "BlackCastle";
+                break;
+            case TerrainType.RedCave:
+                FloorTerrainType = "RedCave";
+                WallTerrainType = "RedCave";
+                break;
+            case TerrainType.GreyCave:
+                FloorTerrainType = "BlackCastle";
+                WallTerrainType = "GreyCave";
+                break;
+            case TerrainType.BlackCave:
+                FloorTerrainType = "BlackCave";
+                WallTerrainType = "BlackCave";
+                break;
+            case TerrainType.BlueCastle:
+                FloorTerrainType = "BlackCastle";
+                WallTerrainType = "BlueCastle";
+                break;
+            case TerrainType.IceCave:
+                FloorTerrainType = "IceCave";
+                WallTerrainType = "IceCave";
+                break;
+
+            default:
+                break;
+        }
     }
 
     public string GetTerrainType()
@@ -112,5 +164,11 @@ public class TileStruct{
     {
         return position * 3.2f;
     }
-  
+
+    public static TerrainType getRandomTerrainType()
+    {
+        System.Random random = new System.Random();
+        Array values = Enum.GetValues(typeof(TerrainType));
+        return (TerrainType)values.GetValue(random.Next(values.Length));
+    }
 }

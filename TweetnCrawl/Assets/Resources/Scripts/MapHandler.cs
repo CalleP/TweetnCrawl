@@ -14,9 +14,11 @@ public class MapHandler
     public int MapWidth { get; set; }
     public int MapHeight { get; set; }
     public int PercentAreWalls { get; set; }
+    public TerrainType TerrainType;
 
-    public MapHandler(int mapWidth, int mapHeight, int wallPercentage)
+    public MapHandler(int mapWidth, int mapHeight, int wallPercentage, TerrainType terrainType)
     {
+        this.TerrainType = terrainType;
         MapWidth = mapWidth;
         MapHeight = mapHeight;
         PercentAreWalls = wallPercentage;
@@ -295,11 +297,11 @@ public class MapHandler
             {
                 if (Map[x, y] == 0)
                 {
-                    convertedArray[y][x] = new TileStruct(x, y, TileType.Dirt);
+                    convertedArray[y][x] = new TileStruct(x, y, TileType.Dirt, TerrainType);
                 }
                 else if (Map[x, y] == 1)
                 {
-                    convertedArray[y][x] = new TileStruct(x, y, TileType.Rock);
+                    convertedArray[y][x] = new TileStruct(x, y, TileType.Rock, TerrainType);
                 }
 
             }
@@ -327,8 +329,8 @@ public class MapHandler
                 eastMap.StartPointY,
                 TileType.Rock,
                 TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.BlackCaste);
+                TerrainType,
+                TerrainType);
 
             //Draw Corridor connecting map and SouthMap
             DrawCorridorHVertical(
@@ -338,8 +340,8 @@ public class MapHandler
                 southMap.EndPointX,
                 TileType.Rock,
                 TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.BlackCaste);
+                TerrainType,
+                TerrainType);
 
             MapChecker checker = new MapChecker(this, map);
             EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
@@ -353,8 +355,8 @@ public class MapHandler
                 westMap.EndPointY,
                 TileType.Rock,
                 TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.BlackCaste);
+                TerrainType,
+                TerrainType);
             
             checker = new MapChecker(this, map);
             SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
@@ -368,8 +370,8 @@ public class MapHandler
                 northMap.StartPointX,
                 TileType.Rock,
                 TileType.Dirt,
-                TerrainType.YellowCave,
-                TerrainType.BlackCaste);
+                TerrainType,
+                TerrainType);
             checker = new MapChecker(this,map);
             WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
     }
@@ -384,7 +386,7 @@ public class MapHandler
 
 
             var closest = ClosestToBorderX(map, TileType.Dirt);
-            DrawCorridorHorizontal(map, 0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.YellowCave);
+            DrawCorridorHorizontal(map, 0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             startY = closest.Y;
             startX = 0;
@@ -392,7 +394,7 @@ public class MapHandler
 
             var closest2 = ClosestToBorderXReverse(map, TileType.Dirt);
             //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-            DrawCorridorHorizontal(map, map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.YellowCave);
+            DrawCorridorHorizontal(map, map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             endX = map[0].Length - 1;
             endY = closest2.Y;
@@ -403,7 +405,7 @@ public class MapHandler
         else
         {
             var closest = ClosestToBorderY(map,TileType.Dirt);
-            DrawCorridorHVertical(map, 0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.YellowCave);
+            DrawCorridorHVertical(map, 0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             startX = closest.X;
             startY = 0;
@@ -411,7 +413,7 @@ public class MapHandler
 
             var closest2 = ClosestToBorderYReverse(map, TileType.Dirt);
             //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-            DrawCorridorHVertical(map, map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.YellowCave);
+            DrawCorridorHVertical(map, map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             endX = closest2.X;
             endY = map.Length - 1;

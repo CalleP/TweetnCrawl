@@ -196,14 +196,14 @@ public class Hub :TileMap {
 
     public TileStruct[][] newMap(TileMap map)
     {
-        var gen = new MapHandler(map.Width, map.Height, 48);
+        var gen = new MapHandler(map.Width, map.Height, 48, TileStruct.getRandomTerrainType());
         return gen.createMap(ref map.StartPointX, ref map.StartPointY, ref map.EndPointX, ref map.EndPointY);
     }
 
     public TileStruct[][] newHub(TileMap centerMap)
     {
 
-        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48);
+        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType());
         return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
     
     }
