@@ -2403,6 +2403,7 @@ GameObject:
   - 4: {fileID: 805661302}
   - 131: {fileID: 805661301}
   - 114: {fileID: 805661300}
+  - 82: {fileID: 805661303}
   m_Layer: 0
   m_Name: PlayGameButton
   m_TagString: Untagged
@@ -2426,6 +2427,8 @@ MonoBehaviour:
   y: 420
   guitext: {fileID: 948537819}
   loading: {fileID: 910669690}
+  Error: {fileID: 8300000, guid: 1ee793853d056cf4a81c6b9506a5630a, type: 3}
+  ModemConnect: {fileID: 8300000, guid: cdc7d7e93d83bf940af222a28e080a32, type: 3}
 --- !u!131 &805661301
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2457,6 +2460,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!82 &805661303
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805661299}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 1ee793853d056cf4a81c6b9506a5630a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &878993287
 GameObject:
   m_ObjectHideFlags: 0
