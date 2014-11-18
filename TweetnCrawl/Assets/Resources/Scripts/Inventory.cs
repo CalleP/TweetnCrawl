@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour {
 
     private BaseWeapon currentWeapon;
     public List<BaseWeapon> weapons;
-    public int WeaponPackSize = 1;
+    public int WeaponPackSize = 3;
 	// Use this for initialization
 	void Start () {
         weapons = new List<BaseWeapon>();
@@ -18,6 +18,20 @@ public class Inventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EquipWeapon(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            EquipWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            EquipWeapon(2);
+        }
+
         if (currentWeapon.SemiAuto == true)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count != 0)
@@ -47,7 +61,7 @@ public class Inventory : MonoBehaviour {
 
     public void EquipWeapon(int index) 
     {
-        if (weapons.Count >= 0 && index <= weapons.Count-1)
+        if (weapons.Count >= 0 && index <= weapons.Count)
         {
             currentWeapon = weapons[index];
         }
@@ -59,25 +73,22 @@ public class Inventory : MonoBehaviour {
         currentWeapon.Fire();
     }
 
-    public void PickUp(PickupBase pickUp) 
+    public void PickUpWeapon(BaseWeapon pickUp) 
     {
-        var item = pickUp.Item;
-        if (item.GetType().IsSubclassOf(typeof(BaseWeapon)))
-        {
+                replaceWeapon(pickUp);
+    }
 
-                replaceWeapon((BaseWeapon)item);
-            
-        }
         //Add code for other pickups
 
-    }
+    
 
     private void replaceWeapon(BaseWeapon weapon)
     { 
         if (weapons.Count >= WeaponPackSize)
         {
+            var index = weapons.IndexOf(currentWeapon);
+            weapons[index] = weapon;
             dropWeapon(currentWeapon);
-            currentWeapon = weapon;
         }
         else
         {
@@ -88,9 +99,9 @@ public class Inventory : MonoBehaviour {
 
     private void dropWeapon(BaseWeapon weapon)
     {
-        var pickUp = (GameObject)Instantiate(Resources.Load("Pickup"),new Vector3(transform.position.x,transform.position.y, 0),Quaternion.identity);
-        var pickUpScript = pickUp.GetComponent<PickupBase>();
-        pickUpScript.Item = weapon;
+        var pickUp = (GameObject)Instantiate(Resources.Load("Pickup"),new Vector3(transform.position.x,transform.position.y, -1),Quaternion.identity);
+        var pickUpScript = pickUp.GetComponent<PickupWeapon>();
+        pickUpScript.selectedWeapon = weapon.type;
     }
 
 

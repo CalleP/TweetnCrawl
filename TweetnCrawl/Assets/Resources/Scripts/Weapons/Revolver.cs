@@ -14,6 +14,7 @@ class Revolver : BaseProjectileWeapon
     public int AltSpread;
     public Revolver() 
     {
+        
         fireSound = Resources.Load<AudioClip>("Sounds/RevolverFireSound");
         reloadSound = null;
         Spread = 3;

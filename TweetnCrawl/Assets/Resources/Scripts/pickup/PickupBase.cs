@@ -17,10 +17,6 @@ public class PickupBase : MonoBehaviour {
 
     protected virtual void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "Player")
-        {
-            coll.gameObject.GetComponent<Inventory>().PickUp(this);
-            Destroy(gameObject);
-        }
+
     }
 }

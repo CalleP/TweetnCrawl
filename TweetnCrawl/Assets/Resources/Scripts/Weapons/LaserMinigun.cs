@@ -7,6 +7,7 @@ class LaserMinigun : MachineGun {
         altCoolDown = 0.1f;
         coolDown = 0.04f;
         AltSpread = 4;
+        type = WeaponTypes.laserMiniGun;
     }
     
 }

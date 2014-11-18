@@ -5,48 +5,52 @@ using System.Text;
 using UnityEngine;
 
 
+
+
+
+public enum WeaponTypes
+{
+    shotgun,
+    machineGun,
+    revolver,
+    laserMiniGun
+}
 class PickupWeapon : PickupBase
 {
-    public enum weaponTypes
-    {
-        shotgun,
-        machineGun,
-        revolver,
-        laserMiniGun
-    }
+    public static Dictionary<WeaponTypes, Type> WepTypes = new Dictionary<WeaponTypes, Type> 
+    { 
+        {WeaponTypes.revolver, typeof(DualRevolvers)},
+        {WeaponTypes.machineGun, typeof(MachineGun)},
+        {WeaponTypes.laserMiniGun, typeof(LaserMinigun)},
+        {WeaponTypes.shotgun, typeof(ShotgunWeapon)}
+    };
 
-    public weaponTypes selectedWeapon = weaponTypes.revolver;
+    public WeaponTypes selectedWeapon = WeaponTypes.revolver;
+    
     private static int test = 0;
     
     void Start()
     {
-        
-        if (selectedWeapon == weaponTypes.revolver)
-        {
-            Item = new DualRevolvers();
-        }
-
-        else if (selectedWeapon == weaponTypes.machineGun)
-        {
-            Item = new MachineGun();
-        }
-
-        else if (selectedWeapon == weaponTypes.shotgun)
-        {
-            Item = new ShotgunWeapon();
-        }
-
-        else if (selectedWeapon == weaponTypes.laserMiniGun)
-        {
-            Item = new LaserMinigun();
-        }
+            Item = instantiateWeaponType(selectedWeapon);
     }
+
+    public static BaseWeapon instantiateWeaponType(WeaponTypes type)
+    {
+        return  (BaseWeapon)Activator.CreateInstance(WepTypes[type]);
+    }
+
+    public static WeaponTypes TypeToWeaponType(Type type)
+    {
+        return WepTypes.FirstOrDefault(x => x.Value == type).Key;
+    }
+
 
     protected override void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-            coll.gameObject.GetComponent<Inventory>().PickUp(this);
+            Debug.Log("KeyDown");
+            coll.gameObject.GetComponent<Inventory>().PickUpWeapon(instantiateWeaponType(selectedWeapon));
             Destroy(gameObject);
         }
     }

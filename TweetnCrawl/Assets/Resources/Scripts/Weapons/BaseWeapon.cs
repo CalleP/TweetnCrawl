@@ -13,12 +13,13 @@ public abstract class BaseWeapon : MonoBehaviour {
     protected float coolDown = 1f;
     protected float altCoolDown = 1f;
     protected float timeStamp = 0f;
-
+    public WeaponTypes type;
     
 
 
     public BaseWeapon()
     {
+        
         audios = wielder.GetComponents<AudioSource>();
     }
 

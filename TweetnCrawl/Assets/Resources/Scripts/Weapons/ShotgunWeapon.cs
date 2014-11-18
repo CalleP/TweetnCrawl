@@ -23,6 +23,7 @@ class ShotgunWeapon : BaseProjectileWeapon
         ProjectileAmount = 8;
         damage = 35;
         SemiAuto = true;
+        type = WeaponTypes.shotgun;
 
     }
 

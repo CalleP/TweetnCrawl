@@ -30,70 +30,6 @@ public class TileMap : MonoBehaviour {
         {
             map[i] = new TileStruct[Width];
         }
-        
-        //FloodMap(TileType.Dirt);
-
-        //BSTgen.GenMap(map, 5, 10, 2, 3, 0, true);
-
-        //DrawMap(
-        //     BSTgen.addRoom(map,5,10,0));
-
-
-
-
-        //////var map2 = CropMap(map, 0, 0, map.Length / 2, map.Length);
-        //////var map3 = CropMap(map, map.Length / 2, 0, map.Length, map.Length);
-
-
-        //////var corridorSize = 3;
-
-        //////BSTgen.addRoom(map2, 0, 5, 0, TileType.Rock, TileType.Dirt);
-        //////BSTgen.addRoom(map3, 0, 5, 0, TileType.Rock, TileType.Dirt);
-
-
-
-
-        //////var map4 = BSTgen.horizontalMerge(map2, map3);
-
-        //////TileMap.CropMap2(map4, 10, 10, 20, 20, TileType.Dirt);
-
-        //////map = map4;
-
-
-        //map = map4;
-
-
-
-
-
-
-
-        //DrawMap(map);
-
-        //VerticalTest
-        //var map2 = CropMap(0, 0, map.Length, map.Length / 2, map.Length / 2);
-        //map2[2][2].Type = TileType.Rock;
-
-
-        //var map3 = CropMap(0, map.Length / 2, map.Length, map.Length, map.Length);
-
-        //map3[2][2].Type = TileType.Rock;
-        //var map4 = BSTgen.verticalMerge(BSTgen.addRoom(map3, 0, 5, 0), BSTgen.addRoom(map2, 0, 5, 0));
-        //map4[2][2].Type = TileType.Rock;
-        //map4[2][18].Type = TileType.Rock;
-         //DrawMap(map4);
-         //DrawMap(map3);
-
-        
-        
-        //DrawMap(BSTgen.addRoom(
-        //   CropMap(0, 0, map.Length / 2, map.Length, 5)
-        //   , 0, 2, 1)
-        //   );
-
-
-
-
     }
 	
 	void Update () {
@@ -141,107 +77,6 @@ public class TileMap : MonoBehaviour {
         }
     }
 
-
-    //public TileStruct[][] createMap() {
-
-
-    //    while (true)
-    //    {
-
-            
-
-    //        MapHandler maphandler = new MapHandler(Width,Height,48);
-
-    //        var convertedArray = maphandler.createMap();
-
-    //        map = convertedArray;
-    //        Copy(map, convertedArray);
-
-    //        TrimMap();
-    //        TrimMap();
-    //        TrimMap();
-    //        TrimMap();
-    //        TrimMap();
-
-    //        PlaceBorders(TileType.Rock);
-
-
-
-    //        if (Width >= Height)
-    //        {
-
-
-
-    //            var closest = ClosestToBorderX(TileType.Dirt);
-    //            DrawCorridorHorizontal(0, closest.X, closest.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            StartPointX = 0;
-    //            StartPointY = closest.Y;
-
-
-    //            var closest2 = ClosestToBorderXReverse(TileType.Dirt);
-    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-    //            DrawCorridorHorizontal(map[0].Length, closest2.X, closest2.Y, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            EndPointX = map[0].Length - 1;
-    //            EndPointY = closest2.Y;
-
-    //            MapChecker checker = new MapChecker(this);
-
-    //            if (checker.CheckMap(closest, closest2,direction.right))
-    //            {
-    //                return convertedArray;
-    //            }
-
-    //        }
-    //        else
-    //        {
-    //            var closest = ClosestToBorderY(TileType.Dirt);
-    //            DrawCorridorHVertical(0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            StartPointX = closest.X;
-    //            StartPointY = 0;
-
-
-    //            var closest2 = ClosestToBorderYReverse(TileType.Dirt);
-    //            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
-    //            DrawCorridorHVertical(map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-    //            EndPointX = closest2.X;
-    //            EndPointY = map.Length - 1;
-
-    //            MapChecker checker = new MapChecker(this);
-
-    //            if (checker.CheckMap(closest, closest2,direction.right))
-    //            {
-    //                return convertedArray;
-    //            }
-    //        }
-
-
-    //    }
-
-    //    if (gameObject.name == "NorthMap")
-    //    {
-    //        Debug.Log("here");
-    //    }
-    //    return null;
-    //}
-
-
-
-
-    
-
-    /// <summary>
-    /// Crops the map between the specified map coordinates
-    /// </summary>
-    /// <param name="x1">The x1.</param>
-    /// <param name="y1">The y1.</param>
-    /// <param name="x2">The x2.</param>
-    /// <param name="y2">The y2.</param>
-    /// <param name="height">The height.</param>
-    /// <returns>TileStruct[][].</returns>
     public static TileStruct[][] CropMap(TileStruct[][] map,int x1, int y1, int x2, int y2)
     {
         int height = Mathf.Abs(y1 - y2);
@@ -444,32 +279,6 @@ public class TileMap : MonoBehaviour {
         }
     }
 
-
-
-    //public void DrawMap3(TileStruct[][] map)
-    //{
-    //    var prefab = Resources.Load("TileNoScript");
-    //    foreach (var item in map)
-    //    {
-    //        foreach (var item2 in item)
-    //        {
-                
-    //            var tile = (GameObject)Instantiate(prefab, new Vector3(((float)item2.X * 3.2f), ((float)item2.Y * 3.2f)), Quaternion.identity);
-    //            if (item2.Type == TileType.Rock)
-    //            {
-    //                tile.GetComponent<SpriteRenderer>().sprite = Tile.rock;
-    //            }
-    //            else
-    //            {
-    //                tile.GetComponent<SpriteRenderer>().sprite = Tile.dirt;
-    //            }
-    //            tile.transform.parent = gameObject.transform;
-    //            var script = (NewTile)tile.GetComponent<NewTile>();
-    //            script.TileData = item2;
-                
-    //        }
-    //    }
-    //}
 
     //Remove?
     public void DrawMap2()
@@ -755,12 +564,13 @@ public class TileMap : MonoBehaviour {
         }
     }
 
-
+    public int count = 0;
     public void TrimMap()
     {
+        count = 0;
         foreach (var y2 in map)
         {
-            
+   
             foreach (var x2 in y2)
             {
                 int surroundingTiles = 0;
@@ -778,7 +588,8 @@ public class TileMap : MonoBehaviour {
                 {
                     currentTile.Type = TileType.Dirt;
 
-                }
+                } 
+
             }
         }
 

@@ -9,6 +9,7 @@ class DualRevolvers : Revolver {
     {
         firstFire = true;
         coolDown = 0.35f;
+        type = WeaponTypes.revolver;
     }
 
     public override void Fire()

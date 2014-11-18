@@ -16,6 +16,7 @@ class MachineGun : Revolver
         Spread = 8;
         altDamage = 100;
         SemiAuto = false;
+        type = WeaponTypes.machineGun;
     }
 
     public override void AltFire()
@@ -27,29 +28,34 @@ class MachineGun : Revolver
 
 
 
-            mousePos = new Vector3(mousePos.x + rand.Next(AltSpread * -1, AltSpread), mousePos.y + rand.Next(AltSpread * -1, AltSpread), mousePos.z);
-            var hits = Physics2D.RaycastAll(wielder.transform.position, (mousePos-objectPos).normalized, 80f);
+            mousePos = new Vector3(mousePos.x + rand.Next(AltSpread * -1, AltSpread), mousePos.y + rand.Next(AltSpread * -1, AltSpread), wielder.transform.position.z);
+            var hits = Physics2D.RaycastAll(wielder.transform.position, (mousePos-objectPos).normalized, 200f);
 
             var closestHit = 5000f;
             var farthestHit = 0f;
             GameObject bestMatch = null;
             RaycastHit2D hit = new RaycastHit2D();
+            bool foundWall = false;
             for (int i = 0; i < hits.Length; i++)
             {
+                
                 if (hits[i].distance <= closestHit)
                 {
                     if (hits[i].collider.gameObject.tag == "Wall")
                     {
-                        closestHit = hits[i].distance;
+                        float distance = (hits[i].point - (Vector2)wielder.transform.position).magnitude;
+                        foundWall = true;
+                        closestHit = distance;
                         bestMatch = hits[i].collider.gameObject;
                         hit = hits[i];
-                        break;
+   
                     }
 
                 }
-                if (hits[i].distance >= farthestHit && hits[i].collider.gameObject.tag != "Wall")
+                if (hits[i].distance >= farthestHit && hits[i].collider.gameObject.tag != "Wall" && !foundWall)
                 {
-                    closestHit = hits[i].distance;
+                    float distance = (hits[i].point - (Vector2)wielder.transform.position).magnitude;
+                    farthestHit = distance;
                     bestMatch = hits[i].collider.gameObject;
                     hit = hits[i];
                 }
