@@ -12,15 +12,17 @@ class ShotgunWeapon : BaseProjectileWeapon
     public int Spread;
 
 
+
     System.Random rand = new System.Random();
 
     public ShotgunWeapon()
     {
-        coolDown = 0.9f;
+        coolDown = 0.7f;
         BulletSpeed = 35f;
         Spread = 20;
         ProjectileAmount = 8;
         damage = 35;
+        SemiAuto = true;
 
     }
 

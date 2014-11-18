@@ -707,6 +707,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
+--- !u!1001 &431531422
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 49.8611641
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 35.523716
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.0078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: selectedWeapon
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+      propertyPath: m_Name
+      value: Pickup3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+  m_RootGameObject: {fileID: 1776098811}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &587446328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
@@ -1256,11 +1308,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_Name
@@ -1723,6 +1775,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!1 &1776098811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+  m_PrefabInternal: {fileID: 431531422}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1776098815}
+  - 212: {fileID: 1776098814}
+  - 61: {fileID: 1776098813}
+  - 114: {fileID: 1776098812}
+  m_Layer: 0
+  m_Name: Pickup3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1776098812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 431531422}
+  m_GameObject: {fileID: 1776098811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533ed573e56afab47a51c5834a55f798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  selectedWeapon: 3
+--- !u!61 &1776098813
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 431531422}
+  m_GameObject: {fileID: 1776098811}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 2.83999991, y: 2.97000003}
+  m_Center: {x: 0, y: 0}
+--- !u!212 &1776098814
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 431531422}
+  m_GameObject: {fileID: 1776098811}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300002, guid: 7d67b1a18a8491946b73475c825cc019, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1776098815
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+  m_PrefabInternal: {fileID: 431531422}
+  m_GameObject: {fileID: 1776098811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.8611641, y: 35.523716, z: -.0078125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1001 &1826262202
 Prefab:
   m_ObjectHideFlags: 0
@@ -1760,7 +1891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 470b23982b1a1af42a9941ad2055df4f, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 470b23982b1a1af42a9941ad2055df4f, type: 2}
@@ -2459,7 +2590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 0
+  selectedWeapon: 2
 --- !u!61 &2080686171
 BoxCollider2D:
   m_ObjectHideFlags: 0

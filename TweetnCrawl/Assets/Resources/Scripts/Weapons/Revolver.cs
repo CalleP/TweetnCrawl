@@ -11,7 +11,7 @@ class Revolver : BaseProjectileWeapon
     System.Random rand = new System.Random();
 
     public int Spread;
-
+    public int AltSpread;
     public Revolver() 
     {
         fireSound = Resources.Load<AudioClip>("Sounds/RevolverFireSound");
@@ -19,6 +19,7 @@ class Revolver : BaseProjectileWeapon
         Spread = 3;
         BulletSpeed = 55f;
         coolDown = 0.15f;
+        SemiAuto = true;
     }
 
 

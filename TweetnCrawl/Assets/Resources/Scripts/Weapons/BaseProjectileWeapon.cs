@@ -50,9 +50,6 @@ class BaseProjectileWeapon : BaseWeapon
 
 
 
-    public override void Fire()
-    {
-        base.Fire();
-    }
+
 }
 

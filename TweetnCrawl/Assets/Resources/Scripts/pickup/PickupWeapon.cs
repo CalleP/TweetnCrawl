@@ -11,7 +11,8 @@ class PickupWeapon : PickupBase
     {
         shotgun,
         machineGun,
-        revolver
+        revolver,
+        laserMiniGun
     }
 
     public weaponTypes selectedWeapon = weaponTypes.revolver;
@@ -22,7 +23,7 @@ class PickupWeapon : PickupBase
         
         if (selectedWeapon == weaponTypes.revolver)
         {
-            Item = new Revolver();
+            Item = new DualRevolvers();
         }
 
         else if (selectedWeapon == weaponTypes.machineGun)
@@ -33,6 +34,11 @@ class PickupWeapon : PickupBase
         else if (selectedWeapon == weaponTypes.shotgun)
         {
             Item = new ShotgunWeapon();
+        }
+
+        else if (selectedWeapon == weaponTypes.laserMiniGun)
+        {
+            Item = new LaserMinigun();
         }
     }
 

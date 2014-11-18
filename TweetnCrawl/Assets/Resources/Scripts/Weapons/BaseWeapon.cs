@@ -5,6 +5,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
     protected AudioSource[] audios;
 
+    public bool SemiAuto = false;
     public Vector3 AimPoint;
     public GameObject wielder = GameObject.Find("Player");
     protected int damage = 20;
@@ -12,6 +13,8 @@ public abstract class BaseWeapon : MonoBehaviour {
     protected float coolDown = 1f;
     protected float altCoolDown = 1f;
     protected float timeStamp = 0f;
+
+    
 
 
     public BaseWeapon()

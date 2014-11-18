@@ -11,20 +11,38 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         weapons = new List<BaseWeapon>();
+        weapons.Add(new DualRevolvers());
+        EquipWeapon(0);
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Mouse0) && weapons.Count != 0)
+        if (currentWeapon.SemiAuto == true)
         {
-            currentWeapon.Fire();
+            if (Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count != 0)
+            {
+                currentWeapon.Fire();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse1) && weapons.Count != 0)
+            {
+                currentWeapon.AltFire();
+            }
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.Mouse0) && weapons.Count != 0)
+            {
+                currentWeapon.Fire();
+            }
+
+            if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0)
+            {
+                currentWeapon.AltFire();
+            }
         }
 
-        if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0)
-        {
-            currentWeapon.AltFire();
-        }
 	}
 
     public void EquipWeapon(int index) 

@@ -52,6 +52,7 @@ public class ObjectPlacer : MonoBehaviour {
         GameObject.Find("Player").transform.position = new Vector3(width,height, -1);
         GameObject.Find("Pickup1").transform.position = new Vector3(width - 3.2f, height, -1);
         GameObject.Find("Pickup2").transform.position = new Vector3(width + 3.2f, height, -1);
+        GameObject.Find("Pickup3").transform.position = new Vector3(width, height + 3.2f, -1);
     }
 
     public static void spawnPickup(BaseWeapon pickup)

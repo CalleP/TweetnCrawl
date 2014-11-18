@@ -83,6 +83,8 @@
      <Compile Include="Assets\Resources\Scripts\TileStruct.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\BaseProjectileWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\BaseWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\DualRevolvers.cs" />
+     <Compile Include="Assets\Resources\Scripts\Weapons\LaserMinigun.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\MachineGun.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\OrbitalWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\Revolver.cs" />

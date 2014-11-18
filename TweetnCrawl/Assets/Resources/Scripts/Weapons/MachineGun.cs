@@ -7,6 +7,7 @@ using UnityEngine;
 
 class MachineGun : Revolver
 {
+    private System.Random rand = new System.Random();
     public MachineGun() : base()
     {
         fireSound = null;
@@ -14,6 +15,7 @@ class MachineGun : Revolver
         altCoolDown = 0.6f;
         Spread = 8;
         altDamage = 100;
+        SemiAuto = false;
     }
 
     public override void AltFire()
@@ -24,8 +26,8 @@ class MachineGun : Revolver
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-           
 
+            mousePos = new Vector3(mousePos.x + rand.Next(AltSpread * -1, AltSpread), mousePos.y + rand.Next(AltSpread * -1, AltSpread), mousePos.z);
             var hits = Physics2D.RaycastAll(wielder.transform.position, (mousePos-objectPos).normalized, 80f);
 
             var closestHit = 5000f;
