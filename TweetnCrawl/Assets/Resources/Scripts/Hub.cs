@@ -160,6 +160,8 @@ public class Hub :TileMap {
 
 
 
+
+
     public void StepUp()
     {
         Time.timeScale = 0;
@@ -500,7 +502,6 @@ public class Hub :TileMap {
                     if (GetTileData(x2, y2 + 1).Type == TileType.Rock) { surroundingTiles++; }
                     if (GetTileData(x2, y2 - 1).Type == TileType.Rock) { surroundingTiles++; }
 
-                    currentTile.test = surroundingTiles;
 
                     if (surroundingTiles != 4)
                     {

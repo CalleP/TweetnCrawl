@@ -45,7 +45,7 @@ class MapChecker
         {
             
 
-            if (generator.GetTileData(map,x, y).Type == TileType.None)
+            if (MapHandler.GetTileData(map,x, y).Type == TileType.None)
             {
                 return false;
             }
@@ -98,7 +98,7 @@ class MapChecker
                 
             }
 
-            generator.GetTileData(map,x, y).test =  (int)currentDirection;
+            //MapHandler.GetTileData(map, x, y).test = (int)currentDirection;
             firstTime = false;
             //generator.GetTileData(map, x, y).SetBoth(TerrainType.BlackCaste);
             count++;
@@ -163,20 +163,20 @@ class MapChecker
     private bool isTileInFrontBlocking()
     {
         if (currentDirection == direction.down)
-        { 
-            if (generator.GetTileData(map, x, y - 1).Type == TileType.Rock) return true; 
+        {
+            if (MapHandler.GetTileData(map, x, y - 1).Type == TileType.Rock) return true; 
         }
         else if (currentDirection == direction.right)
         {
-            if (generator.GetTileData(map, x + 1, y).Type == TileType.Rock) return true;
+            if (MapHandler.GetTileData(map, x + 1, y).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (generator.GetTileData(map, x, y + 1).Type == TileType.Rock) return true;
+            if (MapHandler.GetTileData(map, x, y + 1).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (generator.GetTileData(map, x - 1, y).Type == TileType.Rock) return true;
+            if (MapHandler.GetTileData(map, x - 1, y).Type == TileType.Rock) return true;
         }  
 
         return false;
@@ -186,19 +186,19 @@ class MapChecker
     {
         if (currentDirection == direction.down)
         {
-            if (generator.GetTileData(map, x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapHandler.GetTileData(map, x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         } 
         else if (currentDirection == direction.right)
         {
-            if (generator.GetTileData(map, x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapHandler.GetTileData(map, x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (generator.GetTileData(map, x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapHandler.GetTileData(map, x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (generator.GetTileData(map, x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapHandler.GetTileData(map, x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
 
         return false;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-//We followed the tutorial http://csharpcodewhisperer.blogspot.se/2013/07/Rouge-like-dungeon-generation.html for most of the class
+//We followed the tutorial http://csharpcodewhisperer.blogspot.se/2013/07/Rouge-like-dungeon-generation.html for the cellular automata implementation
 public class MapHandler
 {
     System.Random rand = new System.Random();
@@ -216,27 +216,34 @@ public class MapHandler
         TrimMap(convertedArray);
         TrimMap(convertedArray);
 
-        DrawStartAndEndPoints(convertedArray, ref startX,ref startY, ref endX, ref endY);
+        DrawStartAndEndPoints(convertedArray, ref startX, ref startY, ref endX, ref endY);
+
+
+
+
 
         MapChecker checker = new MapChecker(this, convertedArray);
+
 
         if (checker.CheckMap(
             GetTileData(convertedArray, startX, startY),
             GetTileData(convertedArray, endX, endY),
             direction.right))
         {
+            //FloodFill(convertedArray, startX, startY, TileType.Dirt, TileType.Rock);
+
             return checker.map;
         }
         else
         {
-            
-           // return checker.map;
-            
+
+            // return checker.map;
+
             return createMap(ref startX, ref startY, ref endX, ref endY);
         }
 
 
-        
+
 
         //MapChecker checker = new MapChecker(this, map);
         //if (checker.CheckMap(closest, closest2, direction.right))
@@ -263,7 +270,7 @@ public class MapHandler
         TrimMap(convertedArray);
         TrimMap(convertedArray);
         TrimMap(convertedArray);
-        
+
         DrawHubStartAndEndPoints(convertedArray, westMap, eastMap, southMap, northMap);
 
         if (EastToSouth && SouthToWest && WestToNorth)
@@ -281,7 +288,7 @@ public class MapHandler
 
 
 
-    public TileStruct[][] GetAsTileStructArr() 
+    public TileStruct[][] GetAsTileStructArr()
     {
         TileStruct[][] convertedArray;
         convertedArray = new TileStruct[Map.GetLength(1)][];
@@ -316,64 +323,64 @@ public class MapHandler
     public void DrawHubStartAndEndPoints(TileStruct[][] map, TileMap westMap, TileMap eastMap, TileMap southMap, TileMap northMap)
     {
 
-            var NorthPoint = map[map.Length - 1][northMap.StartPointX].Clone();
-            var SouthPoint = map[0][southMap.EndPointX].Clone();
-            var WestPoint = map[westMap.EndPointY][0].Clone();
-            var EastPoint = map[eastMap.StartPointY][map[0].Length - 1].Clone();
+        var NorthPoint = map[map.Length - 1][northMap.StartPointX].Clone();
+        var SouthPoint = map[0][southMap.EndPointX].Clone();
+        var WestPoint = map[westMap.EndPointY][0].Clone();
+        var EastPoint = map[eastMap.StartPointY][map[0].Length - 1].Clone();
 
 
-            DrawCorridorHorizontal(
-                map,
-                (map[0].Length) - TilesBeside(map, map[0].Length, eastMap.StartPointY, direction.left, TileType.Rock),
-                map[0].Length,
-                eastMap.StartPointY,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType,
-                TerrainType);
+        DrawCorridorHorizontal(
+            map,
+            (map[0].Length) - TilesBeside(map, map[0].Length, eastMap.StartPointY, direction.left, TileType.Rock),
+            map[0].Length,
+            eastMap.StartPointY,
+            TileType.Rock,
+            TileType.Dirt,
+            TerrainType,
+            TerrainType);
 
-            //Draw Corridor connecting map and SouthMap
-            DrawCorridorHVertical(
-                map,
-                0,
-                TilesBeside(map, southMap.EndPointX, 0, direction.up, TileType.Rock),
-                southMap.EndPointX,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType,
-                TerrainType);
+        //Draw Corridor connecting map and SouthMap
+        DrawCorridorHVertical(
+            map,
+            0,
+            TilesBeside(map, southMap.EndPointX, 0, direction.up, TileType.Rock),
+            southMap.EndPointX,
+            TileType.Rock,
+            TileType.Dirt,
+            TerrainType,
+            TerrainType);
 
-            MapChecker checker = new MapChecker(this, map);
-            EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
+        MapChecker checker = new MapChecker(this, map);
+        EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
 
 
-            //Draw Corridor connecting map and WestMap
-            DrawCorridorHorizontal(
-                map,
-                0,
-                TilesBeside(map,0, westMap.EndPointY, direction.right, TileType.Rock),
-                westMap.EndPointY,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType,
-                TerrainType);
-            
-            checker = new MapChecker(this, map);
-            SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
-            
+        //Draw Corridor connecting map and WestMap
+        DrawCorridorHorizontal(
+            map,
+            0,
+            TilesBeside(map, 0, westMap.EndPointY, direction.right, TileType.Rock),
+            westMap.EndPointY,
+            TileType.Rock,
+            TileType.Dirt,
+            TerrainType,
+            TerrainType);
 
-            //Draw Corridor connecting map and NorthMap
-            DrawCorridorHVertical(
-                map,
-                (map.Length) - TilesBeside(map, northMap.StartPointX, map.Length, direction.down, TileType.Rock),
-                map.Length,
-                northMap.StartPointX,
-                TileType.Rock,
-                TileType.Dirt,
-                TerrainType,
-                TerrainType);
-            checker = new MapChecker(this,map);
-            WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
+        checker = new MapChecker(this, map);
+        SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
+
+
+        //Draw Corridor connecting map and NorthMap
+        DrawCorridorHVertical(
+            map,
+            (map.Length) - TilesBeside(map, northMap.StartPointX, map.Length, direction.down, TileType.Rock),
+            map.Length,
+            northMap.StartPointX,
+            TileType.Rock,
+            TileType.Dirt,
+            TerrainType,
+            TerrainType);
+        checker = new MapChecker(this, map);
+        WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
     }
 
 
@@ -404,7 +411,7 @@ public class MapHandler
         }
         else
         {
-            var closest = ClosestToBorderY(map,TileType.Dirt);
+            var closest = ClosestToBorderY(map, TileType.Dirt);
             DrawCorridorHVertical(map, 0, closest.Y, closest.X, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             startX = closest.X;
@@ -423,7 +430,7 @@ public class MapHandler
         }
 
 
-        
+
     }
 
 
@@ -473,7 +480,7 @@ public class MapHandler
                 if (surroundingTiles == 3 && currentTile.Type == TileType.Rock)
                 {
                     currentTile.Type = TileType.Dirt;
-                   
+
                 }
             }
         }
@@ -488,7 +495,7 @@ public class MapHandler
     /// <param name="x">X coordinate</param>
     /// <param name="y">Y coordinate</param>
     /// <returns>TileStruct.</returns>
-    public TileStruct GetTileData(TileStruct[][] map, int x, int y)
+    public static TileStruct GetTileData(TileStruct[][] map, int x, int y)
     {
         var outType = new TileStruct(x, y, TileType.None);
         if (x < 0 || x >= map[0].Length)
@@ -695,7 +702,69 @@ public class MapHandler
 
     }
 
+
+
+    public static void FloodFill(TileStruct[][] map, int x, int y, TileType targetType, TileType replacementType)
+    {
+        /*
+        1: stuff the start pixel into a queue, note its color. note it as added.
+        2: begin picking a pixel off the queue. If it's similar to the start pixel:
+           2: put all its neighbours into the queue
+              for each added pixel, note it's added. if already noted for a pixel, don't 
+              add it anymore.
+           3: color it with the destination color.
+        3: nonempty => jump back to 2
+        4: empty => we are finished
+
+         */
+
+        List<string> list = new List<string>();
+        Queue<TileStruct> q = new Queue<TileStruct>();
+        q.Enqueue(map[y][x]);
+
+        while (q.Count != 0)
+        {
+            var tile = q.Dequeue();
+            if (tile.Type == targetType)
+            {
+                tile.Type = replacementType;
+
+                var west = MapHandler.GetTileData(map, tile.X - 1, tile.Y);
+                if (!list.Contains(west.X + "," + west.Y)) { q.Enqueue(west); list.Add(west.X + "," + west.Y); }
+                //west.Type = replacementType;
+
+                var east = MapHandler.GetTileData(map, tile.X + 1, tile.Y);
+                if (!list.Contains(east.X + "," + east.Y)) { q.Enqueue(east); list.Add(east.X + "," + east.Y); }
+                //east.Type = replacementType;
+
+
+                var north = MapHandler.GetTileData(map, tile.X, tile.Y + 1);
+                if (!list.Contains(north.X + "," + north.Y)) { q.Enqueue(north); list.Add(north.X + "," + north.Y); }
+                //north.Type = replacementType;
+
+                var south = MapHandler.GetTileData(map, tile.X, tile.Y - 1);
+                if (!list.Contains(south.X + "," + south.Y)) { q.Enqueue(north); list.Add(south.X + "," + south.Y); }
+                //south.Type = replacementType;
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
+
+
+
+
 
 
 
