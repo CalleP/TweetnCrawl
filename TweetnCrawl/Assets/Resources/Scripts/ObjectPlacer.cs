@@ -46,7 +46,6 @@ public class ObjectPlacer : MonoBehaviour {
     public static void testStart()
     {
         var tile = findAvailableTile();
-
         var height = (map.Height / 2)*3.2f;
         var width = (map.Width / 2)*3.2f;
         GameObject.Find("Player").transform.position = new Vector3(width,height, -1);

@@ -63,6 +63,12 @@ public class BaseProjectile : MonoBehaviour {
             Destroy(gameObject);
         }
 
+		if (coll.gameObject.tag == "Player")
+		{
+			coll.GetComponent<CharacterHealth>().receiveDamage(Damage);
+			Destroy(gameObject);
+		}
+
         if (coll.gameObject.tag == "Wall")
         {
             
