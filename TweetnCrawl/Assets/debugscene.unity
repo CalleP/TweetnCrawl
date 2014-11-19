@@ -204,7 +204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_LocalRotation.x
@@ -224,7 +224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: m_Size.x
@@ -242,6 +242,16 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: IdleState1
+      value: 
+      objectReference: {fileID: 21300152, guid: 631460fba56b21e40aed72a4313cba6a,
+        type: 3}
+    - target: {fileID: 11400000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: IdleState2
+      value: 
+      objectReference: {fileID: 21300152, guid: e4f53a9b70721b442aef2df0cd3f0bd9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_RootGameObject: {fileID: 316957756}
@@ -291,7 +301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &276434503
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b13509be5f9d74a8fc7806525674fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleState1: {fileID: 21300152, guid: 631460fba56b21e40aed72a4313cba6a, type: 3}
+  IdleState2: {fileID: 21300152, guid: e4f53a9b70721b442aef2df0cd3f0bd9, type: 3}
+  idleInterval: .5
 --- !u!50 &316957758
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -412,11 +425,11 @@ Transform:
   m_PrefabInternal: {fileID: 120395857}
   m_GameObject: {fileID: 316957756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.0954742, y: 31.1805115, z: -1}
+  m_LocalPosition: {x: 44.0954742, y: 31.1805115, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!61 &316957761
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -772,7 +785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
 --- !u!1001 &431531422
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,7 +827,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_Name
@@ -974,7 +987,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_Name
@@ -1251,7 +1264,7 @@ Transform:
   m_LocalScale: {x: 5.43305826, y: 3.83086514, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1170282898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,7 +1382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1436754456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 3
+  selectedWeapon: 0
 --- !u!61 &1776098813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1594,7 +1607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &1837530539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,7 +1697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &2014471613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 2
+  selectedWeapon: 3
 --- !u!61 &2080686171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1881,4 +1894,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6

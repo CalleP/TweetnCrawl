@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: ShotgunAltProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0, z: 0, w: 0}
   speed: 0
   Damage: 50
+  SpriteRotation: -90
   amountOfSubProjectiles: 12
   projectile: {fileID: 100000, guid: 63b3ed05022dfe5499129216a72ff320, type: 2}
   projectiles: []

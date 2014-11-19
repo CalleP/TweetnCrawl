@@ -59,6 +59,7 @@
      <Compile Include="Assets\Resources\Scripts\CharacterHealth.cs" />
      <Compile Include="Assets\Resources\Scripts\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Extensions.cs" />
      <Compile Include="Assets\Resources\Scripts\Hub.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\JsonHelper.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Projectiles\ScatterProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Room.cs" />
+     <Compile Include="Assets\Resources\Scripts\ScreenShake.cs" />
      <Compile Include="Assets\Resources\Scripts\ServerConnector.cs" />
      <Compile Include="Assets\Resources\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Resources\Scripts\SmoothCamera2D.cs" />

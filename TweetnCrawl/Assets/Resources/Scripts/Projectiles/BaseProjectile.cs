@@ -14,6 +14,18 @@ public class BaseProjectile : MonoBehaviour {
 	// Use this for initialization
     public int SpriteRotation = -90;
 
+    void Start()
+    {
+        this.transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
+    }
+
+    void Update()
+    {
+        this.transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
+    
+    }
+
+
     public void Init(Vector2 direction, Quaternion rotation, float speed, int damage)
     {
         Damage = damage;

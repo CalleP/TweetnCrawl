@@ -24,6 +24,7 @@ class ShotgunWeapon : BaseProjectileWeapon
         damage = 35;
         SemiAuto = true;
         type = WeaponTypes.shotgun;
+        altCoolDown = 0.7f;
 
     }
 

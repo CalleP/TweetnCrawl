@@ -5,13 +5,27 @@ public class OldCharacterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        sr = gameObject.GetComponent<SpriteRenderer>();
 	}
+    public Sprite IdleState1;
+    public Sprite IdleState2;
+    private bool state = true;
+    private SpriteRenderer sr;
 
+    public float idleInterval = 0.5f;
+    private float time;
 
     void Update()
     {
-        transform.rotation = Quaternion.identity;
+
+        if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
         rigidbody2D.velocity = new Vector2(0,0);
     }
 	// Update is called once per frame
@@ -38,5 +52,27 @@ public class OldCharacterController : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0.32f, 0, transform.position.z), 1f);
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
+
+        if (Time.time >= time)
+        {
+            if (state == true)
+            {
+                state = false;
+                sr.sprite = IdleState1;
+
+            }
+            else
+            {
+                state = true;
+                sr.sprite = IdleState2;
+            }
+            time = Time.time + idleInterval;
+        }
+
+
+
+
+
+
 	}
 }

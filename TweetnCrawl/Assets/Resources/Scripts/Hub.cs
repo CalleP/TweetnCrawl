@@ -162,6 +162,8 @@ public class Hub :TileMap {
 
     public void StepUp()
     {
+        Time.timeScale = 0;
+
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
@@ -170,10 +172,17 @@ public class Hub :TileMap {
 
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        RelocateAll(direction.down);
+
+        Time.timeScale = 1;
+
     }
 
     public void StepDown()
     {
+        Time.timeScale = 0;
+
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
@@ -181,27 +190,65 @@ public class Hub :TileMap {
 
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        RelocateAll(direction.up);
+
+        Time.timeScale = 1;
+
+
+
     }
 
     public void StepLeft()
     {
+        Time.timeScale = 0;
+
         CopyWithStartPoints(EastMap, WestMap);
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        RelocateAll(direction.right);
+
+        Time.timeScale = 1;
     }
 
     public void StepRight()
     {
+        Time.timeScale = 0;
+
         CopyWithStartPoints(WestMap, EastMap);
         Copy(EastMap.map, newMap(EastMap));
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        RelocateAll(direction.left);
+
+        Time.timeScale = 1;
+
+        
                 
     //
+    }
+
+    public void RelocateAll(direction direction)
+    {
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+
+        foreach (var enemy in enemies)
+        {
+            enemy.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        }
+        foreach (var projectile in projectiles)
+        {
+            projectile.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        }
+
+        Camera.main.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
     }
 
 

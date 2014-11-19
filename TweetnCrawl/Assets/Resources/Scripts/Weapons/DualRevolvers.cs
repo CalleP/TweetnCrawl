@@ -8,7 +8,8 @@ class DualRevolvers : Revolver {
     public DualRevolvers()
     {
         firstFire = true;
-        coolDown = 0.35f;
+        coolDown = 0.15f;
+        altCoolDown = 0.15f;
         type = WeaponTypes.revolver;
     }
 
