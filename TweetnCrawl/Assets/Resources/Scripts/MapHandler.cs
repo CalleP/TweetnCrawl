@@ -473,7 +473,7 @@ public class MapHandler
                 if (surroundingTiles == 3 && currentTile.Type == TileType.Rock)
                 {
                     currentTile.Type = TileType.Dirt;
-
+                   
                 }
             }
         }

@@ -86,6 +86,7 @@ public class Hub :TileMap {
 
 
         //DrawMap(arr);
+        PreInstantiateColliders();
 
 
         ObjectPlacer.testStart();
@@ -109,28 +110,38 @@ public class Hub :TileMap {
         {
             StepRight();
             player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(West), player.transform.position.y, player.transform.position.z);
+            ClearColliders();
+            PreInstantiateColliders();
         }
         else if (playerX < West)
         {
             StepLeft();
             player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(East), player.transform.position.y, player.transform.position.z);
+            ClearColliders();
+            PreInstantiateColliders();
+            
         }
 
         if (playerY > North)
         {
             StepUp();
             player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(South), player.transform.position.z);
+            ClearColliders();
+            PreInstantiateColliders();
         
         }
         else if (playerY < South)
         {
             StepDown();
             player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(North), player.transform.position.z);
+            ClearColliders();
+            PreInstantiateColliders();
         }
 
         if (Input.GetKey(KeyCode.K))
         {
             StepUp();
+
 
             //Copy(WestMap.map, newMap(WestMap));
             //Copy(EastMap.map, newMap(EastMap));
@@ -417,6 +428,53 @@ public class Hub :TileMap {
         target.EndPointY = template.EndPointY;
     
     }
+
+    public GameObject collider;
+
+    public GameObject colliderContainer;
+    public void PreInstantiateColliders()
+    {
+
+        for (int y = 0; y < map.Length; y++)
+        {
+            for (int x = 0; x < map[0].Length; x++)
+            {
+                TileStruct currentTile = GetTileData(x, y);
+                if (currentTile.Type == TileType.Rock) 
+                {
+                    int surroundingTiles = 0;
+
+                    var x2 = currentTile.X;
+                    var y2 = currentTile.Y;
+
+                    if (GetTileData(x2 - 1, y2).Type == TileType.Rock) { surroundingTiles++; };
+
+                    if (GetTileData(x2 + 1, y2).Type == TileType.Rock) { surroundingTiles++; }
+                    if (GetTileData(x2, y2 + 1).Type == TileType.Rock) { surroundingTiles++; }
+                    if (GetTileData(x2, y2 - 1).Type == TileType.Rock) { surroundingTiles++; }
+
+                    currentTile.test = surroundingTiles;
+
+                    if (surroundingTiles != 4)
+                    {
+                        GameObject coll = (GameObject)Instantiate(collider, new Vector3(currentTile.X*3.2f, currentTile.Y*3.2f, 0), Quaternion.identity);
+                        coll.transform.parent = colliderContainer.transform;
+
+                    }
+                }
+            }
+        }
+    }
+
+    public void ClearColliders()
+    {
+
+        Destroy(colliderContainer);
+        colliderContainer = (GameObject)Instantiate(Resources.Load<GameObject>("ColliderContainer"));
+
+    }
+
+
 
     public void SwapVertical()
     { 

@@ -19,19 +19,24 @@ public class OldCharacterController : MonoBehaviour {
         transform.rotation = Quaternion.identity;
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(new Vector3(0, 0.32f));
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0, 0.32f, transform.position.z), 1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(0, -0.32f));
+             transform.position = Vector3.MoveTowards(transform.position, transform.position+new Vector3(0, -0.32f, transform.position.z), 1f);
+             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(-0.32f, 0));
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(-0.32f, 0, transform.position.z), 1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(new Vector3(0.32f, 0));
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0.32f, 0, transform.position.z), 1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
 	}
 }

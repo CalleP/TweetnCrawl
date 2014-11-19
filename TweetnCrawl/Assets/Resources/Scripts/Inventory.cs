@@ -61,7 +61,7 @@ public class Inventory : MonoBehaviour {
 
     public void EquipWeapon(int index) 
     {
-        if (weapons.Count >= 0 && index <= weapons.Count)
+        if (weapons.Count >= 0 && index <= weapons.Count-1)
         {
             currentWeapon = weapons[index];
         }
@@ -73,35 +73,43 @@ public class Inventory : MonoBehaviour {
         currentWeapon.Fire();
     }
 
-    public void PickUpWeapon(BaseWeapon pickUp) 
+    public void PickUpWeapon(BaseWeapon weapon, PickupWeapon pickup) 
     {
-                replaceWeapon(pickUp);
+                replaceWeapon(weapon, pickup);
     }
 
         //Add code for other pickups
 
     
 
-    private void replaceWeapon(BaseWeapon weapon)
+    private void replaceWeapon(BaseWeapon weapon, PickupWeapon pickup)
     { 
         if (weapons.Count >= WeaponPackSize)
         {
-            var index = weapons.IndexOf(currentWeapon);
+            
+            int index;
+            for (index = 0; index < weapons.Count; index++)
+            {
+                if (weapons[index].GetType() == currentWeapon.GetType()) { break; }
+            }
+            Debug.Log(index);
             weapons[index] = weapon;
-            dropWeapon(currentWeapon);
+            dropWeapon(currentWeapon, pickup);
+            EquipWeapon(index);
         }
         else
         {
             weapons.Add(weapon);
             EquipWeapon(weapons.Count - 1);
+            Destroy(pickup.gameObject);
         }
     }
 
-    private void dropWeapon(BaseWeapon weapon)
+    private void dropWeapon(BaseWeapon weapon, PickupWeapon pickup)
     {
-        var pickUp = (GameObject)Instantiate(Resources.Load("Pickup"),new Vector3(transform.position.x,transform.position.y, -1),Quaternion.identity);
-        var pickUpScript = pickUp.GetComponent<PickupWeapon>();
-        pickUpScript.selectedWeapon = weapon.type;
+       
+        var pickupScript = pickup.GetComponent<PickupWeapon>();
+        pickupScript.selectedWeapon = PickupWeapon.TypeToWeaponType(weapon.GetType());
     }
 
 

@@ -15,7 +15,7 @@ public enum WeaponTypes
     revolver,
     laserMiniGun
 }
-class PickupWeapon : PickupBase
+public class PickupWeapon : PickupBase
 {
     public static Dictionary<WeaponTypes, Type> WepTypes = new Dictionary<WeaponTypes, Type> 
     { 
@@ -44,14 +44,15 @@ class PickupWeapon : PickupBase
         return WepTypes.FirstOrDefault(x => x.Value == type).Key;
     }
 
-
+    private float timeStamp;
     protected override void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (coll.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.E) && timeStamp <= Time.time)
         {
             Debug.Log("KeyDown");
-            coll.gameObject.GetComponent<Inventory>().PickUpWeapon(instantiateWeaponType(selectedWeapon));
-            Destroy(gameObject);
+            coll.gameObject.GetComponent<Inventory>().PickUpWeapon(instantiateWeaponType(selectedWeapon), this);
+            timeStamp = Time.time + 0.5f;
+            
         }
     }
 }

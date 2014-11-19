@@ -27,16 +27,17 @@ public class Tile : MonoBehaviour {
         TileData = map.GetTileData(x, y);
     }
 
+    private SpriteRenderer sr;
 	void Start () {
        
         gameObject.name = TileData.X + "," + TileData.Y;
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = dirt;
 
         
 
-        BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
-        collider.size = sr.sprite.bounds.size;
+        //BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
+        //collider.size = sr.sprite.bounds.size;
 
 
 	}
@@ -59,26 +60,26 @@ public class Tile : MonoBehaviour {
         //}
         if (TileData.Type == TileType.Dirt)
         {
-            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
+            //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            sr.sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
             gameObject.tag = "Tile";
             //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
         }
         else if (TileData.Type == TileType.Rock)
         {
-            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
-            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteHandler.GetTexture(TileData, map);
+            //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            sr.sprite = SpriteHandler.GetTexture(TileData, map);
             gameObject.tag = "Wall";
             //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
         }
         else if (TileData.Type == TileType.Wood)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = rock;
+            sr.sprite = rock;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
-            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            sr.sprite = dirt;
+            //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
     }
