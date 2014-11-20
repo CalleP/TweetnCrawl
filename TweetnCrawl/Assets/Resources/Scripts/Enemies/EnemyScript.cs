@@ -9,11 +9,18 @@ public class EnemyScript : MonoBehaviour {
 	public float distance;
 	public int health = 100;
 	public float PrevSpeed;
-	public bool CanAttack = true;
 	public CharacterHealth ch;
 	double attackTime = 0.0;
 	double AttackDelay = 1.0;
+	float rotationSpeed = 50f;
+	public float rotationTime = 5f;
 	public AudioClip jab;
+	public float patrolspeed = 5;
+	public bool waiting = false;
+	Vector3 randomPosition;
+	Quaternion qTo;
+
+
 	
 	void Start() 
 	{
@@ -36,6 +43,7 @@ public class EnemyScript : MonoBehaviour {
 		
 		//Updates constantly the distance between the follower and the player
 		distance = Vector3.Distance (Follower.position, player.position);
+		patrol ();
 		
 		//if the distance gets within the chaseRange the follower will start following the player
 		if (distance <= chaseRange) {
@@ -77,6 +85,40 @@ public class EnemyScript : MonoBehaviour {
 		GameObject.Find("Player").GetComponent<CharacterHealth>().receiveDamage(EnemyDamage);
 		this.audio.Play ();
 	}
+
+	public void patrol() {
+
+		if (waiting == false)
+		{
+			print("stopped patrol");
+			StopCoroutine (patrolUpdate ());
+			StartCoroutine (patrolUpdate ());
+		}
+		else
+		{
+
+			transform.position = Vector3.Lerp (transform.position, randomPosition, Time.deltaTime*1);
+			transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime * 10);
+		
+		}
+	}
+	
+	
+	IEnumerator patrolUpdate() {
+	int	rotation = Random.Range (1,2);
+		randomPosition = new Vector3 (transform.position.x + Random.Range( 10f,-10f ), transform.position.y + Random.Range( 8f, -8f ), 0f);
+		if(rotation == 1) {
+			qTo = Quaternion.Euler(new Vector3(0.0f,0.0f,Random.Range(-90.0f, 180.0f)));  
+		} else if (rotation == 2) {
+			qTo = Quaternion.Euler(new Vector3(0.0f,0.0f,Random.Range(-90.0f, 180.0f)));  
+		}
+		waiting = true;
+		yield return new WaitForSeconds(2);
+		waiting = false;
+
+		}
+	
+
 	
 	
 }
