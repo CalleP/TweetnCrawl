@@ -10,6 +10,7 @@ public class Animator : MonoBehaviour {
     public float interval;
     public List<Sprite> sprites = new List<Sprite>();
     public bool DeathAfterLastFrame;
+    public bool PlayOnAwake = true;
 
     private SpriteRenderer sr;
     private int index;
@@ -22,27 +23,33 @@ public class Animator : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (time <= Time.time)
+    void Update()
+    {
+        if (PlayOnAwake)
         {
-            if ((index >= sprites.Count-1) && loop)
+            if (time <= Time.time)
             {
-                index = 0;
-                sr.sprite = sprites[index];
+                if ((index >= sprites.Count - 1) && loop)
+                {
+                    index = 0;
+                    sr.sprite = sprites[index];
 
-            }
-            else if (index >= sprites.Count - 1 && DeathAfterLastFrame)
-            {
-                sr.sprite = null;
-            }
-            else if (!(index >= sprites.Count - 1))
-            {
-                index++;
-                sr.sprite = sprites[index];
-            }
+                }
+                else if (index >= sprites.Count - 1 && DeathAfterLastFrame)
+                {
+                    sr.sprite = null;
+                    Destroy(gameObject);
+                }
+                else if (!(index >= sprites.Count - 1))
+                {
+                    index++;
+                    sr.sprite = sprites[index];
+                }
 
-            
-            time = Time.time + interval;
+
+
+                time = Time.time + interval;
+            }
         }
-	}
+    }
 }
