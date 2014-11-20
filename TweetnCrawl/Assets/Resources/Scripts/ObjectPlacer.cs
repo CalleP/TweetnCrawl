@@ -40,11 +40,13 @@ public class ObjectPlacer : MonoBehaviour {
         var tile = findAvailableTile();
 
         Instantiate(Resources.Load("Enemy"), new Vector3(tile.X*3.2f,tile.Y*3.2f,-1f), Quaternion.identity);
+		Instantiate(Resources.Load("Enemy2"), new Vector3(tile.X*3.2f,tile.Y*3.2f,-1f), Quaternion.identity);
 
     }
 
     public static void testStart()
     {
+		spawnEnemy ();
         var tile = findAvailableTile();
         var height = (map.Height / 2)*3.2f;
         var width = (map.Width / 2)*3.2f;

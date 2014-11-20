@@ -92,6 +92,7 @@ public class Hub :TileMap {
         ObjectPlacer.testStart();
 
 
+
 	}
 	
 	// Update is called once per frame
