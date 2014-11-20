@@ -231,6 +231,9 @@ public class MapHandler
             direction.right))
         {
             //FloodFill(convertedArray, startX, startY, TileType.Dirt, TileType.Rock);
+            Sprinkle(convertedArray, 62, DecorType.Grass);
+            Sprinkle(convertedArray, 68, DecorType.Rock);
+
 
             return checker.map;
         }
@@ -275,6 +278,8 @@ public class MapHandler
 
         if (EastToSouth && SouthToWest && WestToNorth)
         {
+            Sprinkle(convertedArray, 62, DecorType.Grass);
+            Sprinkle(convertedArray, 68, DecorType.Rock);
             return convertedArray;
         }
         else
@@ -435,7 +440,27 @@ public class MapHandler
 
 
 
+    public void Sprinkle(TileStruct[][] map, int percentage, DecorType decor)
+    {
+        MapHandler handler = new MapHandler(MapWidth, MapHeight, percentage, TerrainType);
+        handler.BlankMap();
+        handler.RandomFillMap();
 
+        handler.MakeCaverns();
+
+        var overlayingMap = handler.GetAsTileStructArr();
+
+        for (int y = 0; y < overlayingMap.Length; y++)
+        {
+            for (int x = 0; x < overlayingMap[0].Length; x++)
+            {
+                if (overlayingMap[y][x].Type == TileType.Dirt)
+                {
+                    map[y][x].DecorType = decor;
+                }
+            }
+        }
+    }
 
 
 

@@ -54,42 +54,82 @@ public class SpriteHandler : MonoBehaviour {
     public static Sprite GetTexture(TileStruct tile, TileMap map)
     {
 
+        var left =  map.GetTileData(tile.X - 1, tile.Y);
+        var right =    map.GetTileData(tile.X + 1, tile.Y);
+        var north =    map.GetTileData(tile.X, tile.Y + 1);
+        var south =    map.GetTileData(tile.X, tile.Y - 1);
+        var upLeft =    map.GetTileData(tile.X - 1, tile.Y + 1);
+        var upRight =    map.GetTileData(tile.X + 1, tile.Y + 1);
+        var downLeft =    map.GetTileData(tile.X - 1, tile.Y - 1);
+        var downRight =    map.GetTileData(tile.X + 1, tile.Y - 1);
 
+
+
+
+        if (left.Type == TileType.Rock || right.Type == TileType.Rock || north.Type == TileType.Rock || south.Type == TileType.Rock || upLeft.Type == TileType.Rock || upRight.Type == TileType.Rock || downLeft.Type == TileType.Rock || downRight.Type == TileType.Rock)
+        {
+            tile.DecorType = DecorType.None;
+        }
 
         if (tile.Type == TileType.Rock)
         {
             return getSpriteWithName(tile.WallTerrainType + getNumber(
             tile.WallTerrainType,
-            map.GetTileData(tile.X - 1, tile.Y).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y).GetTerrainType(),
-            map.GetTileData(tile.X, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X, tile.Y - 1).GetTerrainType(),
-            map.GetTileData(tile.X - 1, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X - 1, tile.Y - 1).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y - 1).GetTerrainType()
+            left.GetTerrainType(),
+            right.GetTerrainType(),
+            north.GetTerrainType(),
+            south.GetTerrainType(),
+            upLeft.GetTerrainType(),
+            upRight.GetTerrainType(),
+            downLeft.GetTerrainType(),
+            downRight.GetTerrainType()
             ),
 
 
             tile.Type);
 
         }
+
+
+
+
+        string decor = Enum.GetName(typeof(DecorType), tile.DecorType);
+
+
+
         if (tile.Type == TileType.Dirt)
         {
-            return getSpriteWithName(tile.GetTerrainType() + getNumberFloors(
-            tile.GetTerrainType(),
-            map.GetTileData(tile.X - 1, tile.Y).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y).GetTerrainType(),
-            map.GetTileData(tile.X, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X, tile.Y - 1).GetTerrainType(),
-            map.GetTileData(tile.X - 1, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y + 1).GetTerrainType(),
-            map.GetTileData(tile.X - 1, tile.Y - 1).GetTerrainType(),
-            map.GetTileData(tile.X + 1, tile.Y - 1).GetTerrainType()
-            ),
+            if (tile.DecorType == DecorType.None)
+            {
+                return getSpriteWithName(tile.GetTerrainType() + getNumberFloors(
+                tile.GetTerrainType(),
+                left.GetTerrainType(),
+                right.GetTerrainType(),
+                north.GetTerrainType(),
+                south.GetTerrainType(),
+                upLeft.GetTerrainType(),
+                upRight.GetTerrainType(),
+                downLeft.GetTerrainType(),
+                downRight.GetTerrainType()),
+                tile.Type);
+            }
+            else
+            {
+                return getSpriteWithName(tile.GetTerrainType() + decor + getNumberFloors(
+                tile.GetTerrainType() + tile.GetDecorType(),
+                left.GetTerrainType() + left.GetDecorType(),
+                right.GetTerrainType() + right.GetDecorType(),
+                north.GetTerrainType() + north.GetDecorType(),
+                south.GetTerrainType() + south.GetDecorType(),
+                upLeft.GetTerrainType() + upLeft.GetDecorType(),
+                upRight.GetTerrainType() + upRight.GetDecorType(),
+                downLeft.GetTerrainType() + downLeft.GetDecorType(),
+                downRight.GetTerrainType() + downRight.GetDecorType()
+                ),
 
 
-            tile.Type);
+                tile.Type);
+            }
         }
 
         return null;

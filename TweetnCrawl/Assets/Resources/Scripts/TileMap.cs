@@ -604,6 +604,7 @@ public class TileMap : MonoBehaviour {
             {
                 var tile = newCopy[y][x];
                 original[y][x].Type = tile.Type;
+                original[y][x].DecorType = tile.DecorType;
                 original[y][x].SetBoth(tile.terrainType);
 
 

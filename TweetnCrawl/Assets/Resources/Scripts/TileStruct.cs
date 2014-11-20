@@ -22,6 +22,12 @@ public enum TerrainType
     IceCave
 }
 
+public enum DecorType
+{
+    None,
+    Grass,
+    Rock 
+}
 
 
 
@@ -33,8 +39,9 @@ public class TileStruct{
     public string WallTerrainType = "YellowCave";
     public string FloorTerrainType = "YellowCave";
 
-    public TerrainType terrainType;
 
+    public TerrainType terrainType;
+    public DecorType DecorType = DecorType.None;
     public TileType Type;
     public int Y;
     public int X;
@@ -102,7 +109,7 @@ public class TileStruct{
                 WallTerrainType = "YellowCave";
                 break;
             case TerrainType.BlackCaste:
-                FloorTerrainType = "BlackCastle";
+                FloorTerrainType = "BlackCave";
                 WallTerrainType = "BlackCastle";
                 break;
             case TerrainType.RedCave:
@@ -110,7 +117,7 @@ public class TileStruct{
                 WallTerrainType = "RedCave";
                 break;
             case TerrainType.GreyCave:
-                FloorTerrainType = "BlackCastle";
+                FloorTerrainType = "BlackCave";
                 WallTerrainType = "GreyCave";
                 break;
             case TerrainType.BlackCave:
@@ -118,11 +125,11 @@ public class TileStruct{
                 WallTerrainType = "BlackCave";
                 break;
             case TerrainType.BlueCastle:
-                FloorTerrainType = "BlackCastle";
+                FloorTerrainType = "BlackCave";
                 WallTerrainType = "BlueCastle";
                 break;
             case TerrainType.IceCave:
-                FloorTerrainType = "IceCave";
+                FloorTerrainType = "BlackCave";
                 WallTerrainType = "IceCave";
                 break;
 
@@ -142,6 +149,16 @@ public class TileStruct{
         {
             return FloorTerrainType + "Floor";
         }
+    }
+
+    public string GetDecorType()
+    {
+        var value = Enum.GetName(DecorType.GetType(), DecorType);
+        if (value == "None")
+        {
+            value = "";
+        }
+        return value;
     }
 
     public TileStruct Clone()

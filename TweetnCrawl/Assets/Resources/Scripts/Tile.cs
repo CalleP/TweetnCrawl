@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour {
 
     public string TerrainType;
 
-    
+    public DecorType decor;
 
     //TODO: add texture and stuff later
     public Tile(int x, int y) {
@@ -44,7 +44,7 @@ public class Tile : MonoBehaviour {
 
     void Update() 
     {
-
+        decor = TileData.DecorType;
 
         surroundingTiles = TileData.test;
         TerrainType = TileData.GetTerrainType();
@@ -58,6 +58,15 @@ public class Tile : MonoBehaviour {
         //{
         //    transform.position = new Vector3(TileData.X * 3.2f, transform.position.y);
         //}
+        if (decor == DecorType.Grass)
+        {
+            //sr.color = Color.blue;
+        }
+        else
+        {
+            //sr.color = Color.white;
+        }
+
         if (TileData.Type == TileType.Dirt)
         {
             //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
