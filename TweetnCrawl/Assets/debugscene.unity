@@ -678,7 +678,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
       propertyPath: Height
@@ -875,7 +875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
@@ -983,7 +983,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
@@ -1106,7 +1106,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0a51f79a4f308164eb13e7148b8e151e, type: 2}
       propertyPath: map

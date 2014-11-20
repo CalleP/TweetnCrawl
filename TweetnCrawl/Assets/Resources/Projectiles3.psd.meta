@@ -3,6 +3,13 @@ guid: 1c451144a2a828d468c2580efbc49a8d
 TextureImporter:
   fileIDToRecycleName:
     21300000: Projectiles3_0
+    21300002: Projectiles3_1
+    21300004: Projectiles3_2
+    21300006: Projectiles3_3
+    21300008: BlueOnDeath1
+    21300010: BlueOnDeath2
+    21300012: BlueOnDeath3
+    21300014: BlueOnDeath4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,6 +58,76 @@ TextureImporter:
         y: 270
         width: 10
         height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Projectiles3_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 244
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Projectiles3_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 223
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Projectiles3_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 206
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueOnDeath1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 307
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueOnDeath2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 312
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueOnDeath3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 319
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueOnDeath4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 329
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

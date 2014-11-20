@@ -8,7 +8,7 @@ public class BaseProjectile : MonoBehaviour {
     public Quaternion rotation;
     public float speed;
 
-
+    public GameObject onDeathPrefab;
 
     public int Damage = 50;
 	// Use this for initialization
@@ -60,7 +60,9 @@ public class BaseProjectile : MonoBehaviour {
         if (coll.gameObject.tag == "Enemy")
         {
             coll.GetComponent<EnemyScript>().receiveDamage(Damage);
+            spawnDeathAnim();
             Destroy(gameObject);
+            
         }
 
 		if (coll.gameObject.tag == "Enemy2")
@@ -72,14 +74,28 @@ public class BaseProjectile : MonoBehaviour {
 		if (coll.gameObject.tag == "Player")
 		{
 			coll.GetComponent<CharacterHealth>().receiveDamage(Damage);
-			Destroy(gameObject);
+            spawnDeathAnim();
+            Destroy(gameObject);
+
 		}
 
         if (coll.gameObject.tag == "Wall")
         {
-            
+            spawnDeathAnim();
             Destroy(gameObject);
         }
+    }
+
+    private static System.Random rand = new System.Random(); 
+    private void spawnDeathAnim()
+    {
+        if (onDeathPrefab != null)
+        {
+
+            var obj = (GameObject)Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
+            obj.transform.Rotate(new Vector3(0, 0, rand.Next(0,360)));
+        }
+
     }
 
 
