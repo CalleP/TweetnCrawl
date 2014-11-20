@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: ShotgunAltProjectile
   m_TagString: Projectile
@@ -71,12 +72,39 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   speed: 0
+  onDeathPrefab: {fileID: 0}
   Damage: 50
   SpriteRotation: -90
   amountOfSubProjectiles: 12
   projectile: {fileID: 100000, guid: 63b3ed05022dfe5499129216a72ff320, type: 2}
   projectiles: []
   spread: 20
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab295b6504ae347a52e592814bedb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 0
+  interval: .0799999982
+  sprites:
+  - {fileID: 21300014, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300016, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300018, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300020, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300022, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300024, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300026, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300028, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300030, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300032, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  - {fileID: 21300034, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
+  DeathAfterLastFrame: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
