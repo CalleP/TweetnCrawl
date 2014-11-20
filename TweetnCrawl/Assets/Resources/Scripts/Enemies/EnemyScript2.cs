@@ -21,7 +21,7 @@ public class EnemyScript2 : MonoBehaviour {
 		player = GameObject.Find("Player").transform;
 		attackTime = Time.time;
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> ();
-		chaseRange = 20.0f;
+		chaseRange = 30.0f;
 		speed = Random.Range(10,20);
 		Follower = transform;
 		PrevSpeed = speed;
@@ -41,29 +41,29 @@ public class EnemyScript2 : MonoBehaviour {
 		
 		//if the distance gets within the chaseRange the follower will start following the player
 		if (distance <= chaseRange) {
-			speed = PrevSpeed;
-			float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
+		
+						float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
 			
-			transform.eulerAngles = new Vector3 (0, 0, z);
+						transform.eulerAngles = new Vector3 (0, 0, z);
 			
-			rigidbody2D.AddForce (gameObject.transform.up * speed);
+						rigidbody2D.AddForce (gameObject.transform.up * speed);
 			
-			//if the enemy is close enough with a distance of 5 or less hit the player.
-			if (distance > chaseRange - 10) {
-				speed = 0;
+						//if the enemy is close enough with a distance of 5 or less hit the player.
+						if (distance < chaseRange - 10) {
+								speed = 0;
 
-				// a simple boolean checking if the enemy can attack or not to provide delay
-				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0 && distance > chaseRange - 10) {
-					speed = 0;
-					EnemyAttack ();
-					attackTime = Time.time + AttackDelay;
+								// a simple boolean checking if the enemy can attack or not to provide delay
+								if (Time.time > attackTime && GameObject.Find ("Player").GetComponent<CharacterHealth> ().health >= 0 && distance < chaseRange - 10) {
+										EnemyAttack ();
+										attackTime = Time.time + AttackDelay;
 					
-				} 
+								} 
 				
-			} else {
-				return;
-			}
-		} 
+						} else if (distance > chaseRange - 10) {
+								speed = PrevSpeed;
+								return;
+						}
+				} 
 	}
 	
 	//subtracts the enemy health with the player damage.
@@ -76,8 +76,9 @@ public class EnemyScript2 : MonoBehaviour {
 
 		//transform.Translate((player.position - transform.position).normalized * speed * Time.deltaTime);
 		
-		Transform projectile = (Transform)Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, Quaternion.LookRotation(player.position - transform.position));
-
+			Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
+			
+	
 	}
 	
 	

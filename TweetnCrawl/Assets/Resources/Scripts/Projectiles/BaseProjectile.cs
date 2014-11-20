@@ -68,6 +68,7 @@ public class BaseProjectile : MonoBehaviour {
 		if (coll.gameObject.tag == "Enemy2")
 		{
 			coll.GetComponent<EnemyScript2>().receiveDamage(Damage);
+			spawnDeathAnim();
 			Destroy(gameObject);
 		}
 

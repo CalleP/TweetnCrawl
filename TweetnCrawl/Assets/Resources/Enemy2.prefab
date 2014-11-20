@@ -370,10 +370,10 @@ MonoBehaviour:
   distance: 0
   health: 100
   PrevSpeed: 0
-  CanAttack: 1
   ch: {fileID: 0}
   jab: {fileID: 0}
   Projectile: {fileID: 400000, guid: 989aba1d17d35e143a8064f5ff54574f, type: 2}
+  howCloseToPlayer: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -398,13 +398,13 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100000}
+  m_RootGameObject: {fileID: 0}
   m_IsPrefabParent: 1
   m_IsExploded: 1
