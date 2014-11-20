@@ -14,7 +14,6 @@ public class EnemyScript2 : MonoBehaviour {
 	double AttackDelay = 1.0;
 	public AudioClip jab;
 	public Transform Projectile;
-	public float howCloseToPlayer = 3f;
 
 	void Start() 
 	{
@@ -75,7 +74,7 @@ public class EnemyScript2 : MonoBehaviour {
 	public void EnemyAttack() {
 
 		//transform.Translate((player.position - transform.position).normalized * speed * Time.deltaTime);
-		
+
 			Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
 			
 	
