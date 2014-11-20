@@ -15,13 +15,14 @@ public class EnemyScript2 : MonoBehaviour {
 	double AttackDelay = 1.0;
 	public AudioClip jab;
 	public Transform Projectile;
+	float standOffDistance = 10;
 	
 	void Start() 
 	{
 		player = GameObject.Find("Player").transform;
 		attackTime = Time.time;
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> ();
-		chaseRange = 20.0f;
+		chaseRange = 25.0f;
 		speed = Random.Range(10,20);
 		Follower = transform;
 		PrevSpeed = speed;
@@ -49,11 +50,11 @@ public class EnemyScript2 : MonoBehaviour {
 			rigidbody2D.AddForce (gameObject.transform.up * speed);
 			
 			//if the enemy is close enough with a distance of 5 or less hit the player.
-			if (distance <= chaseRange) {
-				speed = 0;
-				
+			if (distance <= chaseRange - 5) {
+				//speed = 0;
+				return;
 				// a simple boolean checking if the enemy can attack or not to provide delay
-				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0) {
+				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0 && distance > standOffDistance) {
 					
 					EnemyAttack ();
 					attackTime = Time.time + AttackDelay;
