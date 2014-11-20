@@ -9,20 +9,19 @@ public class EnemyScript2 : MonoBehaviour {
 	public float distance;
 	public int health = 100;
 	public float PrevSpeed;
-	public bool CanAttack = true;
 	public CharacterHealth ch;
 	double attackTime = 0.0;
 	double AttackDelay = 1.0;
 	public AudioClip jab;
 	public Transform Projectile;
-	float standOffDistance = 10;
-	
+	public float howCloseToPlayer = 3f;
+
 	void Start() 
 	{
 		player = GameObject.Find("Player").transform;
 		attackTime = Time.time;
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> ();
-		chaseRange = 25.0f;
+		chaseRange = 20.0f;
 		speed = Random.Range(10,20);
 		Follower = transform;
 		PrevSpeed = speed;
@@ -42,7 +41,7 @@ public class EnemyScript2 : MonoBehaviour {
 		
 		//if the distance gets within the chaseRange the follower will start following the player
 		if (distance <= chaseRange) {
-			
+			speed = PrevSpeed;
 			float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
 			
 			transform.eulerAngles = new Vector3 (0, 0, z);
@@ -50,18 +49,16 @@ public class EnemyScript2 : MonoBehaviour {
 			rigidbody2D.AddForce (gameObject.transform.up * speed);
 			
 			//if the enemy is close enough with a distance of 5 or less hit the player.
-			if (distance <= chaseRange - 5) {
-				//speed = 0;
-				return;
+			if (distance > chaseRange - 10) {
+				speed = 0;
+
 				// a simple boolean checking if the enemy can attack or not to provide delay
-				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0 && distance > standOffDistance) {
-					
+				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0 && distance > chaseRange - 10) {
+					speed = 0;
 					EnemyAttack ();
 					attackTime = Time.time + AttackDelay;
 					
-				} else {
-					speed = PrevSpeed;
-				}
+				} 
 				
 			} else {
 				return;
@@ -77,9 +74,10 @@ public class EnemyScript2 : MonoBehaviour {
 	
 	public void EnemyAttack() {
 
-		transform.Translate((player.position - transform.position).normalized * speed * Time.deltaTime);
+		//transform.Translate((player.position - transform.position).normalized * speed * Time.deltaTime);
 		
-		Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, Quaternion.LookRotation(player.position - transform.position));
+		Transform projectile = (Transform)Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, Quaternion.LookRotation(player.position - transform.position));
+
 	}
 	
 	
