@@ -43,16 +43,18 @@ public class EnemyScript : MonoBehaviour {
 		
 		//Updates constantly the distance between the follower and the player
 		distance = Vector3.Distance (Follower.position, player.position);
-		patrol ();
-		
+		if (distance > chaseRange) {
+						patrol ();
+				}
 		//if the distance gets within the chaseRange the follower will start following the player
 		if (distance <= chaseRange) {
+			;
 			
 			float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
 			
 			transform.eulerAngles = new Vector3 (0, 0, z);
 			
-			rigidbody2D.AddForce (gameObject.transform.up * speed);
+			rigidbody2D.AddForce(transform.up * speed);
 			
 			//if the enemy is close enough with a distance of 5 or less hit the player.
 			if (distance <= chaseRange - 15f) {
