@@ -39,6 +39,7 @@ public class TileStruct{
     public string WallTerrainType = "YellowCave";
     public string FloorTerrainType = "YellowCave";
 
+    public int SurroundingRocks = 0;
 
     public TerrainType terrainType;
     public DecorType DecorType = DecorType.None;

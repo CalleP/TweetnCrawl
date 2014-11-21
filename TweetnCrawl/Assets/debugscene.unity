@@ -125,6 +125,14 @@ Prefab:
       propertyPath: m_Name
       value: EastMap
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: colliderContainer
+      value: 
+      objectReference: {fileID: 786841135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
   m_RootGameObject: {fileID: 1157340190}
@@ -629,6 +637,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
 --- !u!4 &325165671
 Transform:
   m_ObjectHideFlags: 0
@@ -692,6 +702,14 @@ Prefab:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: colliderContainer
+      value: 
+      objectReference: {fileID: 786841135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
   m_RootGameObject: {fileID: 1421592417}
@@ -941,6 +959,14 @@ Prefab:
       propertyPath: m_Name
       value: SouthMap
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: colliderContainer
+      value: 
+      objectReference: {fileID: 786841135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
   m_RootGameObject: {fileID: 325165669}
@@ -1168,6 +1194,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
 --- !u!4 &1157340192
 Transform:
   m_ObjectHideFlags: 0
@@ -1331,6 +1359,14 @@ Prefab:
       propertyPath: m_Name
       value: NorthMap
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: colliderContainer
+      value: 
+      objectReference: {fileID: 786841135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
   m_RootGameObject: {fileID: 1436754456}
@@ -1371,6 +1407,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
 --- !u!4 &1421592419
 Transform:
   m_ObjectHideFlags: 0
@@ -1418,6 +1456,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
 --- !u!4 &1436754458
 Transform:
   m_ObjectHideFlags: 0
@@ -1465,6 +1505,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
 --- !u!4 &1659050255
 Transform:
   m_ObjectHideFlags: 0
@@ -1732,6 +1774,8 @@ MonoBehaviour:
   EndPointX: 0
   EndPointY: 0
   count: 0
+  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
+  colliderContainer: {fileID: 786841135}
   Username: 
   UserID: 
   friends: []
@@ -1745,9 +1789,8 @@ MonoBehaviour:
   SouthToWest: 0
   EastToSouth: 0
   started: 0
+  MainHub: 1
   player: {fileID: 316957756}
-  collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
-  colliderContainer: {fileID: 786841135}
 --- !u!4 &2014471615
 Transform:
   m_ObjectHideFlags: 0
@@ -1811,6 +1854,14 @@ Prefab:
       propertyPath: m_Name
       value: CenterMap
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: colliderContainer
+      value: 
+      objectReference: {fileID: 786841135}
+    - target: {fileID: 11400000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afe5c08f2ec5bf4ab267ad22af746ea, type: 2}
   m_RootGameObject: {fileID: 1659050253}

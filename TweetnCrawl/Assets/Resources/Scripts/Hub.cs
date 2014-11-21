@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
 
 public class Hub :TileMap {
 
@@ -17,7 +19,7 @@ public class Hub :TileMap {
     public TileMap EastMap;
     public TileMap CenterMap;
 
-
+    
 
     public TileStruct[][] FullMap;
 
@@ -31,9 +33,17 @@ public class Hub :TileMap {
     private int originalLength;
 
 
+    private float loadingTimer = 5f;
+
+    public bool MainHub;
+
 	public override void Start () {
-        
-        base.Start();
+
+        if (!MainHub)
+        {
+            base.Start();
+        }
+
 
 
 
@@ -86,8 +96,15 @@ public class Hub :TileMap {
 
 
         //DrawMap(arr);
-        PreInstantiateColliders();
 
+
+
+        if (MainHub)
+        {
+            PreInstantiateAll();
+        }
+
+        
 
         ObjectPlacer.testStart();
 
@@ -96,7 +113,10 @@ public class Hub :TileMap {
 	}
 	
 	// Update is called once per frame
+
+    private float time;
     public GameObject player;
+    
     void Update () 
     {
         var playerX = TileStruct.UnityUnitToTileUnit(player.transform.position.x);
@@ -107,36 +127,72 @@ public class Hub :TileMap {
         int North = NorthMap.GetTileData(0, NorthMap.Height / 2).Y;
         int South = SouthMap.GetTileData(0, SouthMap.Height / 2).Y;
 
-        if (playerX > East)
+        if (time <= Time.time)
         {
-            StepRight();
-            player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(West), player.transform.position.y, player.transform.position.z);
-            ClearColliders();
-            PreInstantiateColliders();
-        }
-        else if (playerX < West)
-        {
-            StepLeft();
-            player.transform.position = new Vector3(TileStruct.TileUnityToUnityUnit(East), player.transform.position.y, player.transform.position.z);
-            ClearColliders();
-            PreInstantiateColliders();
-            
-        }
+            if (playerX > East)
+            {
+                //Time.timeScale = 0;
+                Thread thread = new Thread(StepRight);
+                thread.Start();
+                //StepRight();
+                RelocateAll(direction.left);
 
-        if (playerY > North)
-        {
-            StepUp();
-            player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(South), player.transform.position.z);
-            ClearColliders();
-            PreInstantiateColliders();
+                //ClearColliders();
+                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                Time.timeScale = 1;
+                time = Time.time + loadingTimer;
+
+            }
+            else if (playerX < West)
+            {
+
+                //Time.timeScale = 0;
+                Thread thread = new Thread(StepLeft);
+                thread.Start();
+                //StepLeft();
+                RelocateAll(direction.right);
+
+                //ClearColliders();
+
+                StartCoroutine("WaitForThreadThenInstantiate", thread);
+
+
+                Time.timeScale = 1;
+                time = Time.time + loadingTimer;
+            }
+
+            if (playerY > North)
+            {
+                //Time.timeScale = 0;
+                Thread thread = new Thread(StepUp);
+                thread.Start();
+                //StepUp();
+
+                RelocateAll(direction.down);
+
+                //ClearColliders();
+                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                Time.timeScale = 1;
+                time = Time.time + loadingTimer;
         
-        }
-        else if (playerY < South)
-        {
-            StepDown();
-            player.transform.position = new Vector3(player.transform.position.x, TileStruct.TileUnityToUnityUnit(North), player.transform.position.z);
-            ClearColliders();
-            PreInstantiateColliders();
+            }
+            else if (playerY < South)
+            {
+                //Time.timeScale = 0;
+                Thread thread = new Thread(StepDown);
+                thread.Start();
+                //StepDown();
+
+                RelocateAll(direction.up);
+
+                //ClearColliders();
+                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                
+
+                //PreInstantiateAll();
+                Time.timeScale = 1;
+                time = Time.time + loadingTimer;
+            }
         }
 
         if (Input.GetKey(KeyCode.K))
@@ -154,9 +210,21 @@ public class Hub :TileMap {
 
         }
 
+        
+            
+            
+    }
 
+    IEnumerator WaitForThreadThenInstantiate(Thread thread)
+    {
+        while(thread.IsAlive)
+        {
             
-            
+            yield return new WaitForSeconds(.1f);
+        }
+        PreInstantiateAll();
+        yield return null;
+        
     }
 
 
@@ -165,7 +233,7 @@ public class Hub :TileMap {
 
     public void StepUp()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
@@ -176,15 +244,14 @@ public class Hub :TileMap {
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(CenterMap.map, newHub(CenterMap));
 
-        RelocateAll(direction.down);
 
-        Time.timeScale = 1;
+
 
     }
 
     public void StepDown()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
@@ -194,9 +261,7 @@ public class Hub :TileMap {
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
 
-        RelocateAll(direction.up);
 
-        Time.timeScale = 1;
 
 
 
@@ -204,7 +269,7 @@ public class Hub :TileMap {
 
     public void StepLeft()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         CopyWithStartPoints(EastMap, WestMap);
 
@@ -213,14 +278,13 @@ public class Hub :TileMap {
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
 
-        RelocateAll(direction.right);
 
-        Time.timeScale = 1;
+
     }
 
     public void StepRight()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         CopyWithStartPoints(WestMap, EastMap);
         Copy(EastMap.map, newMap(EastMap));
@@ -228,11 +292,8 @@ public class Hub :TileMap {
         Copy(SouthMap.map, newMap(SouthMap));
         Copy(CenterMap.map, newHub(CenterMap));
 
-        RelocateAll(direction.left);
 
-        Time.timeScale = 1;
 
-        
                 
     //
     }
@@ -250,7 +311,8 @@ public class Hub :TileMap {
         {
             projectile.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
-
+        
+        player.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         Camera.main.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
     }
 
@@ -469,6 +531,7 @@ public class Hub :TileMap {
         
     //}
 
+
     public void CopyWithStartPoints(TileMap target, TileMap template)
     {
         Copy(target.map, template.map);
@@ -479,41 +542,7 @@ public class Hub :TileMap {
     
     }
 
-    public GameObject collider;
 
-    public GameObject colliderContainer;
-    public void PreInstantiateColliders()
-    {
-
-        for (int y = 0; y < map.Length; y++)
-        {
-            for (int x = 0; x < map[0].Length; x++)
-            {
-                TileStruct currentTile = GetTileData(x, y);
-                if (currentTile.Type == TileType.Rock) 
-                {
-                    int surroundingTiles = 0;
-
-                    var x2 = currentTile.X;
-                    var y2 = currentTile.Y;
-
-                    if (GetTileData(x2 - 1, y2).Type == TileType.Rock) { surroundingTiles++; };
-
-                    if (GetTileData(x2 + 1, y2).Type == TileType.Rock) { surroundingTiles++; }
-                    if (GetTileData(x2, y2 + 1).Type == TileType.Rock) { surroundingTiles++; }
-                    if (GetTileData(x2, y2 - 1).Type == TileType.Rock) { surroundingTiles++; }
-
-
-                    if (surroundingTiles != 4)
-                    {
-                        GameObject coll = (GameObject)Instantiate(collider, new Vector3(currentTile.X*3.2f, currentTile.Y*3.2f, 0), Quaternion.identity);
-                        coll.transform.parent = colliderContainer.transform;
-
-                    }
-                }
-            }
-        }
-    }
 
     public void ClearColliders()
     {
@@ -523,6 +552,15 @@ public class Hub :TileMap {
 
     }
 
+
+    public void PreInstantiateAll()
+    {
+        NorthMap.PreInstantiateColliders();
+        SouthMap.PreInstantiateColliders();
+        CenterMap.PreInstantiateColliders();
+        WestMap.PreInstantiateColliders();
+        EastMap.PreInstantiateColliders();
+    }
 
 
     public void SwapVertical()

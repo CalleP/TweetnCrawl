@@ -23,13 +23,29 @@ public class TileMap : MonoBehaviour {
     public int EndPointY;
 
 
+    private List<GameObject> colliders = new List<GameObject>();
+
+
 	public virtual void Start () {
+
+
+
 
         map = new TileStruct[Height][];
         for (int i = 0; i < map.Length; i++)
         {
             map[i] = new TileStruct[Width];
         }
+
+
+        for (int i = 0; i < 750; i++)
+        {
+            GameObject coll = (GameObject)Instantiate(collider, new Vector3(0, 0, 0), Quaternion.identity);
+            coll.transform.parent = colliderContainer.transform;
+            colliders.Add(coll);
+        }
+
+
     }
 	
 	void Update () {
@@ -612,6 +628,102 @@ public class TileMap : MonoBehaviour {
         }
 
 
+    }
+
+
+
+    public GameObject collider;
+
+    private int previousColliderArraySize = 0;
+
+    public GameObject colliderContainer;
+    public void PreInstantiateColliders()
+    {
+        float time2 = 0f;
+        float time3 = 0f;
+        float btime2 = 0f;
+        float btime3 = 0f;
+
+
+        var vector3 = new Vector3(0, 0, 0);
+
+
+        btime2 = Time.realtimeSinceStartup;
+        int count = 0;
+        for (int y = 0; y < map.Length; y++)
+        {
+            for (int x = 0; x < map[0].Length; x++)
+            {
+                btime2 += Time.realtimeSinceStartup;
+                TileStruct currentTile = GetTileData(x, y);
+                if (currentTile.Type == TileType.Rock)
+                {
+
+
+                    int surroundingTiles = 0;
+
+                    var x2 = x;
+                    var y2 = y;
+
+
+
+
+                    if (GetTileData(x2 - 1, y2).Type == TileType.Rock) { surroundingTiles++; };
+
+                    if (GetTileData(x2 + 1, y2).Type == TileType.Rock) { surroundingTiles++; }
+                    if (GetTileData(x2, y2 + 1).Type == TileType.Rock) { surroundingTiles++; }
+                    if (GetTileData(x2, y2 - 1).Type == TileType.Rock) { surroundingTiles++; }
+
+
+                    if (surroundingTiles != 4)
+                    {
+
+
+                        //time3 = Time.realtimeSinceStartup;
+
+                        vector3.x = currentTile.X * 3.2f;
+                        vector3.y = currentTile.Y * 3.2f;
+                        try
+                        {
+                            colliders[count].transform.position = vector3;
+                        }
+                        catch (Exception)
+                        {
+                            
+                            throw;
+                        }
+                        
+
+                        //btime3 = Time.realtimeSinceStartup;
+
+
+                        count++;
+
+                    }
+
+                }
+                time2 += Time.realtimeSinceStartup;
+            }
+
+        }
+
+
+
+        btime3 = Time.realtimeSinceStartup;
+        int unchangedValues = previousColliderArraySize - count;
+
+        var vector = new Vector3(0, 0, 0);
+        for (int i = 0; i < unchangedValues; i++)
+        {
+            colliders[count + i].transform.position = vector;
+        }
+
+        time3 = Time.realtimeSinceStartup;
+
+        previousColliderArraySize = count;
+
+        Debug.Log("Debug2:" + (time3 - btime3));
+        Debug.Log("Debug1:" + ((time2 - btime2) / (map.Length * map[0].Length)));
     }
 
 }

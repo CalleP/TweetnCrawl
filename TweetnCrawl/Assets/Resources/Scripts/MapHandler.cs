@@ -491,22 +491,38 @@ public class MapHandler
 
             foreach (var x2 in y2)
             {
+                int surroundingRocks = 0;
                 int surroundingTiles = 0;
                 var currentTile = x2;
                 var x = currentTile.X;
                 var y = currentTile.Y;
 
-                if (GetTileData(map, x - 1, y).Type == TileType.Dirt) { surroundingTiles++; };
+                var left = GetTileData(map, x - 1, y);
+                var right = GetTileData(map, x + 1, y);
+                var up = GetTileData(map, x, y + 1);
+                var down = GetTileData(map, x, y - 1);
 
-                if (GetTileData(map, x + 1, y).Type == TileType.Dirt) { surroundingTiles++; }
-                if (GetTileData(map, x, y + 1).Type == TileType.Dirt) { surroundingTiles++; }
-                if (GetTileData(map, x, y - 1).Type == TileType.Dirt) { surroundingTiles++; }
+
+                if (left.Type == TileType.Dirt) { surroundingTiles++; };
+
+                if (right.Type == TileType.Dirt) { surroundingTiles++; }
+                if (up.Type == TileType.Dirt) { surroundingTiles++; }
+                if (down.Type == TileType.Dirt) { surroundingTiles++; }
 
                 if (surroundingTiles == 3 && currentTile.Type == TileType.Rock)
                 {
                     currentTile.Type = TileType.Dirt;
 
                 }
+
+
+                if (left.Type == TileType.Rock) { surroundingRocks++; };
+
+                if (right.Type == TileType.Rock) { surroundingRocks++; }
+                if (up.Type == TileType.Rock) { surroundingRocks++; }
+                if (down.Type == TileType.Rock) { surroundingRocks++; }
+                currentTile.SurroundingRocks = surroundingRocks;
+
             }
         }
 
