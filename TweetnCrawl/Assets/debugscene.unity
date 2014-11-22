@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 100
   Width: 30
   StartPointX: 0
@@ -1187,6 +1188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 30
   Width: 100
   StartPointX: 0
@@ -1400,6 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 30
   Width: 100
   StartPointX: 0
@@ -1449,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 100
   Width: 30
   StartPointX: 0
@@ -1498,6 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8809a97fc440e4188e423b4ff91187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 30
   Width: 30
   StartPointX: 0
@@ -1767,6 +1772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8856dc8753ca9964ba003cff239faddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hashtag: granat
   Height: 30
   Width: 30
   StartPointX: 0
@@ -1776,8 +1782,6 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
-  Username: 
-  UserID: 
   friends: []
   test: 0
   NorthMap: {fileID: 1436754457}

@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 21300032, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
   - {fileID: 21300034, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
   DeathAfterLastFrame: 0
+  PlayOnAwake: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +118,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3083005a138e3b44d8c625bbfe7d8292, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

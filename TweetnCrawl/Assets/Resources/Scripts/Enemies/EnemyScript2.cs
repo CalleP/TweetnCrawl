@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class EnemyScript2 : BaseEnemy {
+
+	public Sprite IdleState1; //Enemy idlestate1
+	public Sprite IdleState2; //Enemy idleState2
 	
 	void Start() 
 	{

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyScript : BaseEnemy {
 
+	public Sprite IdleState1; //Enemy idlestate1
+	public Sprite IdleState2; //Enemy idleState2
+
 	void Start() 
 	{
 		baseReferences ();
@@ -10,6 +13,22 @@ public class EnemyScript : BaseEnemy {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (Time.time >= time)
+		{
+			if (state == true)
+			{
+				state = false;
+				//sr.sprite = IdleState1;
+				
+			}
+			else
+			{
+				state = true;
+				//sr.sprite = IdleState2;
+			}
+			time = Time.time + idleInterval;
+		}
 		//if the enemy followers health reaches 0 remove him from the game.
 		if (health <= 0) {
 			print ("Blaaah you killed me!");

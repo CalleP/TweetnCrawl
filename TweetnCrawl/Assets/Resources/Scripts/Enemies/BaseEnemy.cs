@@ -20,7 +20,11 @@ public class BaseEnemy : MonoBehaviour {
 	public bool waiting = false; //The boolean if the enemy has moved and is standing still true/false
 	public Vector3 randomPosition; //The position an enemy will randomly move to when patrolling
 	public Quaternion qTo; //Rotation reference
-	public Transform Projectile;
+	public Transform Projectile; //Enemy Projectiles
+	protected bool state = true; //which state is the enemy in
+	protected SpriteRenderer sr; //Renderer
+	public float idleInterval = 0.5f; //Sprite interval
+	protected float time; //Time
 
 	
 	//Method containing the basereferences for the enemies
