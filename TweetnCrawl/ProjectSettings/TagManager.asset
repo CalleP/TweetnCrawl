@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Projectile
   - Enemy2
+  - Splitter
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
