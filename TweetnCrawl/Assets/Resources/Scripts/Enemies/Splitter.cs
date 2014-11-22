@@ -17,6 +17,8 @@ public class Splitter : BaseEnemy {
 			print ("Split");
 			Instantiate(Resources.Load("Enemy"), transform.position, transform.rotation);  
 			Instantiate(Resources.Load("Enemy"), transform.position, transform.rotation);  
+			Instantiate(Resources.Load("Enemy"), transform.position, transform.rotation);  
+			Instantiate(Resources.Load("Enemy"), transform.position, transform.rotation);  
 			//Instantiate(Resources.Load("Enemy"), transform.position.y + 2, transform.rotation);
 			//Instantiate(Resources.Load("Enemy"), transform.position.y - 2, transform.rotation);
 			Destroy ((Follower as Transform).gameObject);
