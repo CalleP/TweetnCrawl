@@ -73,6 +73,7 @@ public class BaseEnemy : MonoBehaviour {
 	
 	
 	IEnumerator patrolUpdate() {
+		int randomWait = Random.Range (2, 6);
 		int	rotation = Random.Range (1,2);
 		randomPosition = new Vector3 (transform.position.x + Random.Range( 10f,-10f ), transform.position.y + Random.Range( 8f, -8f ), 0f);
 		if(rotation == 1) {
@@ -81,7 +82,7 @@ public class BaseEnemy : MonoBehaviour {
 			qTo = Quaternion.Euler(new Vector3(0.0f,0.0f,Random.Range(-90.0f, 180.0f)));  
 		}
 		waiting = true;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(randomWait);
 		waiting = false;
 		
 	}
