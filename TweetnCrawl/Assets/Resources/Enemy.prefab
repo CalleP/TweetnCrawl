@@ -17,6 +17,7 @@ GameObject:
   - 82: {fileID: 8200004}
   - 82: {fileID: 8200006}
   - 82: {fileID: 8200008}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -370,9 +371,38 @@ MonoBehaviour:
   distance: 0
   health: 100
   PrevSpeed: 0
-  CanAttack: 1
   ch: {fileID: 0}
+  attackTime: 0
+  AttackDelay: 1
+  rotationSpeed: 50
+  rotationTime: 5
   jab: {fileID: 8300000, guid: 924f7e9d3309da44084f08f05ce244a4, type: 3}
+  patrolspeed: 5
+  waiting: 0
+  randomPosition: {x: 0, y: 0, z: 0}
+  qTo: {x: 0, y: 0, z: 0, w: 0}
+  Projectile: {fileID: 0}
+  idleInterval: .5
+  IdleState1: {fileID: 0}
+  IdleState2: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab295b6504ae347a52e592814bedb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 1
+  interval: .5
+  sprites:
+  - {fileID: 21300004, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
+  - {fileID: 21300004, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
+  DeathAfterLastFrame: 0
+  PlayOnAwake: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
