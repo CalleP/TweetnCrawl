@@ -11,8 +11,8 @@ public class EnemyScript : BaseEnemy {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-
+	
+		Flip ();
 		//if the enemy followers health reaches 0 remove him from the game.
 		if (health <= 0) {
 			print ("Blaaah you killed me!");

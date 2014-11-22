@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.3576241, y: 44.5544243, z: -.0078125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -383,8 +383,6 @@ MonoBehaviour:
   qTo: {x: 0, y: 0, z: 0, w: 0}
   Projectile: {fileID: 0}
   idleInterval: .5
-  IdleState1: {fileID: 0}
-  IdleState2: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -25,6 +25,7 @@ public class BaseEnemy : MonoBehaviour {
 	protected SpriteRenderer sr; //Renderer
 	public float idleInterval = 0.5f; //Sprite interval
 	protected float time; //Time
+	protected float _posX;
 
 	
 	//Method containing the basereferences for the enemies
@@ -36,8 +37,11 @@ public class BaseEnemy : MonoBehaviour {
 		speed = Random.Range(10,20); //Randomizes the enemy's speed of a value between 10-20
 		Follower = transform; //References the Enemy
 		PrevSpeed = speed; //Stores the speed if we need to resume that speed later.
-
+		rigidbody2D.fixedAngle = true;
+		_posX = transform.position.x;
 		}
+
+
 	//Method dealing damage to the enemies
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
@@ -98,6 +102,23 @@ public class BaseEnemy : MonoBehaviour {
 		//rigidbody2D.AddForce(transform.up * speed);
 		transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 	}
+
+	public void Flip() {
+		if (transform.position.x < _posX)
+		{
+		
+				transform.eulerAngles = new Vector3(0, 0, 0);
+		
+		}
+		else
+		{
+		
+				transform.eulerAngles = new Vector3(0,180,0);
+		
+		}
+		
+		_posX = transform.position.x;
+		}
 	
 
 
