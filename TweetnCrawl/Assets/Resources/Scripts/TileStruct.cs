@@ -52,6 +52,16 @@ public class TileStruct{
     //remove when finished testing
     public int test = 0;
 
+
+    public TileStruct(int x, int y, TileType type, TerrainType terrainType, DecorType decor)
+    {
+        this.DecorType = decor;
+        SetBoth(terrainType);
+        this.X = x;
+        this.Y = y;
+        this.Type = type;
+    }
+
     public TileStruct(int x, int y, TileType type, TerrainType terrainType)
     {
         SetBoth(terrainType);

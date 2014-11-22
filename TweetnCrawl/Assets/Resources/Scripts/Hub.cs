@@ -119,6 +119,42 @@ public class Hub :TileMap {
     
     void Update () 
     {
+
+        if (transition)
+        {
+                    RelocateAll(transitionDir);        
+                    transition = false;
+
+                    switch (transitionDir)
+                    {
+                        case direction.up:
+                            NorthMap.PreInstantiateColliders();
+                            break;
+                        case direction.down:
+                            SouthMap.PreInstantiateColliders();
+                            break;
+                        case direction.left:
+                            WestMap.PreInstantiateColliders();
+                            break;
+                        case direction.right:
+                            EastMap.PreInstantiateColliders();
+                            break;
+                        default:
+                            break;
+                    }
+
+        }
+
+        if (mapGenComplete)
+        {
+
+            PreInstantiateAll();
+            mapGenComplete = false;
+
+
+
+        }
+
         var playerX = TileStruct.UnityUnitToTileUnit(player.transform.position.x);
         var playerY = TileStruct.UnityUnitToTileUnit(player.transform.position.y);
 
@@ -135,10 +171,9 @@ public class Hub :TileMap {
                 Thread thread = new Thread(StepRight);
                 thread.Start();
                 //StepRight();
-                RelocateAll(direction.left);
 
                 //ClearColliders();
-                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.left));
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
 
@@ -150,11 +185,11 @@ public class Hub :TileMap {
                 Thread thread = new Thread(StepLeft);
                 thread.Start();
                 //StepLeft();
-                RelocateAll(direction.right);
+
 
                 //ClearColliders();
 
-                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.right));
 
 
                 Time.timeScale = 1;
@@ -163,35 +198,39 @@ public class Hub :TileMap {
 
             if (playerY > North)
             {
+                
                 //Time.timeScale = 0;
                 Thread thread = new Thread(StepUp);
                 thread.Start();
                 //StepUp();
 
-                RelocateAll(direction.down);
 
                 //ClearColliders();
-                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.down));
+                
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
         
             }
             else if (playerY < South)
             {
+                
                 //Time.timeScale = 0;
                 Thread thread = new Thread(StepDown);
                 thread.Start();
                 //StepDown();
 
-                RelocateAll(direction.up);
+
 
                 //ClearColliders();
-                StartCoroutine("WaitForThreadThenInstantiate", thread);
+                StartCoroutine(WaitForThreadInstantiateRelocate(thread,direction.up));
                 
 
                 //PreInstantiateAll();
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
+
+
             }
         }
 
@@ -215,14 +254,23 @@ public class Hub :TileMap {
             
     }
 
-    IEnumerator WaitForThreadThenInstantiate(Thread thread)
+    direction transitionDir;
+    bool transition = false;
+    IEnumerator WaitForThreadInstantiateRelocate(Thread thread,direction relocationDir)
     {
-        while(thread.IsAlive)
+        transitionDir = relocationDir;
+        while (!transition)
         {
             
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.00001f);
         }
-        PreInstantiateAll();
+
+   
+        //Camera.main.transform.Relocate(relocationDir, WestMap.Width, NorthMap.Height, WestMap.Height);
+        //RelocateAll(relocationDir);
+        //PreInstantiateAll();
+        
+
         yield return null;
         
     }
@@ -230,38 +278,55 @@ public class Hub :TileMap {
 
 
 
-
+    private bool mapGenComplete = false;
     public void StepUp()
     {
         //Time.timeScale = 0;
+
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
         //Copy(SouthMap.map, newMap(SouthMap));
-        CopyWithStartPoints(SouthMap, NorthMap);
 
+
+
+        //TODO: Clone, statement needs to be the last statement
+        CopyWithStartPoints(SouthMap, NorthMap);
+        transition = true;
+
+        //center map should probably be run on a seperate thread as well
         Copy(NorthMap.map, newMap(NorthMap));
+        
         Copy(CenterMap.map, newHub(CenterMap));
 
-
-
+        mapGenComplete = true;
 
     }
 
     public void StepDown()
     {
+
+
+
         //Time.timeScale = 0;
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
+
         CopyWithStartPoints(NorthMap, SouthMap);
 
+
+        transition = true;
+
+
+
         Copy(SouthMap.map, newMap(SouthMap));
+
         Copy(CenterMap.map, newHub(CenterMap));
 
-
+        mapGenComplete = true;
 
 
 
@@ -270,15 +335,17 @@ public class Hub :TileMap {
     public void StepLeft()
     {
         //Time.timeScale = 0;
+        Debug.Log("stepping left");
 
-        CopyWithStartPoints(EastMap, WestMap);
-
-        Copy(WestMap.map, newMap(WestMap));
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
+
+        CopyWithStartPoints(EastMap, WestMap);
+        transition = true;
+
+        Copy(WestMap.map, newMap(WestMap));
         Copy(CenterMap.map, newHub(CenterMap));
-
-
+        mapGenComplete = true;
 
     }
 
@@ -286,20 +353,48 @@ public class Hub :TileMap {
     {
         //Time.timeScale = 0;
 
-        CopyWithStartPoints(WestMap, EastMap);
-        Copy(EastMap.map, newMap(EastMap));
+
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
+
+
+
+        
+        //Copy(EastMap.map, newMap(EastMap));
+
+        CopyWithStartPoints(WestMap, EastMap);
+        transition = true;
+
+        Copy(EastMap.map, newMap(EastMap));
         Copy(CenterMap.map, newHub(CenterMap));
 
-
-
+        mapGenComplete = true;
                 
     //
     }
 
+    private TileStruct[][] clone(TileStruct[][] map)
+    {
+        var newMap = new TileStruct[map.Length][];
+        for (int y = 0; y < map.Length; y++)
+        {
+            newMap[y] = new TileStruct[map[0].Length];
+            for (int x = 0; x < map[0].Length; x++)
+            {
+                var currentTile = map[y][x];
+                newMap[y][x] = new TileStruct(currentTile.X, currentTile.Y, currentTile.Type, currentTile.terrainType, currentTile.DecorType);
+            }
+        }
+        return newMap;
+    }
+
+    
+
     public void RelocateAll(direction direction)
     {
+        player.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        Camera.main.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
 
@@ -312,8 +407,7 @@ public class Hub :TileMap {
             projectile.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
         
-        player.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
-        Camera.main.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+
     }
 
 
@@ -542,6 +636,18 @@ public class Hub :TileMap {
     
     }
 
+    public void CopyWithStartPoints(TileMap target, TileStruct[][] template, int startX, int startY, int endX, int endY)
+    {
+        Copy(target.map, template);
+        target.StartPointX = startX;
+        target.StartPointY = startY;
+        target.EndPointX = endX;
+        target.EndPointY = endY;
+
+    }
+
+
+
 
 
     public void ClearColliders()
@@ -573,5 +679,7 @@ public class Hub :TileMap {
 
     
     }
+
+
 
 }

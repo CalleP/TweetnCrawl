@@ -26,6 +26,11 @@ public class TileMap : MonoBehaviour {
     private List<GameObject> colliders = new List<GameObject>();
 
 
+    /// <summary>
+    /// Work around constructor DO NOT USE
+    /// </summary>
+
+
 	public virtual void Start () {
 
 
@@ -428,33 +433,33 @@ public class TileMap : MonoBehaviour {
             for (int i = distance; i <= 0; i++)
             {
                 x = GetTileData(location.X+i, location.Y);
-                x.SetBoth(TerrainType.BlackCaste);
+                x.SetBoth(TerrainType.BlackCave);
                 x.Type = TileType.Dirt;
 
                 var downWalls = GetTileData(location.X + i, location.Y-1);
-                downWalls.SetBoth(TerrainType.BlackCaste);
+                downWalls.SetBoth(TerrainType.BlackCave);
                 downWalls.Type = TileType.Rock;
                 var upWalls = GetTileData(location.X + i, location.Y+1);
-                upWalls.SetBoth(TerrainType.BlackCaste);
+                upWalls.SetBoth(TerrainType.BlackCave);
                 upWalls.Type = TileType.Rock;
 
 
                 if (i == 0)
                 {
                     var Wall = GetTileData(location.X + i + 1, location.Y);
-                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.SetBoth(TerrainType.BlackCave);
                     Wall.Type = TileType.Dirt;
 
                     Wall = GetTileData(location.X + i +1, location.Y-1);
-                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.SetBoth(TerrainType.BlackCave);
                     Wall.Type = TileType.Dirt;
 
                     Wall = GetTileData(location.X + i + 1, location.Y + 1);
-                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.SetBoth(TerrainType.BlackCave);
                     Wall.Type = TileType.Dirt;
 
                     Wall = GetTileData(location.X + i + 2, location.Y);
-                    Wall.SetBoth(TerrainType.BlackCaste);
+                    Wall.SetBoth(TerrainType.BlackCave);
                     Wall.Type = TileType.Dirt;
 
                     //Wall = GetTileData(location.X + i + 1, location.Y +1);
@@ -639,22 +644,17 @@ public class TileMap : MonoBehaviour {
     public GameObject colliderContainer;
     public void PreInstantiateColliders()
     {
-        float time2 = 0f;
-        float time3 = 0f;
-        float btime2 = 0f;
-        float btime3 = 0f;
 
 
         var vector3 = new Vector3(0, 0, 0);
 
 
-        btime2 = Time.realtimeSinceStartup;
         int count = 0;
         for (int y = 0; y < map.Length; y++)
         {
             for (int x = 0; x < map[0].Length; x++)
             {
-                btime2 += Time.realtimeSinceStartup;
+
                 TileStruct currentTile = GetTileData(x, y);
                 if (currentTile.Type == TileType.Rock)
                 {
@@ -702,14 +702,12 @@ public class TileMap : MonoBehaviour {
                     }
 
                 }
-                time2 += Time.realtimeSinceStartup;
+
             }
 
         }
 
 
-
-        btime3 = Time.realtimeSinceStartup;
         int unchangedValues = previousColliderArraySize - count;
 
         var vector = new Vector3(0, 0, 0);
@@ -718,12 +716,11 @@ public class TileMap : MonoBehaviour {
             colliders[count + i].transform.position = vector;
         }
 
-        time3 = Time.realtimeSinceStartup;
+
 
         previousColliderArraySize = count;
 
-        Debug.Log("Debug2:" + (time3 - btime3));
-        Debug.Log("Debug1:" + ((time2 - btime2) / (map.Length * map[0].Length)));
+
     }
 
 }
