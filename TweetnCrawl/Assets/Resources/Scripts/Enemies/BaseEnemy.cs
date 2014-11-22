@@ -20,6 +20,7 @@ public class BaseEnemy : MonoBehaviour {
 	public bool waiting = false; //The boolean if the enemy has moved and is standing still true/false
 	Vector3 randomPosition; //The position an enemy will randomly move to when patrolling
 	Quaternion qTo; //Rotation reference
+	public Transform Projectile;
 
 
 	// Use this for initialization

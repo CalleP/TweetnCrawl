@@ -48,7 +48,7 @@ public class EnemyScript : MonoBehaviour {
 				}
 		//if the distance gets within the chaseRange the follower will start following the player
 		if (distance <= chaseRange) {
-			;
+
 			
 			float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
 			
