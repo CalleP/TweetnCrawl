@@ -193,9 +193,9 @@ public class TileStruct{
         return position * 3.2f;
     }
 
-    public static TerrainType getRandomTerrainType()
+    public static TerrainType getRandomTerrainType(int seed)
     {
-        System.Random random = new System.Random();
+        System.Random random = new System.Random(seed);
         Array values = Enum.GetValues(typeof(TerrainType));
         return (TerrainType)values.GetValue(random.Next(values.Length));
     }

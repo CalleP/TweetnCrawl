@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.Runtime;
 
 public class Hub :TileMap {
 
 
-    public string Username;
-    public string UserID;
+
+
 
     public string[] friends;
 
@@ -45,7 +46,9 @@ public class Hub :TileMap {
         }
 
 
+        Hashtag = "Koala";
 
+        NorthMap.Hashtag = "KKKKK";
 
         SouthMap.map = newMap(SouthMap);
         NorthMap.map = newMap(NorthMap);
@@ -262,7 +265,7 @@ public class Hub :TileMap {
         while (!transition)
         {
             
-            yield return new WaitForSeconds(.00001f);
+            yield return new WaitForSeconds(.01f);
         }
 
    
@@ -413,18 +416,30 @@ public class Hub :TileMap {
 
     public TileStruct[][] newMap(TileMap map)
     {
-        var gen = new MapHandler(map.Width, map.Height, 48, TileStruct.getRandomTerrainType());
+        var gen = new MapHandler(map.Width, map.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag + map.Hashtag)), stringToSeed(Hashtag + map.Hashtag));
         return gen.createMap(ref map.StartPointX, ref map.StartPointY, ref map.EndPointX, ref map.EndPointY);
     }
 
     public TileStruct[][] newHub(TileMap centerMap)
     {
 
-        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType());
+        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag)), stringToSeed(Hashtag));
         return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
     
     }
 
+    public int stringsToSeed(string first, string second)
+    {
+        return (first + second).GetHashCode();
+         
+    }
+    public int stringToSeed(string first)
+    {
+        return first.GetHashCode();
+
+    }
+
+    
 
     public void MergeHorizontal(TileStruct[][] map2, TileStruct[][] map1) {
         var outArr = new TileStruct[map1.Length][];

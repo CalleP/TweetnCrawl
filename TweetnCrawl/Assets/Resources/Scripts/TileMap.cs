@@ -9,7 +9,9 @@ using System.Linq;
 /// Class TileMap.
 /// </summary>
 public class TileMap : MonoBehaviour {
-    
+
+    public string Hashtag = "granat";
+
     public int Height = 20;
     public int Width  = 20;
     System.Random rand = new System.Random();
@@ -43,7 +45,7 @@ public class TileMap : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < 750; i++)
+        for (int i = 0; i < 1000; i++)
         {
             GameObject coll = (GameObject)Instantiate(collider, new Vector3(0, 0, 0), Quaternion.identity);
             coll.transform.parent = colliderContainer.transform;

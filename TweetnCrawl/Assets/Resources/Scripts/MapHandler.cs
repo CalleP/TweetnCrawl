@@ -15,9 +15,13 @@ public class MapHandler
     public int MapHeight { get; set; }
     public int PercentAreWalls { get; set; }
     public TerrainType TerrainType;
+    private int seed;
 
-    public MapHandler(int mapWidth, int mapHeight, int wallPercentage, TerrainType terrainType)
+    public MapHandler(int mapWidth, int mapHeight, int wallPercentage, TerrainType terrainType, int seed)
     {
+        this.seed = seed;
+        rand = new System.Random(seed);
+
         this.TerrainType = terrainType;
         MapWidth = mapWidth;
         MapHeight = mapHeight;
@@ -442,7 +446,7 @@ public class MapHandler
 
     public void Sprinkle(TileStruct[][] map, int percentage, DecorType decor)
     {
-        MapHandler handler = new MapHandler(MapWidth, MapHeight, percentage, TerrainType);
+        MapHandler handler = new MapHandler(MapWidth, MapHeight, percentage, TerrainType, seed);
         handler.BlankMap();
         handler.RandomFillMap();
 

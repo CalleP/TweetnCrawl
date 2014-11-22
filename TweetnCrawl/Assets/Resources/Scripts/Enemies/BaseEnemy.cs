@@ -43,7 +43,7 @@ public class BaseEnemy : MonoBehaviour {
 	//Shootattack for the enemies
 	public void shootAttack() {
 		
-		Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
+		//Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
 			
 	}
 	//MeleeAttack for the enemies
