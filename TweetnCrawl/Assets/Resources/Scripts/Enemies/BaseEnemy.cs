@@ -48,7 +48,7 @@ public class BaseEnemy : MonoBehaviour {
 
 	public void EnemyAttack() {
 		
-		Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
+		//Instantiate(Projectile, transform.position + (player.position - transform.position).normalized, transform.rotation);    
 			
 	}
 
