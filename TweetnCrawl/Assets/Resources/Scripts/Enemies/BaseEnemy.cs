@@ -4,17 +4,22 @@ using System.Collections;
 public class BaseEnemy : MonoBehaviour {
 
 	public float speed; //The speed of the enemy
-	public float chaseRange; //The range which the enemy chases the player
-	public Transform player; //Reference to the player
-	public Transform Follower; //Reference to the Enemy
+	public float chaseRange; //The chaserange of the enemy
+	public Transform player; //The reference to the player	
+	public Transform Follower; //The reference to the enemy
 	public float distance; //The distance between the player and the enemy
-	public int health = 100; //The health of the enemy
-	public float PrevSpeed; // stores the speed when speed is set to 0 and when you wish to return, prevspeed keeps the original speed given to the enemy
-	public CharacterHealth ch; //Reference to the player's health
-	double attackTime = 0.0; // Attacktime of the enemy
-	double AttackDelay = 1.0; // The cooldown of enemy's attack
-	public AudioClip jab; 
-	public Transform Projectile; 
+	public int health = 100; //The enemy's health
+	public float PrevSpeed; //The enemies speed stored when it needs to be restored to it's default value
+	public CharacterHealth ch; //Access to the players health
+	double attackTime = 0.0; //Enemy attacktime
+	double AttackDelay = 1.0; //Enemy attack cooldown
+	float rotationSpeed = 50f; //The speed of which an enemy rotates when patrolling
+	public float rotationTime = 5f; //The time it takes for the enemy to rotate
+	public AudioClip jab; //The enemy's attack sound
+	public float patrolspeed = 5; //The speed of which an enemy patrol at
+	public bool waiting = false; //The boolean if the enemy has moved and is standing still true/false
+	Vector3 randomPosition; //The position an enemy will randomly move to when patrolling
+	Quaternion qTo; //Rotation reference
 
 
 	// Use this for initialization
