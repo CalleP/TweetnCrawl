@@ -59,7 +59,7 @@ public class BaseProjectile : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            coll.GetComponent<EnemyScript>().receiveDamage(Damage);
+            coll.GetComponent<BaseEnemy>().receiveDamage(Damage);
             spawnDeathAnim();
             Destroy(gameObject);
             
@@ -72,13 +72,6 @@ public class BaseProjectile : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		if (coll.gameObject.tag == "Player")
-		{
-			coll.GetComponent<CharacterHealth>().receiveDamage(Damage);
-            spawnDeathAnim();
-            Destroy(gameObject);
-
-		}
 
         if (coll.gameObject.tag == "Wall")
         {
@@ -88,7 +81,7 @@ public class BaseProjectile : MonoBehaviour {
     }
 
     private static System.Random rand = new System.Random(); 
-    private void spawnDeathAnim()
+    protected void spawnDeathAnim()
     {
         if (onDeathPrefab != null)
         {
