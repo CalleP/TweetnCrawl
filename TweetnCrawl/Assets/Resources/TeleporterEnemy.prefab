@@ -16,11 +16,10 @@ GameObject:
   - 82: {fileID: 8200004}
   - 82: {fileID: 8200006}
   - 82: {fileID: 8200008}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  - 195: {fileID: 19500000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: RangedSplitter
+  m_Name: TeleporterEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.3576241, y: 44.5544243, z: -.0078125}
-  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -362,7 +361,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3741e0e1c0b8646833c11f1b08bb49, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aab295b6504ae347a52e592814bedb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 1
+  interval: .5
+  sprites:
+  - {fileID: 21300004, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
+  - {fileID: 21300004, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
+  DeathAfterLastFrame: 0
+  PlayOnAwake: 1
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcabd7b868feec4a8c92fe54f079fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
@@ -384,50 +401,11 @@ MonoBehaviour:
   qTo: {x: 0, y: 0, z: 0, w: 0}
   Projectile: {fileID: 100000, guid: 455387560834aff4c92a845abd1c5345, type: 2}
   idleInterval: .5
-  ProjectileSpeed: 40
+  ProjectileSpeed: 50
   ProjectileDamage: 5
   ProjectileSpread: 5
-  SpawnedEnemy: {fileID: 100000, guid: 82998a112b03a0444a5be6953d98068c, type: 2}
-  AmountOfSpawns: 4
-  SplitEffect: {fileID: 100000, guid: a540af7b1ec76a74186f9e6be97555bf, type: 2}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aab295b6504ae347a52e592814bedb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loop: 1
-  interval: .5
-  sprites:
-  - {fileID: 21300004, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
-  - {fileID: 21300004, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
-  DeathAfterLastFrame: 0
-  PlayOnAwake: 1
---- !u!195 &19500000
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Radius: .5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  TeleporterEffect: {fileID: 100000, guid: a0d075585c9082943aa8e7a54c1b3b70, type: 2}
+  TeleportCooldown: 4
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

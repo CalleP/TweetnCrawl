@@ -18,6 +18,12 @@ TextureImporter:
     21300026: EnemyHit2
     21300028: EnemyHit3
     21300030: EnemyHit4
+    21300032: SplitEffect1
+    21300034: SplitEffect2
+    21300036: SplitEffect3
+    21300038: Teleport1
+    21300040: Teleport2
+    21300042: Teleport3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -216,6 +222,66 @@ TextureImporter:
         y: 307
         width: 3
         height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplitEffect1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 66
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplitEffect2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 82
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplitEffect3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 98
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Teleport1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 133
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Teleport2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 150
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Teleport3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 169
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

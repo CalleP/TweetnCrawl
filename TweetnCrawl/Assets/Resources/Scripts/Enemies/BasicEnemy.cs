@@ -15,7 +15,7 @@ class BasicEnemy : BaseEnemy
     public int ProjectileDamage;
     public float ProjectileSpread;
 
-    private float time2;
+    protected float time2;
     void Start()
     {
 
@@ -39,54 +39,72 @@ class BasicEnemy : BaseEnemy
 		    }
 		
 		    //Updates constantly the distance between the follower and the player
-		    distance = Vector3.Distance (Follower.position, player.position);
+
 		
 
 
 		    //if the distance gets within the chaseRange the follower will start following the player
 
-            bool hitPlayer = false;
-            bool LOS = true;
 
-            var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
-            for (int i = 0; i < hits.Length; i++)
+
+            if (time2 <= Time.time)
             {
-                var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
-                if (hits[i].transform.gameObject.tag == "Player")
-                {
-                    hitPlayer = true;
-                }
-                else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
-	            {
-                    LOS = false;
-	            }
-
-
-
-
-
-
-
-
-            }
-            if (hitPlayer && LOS)
-            {
-                if (time2 <= Time.time)
+                if (isPlayerInLineOfSight())
                 {
                     ShootAtPlayer();
                     time2 = Time.time + (float)AttackDelay;
                 }
 
             }
-
-
     }
 
 
 
+    public override void patrol()
+    {
+        StartCoroutine(patrolUpdate());
+    }
+
+    protected bool isPlayerInLineOfSight()
+    {
+        distance = Vector3.Distance(Follower.position, player.position);
+        bool hitPlayer = false;
+        bool LOS = true;
+
+        var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
+            if (hits[i].transform.gameObject.tag == "Player")
+            {
+                hitPlayer = true;
+            }
+            else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
+            {
+                LOS = false;
+            }
+
+
+
+
+
+<<<<<<< HEAD
     public void patrol()
     {
         StartCoroutine(patrolUpdate());
+=======
+
+
+
+        }
+        if (hitPlayer && LOS)
+        {
+            return true;
+
+        }
+        return false;
+    
+>>>>>>> origin/master
     }
 
    protected virtual IEnumerator patrolUpdate()
