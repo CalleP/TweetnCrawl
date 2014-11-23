@@ -10,6 +10,8 @@ class RangedSplitter : BasicEnemy {
 
     public GameObject SpawnedEnemy;
     public int AmountOfSpawns;
+    public GameObject SplitEffect;
+    public float SplitDelay = 1f;
 	// Update is called once per frame
     public override void Update()
     {
@@ -20,8 +22,11 @@ class RangedSplitter : BasicEnemy {
         {
             print("Split");
 
-            Split();
-            Destroy((Follower as Transform).gameObject);
+            StartCoroutine(WaitAndSplit(SplitDelay));
+            var obj = (GameObject)Instantiate(SplitEffect, transform.position, Quaternion.identity);
+            obj.transform.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(0, 360)));
+
+
         }
 
     }
@@ -33,5 +38,15 @@ class RangedSplitter : BasicEnemy {
             Instantiate(SpawnedEnemy, transform.position, transform.rotation);
             
         }
+    }
+    public IEnumerator WaitAndSplit(float waitTime)
+    {
+
+        Split();
+        yield return new WaitForSeconds(waitTime);
+        
+        //Destroy((Follower as Transform).gameObject);
+        yield return null;
+
     }
 }

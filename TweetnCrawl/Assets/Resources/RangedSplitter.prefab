@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.3576241, y: 44.5544243, z: -.0078125}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -387,7 +387,8 @@ MonoBehaviour:
   ProjectileDamage: 5
   ProjectileSpread: 5
   SpawnedEnemy: {fileID: 100000, guid: 82998a112b03a0444a5be6953d98068c, type: 2}
-  AmountOfSpawns: 10
+  AmountOfSpawns: 4
+  SplitEffect: {fileID: 100000, guid: a540af7b1ec76a74186f9e6be97555bf, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
