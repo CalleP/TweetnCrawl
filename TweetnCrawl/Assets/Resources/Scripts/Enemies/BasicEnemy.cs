@@ -15,7 +15,7 @@ class BasicEnemy : BaseEnemy
     public int ProjectileDamage;
     public float ProjectileSpread;
 
-    private float time2;
+    protected float time2;
     void Start()
     {
 

@@ -28,6 +28,20 @@ public class ObjectPlacer : MonoBehaviour {
         return tile;
     }
 
+    public static TileStruct findAvailableCloseToPlayer(int maxDistance)
+    {
+        GameObject player = GameObject.Find("Player");
+        var playerTile = map.GetTileData((int)(player.transform.position.x / 3.2f), (int)(player.transform.position.y / 3.2f));
+        var tile = map.GetTileData(playerTile.X + Random.Range(-maxDistance, maxDistance), playerTile.Y + Random.Range(-maxDistance, maxDistance));
+        while (tile.Type != TileType.Dirt)
+        {
+            tile = map.GetTileData(playerTile.X + Random.Range(-maxDistance, maxDistance), playerTile.Y + Random.Range(-maxDistance, maxDistance));
+        }
+
+        return tile;
+    }
+
+
 
     public static void spawnObject(Object obj)
     {
@@ -45,11 +59,8 @@ public class ObjectPlacer : MonoBehaviour {
         Instantiate(Resources.Load("Splitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1f), Quaternion.identity);
         //Instantiate(Resources.Load("RangedSplitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1f), Quaternion.identity);
         Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
-        Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
-        Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
-        Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
-        Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
-        Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
+        Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(385, 385, -1f), Quaternion.identity);
+
     }
 
     public static void testStart()
