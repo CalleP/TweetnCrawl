@@ -43,6 +43,8 @@ MonoBehaviour:
   loop: 0
   interval: .200000003
   sprites:
+  - {fileID: 21300032, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
+  - {fileID: 21300034, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300036, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300034, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300032, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}

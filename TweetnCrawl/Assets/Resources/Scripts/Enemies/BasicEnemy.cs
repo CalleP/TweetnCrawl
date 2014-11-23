@@ -42,89 +42,75 @@ class BasicEnemy : BaseEnemy
 
         //Updates constantly the distance between the follower and the player
 
-		distance = Vector3.Distance (Follower.position, player.position);
-		if (distance > chaseRange) {
-			patrol ();
-		}
-		//if the distance gets within the chaseRange the follower will start following the player
-		if (distance <= chaseRange) {
-			
-			chase();
-			//if the enemy is close enough with a distance of 5 or less hit the player.
-			if (distance <= chaseRange - 25f) {
-				speed = 0;
-				
-				// a simple boolean checking if the enemy can attack or not to provide delay
-				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0) {
-					
-					ShootAtPlayer();
-					attackTime = Time.time + AttackDelay;
-					
-				} else {
-					speed = PrevSpeed;
-				}
-				
-			} else {
-				return;
-			}
-		} 
+
+        distance = Vector3.Distance(Follower.position, player.position);
+        randomPosition = new Vector3(transform.position.x + Random.Range(10f, -10f), transform.position.y + Random.Range(8f, -8f), 0f);
+
+		patrol ();
+		
 
 
         //if the distance gets within the chaseRange the follower will start following the player
 
 
 
-      //  if (time2 <= Time.time)
-       // {
-        //    if (isPlayerInLineOfSight())
-         //   {
-           //     ShootAtPlayer();
-             //   time2 = Time.time + (float)AttackDelay;
-          //  }
+        if (time2 <= Time.time)
+        {
+            if (isPlayerInLineOfSight())
+            {
+                ShootAtPlayer();
+                time2 = Time.time + (float)AttackDelay;
+            }
 
-      //  }
-   // }
-
-
-
-   // public override void patrol()
-    //{
-    //    StartCoroutine(patrolUpdate());
-    //}
-
-    //protected bool isPlayerInLineOfSight()
-    //{
-     //   distance = Vector3.Distance(Follower.position, player.position);
-      //  bool hitPlayer = false;
-       // bool LOS = true;
-
-        //var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
-        //for (int i = 0; i < hits.Length; i++)
-       // {
-        //    var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
-         //   if (hits[i].transform.gameObject.tag == "Player")
-          //  {
-           //     hitPlayer = true;
-           // }
-           // else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
-            //{
-             //   LOS = false;
-            //}
+        }
+    }
 
 
 
 
 
+    
+
+    public override void patrol()
+    {
+        StartCoroutine(patrolUpdate());
+    }
+
+    protected bool isPlayerInLineOfSight()
+    {
+        distance = Vector3.Distance(Follower.position, player.position);
+        bool hitPlayer = false;
+        bool LOS = true;
 
 
 
-      //  }
-       // if (hitPlayer && LOS)
-        //{
-         //   return true;
+        var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
+            if (hits[i].transform.gameObject.tag == "Player")
+            {
+                hitPlayer = true;
+            }
+            else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
+            {
+                LOS = false;
+            }
 
-        //}
-        //return false;
+
+
+
+
+
+
+
+        }
+        if (hitPlayer && LOS)
+        {
+            return true;
+
+        }
+        return false;
 
     }
 
