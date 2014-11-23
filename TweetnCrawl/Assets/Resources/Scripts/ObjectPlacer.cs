@@ -59,6 +59,7 @@ public class ObjectPlacer : MonoBehaviour {
         Instantiate(Resources.Load("Splitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1f), Quaternion.identity);
         //Instantiate(Resources.Load("RangedSplitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1f), Quaternion.identity);
         Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -1f), Quaternion.identity);
+        Instantiate(Resources.Load("HiveEnemy"), new Vector3(385, 385, -1f), Quaternion.identity);
         Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(385, 385, -1f), Quaternion.identity);
 
     }
