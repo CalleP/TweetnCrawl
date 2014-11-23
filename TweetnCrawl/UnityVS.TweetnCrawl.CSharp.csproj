@@ -66,6 +66,7 @@
     <Compile Include="Assets\Resources\Scripts\Enemies\BasicEnemy.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemies\EnemyScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemies\EnemyScript2.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemies\RangedSplitter.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemies\Splitter.cs" />
     <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Extensions.cs" />

@@ -27,7 +27,7 @@ class BasicEnemy : BaseEnemy
         
     }
 
-    void Update()
+    public virtual void Update()
     {
         Flip ();
 
