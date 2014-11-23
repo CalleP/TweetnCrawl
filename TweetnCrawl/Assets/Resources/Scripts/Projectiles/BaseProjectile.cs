@@ -71,6 +71,12 @@ public class BaseProjectile : MonoBehaviour {
 			spawnDeathAnim();
 			Destroy(gameObject);
 		}
+		if (coll.gameObject.tag == "Splitter")
+		{
+			coll.GetComponent<Splitter>().receiveDamage(Damage);
+			spawnDeathAnim();
+			Destroy(gameObject);
+		}
 
 
         if (coll.gameObject.tag == "Wall")
