@@ -24,38 +24,39 @@ class BasicEnemy : BaseEnemy
 
         patrol();
         speed = 0.3f;
-        
+
     }
 
     public virtual void Update()
     {
-        Flip ();
-
-  
-		    //if the enemy followers health reaches 0 remove him from the game.
-		    if (health <= 0) {
-			    print ("Blaaah you killed me!");
-			    Destroy ((Follower as Transform).gameObject);
-		    }
-		
-		    //Updates constantly the distance between the follower and the player
-
-		
+        Flip();
 
 
-		    //if the distance gets within the chaseRange the follower will start following the player
+        //if the enemy followers health reaches 0 remove him from the game.
+        if (health <= 0)
+        {
+            print("Blaaah you killed me!");
+            Destroy((Follower as Transform).gameObject);
+        }
+
+        //Updates constantly the distance between the follower and the player
 
 
 
-            if (time2 <= Time.time)
+
+        //if the distance gets within the chaseRange the follower will start following the player
+
+
+
+        if (time2 <= Time.time)
+        {
+            if (isPlayerInLineOfSight())
             {
-                if (isPlayerInLineOfSight())
-                {
-                    ShootAtPlayer();
-                    time2 = Time.time + (float)AttackDelay;
-                }
-
+                ShootAtPlayer();
+                time2 = Time.time + (float)AttackDelay;
             }
+
+        }
     }
 
 
@@ -88,11 +89,6 @@ class BasicEnemy : BaseEnemy
 
 
 
-<<<<<<< HEAD
-    public void patrol()
-    {
-        StartCoroutine(patrolUpdate());
-=======
 
 
 
@@ -103,13 +99,12 @@ class BasicEnemy : BaseEnemy
 
         }
         return false;
-    
->>>>>>> origin/master
+
     }
 
-   protected virtual IEnumerator patrolUpdate()
+    protected override IEnumerator patrolUpdate()
     {
- 
+
         while (true)
         {
             float randomWait = Random.Range(2f, 3f);
@@ -124,12 +119,12 @@ class BasicEnemy : BaseEnemy
 
     }
 
-   private Vector3 point; 
+    private Vector3 point;
 
-   public void MoveToPoint()
-   {
-       rigidbody2D.MovePosition(transform.position + point);// = Vector3.MoveTowards(transform.position, point, speed);
-   }
+    public void MoveToPoint()
+    {
+        rigidbody2D.MovePosition(transform.position + point);// = Vector3.MoveTowards(transform.position, point, speed);
+    }
 
 
     public void ShootAtPlayer()
@@ -143,7 +138,7 @@ class BasicEnemy : BaseEnemy
         playerPos.y = playerPos.y - objectPos.y;
         var angle = Mathf.Atan2(playerPos.y, playerPos.x) * Mathf.Rad2Deg;
 
-        Quaternion outRotation = Quaternion.Euler(new Vector3(0, 0, angle-Random.Range(-ProjectileSpread, ProjectileSpread)));
+        Quaternion outRotation = Quaternion.Euler(new Vector3(0, 0, angle - Random.Range(-ProjectileSpread, ProjectileSpread)));
 
         script.Init((player.position - transform.position).normalized, outRotation, ProjectileSpeed, ProjectileDamage);
 
