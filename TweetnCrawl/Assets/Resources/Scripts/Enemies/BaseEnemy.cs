@@ -62,7 +62,7 @@ public class BaseEnemy : MonoBehaviour {
 	}
 	
 	//Patrol method for the enemies
-	public virtual void patrol() {
+	public void patrol() {
 		
 		if (waiting == false)
 		{

@@ -34,7 +34,7 @@ public class EnemyScript : BaseEnemy {
 				
 				// a simple boolean checking if the enemy can attack or not to provide delay
 				if (Time.time > attackTime && GameObject.Find("Player").GetComponent<CharacterHealth>().health >= 0) {
-					
+
 					meleeAttack();
 					attackTime = Time.time + AttackDelay;
 					

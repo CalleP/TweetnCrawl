@@ -20,9 +20,9 @@ class BasicEnemy : BaseEnemy
     {
 
         baseReferences();
-        //InvokeRepeating("patrol", 1f, 2f); 
+        //InvokeRepeating("base.patrol", 1f, 2f); 
 
-        
+
        // speed = 0.3f;
 
     }
@@ -30,9 +30,7 @@ class BasicEnemy : BaseEnemy
     public virtual void Update()
     {
         Flip();
-	
-
-
+		patrol ();
         //if the enemy followers health reaches 0 remove him from the game.
         if (health <= 0)
         {
@@ -44,10 +42,9 @@ class BasicEnemy : BaseEnemy
 
 
         distance = Vector3.Distance(Follower.position, player.position);
-        randomPosition = new Vector3(transform.position.x + Random.Range(10f, -10f), transform.position.y + Random.Range(8f, -8f), 0f);
+       // randomPosition = new Vector3(transform.position.x + Random.Range(10f, -10f), transform.position.y + Random.Range(8f, -8f), 0f);
 
-		patrol ();
-		
+
 
 
         //if the distance gets within the chaseRange the follower will start following the player
@@ -57,7 +54,7 @@ class BasicEnemy : BaseEnemy
         if (time2 <= Time.time)
         {
             if (isPlayerInLineOfSight())
-            {
+			{	patrol();
                 ShootAtPlayer();
                 time2 = Time.time + (float)AttackDelay;
             }
@@ -71,10 +68,10 @@ class BasicEnemy : BaseEnemy
 
     
 
-    public override void patrol()
-    {
-        StartCoroutine(patrolUpdate());
-    }
+    //public override void patrol()
+   // {
+   //     StartCoroutine(patrolUpdate());
+   // }
 
     protected bool isPlayerInLineOfSight()
     {
