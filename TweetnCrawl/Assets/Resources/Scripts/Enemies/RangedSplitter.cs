@@ -7,8 +7,9 @@ using UnityEngine;
 using System.Collections;
 
 class RangedSplitter : BasicEnemy {
-	
-	
+
+    public GameObject SpawnedEnemy;
+    public int AmountOfSpawns;
 	// Update is called once per frame
     public override void Update()
     {
@@ -18,13 +19,19 @@ class RangedSplitter : BasicEnemy {
         if (health <= 0)
         {
             print("Split");
-            Instantiate(Resources.Load("BasicEnemy"), transform.position, transform.rotation);
-            Instantiate(Resources.Load("BasicEnemy"), transform.position, transform.rotation);
-            Instantiate(Resources.Load("BasicEnemy"), transform.position, transform.rotation);
-            Instantiate(Resources.Load("BasicEnemy"), transform.position, transform.rotation);
-            //Instantiate(Resources.Load("Enemy"), transform.position.y + 2, transform.rotation);
-            //Instantiate(Resources.Load("Enemy"), transform.position.y - 2, transform.rotation);
+
+            Split();
             Destroy((Follower as Transform).gameObject);
+        }
+
+    }
+
+    public void Split()
+    {
+        for (int i = 0; i < AmountOfSpawns; i++)
+        {
+            Instantiate(SpawnedEnemy, transform.position, transform.rotation);
+            
         }
     }
 }

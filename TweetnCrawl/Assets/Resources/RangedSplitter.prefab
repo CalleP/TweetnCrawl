@@ -386,6 +386,8 @@ MonoBehaviour:
   ProjectileSpeed: 40
   ProjectileDamage: 5
   ProjectileSpread: 5
+  SpawnedEnemy: {fileID: 100000, guid: 82998a112b03a0444a5be6953d98068c, type: 2}
+  AmountOfSpawns: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
