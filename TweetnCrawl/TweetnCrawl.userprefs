@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Enemies\BasicEnemy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Enemies\EnemyScript.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\Enemies\RangedSplitter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Enemies\BaseEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\Enemies\Splitter.cs" Line="21" Column="83" />
-      <File FileName="Assets\Resources\Scripts\Enemies\BasicEnemy.cs" Line="109" Column="27" />
-      <File FileName="Assets\Resources\Scripts\Enemies\BaseEnemy.cs" Line="76" Column="79" />
+      <File FileName="Assets\Resources\Scripts\Enemies\BasicEnemy.cs" Line="30" Column="33" />
+      <File FileName="Assets\Resources\Scripts\Enemies\EnemyScript.cs" Line="23" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
