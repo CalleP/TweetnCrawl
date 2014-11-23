@@ -88,6 +88,11 @@ class BasicEnemy : BaseEnemy
 
 
 
+<<<<<<< HEAD
+    public void patrol()
+    {
+        StartCoroutine(patrolUpdate());
+=======
 
 
 
@@ -99,6 +104,7 @@ class BasicEnemy : BaseEnemy
         }
         return false;
     
+>>>>>>> origin/master
     }
 
    protected virtual IEnumerator patrolUpdate()
