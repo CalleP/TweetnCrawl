@@ -84,7 +84,7 @@ class BasicEnemy : BaseEnemy
 
 
 
-    public override void patrol()
+    public void patrol()
     {
         StartCoroutine(patrolUpdate());
     }

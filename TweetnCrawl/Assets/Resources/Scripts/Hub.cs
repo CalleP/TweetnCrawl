@@ -399,6 +399,7 @@ public class Hub :TileMap {
         Camera.main.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
 
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
         var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
 
         foreach (var enemy in enemies)

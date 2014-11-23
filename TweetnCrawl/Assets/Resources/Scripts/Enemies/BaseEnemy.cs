@@ -72,8 +72,9 @@ public class BaseEnemy : MonoBehaviour {
 		}
 		else
 		{
-			
-			transform.position = Vector3.Lerp (transform.position, randomPosition, Time.deltaTime);
+
+			transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
+			//transform.position = Vector3.Lerp (transform.position, randomPosition, Time.deltaTime);
 			//transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime);
 			
 		}
