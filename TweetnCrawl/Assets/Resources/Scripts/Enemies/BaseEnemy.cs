@@ -82,7 +82,7 @@ public class BaseEnemy : MonoBehaviour {
 	
 	
 	protected virtual IEnumerator patrolUpdate() {
-		int randomWait = Random.Range (2, 6);
+		int randomWait = Random.Range (1, 3);
 		int	rotation = Random.Range (1,2);
 		randomPosition = new Vector3 (transform.position.x + Random.Range( 10f,-10f ), transform.position.y + Random.Range( 8f, -8f ), 0f);
 		if(rotation == 1) {
