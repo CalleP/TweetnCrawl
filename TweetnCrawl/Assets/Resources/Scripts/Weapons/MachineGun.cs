@@ -60,9 +60,15 @@ class MachineGun : Revolver
                     hit = hits[i];
                 }
 
-                if (hits[i].collider.gameObject.tag == "Enemy")
+ 
+            }
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                float distance = (hits[i].point - (Vector2)wielder.transform.position).magnitude;
+                if (hits[i].collider.gameObject.tag == "Enemy" && distance <= closestHit)
                 {
-                    hits[i].collider.gameObject.GetComponent<EnemyScript>().receiveDamage(altDamage);
+                    hits[i].collider.gameObject.GetComponent<BaseEnemy>().receiveDamage(altDamage);
                 }
             }
 
@@ -79,8 +85,8 @@ class MachineGun : Revolver
 
             var line = laser.GetComponent<LineRenderer>();
 
-            line.SetPosition(0, wielder.transform.position);
-            line.SetPosition(1, hit.point);
+            line.SetPosition(0, new Vector3(wielder.transform.position.x, wielder.transform.position.y -0.5f));
+            line.SetPosition(1, new Vector3(hit.point.x, hit.point.y , -0.5f));
 
 
             //laser.transform.position += (laser.transform.up*10);
