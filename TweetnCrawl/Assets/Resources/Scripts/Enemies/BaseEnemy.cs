@@ -3,6 +3,10 @@ using System.Collections;
 
 public class BaseEnemy : MonoBehaviour {
 
+
+
+
+
 	public float speed; //The speed of the enemy
 	public float chaseRange; //The chaserange of the enemy
 	public Transform player; //The reference to the player	

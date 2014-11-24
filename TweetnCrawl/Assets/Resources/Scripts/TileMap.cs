@@ -722,7 +722,9 @@ public class TileMap : MonoBehaviour {
 
         previousColliderArraySize = count;
 
-
+        
     }
+
+
 
 }

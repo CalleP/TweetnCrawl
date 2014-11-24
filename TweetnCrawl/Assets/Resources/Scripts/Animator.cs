@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Animator : MonoBehaviour {
 
 	// Use this for initialization
-
+    
     public bool loop;
     public float interval;
     public List<Sprite> sprites = new List<Sprite>();
@@ -16,6 +16,7 @@ public class Animator : MonoBehaviour {
     private int index;
     private float time;
     void Start () {
+        
         time = Time.time;
         index = 0;
         sr = gameObject.GetComponent<SpriteRenderer>();
