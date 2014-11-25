@@ -111,7 +111,10 @@ public class Hub :TileMap {
 
         ObjectPlacer.testStart();
 
-
+        NorthMap.PopulateMap(true);
+        WestMap.PopulateMap(false);
+        EastMap.PopulateMap(true);
+        SouthMap.PopulateMap(false);
 
 	}
 	
@@ -166,6 +169,44 @@ public class Hub :TileMap {
         int North = NorthMap.GetTileData(0, NorthMap.Height / 2).Y;
         int South = SouthMap.GetTileData(0, SouthMap.Height / 2).Y;
 
+        //EastMap.SetActiveOnEnemies(true);
+
+        if (playerX > EastMap.map[0][0].X + 5)
+        {
+            EastMap.SetActiveOnEnemies(true);
+            WestMap.SetActiveOnEnemies(false);
+            NorthMap.SetActiveOnEnemies(false);
+            SouthMap.SetActiveOnEnemies(false);
+        }
+        else if (playerX < WestMap.map[0][WestMap.Width-1].X - 5)
+        {
+            EastMap.SetActiveOnEnemies(false);
+            WestMap.SetActiveOnEnemies(true);
+            NorthMap.SetActiveOnEnemies(false);
+            SouthMap.SetActiveOnEnemies(false);
+
+        }
+
+        if (playerY > NorthMap.map[0][0].Y + 5)
+        {
+            EastMap.SetActiveOnEnemies(false);
+            WestMap.SetActiveOnEnemies(false);
+            NorthMap.SetActiveOnEnemies(true);
+            SouthMap.SetActiveOnEnemies(false);
+
+
+        }
+        else if (playerY < SouthMap.map[SouthMap.Height-1][0].Y -5)
+        {
+            EastMap.SetActiveOnEnemies(false);
+            WestMap.SetActiveOnEnemies(false);
+            NorthMap.SetActiveOnEnemies(false);
+            SouthMap.SetActiveOnEnemies(true);
+
+
+        }
+
+
         if (time <= Time.time)
         {
             if (playerX > East)
@@ -210,6 +251,17 @@ public class Hub :TileMap {
 
                 //ClearColliders();
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.down));
+
+                SouthMap.ClearEnemies();
+                SouthMap.monsters = NorthMap.monsters;
+
+
+                NorthMap.monsters = new List<GameObject>();
+
+                WestMap.ClearEnemies();
+                EastMap.ClearEnemies();
+
+
                 
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
@@ -229,7 +281,7 @@ public class Hub :TileMap {
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread,direction.up));
                 
 
-                //PreInstantiateAll();
+                
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
 

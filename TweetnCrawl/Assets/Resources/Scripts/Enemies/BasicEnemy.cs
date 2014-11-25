@@ -41,7 +41,7 @@ class BasicEnemy : BaseEnemy
         //Updates constantly the distance between the follower and the player
 
 
-        distance = Vector3.Distance(Follower.position, player.position);
+        
        // randomPosition = new Vector3(transform.position.x + Random.Range(10f, -10f), transform.position.y + Random.Range(8f, -8f), 0f);
 
 
@@ -50,8 +50,8 @@ class BasicEnemy : BaseEnemy
         //if the distance gets within the chaseRange the follower will start following the player
 
 
-
-        if (time2 <= Time.time)
+        distance = Vector3.Distance(Follower.position, player.position);
+        if (time2 <= Time.time && distance <= 200)
         {
             if (isPlayerInLineOfSight())
 			{	patrol();
@@ -61,6 +61,8 @@ class BasicEnemy : BaseEnemy
 
         }
     }
+
+   
 
 
 
@@ -151,7 +153,7 @@ class BasicEnemy : BaseEnemy
 
         script.Init((player.position - transform.position).normalized, outRotation, ProjectileSpeed, ProjectileDamage);
 
-        print("shooting at player");
+        //print("shooting at player");
     }
 
 

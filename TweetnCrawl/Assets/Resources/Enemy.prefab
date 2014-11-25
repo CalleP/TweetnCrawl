@@ -398,8 +398,8 @@ MonoBehaviour:
   loop: 1
   interval: .5
   sprites:
-  - {fileID: 21300004, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
-  - {fileID: 21300004, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
+  - {fileID: 21300104, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
+  - {fileID: 21300104, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
   DeathAfterLastFrame: 0
   PlayOnAwake: 1
 --- !u!195 &19500000

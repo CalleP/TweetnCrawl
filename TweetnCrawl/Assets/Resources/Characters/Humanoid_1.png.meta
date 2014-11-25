@@ -1,114 +1,243 @@
 fileFormatVersion: 2
-guid: f55461d87a4d4064c8fedd96bf0dde32
+guid: 659ddcddea67faa4babf5929a1dd5fb2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player1_0
-    21300002: Player1_1
-    21300004: Player1_2
-    21300006: Player1_3
-    21300008: Player1_4
-    21300010: Player1_5
-    21300012: Player1_6
-    21300014: Player1_7
-    21300016: Player1_8
-    21300018: Player1_9
-    21300020: Player1_10
-    21300022: Player1_11
-    21300024: Player1_12
-    21300026: Player1_13
-    21300028: Player1_14
-    21300030: Player1_15
-    21300032: Player1_16
-    21300034: Player1_17
-    21300036: Player1_18
-    21300038: Player1_19
-    21300040: Player1_20
-    21300042: Player1_21
-    21300044: Player1_22
-    21300046: Player1_23
-    21300048: Player1_24
-    21300050: Player1_25
-    21300052: Player1_26
-    21300054: Player1_27
-    21300056: Player1_28
-    21300058: Player1_29
-    21300060: Player1_30
-    21300062: Player1_31
-    21300064: Player1_32
-    21300066: Player1_33
-    21300068: Player1_34
-    21300070: Player1_35
-    21300072: Player1_36
-    21300074: Player1_37
-    21300076: Player1_38
-    21300078: Player1_39
-    21300080: Player1_40
-    21300082: Player1_41
-    21300084: Player1_42
-    21300086: Player1_43
-    21300088: Player1_44
-    21300090: Player1_45
-    21300092: Player1_46
-    21300094: Player1_47
-    21300096: Player1_48
-    21300098: Player1_49
-    21300100: Player1_50
-    21300102: Player1_51
-    21300104: Player1_52
-    21300106: Player1_53
-    21300108: Player1_54
-    21300110: Player1_55
-    21300112: Player1_56
-    21300114: Player1_57
-    21300116: Player1_58
-    21300118: Player1_59
-    21300120: Player1_60
-    21300122: Player1_61
-    21300124: Player1_62
-    21300126: Player1_63
-    21300128: Player1_64
-    21300130: Player1_65
-    21300132: Player1_66
-    21300134: Player1_67
-    21300136: Player1_68
-    21300138: Player1_69
-    21300140: Player1_70
-    21300142: Player1_71
-    21300144: Player1_72
-    21300146: Player1_73
-    21300148: Player1_74
-    21300150: Player1_75
-    21300152: Player1_76
-    21300154: Player1_77
-    21300156: Player1_78
-    21300158: Player1_79
-    21300160: Player1_80
-    21300162: Player1_81
-    21300164: Player1_82
-    21300166: Player1_83
-    21300168: Player1_84
-    21300170: Player1_85
-    21300172: Player1_86
-    21300174: Player1_87
-    21300176: Player1_88
-    21300178: Player1_89
-    21300180: Player1_90
-    21300182: Player1_91
-    21300184: Player1_92
-    21300186: Player1_93
-    21300188: Player1_94
-    21300190: Player1_95
-    21300192: Player1_96
-    21300194: Player1_97
-    21300196: Player1_98
-    21300198: Player1_99
-    21300200: Player1_100
-    21300202: Player1_101
-    21300204: Player1_102
-    21300206: Player1_103
-    21300208: Player1_104
-    21300210: Player1_105
-    21300212: Player1_106
+    21300000: Humanoid1_0
+    21300002: Humanoid1_1
+    21300004: Humanoid1_2
+    21300006: Humanoid1_3
+    21300008: Humanoid1_4
+    21300010: Humanoid1_5
+    21300012: Humanoid1_6
+    21300014: Humanoid1_7
+    21300016: Humanoid1_8
+    21300018: Humanoid1_9
+    21300020: Humanoid1_10
+    21300022: Humanoid1_11
+    21300024: Humanoid1_12
+    21300026: Humanoid1_13
+    21300028: Humanoid1_14
+    21300030: Humanoid1_15
+    21300032: Humanoid1_16
+    21300034: Humanoid1_17
+    21300036: Humanoid1_18
+    21300038: Humanoid1_19
+    21300040: Humanoid1_20
+    21300042: Humanoid1_21
+    21300044: Humanoid1_22
+    21300046: Humanoid1_23
+    21300048: Humanoid1_24
+    21300050: Humanoid1_25
+    21300052: Humanoid1_26
+    21300054: Humanoid1_27
+    21300056: Humanoid1_28
+    21300058: Humanoid1_29
+    21300060: Humanoid1_30
+    21300062: Humanoid1_31
+    21300064: Humanoid1_32
+    21300066: Humanoid1_33
+    21300068: Humanoid1_34
+    21300070: Humanoid1_35
+    21300072: Humanoid1_36
+    21300074: Humanoid1_37
+    21300076: Humanoid1_38
+    21300078: Humanoid1_39
+    21300080: Humanoid1_40
+    21300082: Humanoid1_41
+    21300084: Humanoid1_42
+    21300086: Humanoid1_43
+    21300088: Humanoid1_44
+    21300090: Humanoid1_45
+    21300092: Humanoid1_46
+    21300094: Humanoid1_47
+    21300096: Humanoid1_48
+    21300098: Humanoid1_49
+    21300100: Humanoid1_50
+    21300102: Humanoid1_51
+    21300104: Humanoid1_52
+    21300106: Humanoid1_53
+    21300108: Humanoid1_54
+    21300110: Humanoid1_55
+    21300112: Humanoid1_56
+    21300114: Humanoid1_57
+    21300116: Humanoid1_58
+    21300118: Humanoid1_59
+    21300120: Humanoid1_60
+    21300122: Humanoid1_61
+    21300124: Humanoid1_62
+    21300126: Humanoid1_63
+    21300128: Humanoid1_64
+    21300130: Humanoid1_65
+    21300132: Humanoid1_66
+    21300134: Humanoid1_67
+    21300136: Humanoid1_68
+    21300138: Humanoid1_69
+    21300140: Humanoid1_70
+    21300142: Humanoid1_71
+    21300144: Humanoid1_72
+    21300146: Humanoid1_73
+    21300148: Humanoid1_74
+    21300150: Humanoid1_75
+    21300152: Humanoid1_76
+    21300154: Humanoid1_77
+    21300156: Humanoid1_78
+    21300158: Humanoid1_79
+    21300160: Humanoid1_80
+    21300162: Humanoid1_81
+    21300164: Humanoid1_82
+    21300166: Humanoid1_83
+    21300168: Humanoid1_84
+    21300170: Humanoid1_85
+    21300172: Humanoid1_86
+    21300174: Humanoid1_87
+    21300176: Humanoid1_88
+    21300178: Humanoid1_89
+    21300180: Humanoid1_90
+    21300182: Humanoid1_91
+    21300184: Humanoid1_92
+    21300186: Humanoid1_93
+    21300188: Humanoid1_94
+    21300190: Humanoid1_95
+    21300192: Humanoid1_96
+    21300194: Humanoid1_97
+    21300196: Humanoid1_98
+    21300198: Humanoid1_99
+    21300200: Humanoid1_100
+    21300202: Humanoid1_101
+    21300204: Humanoid1_102
+    21300206: Humanoid1_103
+    21300208: Humanoid1_104
+    21300210: Humanoid1_105
+    21300212: Humanoid1_106
+    21300214: Humanoid1_107
+    21300216: Humanoid1_108
+    21300218: Humanoid1_109
+    21300220: Humanoid1_110
+    21300222: Humanoid1_111
+    21300224: Humanoid1_112
+    21300226: Humanoid1_113
+    21300228: Humanoid1_114
+    21300230: Humanoid1_115
+    21300232: Humanoid1_116
+    21300234: Humanoid1_117
+    21300236: Humanoid_1_0
+    21300238: Humanoid_1_1
+    21300240: Humanoid_1_2
+    21300242: Humanoid_1_3
+    21300244: Humanoid_1_4
+    21300246: Humanoid_1_5
+    21300248: Humanoid_1_6
+    21300250: Humanoid_1_7
+    21300252: Humanoid_1_8
+    21300254: Humanoid_1_9
+    21300256: Humanoid_1_10
+    21300258: Humanoid_1_11
+    21300260: Humanoid_1_12
+    21300262: Humanoid_1_13
+    21300264: Humanoid_1_14
+    21300266: Humanoid_1_15
+    21300268: Humanoid_1_16
+    21300270: Humanoid_1_17
+    21300272: Humanoid_1_18
+    21300274: Humanoid_1_19
+    21300276: Humanoid_1_20
+    21300278: Humanoid_1_21
+    21300280: Humanoid_1_22
+    21300282: Humanoid_1_23
+    21300284: Humanoid_1_24
+    21300286: Humanoid_1_25
+    21300288: Humanoid_1_26
+    21300290: Humanoid_1_27
+    21300292: Humanoid_1_28
+    21300294: Humanoid_1_29
+    21300296: Humanoid_1_30
+    21300298: Humanoid_1_31
+    21300300: Humanoid_1_32
+    21300302: Humanoid_1_33
+    21300304: Humanoid_1_34
+    21300306: Humanoid_1_35
+    21300308: Humanoid_1_36
+    21300310: Humanoid_1_37
+    21300312: Humanoid_1_38
+    21300314: Humanoid_1_39
+    21300316: Humanoid_1_40
+    21300318: Humanoid_1_41
+    21300320: Humanoid_1_42
+    21300322: Humanoid_1_43
+    21300324: Humanoid_1_44
+    21300326: Humanoid_1_45
+    21300328: Humanoid_1_46
+    21300330: Humanoid_1_47
+    21300332: Humanoid_1_48
+    21300334: Humanoid_1_49
+    21300336: Humanoid_1_50
+    21300338: Humanoid_1_51
+    21300340: Humanoid_1_52
+    21300342: Humanoid_1_53
+    21300344: Humanoid_1_54
+    21300346: Humanoid_1_55
+    21300348: Humanoid_1_56
+    21300350: Humanoid_1_57
+    21300352: Humanoid_1_58
+    21300354: Humanoid_1_59
+    21300356: Humanoid_1_60
+    21300358: Humanoid_1_61
+    21300360: Humanoid_1_62
+    21300362: Humanoid_1_63
+    21300364: Humanoid_1_64
+    21300366: Humanoid_1_65
+    21300368: Humanoid_1_66
+    21300370: Humanoid_1_67
+    21300372: Humanoid_1_68
+    21300374: Humanoid_1_69
+    21300376: Humanoid_1_70
+    21300378: Humanoid_1_71
+    21300380: Humanoid_1_72
+    21300382: Humanoid_1_73
+    21300384: Humanoid_1_74
+    21300386: Humanoid_1_75
+    21300388: Humanoid_1_76
+    21300390: Humanoid_1_77
+    21300392: Humanoid_1_78
+    21300394: Humanoid_1_79
+    21300396: Humanoid_1_80
+    21300398: Humanoid_1_81
+    21300400: Humanoid_1_82
+    21300402: Humanoid_1_83
+    21300404: Humanoid_1_84
+    21300406: Humanoid_1_85
+    21300408: Humanoid_1_86
+    21300410: Humanoid_1_87
+    21300412: Humanoid_1_88
+    21300414: Humanoid_1_89
+    21300416: Humanoid_1_90
+    21300418: Humanoid_1_91
+    21300420: Humanoid_1_92
+    21300422: Humanoid_1_93
+    21300424: Humanoid_1_94
+    21300426: Humanoid_1_95
+    21300428: Humanoid_1_96
+    21300430: Humanoid_1_97
+    21300432: Humanoid_1_98
+    21300434: Humanoid_1_99
+    21300436: Humanoid_1_100
+    21300438: Humanoid_1_101
+    21300440: Humanoid_1_102
+    21300442: Humanoid_1_103
+    21300444: Humanoid_1_104
+    21300446: Humanoid_1_105
+    21300448: Humanoid_1_106
+    21300450: Humanoid_1_107
+    21300452: Humanoid_1_108
+    21300454: Humanoid_1_109
+    21300456: Humanoid_1_110
+    21300458: Humanoid_1_111
+    21300460: Humanoid_1_112
+    21300462: Humanoid_1_113
+    21300464: Humanoid_1_114
+    21300466: Humanoid_1_115
+    21300468: Humanoid_1_116
+    21300470: Humanoid_1_117
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -150,7 +279,787 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player1_0
+    - name: Humanoid_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_31
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_42
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_44
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_47
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_51
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_54
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_56
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_58
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_62
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_63
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_65
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_66
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_70
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_73
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_74
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_75
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_76
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_77
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Humanoid_1_78
       rect:
         serializedVersion: 2
         x: 0
@@ -160,7 +1069,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_1
+    - name: Humanoid_1_79
       rect:
         serializedVersion: 2
         x: 16
@@ -170,7 +1079,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_2
+    - name: Humanoid_1_80
       rect:
         serializedVersion: 2
         x: 32
@@ -180,7 +1089,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_3
+    - name: Humanoid_1_81
       rect:
         serializedVersion: 2
         x: 48
@@ -190,47 +1099,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_8
+    - name: Humanoid_1_82
       rect:
         serializedVersion: 2
         x: 0
@@ -240,7 +1109,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_9
+    - name: Humanoid_1_83
       rect:
         serializedVersion: 2
         x: 16
@@ -250,7 +1119,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_10
+    - name: Humanoid_1_84
       rect:
         serializedVersion: 2
         x: 32
@@ -260,7 +1129,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_11
+    - name: Humanoid_1_85
       rect:
         serializedVersion: 2
         x: 48
@@ -270,47 +1139,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_12
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_14
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_15
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_16
+    - name: Humanoid_1_86
       rect:
         serializedVersion: 2
         x: 0
@@ -320,7 +1149,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_17
+    - name: Humanoid_1_87
       rect:
         serializedVersion: 2
         x: 16
@@ -330,7 +1159,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_18
+    - name: Humanoid_1_88
       rect:
         serializedVersion: 2
         x: 32
@@ -340,7 +1169,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_19
+    - name: Humanoid_1_89
       rect:
         serializedVersion: 2
         x: 48
@@ -350,47 +1179,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_20
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_21
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_22
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_23
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_24
+    - name: Humanoid_1_90
       rect:
         serializedVersion: 2
         x: 0
@@ -400,7 +1189,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_25
+    - name: Humanoid_1_91
       rect:
         serializedVersion: 2
         x: 16
@@ -410,7 +1199,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_26
+    - name: Humanoid_1_92
       rect:
         serializedVersion: 2
         x: 32
@@ -420,57 +1209,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_27
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_28
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_29
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_30
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_31
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_32
+    - name: Humanoid_1_93
       rect:
         serializedVersion: 2
         x: 0
@@ -480,7 +1219,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_33
+    - name: Humanoid_1_94
       rect:
         serializedVersion: 2
         x: 16
@@ -490,7 +1229,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_34
+    - name: Humanoid_1_95
       rect:
         serializedVersion: 2
         x: 32
@@ -500,57 +1239,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_35
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_36
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_37
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_38
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_39
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_40
+    - name: Humanoid_1_96
       rect:
         serializedVersion: 2
         x: 0
@@ -560,7 +1249,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_41
+    - name: Humanoid_1_97
       rect:
         serializedVersion: 2
         x: 16
@@ -570,7 +1259,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_42
+    - name: Humanoid_1_98
       rect:
         serializedVersion: 2
         x: 32
@@ -580,57 +1269,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_43
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_44
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_45
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_46
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_47
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_48
+    - name: Humanoid_1_99
       rect:
         serializedVersion: 2
         x: 0
@@ -640,7 +1279,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_49
+    - name: Humanoid_1_100
       rect:
         serializedVersion: 2
         x: 16
@@ -650,7 +1289,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_50
+    - name: Humanoid_1_101
       rect:
         serializedVersion: 2
         x: 32
@@ -660,7 +1299,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_51
+    - name: Humanoid_1_102
       rect:
         serializedVersion: 2
         x: 0
@@ -670,7 +1309,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_52
+    - name: Humanoid_1_103
       rect:
         serializedVersion: 2
         x: 16
@@ -680,7 +1319,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_53
+    - name: Humanoid_1_104
       rect:
         serializedVersion: 2
         x: 32
@@ -690,57 +1329,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_54
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_55
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_56
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_57
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_58
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_59
+    - name: Humanoid_1_105
       rect:
         serializedVersion: 2
         x: 0
@@ -750,7 +1339,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_60
+    - name: Humanoid_1_106
       rect:
         serializedVersion: 2
         x: 16
@@ -760,67 +1349,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_61
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_62
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_63
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_64
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_65
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_66
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_67
+    - name: Humanoid_1_107
       rect:
         serializedVersion: 2
         x: 0
@@ -830,7 +1359,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_68
+    - name: Humanoid_1_108
       rect:
         serializedVersion: 2
         x: 16
@@ -840,67 +1369,27 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_69
+    - name: Humanoid_1_109
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
+        x: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_70
+    - name: Humanoid_1_110
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 16
+        y: 64
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_71
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_72
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_73
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_74
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_75
+    - name: Humanoid_1_111
       rect:
         serializedVersion: 2
         x: 0
@@ -910,7 +1399,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_76
+    - name: Humanoid_1_112
       rect:
         serializedVersion: 2
         x: 16
@@ -920,67 +1409,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_77
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_78
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_79
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_80
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_81
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_82
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_83
+    - name: Humanoid_1_113
       rect:
         serializedVersion: 2
         x: 0
@@ -990,7 +1419,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_84
+    - name: Humanoid_1_114
       rect:
         serializedVersion: 2
         x: 16
@@ -1000,67 +1429,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_85
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_86
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_87
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_88
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_89
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_90
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_91
+    - name: Humanoid_1_115
       rect:
         serializedVersion: 2
         x: 0
@@ -1070,7 +1439,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_92
+    - name: Humanoid_1_116
       rect:
         serializedVersion: 2
         x: 16
@@ -1080,140 +1449,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_93
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_94
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_95
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_96
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_97
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_98
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_99
+    - name: Humanoid_1_117
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_100
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_101
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_102
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_103
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_104
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_105
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player1_106
-      rect:
-        serializedVersion: 2
-        x: 112
         y: 0
         width: 16
         height: 16

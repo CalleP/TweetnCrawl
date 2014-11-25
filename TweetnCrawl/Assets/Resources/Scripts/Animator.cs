@@ -15,12 +15,21 @@ public class Animator : MonoBehaviour {
     private SpriteRenderer sr;
     private int index;
     private float time;
-    void Start () {
+    public virtual void Start () {
         
         time = Time.time;
         index = 0;
         sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.sprite = sprites[index];
+        try
+        {
+            sr.sprite = sprites[index];
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
+
     }
 	
 	// Update is called once per frame

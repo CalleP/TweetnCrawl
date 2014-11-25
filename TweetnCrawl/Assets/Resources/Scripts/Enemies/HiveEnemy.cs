@@ -25,6 +25,7 @@ class HiveEnemy : BasicEnemy
 
     public override void Update()
     {
+        base.Update();
         int count = 0;
         for (int i = 0; i < monsters.Count; i++)
         {

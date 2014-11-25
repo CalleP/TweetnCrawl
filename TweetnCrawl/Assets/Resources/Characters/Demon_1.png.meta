@@ -1,57 +1,91 @@
 fileFormatVersion: 2
-guid: dee1bec255d783f4fa696bec3252c8ad
+guid: e86e0a8c78e1a2042bb61d805949197e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Elemental0_0
-    21300002: Elemental0_1
-    21300004: Elemental0_2
-    21300006: Elemental0_3
-    21300008: Elemental0_4
-    21300010: Elemental0_5
-    21300012: Elemental0_6
-    21300014: Elemental0_7
-    21300016: Elemental0_8
-    21300018: Elemental0_9
-    21300020: Elemental0_10
-    21300022: Elemental0_11
-    21300024: Elemental0_12
-    21300026: Elemental0_13
-    21300028: Elemental0_14
-    21300030: Elemental0_15
-    21300032: Elemental0_16
-    21300034: Elemental0_17
-    21300036: Elemental0_18
-    21300038: Elemental0_19
-    21300040: Elemental0_20
-    21300042: Elemental0_21
-    21300044: Elemental0_22
-    21300046: Elemental0_23
-    21300048: Elemental0_24
-    21300050: Elemental0_25
-    21300052: Elemental0_26
-    21300054: Elemental0_27
-    21300056: Elemental0_28
-    21300058: Elemental0_29
-    21300060: Elemental0_30
-    21300062: Elemental0_31
-    21300064: Elemental0_32
-    21300066: Elemental0_33
-    21300068: Elemental0_34
-    21300070: Elemental0_35
-    21300072: Elemental0_36
-    21300074: Elemental0_37
-    21300076: Elemental0_38
-    21300078: Elemental0_39
-    21300080: Elemental0_40
-    21300082: Elemental0_41
-    21300084: Elemental0_42
-    21300086: Elemental0_43
-    21300088: Elemental0_44
-    21300090: Elemental0_45
-    21300092: Elemental0_46
-    21300094: Elemental0_47
-    21300096: Elemental0_48
-    21300098: Elemental0_49
+    21300000: Demon1_0
+    21300002: Demon1_1
+    21300004: Demon1_2
+    21300006: Demon1_3
+    21300008: Demon1_4
+    21300010: Demon1_5
+    21300012: Demon1_6
+    21300014: Demon1_7
+    21300016: Demon1_8
+    21300018: Demon1_9
+    21300020: Demon1_10
+    21300022: Demon1_11
+    21300024: Demon1_12
+    21300026: Demon1_13
+    21300028: Demon1_14
+    21300030: Demon1_15
+    21300032: Demon1_16
+    21300034: Demon1_17
+    21300036: Demon1_18
+    21300038: Demon1_19
+    21300040: Demon1_20
+    21300042: Demon1_21
+    21300044: Demon1_22
+    21300046: Demon1_23
+    21300048: Demon1_24
+    21300050: Demon1_25
+    21300052: Demon1_26
+    21300054: Demon1_27
+    21300056: Demon1_28
+    21300058: Demon1_29
+    21300060: Demon1_30
+    21300062: Demon1_31
+    21300064: Demon1_32
+    21300066: Demon1_33
+    21300068: Demon1_34
+    21300070: Demon1_35
+    21300072: Demon1_36
+    21300074: Demon1_37
+    21300076: Demon1_38
+    21300078: Demon1_39
+    21300080: Demon1_40
+    21300082: Demon1_41
+    21300084: Demon_1_0
+    21300086: Demon_1_1
+    21300088: Demon_1_2
+    21300090: Demon_1_3
+    21300092: Demon_1_4
+    21300094: Demon_1_5
+    21300096: Demon_1_6
+    21300098: Demon_1_7
+    21300100: Demon_1_8
+    21300102: Demon_1_9
+    21300104: Demon_1_10
+    21300106: Demon_1_11
+    21300108: Demon_1_12
+    21300110: Demon_1_13
+    21300112: Demon_1_14
+    21300114: Demon_1_15
+    21300116: Demon_1_16
+    21300118: Demon_1_17
+    21300120: Demon_1_18
+    21300122: Demon_1_19
+    21300124: Demon_1_20
+    21300126: Demon_1_21
+    21300128: Demon_1_22
+    21300130: Demon_1_23
+    21300132: Demon_1_24
+    21300134: Demon_1_25
+    21300136: Demon_1_26
+    21300138: Demon_1_27
+    21300140: Demon_1_28
+    21300142: Demon_1_29
+    21300144: Demon_1_30
+    21300146: Demon_1_31
+    21300148: Demon_1_32
+    21300150: Demon_1_33
+    21300152: Demon_1_34
+    21300154: Demon_1_35
+    21300156: Demon_1_36
+    21300158: Demon_1_37
+    21300160: Demon_1_38
+    21300162: Demon_1_39
+    21300164: Demon_1_40
+    21300166: Demon_1_41
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -93,367 +127,317 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Elemental0_0
+    - name: Demon_1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_1
+    - name: Demon_1_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_2
+    - name: Demon_1_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_3
+    - name: Demon_1_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_4
+    - name: Demon_1_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_5
+    - name: Demon_1_5
       rect:
         serializedVersion: 2
         x: 80
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_6
+    - name: Demon_1_6
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_7
+    - name: Demon_1_7
       rect:
         serializedVersion: 2
         x: 112
-        y: 160
+        y: 128
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_8
+    - name: Demon_1_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_9
+    - name: Demon_1_9
       rect:
         serializedVersion: 2
         x: 16
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_10
+    - name: Demon_1_10
       rect:
         serializedVersion: 2
         x: 32
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_11
+    - name: Demon_1_11
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_12
+    - name: Demon_1_12
       rect:
         serializedVersion: 2
         x: 64
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_13
+    - name: Demon_1_13
       rect:
         serializedVersion: 2
         x: 80
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_14
+    - name: Demon_1_14
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_15
+    - name: Demon_1_15
       rect:
         serializedVersion: 2
         x: 112
-        y: 144
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_16
+    - name: Demon_1_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_17
+    - name: Demon_1_17
       rect:
         serializedVersion: 2
         x: 16
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_18
+    - name: Demon_1_18
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_19
+    - name: Demon_1_19
       rect:
         serializedVersion: 2
         x: 48
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_20
+    - name: Demon_1_20
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_21
+    - name: Demon_1_21
       rect:
         serializedVersion: 2
         x: 80
-        y: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_22
+    - name: Demon_1_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Demon_1_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Demon_1_24
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_23
+    - name: Demon_1_25
       rect:
         serializedVersion: 2
         x: 16
-        y: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_24
+    - name: Demon_1_26
       rect:
         serializedVersion: 2
         x: 32
-        y: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_25
+    - name: Demon_1_27
       rect:
         serializedVersion: 2
         x: 48
-        y: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_26
+    - name: Demon_1_28
       rect:
         serializedVersion: 2
         x: 64
-        y: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_27
+    - name: Demon_1_29
       rect:
         serializedVersion: 2
         x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_28
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_29
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_30
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_31
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_32
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_33
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_34
+    - name: Demon_1_30
       rect:
         serializedVersion: 2
-        x: 16
+        x: 96
         y: 80
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_35
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_36
+    - name: Demon_1_31
       rect:
         serializedVersion: 2
         x: 0
@@ -463,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_37
+    - name: Demon_1_32
       rect:
         serializedVersion: 2
         x: 16
@@ -473,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_38
+    - name: Demon_1_33
       rect:
         serializedVersion: 2
         x: 32
@@ -483,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_39
+    - name: Demon_1_34
       rect:
         serializedVersion: 2
         x: 0
@@ -493,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_40
+    - name: Demon_1_35
       rect:
         serializedVersion: 2
         x: 16
@@ -503,17 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_41
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_42
+    - name: Demon_1_36
       rect:
         serializedVersion: 2
         x: 0
@@ -523,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_43
+    - name: Demon_1_37
       rect:
         serializedVersion: 2
         x: 16
@@ -533,17 +507,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_44
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_45
+    - name: Demon_1_38
       rect:
         serializedVersion: 2
         x: 0
@@ -553,7 +517,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_46
+    - name: Demon_1_39
       rect:
         serializedVersion: 2
         x: 16
@@ -563,17 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_47
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_48
+    - name: Demon_1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -583,7 +537,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Elemental0_49
+    - name: Demon_1_41
       rect:
         serializedVersion: 2
         x: 16

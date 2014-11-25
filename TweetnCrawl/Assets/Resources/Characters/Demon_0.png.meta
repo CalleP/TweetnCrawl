@@ -1,57 +1,91 @@
 fileFormatVersion: 2
-guid: fdb0594a483bd47418cca272a97828e9
+guid: 7f189b92c3e3d86448f8aa51b68af955
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Undead0_0
-    21300002: Undead0_1
-    21300004: Undead0_2
-    21300006: Undead0_3
-    21300008: Undead0_4
-    21300010: Undead0_5
-    21300012: Undead0_6
-    21300014: Undead0_7
-    21300016: Undead0_8
-    21300018: Undead0_9
-    21300020: Undead0_10
-    21300022: Undead0_11
-    21300024: Undead0_12
-    21300026: Undead0_13
-    21300028: Undead0_14
-    21300030: Undead0_15
-    21300032: Undead0_16
-    21300034: Undead0_17
-    21300036: Undead0_18
-    21300038: Undead0_19
-    21300040: Undead0_20
-    21300042: Undead0_21
-    21300044: Undead0_22
-    21300046: Undead0_23
-    21300048: Undead0_24
-    21300050: Undead0_25
-    21300052: Undead0_26
-    21300054: Undead0_27
-    21300056: Undead0_28
-    21300058: Undead0_29
-    21300060: Undead0_30
-    21300062: Undead0_31
-    21300064: Undead0_32
-    21300066: Undead0_33
-    21300068: Undead0_34
-    21300070: Undead0_35
-    21300072: Undead0_36
-    21300074: Undead0_37
-    21300076: Undead0_38
-    21300078: Undead0_39
-    21300080: Undead0_40
-    21300082: Undead0_41
-    21300084: Undead0_42
-    21300086: Undead0_43
-    21300088: Undead0_44
-    21300090: Undead0_45
-    21300092: Undead0_46
-    21300094: Undead0_47
-    21300096: Undead0_48
-    21300098: Undead0_49
+    21300000: Demon0_0
+    21300002: Demon0_1
+    21300004: Demon0_2
+    21300006: Demon0_3
+    21300008: Demon0_4
+    21300010: Demon0_5
+    21300012: Demon0_6
+    21300014: Demon0_7
+    21300016: Demon0_8
+    21300018: Demon0_9
+    21300020: Demon0_10
+    21300022: Demon0_11
+    21300024: Demon0_12
+    21300026: Demon0_13
+    21300028: Demon0_14
+    21300030: Demon0_15
+    21300032: Demon0_16
+    21300034: Demon0_17
+    21300036: Demon0_18
+    21300038: Demon0_19
+    21300040: Demon0_20
+    21300042: Demon0_21
+    21300044: Demon0_22
+    21300046: Demon0_23
+    21300048: Demon0_24
+    21300050: Demon0_25
+    21300052: Demon0_26
+    21300054: Demon0_27
+    21300056: Demon0_28
+    21300058: Demon0_29
+    21300060: Demon0_30
+    21300062: Demon0_31
+    21300064: Demon0_32
+    21300066: Demon0_33
+    21300068: Demon0_34
+    21300070: Demon0_35
+    21300072: Demon0_36
+    21300074: Demon0_37
+    21300076: Demon0_38
+    21300078: Demon0_39
+    21300080: Demon0_40
+    21300082: Demon0_41
+    21300084: Demon_0_0
+    21300086: Demon_0_1
+    21300088: Demon_0_2
+    21300090: Demon_0_3
+    21300092: Demon_0_4
+    21300094: Demon_0_5
+    21300096: Demon_0_6
+    21300098: Demon_0_7
+    21300100: Demon_0_8
+    21300102: Demon_0_9
+    21300104: Demon_0_10
+    21300106: Demon_0_11
+    21300108: Demon_0_12
+    21300110: Demon_0_13
+    21300112: Demon_0_14
+    21300114: Demon_0_15
+    21300116: Demon_0_16
+    21300118: Demon_0_17
+    21300120: Demon_0_18
+    21300122: Demon_0_19
+    21300124: Demon_0_20
+    21300126: Demon_0_21
+    21300128: Demon_0_22
+    21300130: Demon_0_23
+    21300132: Demon_0_24
+    21300134: Demon_0_25
+    21300136: Demon_0_26
+    21300138: Demon_0_27
+    21300140: Demon_0_28
+    21300142: Demon_0_29
+    21300144: Demon_0_30
+    21300146: Demon_0_31
+    21300148: Demon_0_32
+    21300150: Demon_0_33
+    21300152: Demon_0_34
+    21300154: Demon_0_35
+    21300156: Demon_0_36
+    21300158: Demon_0_37
+    21300160: Demon_0_38
+    21300162: Demon_0_39
+    21300164: Demon_0_40
+    21300166: Demon_0_41
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -93,87 +127,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Undead0_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_8
+    - name: Demon_0_0
       rect:
         serializedVersion: 2
         x: 0
@@ -183,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_9
+    - name: Demon_0_1
       rect:
         serializedVersion: 2
         x: 16
@@ -193,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_10
+    - name: Demon_0_2
       rect:
         serializedVersion: 2
         x: 32
@@ -203,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_11
+    - name: Demon_0_3
       rect:
         serializedVersion: 2
         x: 48
@@ -213,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_12
+    - name: Demon_0_4
       rect:
         serializedVersion: 2
         x: 64
@@ -223,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_13
+    - name: Demon_0_5
       rect:
         serializedVersion: 2
         x: 80
@@ -233,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_14
+    - name: Demon_0_6
       rect:
         serializedVersion: 2
         x: 96
@@ -243,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_15
+    - name: Demon_0_7
       rect:
         serializedVersion: 2
         x: 112
@@ -253,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_16
+    - name: Demon_0_8
       rect:
         serializedVersion: 2
         x: 0
@@ -263,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_17
+    - name: Demon_0_9
       rect:
         serializedVersion: 2
         x: 16
@@ -273,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_18
+    - name: Demon_0_10
       rect:
         serializedVersion: 2
         x: 32
@@ -283,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_19
+    - name: Demon_0_11
       rect:
         serializedVersion: 2
         x: 48
@@ -293,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_20
+    - name: Demon_0_12
       rect:
         serializedVersion: 2
         x: 64
@@ -303,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_21
+    - name: Demon_0_13
       rect:
         serializedVersion: 2
         x: 80
@@ -313,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_22
+    - name: Demon_0_14
       rect:
         serializedVersion: 2
         x: 96
@@ -323,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_23
+    - name: Demon_0_15
       rect:
         serializedVersion: 2
         x: 112
@@ -333,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_24
+    - name: Demon_0_16
       rect:
         serializedVersion: 2
         x: 0
@@ -343,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_25
+    - name: Demon_0_17
       rect:
         serializedVersion: 2
         x: 16
@@ -353,7 +307,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_26
+    - name: Demon_0_18
       rect:
         serializedVersion: 2
         x: 32
@@ -363,7 +317,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_27
+    - name: Demon_0_19
       rect:
         serializedVersion: 2
         x: 48
@@ -373,7 +327,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_28
+    - name: Demon_0_20
       rect:
         serializedVersion: 2
         x: 64
@@ -383,7 +337,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_29
+    - name: Demon_0_21
       rect:
         serializedVersion: 2
         x: 80
@@ -393,7 +347,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_30
+    - name: Demon_0_22
       rect:
         serializedVersion: 2
         x: 96
@@ -403,7 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_31
+    - name: Demon_0_23
       rect:
         serializedVersion: 2
         x: 112
@@ -413,7 +367,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_32
+    - name: Demon_0_24
       rect:
         serializedVersion: 2
         x: 0
@@ -423,7 +377,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_33
+    - name: Demon_0_25
       rect:
         serializedVersion: 2
         x: 16
@@ -433,7 +387,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_34
+    - name: Demon_0_26
       rect:
         serializedVersion: 2
         x: 32
@@ -443,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_35
+    - name: Demon_0_27
       rect:
         serializedVersion: 2
         x: 48
@@ -453,7 +407,37 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_36
+    - name: Demon_0_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Demon_0_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Demon_0_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Demon_0_31
       rect:
         serializedVersion: 2
         x: 0
@@ -463,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_37
+    - name: Demon_0_32
       rect:
         serializedVersion: 2
         x: 16
@@ -473,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_38
+    - name: Demon_0_33
       rect:
         serializedVersion: 2
         x: 32
@@ -483,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_39
+    - name: Demon_0_34
       rect:
         serializedVersion: 2
         x: 0
@@ -493,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_40
+    - name: Demon_0_35
       rect:
         serializedVersion: 2
         x: 16
@@ -503,17 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_41
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_42
+    - name: Demon_0_36
       rect:
         serializedVersion: 2
         x: 0
@@ -523,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_43
+    - name: Demon_0_37
       rect:
         serializedVersion: 2
         x: 16
@@ -533,17 +507,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_44
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_45
+    - name: Demon_0_38
       rect:
         serializedVersion: 2
         x: 0
@@ -553,7 +517,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_46
+    - name: Demon_0_39
       rect:
         serializedVersion: 2
         x: 16
@@ -563,17 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_47
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_48
+    - name: Demon_0_40
       rect:
         serializedVersion: 2
         x: 0
@@ -583,7 +537,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Undead0_49
+    - name: Demon_0_41
       rect:
         serializedVersion: 2
         x: 16

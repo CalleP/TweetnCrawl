@@ -55,7 +55,10 @@ public class ObjectPlacer : MonoBehaviour {
 
         Instantiate(Resources.Load("Enemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
         Instantiate(Resources.Load("Enemy2"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
-        Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+        var obj = (GameObject)Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+        obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Basic, TerrainType.BlackCaste);
+
+
         Instantiate(Resources.Load("Splitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
         //Instantiate(Resources.Load("RangedSplitter"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1f), Quaternion.identity);
         Instantiate(Resources.Load("RangedSplitter"), new Vector3(385, 385, -0.15f), Quaternion.identity);
@@ -81,6 +84,6 @@ public class ObjectPlacer : MonoBehaviour {
         
     }
 
-
+    
     
 }

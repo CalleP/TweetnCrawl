@@ -88,6 +88,92 @@ TextureImporter:
     21300166: Avian0_83
     21300168: Avian0_84
     21300170: Avian0_85
+    21300172: Avian_0_0
+    21300174: Avian_0_1
+    21300176: Avian_0_2
+    21300178: Avian_0_3
+    21300180: Avian_0_4
+    21300182: Avian_0_5
+    21300184: Avian_0_6
+    21300186: Avian_0_7
+    21300188: Avian_0_8
+    21300190: Avian_0_9
+    21300192: Avian_0_10
+    21300194: Avian_0_11
+    21300196: Avian_0_12
+    21300198: Avian_0_13
+    21300200: Avian_0_14
+    21300202: Avian_0_15
+    21300204: Avian_0_16
+    21300206: Avian_0_17
+    21300208: Avian_0_18
+    21300210: Avian_0_19
+    21300212: Avian_0_20
+    21300214: Avian_0_21
+    21300216: Avian_0_22
+    21300218: Avian_0_23
+    21300220: Avian_0_24
+    21300222: Avian_0_25
+    21300224: Avian_0_26
+    21300226: Avian_0_27
+    21300228: Avian_0_28
+    21300230: Avian_0_29
+    21300232: Avian_0_30
+    21300234: Avian_0_31
+    21300236: Avian_0_32
+    21300238: Avian_0_33
+    21300240: Avian_0_34
+    21300242: Avian_0_35
+    21300244: Avian_0_36
+    21300246: Avian_0_37
+    21300248: Avian_0_38
+    21300250: Avian_0_39
+    21300252: Avian_0_40
+    21300254: Avian_0_41
+    21300256: Avian_0_42
+    21300258: Avian_0_43
+    21300260: Avian_0_44
+    21300262: Avian_0_45
+    21300264: Avian_0_46
+    21300266: Avian_0_47
+    21300268: Avian_0_48
+    21300270: Avian_0_49
+    21300272: Avian_0_50
+    21300274: Avian_0_51
+    21300276: Avian_0_52
+    21300278: Avian_0_53
+    21300280: Avian_0_54
+    21300282: Avian_0_55
+    21300284: Avian_0_56
+    21300286: Avian_0_57
+    21300288: Avian_0_58
+    21300290: Avian_0_59
+    21300292: Avian_0_60
+    21300294: Avian_0_61
+    21300296: Avian_0_62
+    21300298: Avian_0_63
+    21300300: Avian_0_64
+    21300302: Avian_0_65
+    21300304: Avian_0_66
+    21300306: Avian_0_67
+    21300308: Avian_0_68
+    21300310: Avian_0_69
+    21300312: Avian_0_70
+    21300314: Avian_0_71
+    21300316: Avian_0_72
+    21300318: Avian_0_73
+    21300320: Avian_0_74
+    21300322: Avian_0_75
+    21300324: Avian_0_76
+    21300326: Avian_0_77
+    21300328: Avian_0_78
+    21300330: Avian_0_79
+    21300332: Avian_0_80
+    21300334: Avian_0_81
+    21300336: Avian_0_82
+    21300338: Avian_0_83
+    21300340: Avian_0_84
+    21300342: Avian_0_85
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -129,7 +215,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Avian0_0
+    - name: Avian_0_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,7 +225,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_1
+    - name: Avian_0_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,7 +235,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_2
+    - name: Avian_0_2
       rect:
         serializedVersion: 2
         x: 32
@@ -159,7 +245,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_3
+    - name: Avian_0_3
       rect:
         serializedVersion: 2
         x: 48
@@ -169,7 +255,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_4
+    - name: Avian_0_4
       rect:
         serializedVersion: 2
         x: 64
@@ -179,7 +265,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_5
+    - name: Avian_0_5
       rect:
         serializedVersion: 2
         x: 80
@@ -189,7 +275,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_6
+    - name: Avian_0_6
       rect:
         serializedVersion: 2
         x: 96
@@ -199,7 +285,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_7
+    - name: Avian_0_7
       rect:
         serializedVersion: 2
         x: 112
@@ -209,7 +295,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_8
+    - name: Avian_0_8
       rect:
         serializedVersion: 2
         x: 0
@@ -219,7 +305,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_9
+    - name: Avian_0_9
       rect:
         serializedVersion: 2
         x: 16
@@ -227,9 +313,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_10
+    - name: Avian_0_10
       rect:
         serializedVersion: 2
         x: 32
@@ -239,7 +325,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_11
+    - name: Avian_0_11
       rect:
         serializedVersion: 2
         x: 48
@@ -249,7 +335,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_12
+    - name: Avian_0_12
       rect:
         serializedVersion: 2
         x: 64
@@ -259,7 +345,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_13
+    - name: Avian_0_13
       rect:
         serializedVersion: 2
         x: 80
@@ -269,7 +355,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_14
+    - name: Avian_0_14
       rect:
         serializedVersion: 2
         x: 96
@@ -279,7 +365,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_15
+    - name: Avian_0_15
       rect:
         serializedVersion: 2
         x: 112
@@ -289,7 +375,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_16
+    - name: Avian_0_16
       rect:
         serializedVersion: 2
         x: 0
@@ -299,7 +385,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_17
+    - name: Avian_0_17
       rect:
         serializedVersion: 2
         x: 16
@@ -309,7 +395,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_18
+    - name: Avian_0_18
       rect:
         serializedVersion: 2
         x: 32
@@ -319,7 +405,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_19
+    - name: Avian_0_19
       rect:
         serializedVersion: 2
         x: 48
@@ -329,7 +415,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_20
+    - name: Avian_0_20
       rect:
         serializedVersion: 2
         x: 64
@@ -339,7 +425,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_21
+    - name: Avian_0_21
       rect:
         serializedVersion: 2
         x: 80
@@ -349,7 +435,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_22
+    - name: Avian_0_22
       rect:
         serializedVersion: 2
         x: 0
@@ -359,7 +445,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_23
+    - name: Avian_0_23
       rect:
         serializedVersion: 2
         x: 16
@@ -369,7 +455,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_24
+    - name: Avian_0_24
       rect:
         serializedVersion: 2
         x: 32
@@ -379,7 +465,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_25
+    - name: Avian_0_25
       rect:
         serializedVersion: 2
         x: 48
@@ -389,7 +475,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_26
+    - name: Avian_0_26
       rect:
         serializedVersion: 2
         x: 64
@@ -399,7 +485,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_27
+    - name: Avian_0_27
       rect:
         serializedVersion: 2
         x: 80
@@ -409,7 +495,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_28
+    - name: Avian_0_28
       rect:
         serializedVersion: 2
         x: 96
@@ -419,7 +505,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_29
+    - name: Avian_0_29
       rect:
         serializedVersion: 2
         x: 112
@@ -429,7 +515,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_30
+    - name: Avian_0_30
       rect:
         serializedVersion: 2
         x: 0
@@ -439,7 +525,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_31
+    - name: Avian_0_31
       rect:
         serializedVersion: 2
         x: 16
@@ -449,7 +535,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_32
+    - name: Avian_0_32
       rect:
         serializedVersion: 2
         x: 32
@@ -459,7 +545,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_33
+    - name: Avian_0_33
       rect:
         serializedVersion: 2
         x: 48
@@ -469,7 +555,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_34
+    - name: Avian_0_34
       rect:
         serializedVersion: 2
         x: 64
@@ -479,7 +565,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_35
+    - name: Avian_0_35
       rect:
         serializedVersion: 2
         x: 80
@@ -489,7 +575,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_36
+    - name: Avian_0_36
       rect:
         serializedVersion: 2
         x: 96
@@ -499,7 +585,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_37
+    - name: Avian_0_37
       rect:
         serializedVersion: 2
         x: 112
@@ -509,7 +595,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_38
+    - name: Avian_0_38
       rect:
         serializedVersion: 2
         x: 0
@@ -519,7 +605,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_39
+    - name: Avian_0_39
       rect:
         serializedVersion: 2
         x: 16
@@ -529,7 +615,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_40
+    - name: Avian_0_40
       rect:
         serializedVersion: 2
         x: 32
@@ -539,7 +625,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_41
+    - name: Avian_0_41
       rect:
         serializedVersion: 2
         x: 48
@@ -549,7 +635,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_42
+    - name: Avian_0_42
       rect:
         serializedVersion: 2
         x: 64
@@ -559,7 +645,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_43
+    - name: Avian_0_43
       rect:
         serializedVersion: 2
         x: 80
@@ -569,7 +655,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_44
+    - name: Avian_0_44
       rect:
         serializedVersion: 2
         x: 96
@@ -577,9 +663,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_45
+    - name: Avian_0_45
       rect:
         serializedVersion: 2
         x: 112
@@ -587,9 +673,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_46
+    - name: Avian_0_46
       rect:
         serializedVersion: 2
         x: 0
@@ -599,7 +685,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_47
+    - name: Avian_0_47
       rect:
         serializedVersion: 2
         x: 16
@@ -609,7 +695,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_48
+    - name: Avian_0_48
       rect:
         serializedVersion: 2
         x: 32
@@ -619,7 +705,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_49
+    - name: Avian_0_49
       rect:
         serializedVersion: 2
         x: 48
@@ -629,7 +715,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_50
+    - name: Avian_0_50
       rect:
         serializedVersion: 2
         x: 64
@@ -639,7 +725,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_51
+    - name: Avian_0_51
       rect:
         serializedVersion: 2
         x: 80
@@ -649,7 +735,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_52
+    - name: Avian_0_52
       rect:
         serializedVersion: 2
         x: 96
@@ -659,7 +745,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_53
+    - name: Avian_0_53
       rect:
         serializedVersion: 2
         x: 112
@@ -669,7 +755,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_54
+    - name: Avian_0_54
       rect:
         serializedVersion: 2
         x: 0
@@ -679,7 +765,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_55
+    - name: Avian_0_55
       rect:
         serializedVersion: 2
         x: 16
@@ -689,7 +775,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_56
+    - name: Avian_0_56
       rect:
         serializedVersion: 2
         x: 32
@@ -699,7 +785,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_57
+    - name: Avian_0_57
       rect:
         serializedVersion: 2
         x: 48
@@ -709,7 +795,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_58
+    - name: Avian_0_58
       rect:
         serializedVersion: 2
         x: 64
@@ -719,7 +805,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_59
+    - name: Avian_0_59
       rect:
         serializedVersion: 2
         x: 80
@@ -729,7 +815,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_60
+    - name: Avian_0_60
       rect:
         serializedVersion: 2
         x: 96
@@ -739,7 +825,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_61
+    - name: Avian_0_61
       rect:
         serializedVersion: 2
         x: 0
@@ -749,7 +835,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_62
+    - name: Avian_0_62
       rect:
         serializedVersion: 2
         x: 16
@@ -759,7 +845,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_63
+    - name: Avian_0_63
       rect:
         serializedVersion: 2
         x: 32
@@ -769,7 +855,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_64
+    - name: Avian_0_64
       rect:
         serializedVersion: 2
         x: 48
@@ -779,7 +865,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_65
+    - name: Avian_0_65
       rect:
         serializedVersion: 2
         x: 64
@@ -789,7 +875,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_66
+    - name: Avian_0_66
       rect:
         serializedVersion: 2
         x: 80
@@ -799,7 +885,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_67
+    - name: Avian_0_67
       rect:
         serializedVersion: 2
         x: 0
@@ -809,7 +895,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_68
+    - name: Avian_0_68
       rect:
         serializedVersion: 2
         x: 16
@@ -819,7 +905,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_69
+    - name: Avian_0_69
       rect:
         serializedVersion: 2
         x: 32
@@ -829,7 +915,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_70
+    - name: Avian_0_70
       rect:
         serializedVersion: 2
         x: 48
@@ -839,7 +925,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_71
+    - name: Avian_0_71
       rect:
         serializedVersion: 2
         x: 64
@@ -849,7 +935,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_72
+    - name: Avian_0_72
       rect:
         serializedVersion: 2
         x: 80
@@ -859,7 +945,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_73
+    - name: Avian_0_73
       rect:
         serializedVersion: 2
         x: 0
@@ -869,7 +955,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_74
+    - name: Avian_0_74
       rect:
         serializedVersion: 2
         x: 16
@@ -879,7 +965,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_75
+    - name: Avian_0_75
       rect:
         serializedVersion: 2
         x: 32
@@ -889,7 +975,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_76
+    - name: Avian_0_76
       rect:
         serializedVersion: 2
         x: 48
@@ -899,7 +985,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_77
+    - name: Avian_0_77
       rect:
         serializedVersion: 2
         x: 0
@@ -909,7 +995,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_78
+    - name: Avian_0_78
       rect:
         serializedVersion: 2
         x: 16
@@ -919,7 +1005,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_79
+    - name: Avian_0_79
       rect:
         serializedVersion: 2
         x: 32
@@ -929,7 +1015,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_80
+    - name: Avian_0_80
       rect:
         serializedVersion: 2
         x: 48
@@ -939,7 +1025,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_81
+    - name: Avian_0_81
       rect:
         serializedVersion: 2
         x: 64
@@ -949,7 +1035,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_82
+    - name: Avian_0_82
       rect:
         serializedVersion: 2
         x: 0
@@ -959,7 +1045,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_83
+    - name: Avian_0_83
       rect:
         serializedVersion: 2
         x: 16
@@ -969,7 +1055,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_84
+    - name: Avian_0_84
       rect:
         serializedVersion: 2
         x: 32
@@ -979,7 +1065,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Avian0_85
+    - name: Avian_0_85
       rect:
         serializedVersion: 2
         x: 48

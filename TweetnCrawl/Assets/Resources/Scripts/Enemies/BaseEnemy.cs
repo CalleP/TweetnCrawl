@@ -5,7 +5,8 @@ public class BaseEnemy : MonoBehaviour {
 
 
 
-
+    public EnemyTypes EnemyType = EnemyTypes.Basic;
+    public TerrainType terrainType = TerrainType.BlackCaste;
 
 	public float speed; //The speed of the enemy
 	public float chaseRange; //The chaserange of the enemy
@@ -70,7 +71,7 @@ public class BaseEnemy : MonoBehaviour {
 		
 		if (waiting == false)
 		{
-			print("stopped patrol");
+			//print("stopped patrol");
 			StopCoroutine (patrolUpdate ());
 			StartCoroutine (patrolUpdate ());
 		}

@@ -644,6 +644,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
 --- !u!4 &325165671
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +865,33 @@ Prefab:
   m_RootGameObject: {fileID: 1776098811}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &616182474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 616182475}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616182475
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616182474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 385.135773, y: 377.588959, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1001 &624646739
 Prefab:
   m_ObjectHideFlags: 0
@@ -1056,65 +1087,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
---- !u!1 &891876089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 891876091}
-  - 114: {fileID: 891876090}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &891876090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 891876089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b79a92dd2e26624fa303c27f6db2b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loop: 0
-  interval: 0
-  sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  DeathAfterLastFrame: 0
-  PlayOnAwake: 1
-  sprites:
-  - {fileID: 2800000, guid: e0ddaf40999c3d348a11c393015d6d69, type: 3}
-  - {fileID: 2800000, guid: c09ac03ed26ccc049b7debaeeb2c9756, type: 3}
-  - {fileID: 2800000, guid: 7f189b92c3e3d86448f8aa51b68af955, type: 3}
-  - {fileID: 2800000, guid: e86e0a8c78e1a2042bb61d805949197e, type: 3}
-  - {fileID: 2800000, guid: dee1bec255d783f4fa696bec3252c8ad, type: 3}
-  - {fileID: 2800000, guid: 5fc0384a05c77c34383ad4bfee3a5ea2, type: 3}
-  - {fileID: 2800000, guid: db765d8cea01c394eb879524da867951, type: 3}
-  - {fileID: 2800000, guid: 659ddcddea67faa4babf5929a1dd5fb2, type: 3}
-  - {fileID: 2800000, guid: 659ddcddea67faa4babf5929a1dd5fb2, type: 3}
-  - {fileID: 2800000, guid: 659ddcddea67faa4babf5929a1dd5fb2, type: 3}
---- !u!4 &891876091
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 891876089}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 399.590149, y: 399.598877, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
 --- !u!1001 &1025343923
 Prefab:
   m_ObjectHideFlags: 0
@@ -1261,6 +1233,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
 --- !u!4 &1157340192
 Transform:
   m_ObjectHideFlags: 0
@@ -1475,6 +1451,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
 --- !u!4 &1421592419
 Transform:
   m_ObjectHideFlags: 0
@@ -1525,6 +1505,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
 --- !u!4 &1436754458
 Transform:
   m_ObjectHideFlags: 0
@@ -1575,6 +1559,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
 --- !u!4 &1659050255
 Transform:
   m_ObjectHideFlags: 0
@@ -1845,6 +1833,10 @@ MonoBehaviour:
   count: 0
   collider: {fileID: 100000, guid: c08e692f4a3c9d946855b0acb26b6ece, type: 2}
   colliderContainer: {fileID: 786841135}
+  BasicsAmount: 40
+  SpecialistAmount: 10
+  ElitesAmount: 10
+  BossAmount: 1
   friends: []
   test: 0
   NorthMap: {fileID: 1436754457}

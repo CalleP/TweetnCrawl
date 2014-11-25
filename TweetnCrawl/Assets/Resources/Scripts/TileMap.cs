@@ -725,6 +725,83 @@ public class TileMap : MonoBehaviour {
         
     }
 
+    public int BasicsAmount = 40;
+    public int SpecialistAmount = 10;
+    public int ElitesAmount = 10;
+    public int BossAmount = 1;
+
+    public List<GameObject> monsters = new List<GameObject>();
+
+    public void PopulateMap(bool eastOrNorth)
+    {
+        var currentTT = map[0][0].terrainType; 
+
+        for (int i = 0; i < BasicsAmount; i++)
+        {
+            var tile = findAvailableTile(eastOrNorth);
+            var obj = (GameObject)Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Basic, currentTT);
+            obj.SetActive(false);
+            monsters.Add(obj);
+        }
+
+        for (int i = 0; i < SpecialistAmount; i++)
+        {
+            var tile = findAvailableTile(eastOrNorth);
+            var obj = (GameObject)Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Teleporter, currentTT);
+            obj.SetActive(false);
+            monsters.Add(obj);
+        }
+
+
+    
+    }
+    public void ClearEnemies() 
+    {
+        foreach (var item in monsters)
+        {
+            if (item != null)
+            {
+                Destroy(item);
+            }
+
+        }
+        monsters = new List<GameObject>();
+    }
+
+    public void SetActiveOnEnemies(bool active)
+    {
+        foreach (var item in monsters)
+        {
+            if (item != null)
+            {
+                item.SetActive(active);
+            }
+
+        }
+    }
+
+
+    private TileStruct findAvailableTile(bool EastOrNorth)
+    {
+        TileStruct tile = new TileStruct(0, 0, TileType.None);
+        while (tile.Type != TileType.Dirt)
+        {
+            if (!EastOrNorth)
+            {
+                tile = GetTileData(rand.Next(0, (map[0].Length - 1) - 20), rand.Next(0, (map.Length - 1) - 20));
+            }
+            else
+            {
+                tile = GetTileData(rand.Next(0, (map[0].Length - 1) + 20), rand.Next(0, (map.Length - 1) + 20));
+            }
+
+        }
+
+        return tile;
+    }
+
 
 
 }

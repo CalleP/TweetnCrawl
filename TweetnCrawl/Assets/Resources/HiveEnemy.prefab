@@ -18,6 +18,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: HiveEnemy
   m_TagString: Enemy
@@ -367,8 +368,8 @@ MonoBehaviour:
   loop: 1
   interval: .5
   sprites:
-  - {fileID: 21300036, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
-  - {fileID: 21300036, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
+  - {fileID: 21300104, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
+  - {fileID: 21300104, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
   DeathAfterLastFrame: 0
   PlayOnAwake: 1
 --- !u!114 &11400002
@@ -382,6 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e4ec0baaf19ab48b40d978aea31c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyType: 2
+  terrainType: 1
   speed: 0
   chaseRange: 0
   player: {fileID: 0}
@@ -408,6 +411,24 @@ MonoBehaviour:
   MaxSpawns: 10
   SpawnedMonster: {fileID: 100000, guid: 82998a112b03a0444a5be6953d98068c, type: 2}
   SpawnCooldown: 10
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b79a92dd2e26624fa303c27f6db2b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 1
+  interval: .5
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  DeathAfterLastFrame: 0
+  PlayOnAwake: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

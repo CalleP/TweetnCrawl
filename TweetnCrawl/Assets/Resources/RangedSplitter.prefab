@@ -16,9 +16,9 @@ GameObject:
   - 82: {fileID: 8200004}
   - 82: {fileID: 8200006}
   - 82: {fileID: 8200008}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 195: {fileID: 19500000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: RangedSplitter
   m_TagString: Enemy
@@ -365,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3741e0e1c0b8646833c11f1b08bb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyType: 1
+  terrainType: 1
   speed: 0
   chaseRange: 0
   player: {fileID: 0}
@@ -390,6 +392,7 @@ MonoBehaviour:
   SpawnedEnemy: {fileID: 100000, guid: 82998a112b03a0444a5be6953d98068c, type: 2}
   AmountOfSpawns: 4
   SplitEffect: {fileID: 100000, guid: a540af7b1ec76a74186f9e6be97555bf, type: 2}
+  SplitDelay: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,14 +401,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aab295b6504ae347a52e592814bedb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b79a92dd2e26624fa303c27f6db2b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loop: 1
   interval: .5
   sprites:
-  - {fileID: 21300004, guid: fdb0594a483bd47418cca272a97828e9, type: 3}
-  - {fileID: 21300004, guid: a14c7c582e6713640a4739b1f32cef4d, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   DeathAfterLastFrame: 0
   PlayOnAwake: 1
 --- !u!195 &19500000
