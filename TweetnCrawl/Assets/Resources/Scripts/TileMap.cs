@@ -732,6 +732,8 @@ public class TileMap : MonoBehaviour {
 
     public List<GameObject> monsters = new List<GameObject>();
 
+    public bool ReadyToPopulate = true;
+
     public void PopulateMap(bool eastOrNorth)
     {
         var currentTT = map[0][0].terrainType; 
@@ -741,7 +743,6 @@ public class TileMap : MonoBehaviour {
             var tile = findAvailableTile(eastOrNorth);
             var obj = (GameObject)Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
             obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Basic, currentTT);
-            obj.SetActive(false);
             monsters.Add(obj);
         }
 
@@ -750,7 +751,6 @@ public class TileMap : MonoBehaviour {
             var tile = findAvailableTile(eastOrNorth);
             var obj = (GameObject)Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
             obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Teleporter, currentTT);
-            obj.SetActive(false);
             monsters.Add(obj);
         }
 
@@ -794,7 +794,7 @@ public class TileMap : MonoBehaviour {
             }
             else
             {
-                tile = GetTileData(rand.Next(0, (map[0].Length - 1) + 20), rand.Next(0, (map.Length - 1) + 20));
+                tile = GetTileData(rand.Next(20, (map[0].Length - 1)), rand.Next(20, (map.Length - 1)));
             }
 
         }

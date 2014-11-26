@@ -30,7 +30,7 @@ MonoBehaviour {
 	void Start() {
 
         //---data to send to the server---
-        string textToSend = "GetRandomTweet";
+        string textToSend = "Test";
 
         //---create a TCPClient object at the IP and port no.---
         TcpClient client = new TcpClient(Host, Port);

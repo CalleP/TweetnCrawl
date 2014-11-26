@@ -111,10 +111,10 @@ public class Hub :TileMap {
 
         ObjectPlacer.testStart();
 
-        NorthMap.PopulateMap(true);
-        WestMap.PopulateMap(false);
-        EastMap.PopulateMap(true);
-        SouthMap.PopulateMap(false);
+        //NorthMap.PopulateMap(true);
+        //WestMap.PopulateMap(false);
+        //EastMap.PopulateMap(true);
+        //SouthMap.PopulateMap(false);
 
 	}
 	
@@ -171,37 +171,66 @@ public class Hub :TileMap {
 
         //EastMap.SetActiveOnEnemies(true);
 
-        if (playerX > EastMap.map[0][0].X + 5)
+        if (playerX > EastMap.map[0][0].X + 5 && EastMap.ReadyToPopulate)
         {
-            EastMap.SetActiveOnEnemies(true);
-            WestMap.SetActiveOnEnemies(false);
-            NorthMap.SetActiveOnEnemies(false);
-            SouthMap.SetActiveOnEnemies(false);
+            EastMap.PopulateMap(true);
+            EastMap.ReadyToPopulate = false;
+
+            WestMap.ReadyToPopulate = true;
+            WestMap.ClearEnemies();
+            NorthMap.ReadyToPopulate = true;
+            NorthMap.ClearEnemies();
+            SouthMap.ReadyToPopulate = true;
+            SouthMap.ClearEnemies();
+
+            
         }
-        else if (playerX < WestMap.map[0][WestMap.Width-1].X - 5)
+        else if (playerX < WestMap.map[0][WestMap.Width - 1].X - 5 && WestMap.ReadyToPopulate)
         {
-            EastMap.SetActiveOnEnemies(false);
-            WestMap.SetActiveOnEnemies(true);
-            NorthMap.SetActiveOnEnemies(false);
-            SouthMap.SetActiveOnEnemies(false);
+            WestMap.PopulateMap(false);
+            WestMap.ReadyToPopulate = false;
+
+            EastMap.ReadyToPopulate = true;
+            EastMap.ClearEnemies();
+
+            NorthMap.ReadyToPopulate = true;
+            NorthMap.ClearEnemies();
+
+            SouthMap.ReadyToPopulate = true;
+            SouthMap.ClearEnemies();
 
         }
 
-        if (playerY > NorthMap.map[0][0].Y + 5)
+        if (playerY > NorthMap.map[0][0].Y + 5 && NorthMap.ReadyToPopulate)
         {
-            EastMap.SetActiveOnEnemies(false);
-            WestMap.SetActiveOnEnemies(false);
-            NorthMap.SetActiveOnEnemies(true);
-            SouthMap.SetActiveOnEnemies(false);
+            NorthMap.PopulateMap(true);
+            NorthMap.ReadyToPopulate = false;
 
+            EastMap.ReadyToPopulate = true;
+            EastMap.ClearEnemies();
+
+            WestMap.ReadyToPopulate = true;
+            WestMap.ClearEnemies();
+
+            SouthMap.ReadyToPopulate = true;
+            SouthMap.ClearEnemies();
 
         }
-        else if (playerY < SouthMap.map[SouthMap.Height-1][0].Y -5)
+        else if (playerY < SouthMap.map[SouthMap.Height - 1][0].Y - 5 && SouthMap.ReadyToPopulate)
         {
-            EastMap.SetActiveOnEnemies(false);
-            WestMap.SetActiveOnEnemies(false);
-            NorthMap.SetActiveOnEnemies(false);
-            SouthMap.SetActiveOnEnemies(true);
+            SouthMap.PopulateMap(false);
+            SouthMap.ReadyToPopulate = false;
+
+            EastMap.ReadyToPopulate = true;
+            EastMap.ClearEnemies();
+
+            WestMap.ReadyToPopulate = true;
+            WestMap.ClearEnemies();
+
+            NorthMap.ReadyToPopulate = true;
+            NorthMap.ClearEnemies();
+
+
 
 
         }
@@ -212,6 +241,8 @@ public class Hub :TileMap {
             if (playerX > East)
             {
                 //Time.timeScale = 0;
+                WestMap.ReadyToPopulate = false;
+
                 Thread thread = new Thread(StepRight);
                 thread.Start();
                 //StepRight();
@@ -224,6 +255,7 @@ public class Hub :TileMap {
             }
             else if (playerX < West)
             {
+                EastMap.ReadyToPopulate = false;
 
                 //Time.timeScale = 0;
                 Thread thread = new Thread(StepLeft);
@@ -242,7 +274,7 @@ public class Hub :TileMap {
 
             if (playerY > North)
             {
-                
+                SouthMap.ReadyToPopulate = false;
                 //Time.timeScale = 0;
                 Thread thread = new Thread(StepUp);
                 thread.Start();
@@ -269,7 +301,8 @@ public class Hub :TileMap {
             }
             else if (playerY < South)
             {
-                
+                NorthMap.ReadyToPopulate = false;
+
                 //Time.timeScale = 0;
                 Thread thread = new Thread(StepDown);
                 thread.Start();

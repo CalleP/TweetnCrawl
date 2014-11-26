@@ -69,7 +69,7 @@ public class ObjectPlacer : MonoBehaviour {
 
     public static void testStart()
     {
-		spawnEnemy ();
+		//spawnEnemy ();
         var tile = findAvailableTile();
         var height = (map.Height / 2)*3.2f;
         var width = (map.Width / 2)*3.2f;
