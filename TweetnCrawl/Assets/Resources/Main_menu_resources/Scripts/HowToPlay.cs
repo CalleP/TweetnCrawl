@@ -7,6 +7,8 @@ public class HowToPlay : MonoBehaviour
 	public float x;
 	public float y;
 	public GameObject HowTo;
+	public AudioClip Onhover;
+	public AudioClip Onclick;
 
 	void OnGUI()
 	{
@@ -16,6 +18,7 @@ public class HowToPlay : MonoBehaviour
 			print("HowToPlay pressed");
 			HowTo.GetComponent<ScaleHowToPlay>().enabled = true;
 			print("done");
+			audio.PlayOneShot(Onclick);
 		}	
 		
 	}

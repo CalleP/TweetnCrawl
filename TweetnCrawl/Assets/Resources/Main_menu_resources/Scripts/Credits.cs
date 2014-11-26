@@ -10,6 +10,8 @@ public class Credits : MonoBehaviour
 	bool crawling = false;
 	float time;
 	public GameObject credits;
+	public AudioClip Onhover;
+	public AudioClip Onclick;
 
 	
 	void OnGUI()
@@ -18,7 +20,7 @@ public class Credits : MonoBehaviour
 		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
 			crawling = true;
 			print("Credits pressed");
-			
+			audio.PlayOneShot(Onclick);
 		}
 		
 		

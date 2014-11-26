@@ -11,6 +11,8 @@ public class PlayGame : MonoBehaviour
 	public GUITexture loading;
 	public AudioClip Error;
 	public AudioClip ModemConnect;
+	public AudioClip Onhover;
+	public AudioClip Onclick;
 	
 	void OnGUI()
 	{

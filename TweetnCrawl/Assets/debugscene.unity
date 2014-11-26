@@ -648,6 +648,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
 --- !u!4 &325165671
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,6 +1239,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
 --- !u!4 &1157340192
 Transform:
   m_ObjectHideFlags: 0
@@ -1455,6 +1459,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
 --- !u!4 &1421592419
 Transform:
   m_ObjectHideFlags: 0
@@ -1509,6 +1515,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
 --- !u!4 &1436754458
 Transform:
   m_ObjectHideFlags: 0
@@ -1563,6 +1571,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
 --- !u!4 &1659050255
 Transform:
   m_ObjectHideFlags: 0
@@ -1837,6 +1847,8 @@ MonoBehaviour:
   SpecialistAmount: 10
   ElitesAmount: 10
   BossAmount: 1
+  monsters: []
+  ReadyToPopulate: 1
   friends: []
   test: 0
   NorthMap: {fileID: 1436754457}

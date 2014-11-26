@@ -18,6 +18,8 @@ public class ScaleHowToPlay : MonoBehaviour
 	public string stringToEdit;
 	public GUIStyle style;
 	public Vector2 scrollPosition = Vector2.zero;
+	public AudioClip Onhover;
+	public AudioClip Onclick;
 
 
 	void OnGUI()
@@ -26,6 +28,7 @@ public class ScaleHowToPlay : MonoBehaviour
 		if (GUI.Button (new Rect (x2, y2, CloseImage.width, CloseImage.height), CloseImage)) {
 
 			print ("closing");
+			audio.PlayOneShot(Onclick);
 			HowTo.GetComponent<ScaleHowToPlay>().enabled = false;
 		}
 
