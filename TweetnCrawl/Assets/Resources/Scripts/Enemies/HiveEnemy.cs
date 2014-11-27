@@ -54,6 +54,7 @@ class HiveEnemy : BasicEnemy
     {
 
         var obj = (GameObject)Instantiate(SpawnedMonster, transform.position, Quaternion.identity);
+        obj.GetComponent<EnemyRandomizer>().RandomizeFrames(obj.GetComponent<BaseEnemy>().EnemyType, terrainType);
         monsters.Add(obj);
     }
        

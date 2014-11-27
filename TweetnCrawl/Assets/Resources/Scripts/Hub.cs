@@ -503,6 +503,11 @@ public class Hub :TileMap {
         WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
 
+        SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
+        WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
+        NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
+        EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
+
 
 
         Copy(WestMap.map, newMap(WestMap));
@@ -541,6 +546,11 @@ public class Hub :TileMap {
         EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+
+        SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
+        WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
+        NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
+        EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
         //Time.timeScale = 0;
 
@@ -583,6 +593,11 @@ public class Hub :TileMap {
         SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
 
+        SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
+        WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
+        NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
+        EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
+
 
         //Time.timeScale = 0;
         Debug.Log("stepping left");
@@ -618,6 +633,11 @@ public class Hub :TileMap {
         EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+
+        SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
+        WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
+        NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
+        EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
 
 

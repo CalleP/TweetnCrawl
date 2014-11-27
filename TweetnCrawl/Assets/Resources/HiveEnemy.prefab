@@ -402,10 +402,10 @@ MonoBehaviour:
   waiting: 0
   randomPosition: {x: 0, y: 0, z: 0}
   qTo: {x: 0, y: 0, z: 0, w: 0}
-  Projectile: {fileID: 0}
+  Projectile: {fileID: 100000, guid: 455387560834aff4c92a845abd1c5345, type: 2}
   idleInterval: .5
-  ProjectileSpeed: 0
-  ProjectileDamage: 0
+  ProjectileSpeed: 40
+  ProjectileDamage: 1
   ProjectileSpread: 0
   SpawnEffect: {fileID: 100000, guid: a540af7b1ec76a74186f9e6be97555bf, type: 2}
   MaxSpawns: 10

@@ -646,7 +646,7 @@ MonoBehaviour:
   colliderContainer: {fileID: 786841135}
   BasicsAmount: 5
   SpecialistAmount: 4
-  ElitesAmount: 10
+  ElitesAmount: 3
   BossAmount: 1
   monsters: []
   ReadyToPopulate: 1
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   colliderContainer: {fileID: 786841135}
   BasicsAmount: 5
   SpecialistAmount: 4
-  ElitesAmount: 10
+  ElitesAmount: 3
   BossAmount: 1
   monsters: []
   ReadyToPopulate: 1
@@ -1520,7 +1520,7 @@ MonoBehaviour:
   colliderContainer: {fileID: 786841135}
   BasicsAmount: 5
   SpecialistAmount: 4
-  ElitesAmount: 10
+  ElitesAmount: 3
   BossAmount: 1
   monsters: []
   ReadyToPopulate: 1
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   colliderContainer: {fileID: 786841135}
   BasicsAmount: 5
   SpecialistAmount: 4
-  ElitesAmount: 10
+  ElitesAmount: 3
   BossAmount: 1
   monsters: []
   ReadyToPopulate: 1
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   colliderContainer: {fileID: 786841135}
   BasicsAmount: 5
   SpecialistAmount: 4
-  ElitesAmount: 10
+  ElitesAmount: 3
   BossAmount: 1
   monsters: []
   ReadyToPopulate: 1

@@ -727,7 +727,7 @@ public class TileMap : MonoBehaviour {
 
     public int BasicsAmount = 5;
     public int SpecialistAmount = 4;
-    public int ElitesAmount = 10;
+    public int ElitesAmount = 3;
     public int BossAmount = 1;
 
     public List<GameObject> monsters = new List<GameObject>();
@@ -743,6 +743,7 @@ public class TileMap : MonoBehaviour {
             var tile = findAvailableTile(eastOrNorth);
             var obj = (GameObject)Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
             obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Basic, currentTT);
+            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
             monsters.Add(obj);
         }
 
@@ -751,6 +752,16 @@ public class TileMap : MonoBehaviour {
             var tile = findAvailableTile(eastOrNorth);
             var obj = (GameObject)Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
             obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Teleporter, currentTT);
+            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
+            monsters.Add(obj);
+        }
+
+        for (int i = 0; i < ElitesAmount; i++)
+        {
+            var tile = findAvailableTile(eastOrNorth);
+            var obj = (GameObject)Instantiate(Resources.Load("HiveEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Hive, currentTT);
+            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
             monsters.Add(obj);
         }
 
