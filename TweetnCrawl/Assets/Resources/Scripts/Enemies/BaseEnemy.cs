@@ -77,8 +77,9 @@ public class BaseEnemy : MonoBehaviour {
 		}
 		else
 		{
+            var newPos =  Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
+            rigidbody2D.MovePosition(newPos);
 
-			transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
 			//transform.position = Vector3.Lerp (transform.position, randomPosition, Time.deltaTime);
 			//transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime);
 			
