@@ -725,8 +725,8 @@ public class TileMap : MonoBehaviour {
         
     }
 
-    public int BasicsAmount = 40;
-    public int SpecialistAmount = 10;
+    public int BasicsAmount = 5;
+    public int SpecialistAmount = 4;
     public int ElitesAmount = 10;
     public int BossAmount = 1;
 
