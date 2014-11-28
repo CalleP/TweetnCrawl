@@ -18,11 +18,12 @@ class MapChecker
     public TileStruct[][] map;
     TileStruct startPoint;
     TileStruct endPoint;
-    MapHandler generator;
-    public MapChecker(MapHandler generator, TileStruct[][] map)
+
+    public List<TileStruct> VisitedTiles = new List<TileStruct>();
+
+    public MapChecker( TileStruct[][] map)
     {
         this.map = map;
-        this.generator = generator;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
@@ -43,8 +44,12 @@ class MapChecker
 
         while (x != EndPoint.X || y != EndPoint.Y)
         {
-            
+            VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
 
+            if (count >= 1000)
+            {
+                return false;
+            }
             if (MapHandler.GetTileData(map,x, y).Type == TileType.None)
             {
                 return false;
@@ -58,6 +63,7 @@ class MapChecker
             if (canGoForward())
             {
                 goForward();
+                VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
                 //generator.GetTileData(map,x, y).test = (int)currentDirection;
             }
             else
@@ -81,6 +87,7 @@ class MapChecker
                     }
                     
                     goForward();
+                    VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
                     //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 else
@@ -88,6 +95,7 @@ class MapChecker
                     
                     turnLeft();
                     goForward();
+                    VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
                    //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 

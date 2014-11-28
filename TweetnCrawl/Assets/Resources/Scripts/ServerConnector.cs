@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Collections.Generic;
 
-public class ServerConnector {
+public class ServerConnector : MonoBehaviour {
 	bool socketReady = false;
 
     public TcpClient client;

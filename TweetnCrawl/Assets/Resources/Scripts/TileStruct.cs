@@ -36,6 +36,9 @@ public enum DecorType
 /// </summary>
 public class TileStruct{
 
+    public bool Visited = false;
+
+
     public string WallTerrainType = "YellowCave";
     public string FloorTerrainType = "YellowCave";
 

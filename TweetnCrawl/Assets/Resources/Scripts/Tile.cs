@@ -7,6 +7,7 @@ using System.Collections;
 /// </summary>
 public class Tile : MonoBehaviour {
 
+    public string Visited;
     public int x;
     public int y;
     public TileType Type;
@@ -45,7 +46,7 @@ public class Tile : MonoBehaviour {
     void Update() 
     {
         decor = TileData.DecorType;
-
+        
         surroundingTiles = TileData.test;
         TerrainType = TileData.GetTerrainType();
         TileData = map.GetTileData(TileData.X, TileData.Y);
@@ -58,6 +59,16 @@ public class Tile : MonoBehaviour {
         //{
         //    transform.position = new Vector3(TileData.X * 3.2f, transform.position.y);
         //}
+
+        if (Visited == "Visited")
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
+
         if (decor == DecorType.Grass)
         {
             //sr.color = Color.blue;

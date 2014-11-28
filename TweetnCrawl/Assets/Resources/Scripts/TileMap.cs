@@ -727,7 +727,7 @@ public class TileMap : MonoBehaviour {
 
     public int BasicsAmount = 5;
     public int SpecialistAmount = 4;
-    public int ElitesAmount = 3;
+    public int ElitesAmount = 0;
     public int BossAmount = 1;
 
     public List<GameObject> monsters = new List<GameObject>();

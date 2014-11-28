@@ -18,7 +18,15 @@ public class ObjectPlacer : MonoBehaviour {
 	
 	}
 
-    public static TileStruct findAvailableTile(){
+    public static TileStruct findAvailableTile()
+    {
+        return findAvailableTile(map);
+            
+        
+    }
+
+    public static TileStruct findAvailableTile(TileMap map)
+    {
         TileStruct tile = new TileStruct(0,0,TileType.None);
         while (tile.Type != TileType.Dirt)
 	    {
@@ -40,6 +48,8 @@ public class ObjectPlacer : MonoBehaviour {
 
         return tile;
     }
+
+
 
 
 
@@ -69,15 +79,31 @@ public class ObjectPlacer : MonoBehaviour {
 
     public static void testStart()
     {
-		//spawnEnemy ();
-        var tile = findAvailableTile();
-        var height = (map.Height / 2)*3.2f;
-        var width = (map.Width / 2)*3.2f;
-        GameObject.Find("Player").transform.position = new Vector3(width,height, -1);
+        //spawnEnemy ();
+
+
+
+            var selectectedMap = GameObject.Find("Hub").GetComponent<Hub>().CenterMap;
+            var checker = new MapChecker(selectectedMap.map);
+
+            var tile = findAvailableTile(selectectedMap);
+
+            //if (checker.CheckMap(selectectedMap.,))
+            //{
+                
+            //}
+
+
+
+
+        var height = (map.Height / 2) * 3.2f;
+        var width = (map.Width / 2) * 3.2f;
+        GameObject.Find("Player").transform.position = new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1);
         GameObject.Find("Pickup1").transform.position = new Vector3(width - 3.2f, height, -1);
         GameObject.Find("Pickup2").transform.position = new Vector3(width + 3.2f, height, -1);
         GameObject.Find("Pickup3").transform.position = new Vector3(width, height + 3.2f, -1);
     }
+
 
     public static void spawnPickup(BaseWeapon pickup)
     { 

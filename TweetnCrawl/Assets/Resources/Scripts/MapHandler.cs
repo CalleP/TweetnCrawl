@@ -220,13 +220,19 @@ public class MapHandler
         TrimMap(convertedArray);
         TrimMap(convertedArray);
 
+
+ 
+
+
+
         DrawStartAndEndPoints(convertedArray, ref startX, ref startY, ref endX, ref endY);
 
 
 
 
 
-        MapChecker checker = new MapChecker(this, convertedArray);
+
+        MapChecker checker = new MapChecker(convertedArray);
 
 
         if (checker.CheckMap(
@@ -235,6 +241,10 @@ public class MapHandler
             direction.right))
         {
             //FloodFill(convertedArray, startX, startY, TileType.Dirt, TileType.Rock);
+
+            //RemoveUnconnectedChambers(convertedArray, convertedArray[startY][startX], convertedArray[endY][endX]);
+            BreadthFirst(convertedArray, convertedArray[startY][startX]);
+
             Sprinkle(convertedArray, 62, DecorType.Grass);
             Sprinkle(convertedArray, 68, DecorType.Rock);
 
@@ -359,7 +369,7 @@ public class MapHandler
             TerrainType,
             TerrainType);
 
-        MapChecker checker = new MapChecker(this, map);
+        MapChecker checker = new MapChecker(map);
         EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
 
 
@@ -374,7 +384,7 @@ public class MapHandler
             TerrainType,
             TerrainType);
 
-        checker = new MapChecker(this, map);
+        checker = new MapChecker(map);
         SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
 
 
@@ -388,7 +398,7 @@ public class MapHandler
             TileType.Dirt,
             TerrainType,
             TerrainType);
-        checker = new MapChecker(this, map);
+        checker = new MapChecker(map);
         WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
     }
 
@@ -797,7 +807,7 @@ public class MapHandler
 
 
 
-
+        
 
 
 
@@ -805,7 +815,104 @@ public class MapHandler
 
 
     }
+
+    private Dictionary<int[], TileStruct> dict = new Dictionary<int[], TileStruct>();
+    private Stack<TileStruct> stack = new Stack<TileStruct>();
+    public void BreadthFirst(TileStruct[][] map, TileStruct start)
+    {
+        stack.Push(start);
+
+        while (stack.Count != 0)
+        {
+            var tile = stack.Pop();
+
+
+            tile.Visited = true;
+
+
+            var west = MapHandler.GetTileData(map, tile.X - 1, tile.Y);
+            var east = MapHandler.GetTileData(map, tile.X + 1, tile.Y);
+            var north = MapHandler.GetTileData(map, tile.X, tile.Y + 1);
+            var south = MapHandler.GetTileData(map, tile.X, tile.Y - 1);
+
+            if (west.Visited == false && west.Type == TileType.Dirt) stack.Push(west);
+            if (east.Visited == false && east.Type == TileType.Dirt) stack.Push(east);
+            if (north.Visited == false && north.Type == TileType.Dirt) stack.Push(north);
+            if (south.Visited == false && south.Type == TileType.Dirt) stack.Push(south);
+
+
+
+        }
+
+        for (int y = 0; y < map.Length; y++)
+        {
+            for (int x = 0; x < map[0].Length; x++)
+            {
+                var tile = map[y][x];
+                if (tile.Type == TileType.Dirt && tile.Visited == false)
+                {
+                    tile.Type = TileType.Rock;
+                }
+            }
+        }
+    
+    }
+
+    //public void RemoveUnconnectedChambers(TileStruct[][] map, TileStruct start, TileStruct end)
+    //{
+
+
+    //    end.Type = TileType.Rock;
+    //    end.test2 = "Visited";
+    //    MapChecker outerTiles = new MapChecker(map);
+
+        
+    //    outerTiles.CheckMap(start, end, direction.right);
+
+    //    end.Type = TileType.Dirt;
+    //    //Fails the check intentionally
+    //    var visitedTiles = outerTiles.VisitedTiles;
+
+    //    foreach (var item in visitedTiles)
+    //    {
+    //        item.test2 = "Visited";
+    //    }
+
+    //    foreach (var y2 in map)
+    //    {
+
+    //        foreach (var x2 in y2)
+    //        {
+    //            int surroundingTiles = 0;
+    //            var currentTile = x2;
+    //            var x = currentTile.X;
+    //            var y = currentTile.Y;
+
+    //            var left = GetTileData(map, x - 1, y);
+    //            var right = GetTileData(map, x + 1, y);
+    //            var up = GetTileData(map, x, y + 1);
+    //            var down = GetTileData(map, x, y - 1);
+
+
+    //            if (left.Type == TileType.Rock) { surroundingTiles++; };
+
+    //            if (right.Type == TileType.Rock) { surroundingTiles++; }
+    //            if (up.Type == TileType.Rock) { surroundingTiles++; }
+    //            if (down.Type == TileType.Rock) { surroundingTiles++; }
+
+    //            if ((surroundingTiles != 0 && currentTile.Type == TileType.Dirt) && (currentTile.test2 != "Visited"))
+    //            {
+    //                currentTile.Type = TileType.Rock;
+
+    //            }
+
+    //        }
+    //    }
+    //}
 }
+
+
+
 
 
 
