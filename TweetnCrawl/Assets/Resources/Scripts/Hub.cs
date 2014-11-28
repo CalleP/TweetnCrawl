@@ -49,6 +49,11 @@ public class Hub :TileMap {
 
     private string[] arrOfHashTags;
 
+    public List<string> previouslyVisitedHubs = new List<string>();
+    private bool readyToAddPoint = false;
+    public int Points;
+
+
 	public override void Start () {
 
         if (!MainHub)
@@ -142,6 +147,7 @@ public class Hub :TileMap {
         
 
         ObjectPlacer.testStart();
+        previouslyVisitedHubs.Add(CenterMap.Hashtag);
 
         //NorthMap.PopulateMap(true);
         //WestMap.PopulateMap(false);
@@ -294,6 +300,13 @@ public class Hub :TileMap {
         }
         else if ((playerY < NorthMap.map[0][0].Y && playerY > SouthMap.map[SouthMap.Height-1][0].Y) && (playerX > WestMap.map[0][WestMap.Width-1].X && playerX < EastMap.map[0][0].X))
         {
+            if (readyToAddPoint)
+            {
+                Points++;
+                previouslyVisitedHubs.Add(CenterMap.Hashtag);
+                readyToAddPoint = false;
+            }
+
             SouthMap.ReadyToPopulate = true;
             EastMap.ReadyToPopulate = true;
             WestMap.ReadyToPopulate = true;
@@ -526,6 +539,7 @@ public class Hub :TileMap {
         
         Copy(CenterMap.map, newHub(CenterMap));
 
+        readyToAddPoint = true;
         mapGenComplete = true;
 
     }
@@ -569,6 +583,7 @@ public class Hub :TileMap {
 
         Copy(CenterMap.map, newHub(CenterMap));
 
+        readyToAddPoint = true;
         mapGenComplete = true;
 
 
@@ -610,6 +625,8 @@ public class Hub :TileMap {
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        readyToAddPoint = true;
         mapGenComplete = true;
 
     }
@@ -655,6 +672,8 @@ public class Hub :TileMap {
 
         Copy(EastMap.map, newMap(EastMap));
         Copy(CenterMap.map, newHub(CenterMap));
+
+        readyToAddPoint = true;
 
         mapGenComplete = true;
                 
@@ -998,6 +1017,7 @@ public class Hub :TileMap {
  
          //example
          GUI.Label(new Rect(5,210,200,200),CurrentHashtagGUI.guiText.text, style);
+         GUI.Label(new Rect(5, 260, 200, 200), Points.ToString(), style);
  
      }
  
