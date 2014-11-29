@@ -92,7 +92,7 @@ public class BaseProjectile : MonoBehaviour {
         if (onDeathPrefab != null)
         {
 
-            var obj = (GameObject)Instantiate(onDeathPrefab, new Vector3(transform.position.x,transform.position.y, -5), Quaternion.identity);
+            var obj = (GameObject)Instantiate(onDeathPrefab, new Vector3(transform.position.x,transform.position.y, -0), Quaternion.identity);
             obj.transform.Rotate(new Vector3(0, 0, rand.Next(0,360)));
         }
 

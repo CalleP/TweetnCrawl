@@ -51,7 +51,34 @@ public class BaseEnemy : MonoBehaviour {
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
+        StartCoroutine(OnHitEffect());
 	}
+
+    public IEnumerator OnHitEffect()
+    {
+        //yield return new WaitForSeconds(0.01f);
+        //renderer.material.color = Color.red;
+        //yield return new WaitForSeconds(0.01f);
+        //renderer.material.color = Color.black;
+        //yield return new WaitForSeconds(0.01f);
+        //renderer.material.color = Color.white;
+        //yield return null;
+
+        yield return new WaitForSeconds(0.003f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.red;
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.003f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.black;
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.white;
+
+        yield return null;
+    }
 
 	//Shootattack for the enemies
 	public void shootAttack() {

@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 21300012, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300014, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   DeathAfterLastFrame: 1
+  PlayOnAwake: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -67,7 +68,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
