@@ -755,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Host: 195.178.179.176
   Port: 8080
+  OfflineMode: 0
 --- !u!4 &405674757
 Transform:
   m_ObjectHideFlags: 0
@@ -1865,7 +1866,6 @@ MonoBehaviour:
   monsters: []
   ReadyToPopulate: 1
   CurrentHashtagGUI: {fileID: 1403784939}
-  connector: {fileID: 405674755}
   friends: []
   test: 0
   NorthMap: {fileID: 1436754457}
@@ -1886,6 +1886,7 @@ MonoBehaviour:
   previouslyVisitedHubs: []
   Points: 0
   player: {fileID: 316957756}
+  rightCount: 0
   style:
     m_Name: 
     m_Normal:

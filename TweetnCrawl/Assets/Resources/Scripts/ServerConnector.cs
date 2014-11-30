@@ -20,6 +20,8 @@ public class ServerConnector : MonoBehaviour {
     public static List<string> TwitterNAmes = new List<string>();
     public static string TweetData;
 
+    public bool OfflineMode = false;
+
 	//Test the connection
 	void TestSocketConnection(){
 
@@ -32,8 +34,10 @@ public class ServerConnector : MonoBehaviour {
 
 
         //---create a TCPClient object at the IP and port no.---
-        client = new TcpClient(Host, Port);
-        nwStream = client.GetStream();
+
+
+
+
         //var hash = ParseHashtag(Send("Test"));
         //Debug.Log(hash[0]);
         //---read back the text---
@@ -64,14 +68,55 @@ public class ServerConnector : MonoBehaviour {
         //Debug.Log(test);
 	}
 
+    public void Connect() {
+
+
+
+        IAsyncResult result;
+        Action action = () =>
+        {
+            client = new TcpClient(Host, Port);
+            nwStream = client.GetStream();
+        };
+
+        result = action.BeginInvoke(null, null);
+
+        if (result.AsyncWaitHandle.WaitOne(3000))
+            Console.WriteLine("Method successful.");
+        else
+            OfflineMode = true;
+    }
+
     public string Send(string textToSend)
     {
 
+        if (OfflineMode)
+        {
+            System.Random rand = new System.Random();
+            string output = "{";
+            for (int i = 0; i < 10; i++)
+            {
+                output = output + "#LostInTwitter" + rand.Next(0, 5000) + ", ";
+            }
+            output = output + "#LostInTwitter}";
+
+            return output;
+
+        }
 
         byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
 
         //---send the text---
-        nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+        try
+        {
+            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+        }
+        catch (Exception)
+        {
+            
+            throw;
+        }
+       
 
         byte[] bytesToRead = new byte[client.ReceiveBufferSize];
         int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
@@ -90,6 +135,10 @@ public class ServerConnector : MonoBehaviour {
 
     public void Close() 
     {
+        if (OfflineMode)
+        {
+            return;
+        }
         client.Close();
     }
 

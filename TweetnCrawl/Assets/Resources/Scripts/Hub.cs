@@ -8,7 +8,7 @@ public class Hub :TileMap {
 
     public GameObject CurrentHashtagGUI;
 
-    public GameObject connector;
+    //public GameObject connector;
 
     public string[] friends;
 
@@ -64,9 +64,14 @@ public class Hub :TileMap {
 
         var connect = new ServerConnector();
 
+        connect.Connect();
+
+            Debug.Log("Failed to connect starting offlineMode");
+
+
         arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
 
-        connect.client.Close();
+        connect.Close();
 
         Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
 
@@ -353,7 +358,7 @@ public class Hub :TileMap {
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
 
-
+                Debug.Log("Has stepped right:" + rightCount);
 
             }
             else if (playerX < West)
@@ -386,7 +391,7 @@ public class Hub :TileMap {
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
 
-
+                Debug.Log("Has stepped left:" + leftCount);
 
             }
 
@@ -502,10 +507,7 @@ public class Hub :TileMap {
     public void StepUp()
     {
         //Time.timeScale = 0;
-        var connect = new ServerConnector();
-        arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
-
-        connect.client.Close();
+        arrOfHashTags = getHashtags();
 
         SouthHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = NorthHubHashtag;
@@ -547,10 +549,7 @@ public class Hub :TileMap {
     public void StepDown()
     {
 
-        var connect = new ServerConnector();
-        arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
-
-        connect.client.Close();
+        arrOfHashTags = getHashtags();
 
         NorthHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = SouthHubHashtag;
@@ -590,13 +589,14 @@ public class Hub :TileMap {
 
     }
 
+    int leftCount = 0;
     public void StepLeft()
     {
+        leftCount++;
+       
+        arrOfHashTags = getHashtags();
 
-        var connect = new ServerConnector();
-        arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
 
-        connect.client.Close();
 
         EastHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = WestHubHashtag;
@@ -615,7 +615,6 @@ public class Hub :TileMap {
 
 
         //Time.timeScale = 0;
-        Debug.Log("stepping left");
 
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
@@ -631,15 +630,16 @@ public class Hub :TileMap {
 
     }
 
+    public int rightCount = 0;
     public void StepRight()
     {
+        rightCount++;
         //Time.timeScale = 0;
 
 
-        var connect = new ServerConnector();
-        arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
+        arrOfHashTags = getHashtags();
 
-        connect.client.Close();
+
 
         WestHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = EastHubHashtag;
@@ -728,7 +728,7 @@ public class Hub :TileMap {
     public TileStruct[][] newHub(TileMap centerMap)
     {
 
-        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag)), stringToSeed(Hashtag));
+        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(centerMap.Hashtag)), stringToSeed(centerMap.Hashtag));
         return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
     
     }
@@ -1000,6 +1000,20 @@ public class Hub :TileMap {
     
     }
 
+    public string[] getHashtags()
+    {
+        var connect = new ServerConnector();
+
+        connect.Connect();
+
+
+        arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
+
+        connect.Close();
+
+        return arrOfHashTags;
+    }
+
      float native_width = 1920;
      float native_height = 1080;
 
@@ -1020,5 +1034,8 @@ public class Hub :TileMap {
          GUI.Label(new Rect(5, 260, 200, 200), Points.ToString(), style);
  
      }
+
+
+
  
 }

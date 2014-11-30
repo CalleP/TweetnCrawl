@@ -294,6 +294,9 @@ public class MapHandler
         {
             Sprinkle(convertedArray, 62, DecorType.Grass);
             Sprinkle(convertedArray, 68, DecorType.Rock);
+
+            BreadthFirst(convertedArray, convertedArray[westMap.EndPointY][0]);
+
             return convertedArray;
         }
         else
