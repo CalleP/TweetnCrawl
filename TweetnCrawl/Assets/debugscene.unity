@@ -264,6 +264,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: m_Mass
+      value: 406.220001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_RootGameObject: {fileID: 316957756}
@@ -398,7 +402,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 120395857}
   m_GameObject: {fileID: 316957756}
-  m_Mass: 1
+  m_Mass: 406.220001
   m_LinearDrag: 2.88000011
   m_AngularDrag: .0500000007
   m_GravityScale: 0
