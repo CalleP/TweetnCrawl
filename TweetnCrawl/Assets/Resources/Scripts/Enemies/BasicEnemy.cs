@@ -56,6 +56,14 @@ class BasicEnemy : BaseEnemy
             if (isPlayerInLineOfSight())
 			{	patrol();
                 ShootAtPlayer();
+                if (Follower.position.x - player.position.x > 0)
+                {
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                }
                 time2 = Time.time + (float)AttackDelay;
             }
 
@@ -75,43 +83,7 @@ class BasicEnemy : BaseEnemy
    //     StartCoroutine(patrolUpdate());
    // }
 
-    protected bool isPlayerInLineOfSight()
-    {
-        distance = Vector3.Distance(Follower.position, player.position);
-        bool hitPlayer = false;
-        bool LOS = true;
 
-
-
-        var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
-        for (int i = 0; i < hits.Length; i++)
-        {
-            var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
-            if (hits[i].transform.gameObject.tag == "Player")
-            {
-                hitPlayer = true;
-            }
-            else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
-            {
-                LOS = false;
-            }
-
-
-
-
-
-
-
-
-        }
-        if (hitPlayer && LOS)
-        {
-            return true;
-
-        }
-        return false;
-
-    }
 
    // protected override IEnumerator patrolUpdate()
    // {

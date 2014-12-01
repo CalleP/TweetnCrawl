@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class BaseWeapon : MonoBehaviour {
+public abstract class BaseWeapon : ScriptableObject {
 
     protected AudioSource[] audios;
 

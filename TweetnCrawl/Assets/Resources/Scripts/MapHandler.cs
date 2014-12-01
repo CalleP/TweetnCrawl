@@ -722,7 +722,7 @@ public class MapHandler
                 pointA = GetTileData(map, x1 - i, y);
             }
             pointA.Type = floorType;
-            pointA.SetFloor(floorTerrainType);
+            pointA.SetBoth(wallTerrainType);
 
 
 
@@ -751,7 +751,7 @@ public class MapHandler
                 pointA = GetTileData(map, x, y1 - i);
             }
             pointA.Type = floorType;
-            pointA.SetFloor(floorTerrainType);
+            pointA.SetBoth(wallTerrainType);
 
 
 

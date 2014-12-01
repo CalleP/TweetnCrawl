@@ -754,8 +754,6 @@ public class TileMap : MonoBehaviour {
             spawnMonster(eastOrNorth, currentTT, "HiveEnemy", EnemyTypes.Hive);
         }
 
-
-    
     }
 
     private void spawnMonster(bool eastOrNorth, TerrainType currentTT, string enemyPrefab, EnemyTypes enemyType)

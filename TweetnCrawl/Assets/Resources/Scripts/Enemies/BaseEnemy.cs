@@ -149,7 +149,11 @@ public class BaseEnemy : MonoBehaviour {
 	}
 
 	public void Flip() {
-		if (transform.position.x < _posX)
+        if (transform.position.x == _posX)
+        {
+            
+        }
+		else if (transform.position.x < _posX)
 		{
 		
 				transform.eulerAngles = new Vector3(0, 0, 0);
@@ -164,7 +168,33 @@ public class BaseEnemy : MonoBehaviour {
 		
 		_posX = transform.position.x;
 		}
-	
 
 
+    protected bool isPlayerInLineOfSight()
+    {
+        distance = Vector3.Distance(Follower.position, player.position);
+        bool hitPlayer = false;
+        bool LOS = true;
+
+        var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            var hitDistance = (hits[i].point - (Vector2)transform.position).magnitude;
+            if (hits[i].transform.gameObject.tag == "Player")
+            {
+                hitPlayer = true;
+            }
+            else if (hits[i].transform.gameObject.tag == "Wall" && hitDistance <= distance)
+            {
+                LOS = false;
+            }
+        }
+        if (hitPlayer && LOS)
+        {
+            return true;
+
+        }
+        return false;
+
+    }
 }
