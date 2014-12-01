@@ -35,7 +35,7 @@ class BasicEnemy : BaseEnemy
         if (health <= 0)
         {
             print("Blaaah you killed me!");
-            Destroy((Follower as Transform).gameObject);
+            StartCoroutine(OnDeathEffect());
         }
 
         //Updates constantly the distance between the follower and the player
@@ -51,7 +51,7 @@ class BasicEnemy : BaseEnemy
 
 
         distance = Vector3.Distance(Follower.position, player.position);
-        if (time2 <= Time.time && distance <= 75)
+        if (time2 <= Time.time && distance <= 60)
         {
             if (isPlayerInLineOfSight())
 			{	patrol();

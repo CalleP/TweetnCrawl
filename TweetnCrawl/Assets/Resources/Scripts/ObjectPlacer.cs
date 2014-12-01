@@ -20,17 +20,24 @@ public class ObjectPlacer : MonoBehaviour {
 
     public static TileStruct findAvailableTile()
     {
-        return findAvailableTile(map);
+        return findAvailableTile(map, 0, 0);
             
         
     }
 
     public static TileStruct findAvailableTile(TileMap map)
     {
+        return findAvailableTile(map, 0, 0);
+    }
+
+
+    public static TileStruct findAvailableTile(TileMap map, int Xoffset, int Yoffset)
+    {
         TileStruct tile = new TileStruct(0,0,TileType.None);
         while (tile.Type != TileType.Dirt)
 	    {
-	                 tile = map.map[rand.Next(0, map.map.Length-1)][rand.Next(0,map.map[0].Length-1)];
+
+            tile = map.GetTileData(rand.Next(0, map.map[0].Length - 1) + Xoffset, rand.Next(0, map.map.Length - 1) + Yoffset);
 	    }
 
         return tile;

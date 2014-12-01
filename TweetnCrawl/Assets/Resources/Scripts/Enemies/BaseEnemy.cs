@@ -56,13 +56,6 @@ public class BaseEnemy : MonoBehaviour {
 
     public IEnumerator OnHitEffect()
     {
-        //yield return new WaitForSeconds(0.01f);
-        //renderer.material.color = Color.red;
-        //yield return new WaitForSeconds(0.01f);
-        //renderer.material.color = Color.black;
-        //yield return new WaitForSeconds(0.01f);
-        //renderer.material.color = Color.white;
-        //yield return null;
 
         yield return new WaitForSeconds(0.003f);
         renderer.enabled = false;
@@ -76,6 +69,24 @@ public class BaseEnemy : MonoBehaviour {
         renderer.enabled = true;
         yield return new WaitForSeconds(0.003f);
         renderer.material.color = Color.white;
+
+        yield return null;
+    }
+
+    public IEnumerator OnDeathEffect()
+    {
+        yield return new WaitForSeconds(0.006f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.006f);
+
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.006f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.006f);
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.006f);
+        renderer.enabled = false;
+        Destroy(gameObject);
 
         yield return null;
     }

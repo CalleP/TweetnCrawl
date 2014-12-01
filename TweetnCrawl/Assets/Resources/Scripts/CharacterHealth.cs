@@ -53,6 +53,7 @@ public class CharacterHealth : MonoBehaviour {
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
+        StartCoroutine(OnHitEffect());
 	}
 	
 	public void PlayerDeath () {
@@ -60,4 +61,23 @@ public class CharacterHealth : MonoBehaviour {
 		Vector3 pos = Player.transform.position;
 		Instantiate(Resources.Load("BlueExplosion"), pos, Quaternion.identity);
 	}
+
+    public IEnumerator OnHitEffect()
+    {
+
+        yield return new WaitForSeconds(0.003f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.red;
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.003f);
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.black;
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.003f);
+        renderer.material.color = Color.white;
+
+        yield return null;
+    }
 }

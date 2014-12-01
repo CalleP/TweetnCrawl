@@ -727,7 +727,7 @@ public class TileMap : MonoBehaviour {
 
     public int BasicsAmount = 5;
     public int SpecialistAmount = 4;
-    public int ElitesAmount = 0;
+    public int ElitesAmount = 2;
     public int BossAmount = 1;
 
     public List<GameObject> monsters = new List<GameObject>();
@@ -740,34 +740,45 @@ public class TileMap : MonoBehaviour {
 
         for (int i = 0; i < BasicsAmount; i++)
         {
-            var tile = findAvailableTile(eastOrNorth);
-            var obj = (GameObject)Instantiate(Resources.Load("BasicEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
-            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Basic, currentTT);
-            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
-            monsters.Add(obj);
+            spawnMonster(eastOrNorth, currentTT, "BasicEnemy", EnemyTypes.Basic);
         }
 
         for (int i = 0; i < SpecialistAmount; i++)
         {
-            var tile = findAvailableTile(eastOrNorth);
-            var obj = (GameObject)Instantiate(Resources.Load("TeleporterEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
-            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Teleporter, currentTT);
-            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
-            monsters.Add(obj);
+            spawnMonster(eastOrNorth, currentTT, "TeleporterEnemy", EnemyTypes.Teleporter);
         }
+
 
         for (int i = 0; i < ElitesAmount; i++)
         {
-            var tile = findAvailableTile(eastOrNorth);
-            var obj = (GameObject)Instantiate(Resources.Load("HiveEnemy"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
-            obj.GetComponent<EnemyRandomizer>().RandomizeFrames(EnemyTypes.Hive, currentTT);
-            obj.GetComponent<BaseEnemy>().terrainType = currentTT;
-            monsters.Add(obj);
+            spawnMonster(eastOrNorth, currentTT, "HiveEnemy", EnemyTypes.Hive);
         }
 
 
     
     }
+
+    private void spawnMonster(bool eastOrNorth, TerrainType currentTT, string enemyPrefab, EnemyTypes enemyType)
+    {
+        TileStruct tile = null;
+        if (Width > Height)
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, -30, 0);
+            else tile = ObjectPlacer.findAvailableTile(this, 30, 0);
+        }
+        else
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, 0, -30);
+            else tile = ObjectPlacer.findAvailableTile(this, 0, 30);
+        }
+
+        var obj = (GameObject)Instantiate(Resources.Load(enemyPrefab), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+        obj.GetComponent<EnemyRandomizer>().RandomizeFrames(enemyType, currentTT);
+        obj.GetComponent<BaseEnemy>().terrainType = currentTT;
+        monsters.Add(obj);
+    }
+
+
     public void ClearEnemies() 
     {
         foreach (var item in monsters)

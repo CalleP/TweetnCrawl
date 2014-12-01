@@ -60,31 +60,42 @@ public class BaseProjectile : MonoBehaviour {
         if (coll.gameObject.tag == "Enemy")
         {
             coll.GetComponent<BaseEnemy>().receiveDamage(Damage);
-            spawnDeathAnim();
-            Destroy(gameObject);
+            StartCoroutine(OnDeath());
             
         }
 
 		if (coll.gameObject.tag == "Enemy2")
 		{
 			coll.GetComponent<EnemyScript2>().receiveDamage(Damage);
-			spawnDeathAnim();
-			Destroy(gameObject);
+            StartCoroutine(OnDeath());
 		}
 		if (coll.gameObject.tag == "Splitter")
 		{
 			coll.GetComponent<Splitter>().receiveDamage(Damage);
-			spawnDeathAnim();
-			Destroy(gameObject);
+            StartCoroutine(OnDeath());
 		}
 
 
         if (coll.gameObject.tag == "Wall")
         {
-            spawnDeathAnim();
-            Destroy(gameObject);
+            StartCoroutine(OnDeath());
         }
     }
+
+
+    protected virtual IEnumerator OnDeath()
+    {
+        spawnDeathAnim();
+        renderer.enabled = false;
+        collider2D.enabled = false;
+        while (audio.isPlaying)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        Destroy(gameObject);
+
+    }
+
 
     private static System.Random rand = new System.Random(); 
     protected void spawnDeathAnim()
