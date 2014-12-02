@@ -30,7 +30,11 @@ public class BaseEnemy : MonoBehaviour {
 	protected SpriteRenderer sr; //Renderer
 	public float idleInterval = 0.5f; //Sprite interval
 	protected float time; //Time
+	bool spotted = false;
 	protected float _posX;
+	public AudioClip[] PlayerSpottedSounds;
+
+
 
 	
 	//Method containing the basereferences for the enemies
@@ -44,6 +48,11 @@ public class BaseEnemy : MonoBehaviour {
 		PrevSpeed = speed; //Stores the speed if we need to resume that speed later.
 		rigidbody2D.fixedAngle = true;
 		_posX = transform.position.x;
+
+		PlayerSpottedSounds =  new AudioClip[]{(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/1"),
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/2"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/3"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/4")};
 		}
 
 
@@ -146,6 +155,17 @@ public class BaseEnemy : MonoBehaviour {
 		
 	}
 
+	//TODO this method needs more tweaking
+	protected virtual IEnumerator RandomPlayerSpottedSound() {
+		if (distance < chaseRange - 10 && !audio.isPlaying && spotted == false) {
+			yield return new WaitForSeconds(5);
+						audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
+			spotted = true;
+				}
+		yield return null;
+		
+	}
+
 	//Chase method for the enemies
 	public void chase() {
 		//float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), (player.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
@@ -181,6 +201,8 @@ public class BaseEnemy : MonoBehaviour {
         distance = Vector3.Distance(Follower.position, player.position);
         bool hitPlayer = false;
         bool LOS = true;
+		StartCoroutine (RandomPlayerSpottedSound());
+		
 
         var hits = Physics2D.LinecastAll((Vector2)transform.position, (Vector2)player.transform.position);
         for (int i = 0; i < hits.Length; i++)
