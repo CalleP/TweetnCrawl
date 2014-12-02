@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour {
     public Sprite dirt = Resources.Load<Sprite>("Minecraft_dirt");
     public Sprite rock = Resources.Load<Sprite>("rock");
     //private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
-    private static TileMap map = GameObject.Find("World").GetComponent<Pooling>().map;
+    private TileMap map;
     public int surroundingTiles = 0;
 
     public string TerrainType;
@@ -30,7 +30,8 @@ public class Tile : MonoBehaviour {
 
     private SpriteRenderer sr;
 	void Start () {
-       
+       map = GameObject.Find("World").GetComponent<Pooling>().map;
+
         gameObject.name = TileData.X + "," + TileData.Y;
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = dirt;
