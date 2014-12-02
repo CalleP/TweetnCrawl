@@ -35,6 +35,7 @@ public class OldCharacterController : MonoBehaviour {
 				DestroyAllGameObjects();
 				Time.timeScale = 1;
 				Escape = false;
+			
 				Application.LoadLevel(0);
 			}
 			
@@ -44,6 +45,7 @@ public class OldCharacterController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sr = gameObject.GetComponent<SpriteRenderer>();
+
 
 	}
 	public Texture2D Resume;
@@ -56,6 +58,7 @@ public class OldCharacterController : MonoBehaviour {
 	private bool Escape = false;
 	public GameObject HowTo;
 	public GameObject Panel;
+
 
     public float idleInterval = 0.5f;
     private float time;

@@ -6,6 +6,7 @@ public class CharacterHealth : MonoBehaviour {
 	public int health = 100;
 	public Texture2D HB;
 	public Transform Player;
+	public AudioClip[] list;
 
 
 	public float x;
@@ -53,6 +54,7 @@ public class CharacterHealth : MonoBehaviour {
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
+		StartCoroutine(RandomSound());
         StartCoroutine(OnHitEffect());
 	}
 	
@@ -80,4 +82,12 @@ public class CharacterHealth : MonoBehaviour {
 
         yield return null;
     }
+
+	protected virtual IEnumerator RandomSound() {
+		audio.PlayOneShot(list[Random.Range(0,list.Length)]);
+
+		yield return null;
+		
+	}
+
 }

@@ -194,6 +194,11 @@ AudioSource:
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+    - time: .167938918
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   spreadCustomCurve:
@@ -217,22 +222,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b13509be5f9d74a8fc7806525674fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resume: {fileID: 2800000, guid: e91a164f392411249aa9820eecdf3e7d, type: 3}
+  Resume: {fileID: 2800000, guid: 94143f54376170842b4d8229df94ceb1, type: 3}
   HowToPlay: {fileID: 2800000, guid: 8cb61087322856e49a53d9f8c94daa2a, type: 3}
-  MainMenu: {fileID: 2800000, guid: 6b9ebb18d94ee9f4aabac3ebfe0d5c4e, type: 3}
-  Restart: {fileID: 2800000, guid: 06b06e6c795417f4898950f7c4e34171, type: 3}
+  MainMenu: {fileID: 2800000, guid: 594527c7d3dba4241806d065a0e8e199, type: 3}
   IdleState1: {fileID: 21300152, guid: 631460fba56b21e40aed72a4313cba6a, type: 3}
   IdleState2: {fileID: 21300152, guid: e4f53a9b70721b442aef2df0cd3f0bd9, type: 3}
   HowTo: {fileID: 0}
+  Panel: {fileID: 0}
   idleInterval: .5
-  x1: 500
-  y1: 300
-  x2: 500
-  y2: 400
-  x3: 500
-  y3: 500
-  x4: 500
-  y4: 600
+  x1: 320
+  y1: 410
+  x2: 320
+  y2: 480
+  x3: 320
+  y3: 550
   Onclick: {fileID: 8300000, guid: 24557835899d8304aa51c5b7751f00f8, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -261,6 +264,13 @@ MonoBehaviour:
   health: 100
   HB: {fileID: 2800000, guid: 5f9cc70e8977f89499ab9ae987f89453, type: 3}
   Player: {fileID: 0}
+  list:
+  - {fileID: 8300000, guid: 3f21efb28bb6aee4e9738181d4ca7b9d, type: 3}
+  - {fileID: 8300000, guid: 42630529fc1920d489612032141a2777, type: 3}
+  - {fileID: 8300000, guid: a708e44ad7943ff4d8722f346bd158dc, type: 3}
+  - {fileID: 8300000, guid: 3bfb45398d553324492f8d08e9a99803, type: 3}
+  - {fileID: 8300000, guid: 45ba5066c3c4021439361faa936656fe, type: 3}
+  - {fileID: 8300000, guid: c8b177006319c9d44ae7d022aa12bafd, type: 3}
   x: 10
   y: 10
   w: 150
