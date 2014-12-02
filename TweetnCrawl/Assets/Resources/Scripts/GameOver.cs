@@ -7,8 +7,10 @@ public class GameOver : MonoBehaviour {
 		AutoResize(1920, 1080);
 
 		if (GameEnd == true) {
+
 			Panel.GetComponent<ScaleGUI>().enabled = true;
 			Time.timeScale = 0;
+
 
 			if (GUI.Button (new Rect (x1, y1, Restart.width, Restart.height), Restart)) {
 				print("Restart pressed");
@@ -61,7 +63,7 @@ public class GameOver : MonoBehaviour {
 	                    }
 
 	public void gameover() {
-
+		StartCoroutine(RandomSound());
 		GameEnd = true;
 		}
 

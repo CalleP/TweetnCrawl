@@ -161,7 +161,6 @@ public class BaseEnemy : MonoBehaviour {
 			int wait = Random.Range(3,20);
 			yield return new WaitForSeconds(wait);
 			audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
-
 				}
 		yield return null;
 		
