@@ -317,10 +317,7 @@ public class Hub :TileMap {
             WestMap.ReadyToPopulate = true;
             NorthMap.ReadyToPopulate = true;
 
-            SouthMap.ClearEnemies();
-            EastMap.ClearEnemies();
-            WestMap.ClearEnemies();
-            NorthMap.ClearEnemies();
+            DestroyAll();
 
             CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
 
@@ -706,6 +703,8 @@ public class Hub :TileMap {
 
         var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
 
+        var pickups = GameObject.FindGameObjectsWithTag("Pickup");
+
         foreach (var enemy in enemies)
         {
             enemy.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
@@ -714,9 +713,34 @@ public class Hub :TileMap {
         {
             projectile.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
+
+        foreach (var pickup in  pickups)
+        {
+            pickup.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        }
         
+    }
+
+    public void DestroyAll()
+    {
+
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+
+        var pickups = GameObject.FindGameObjectsWithTag("Pickup");
+
+        foreach (var enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        foreach (var pickup in pickups)
+        {
+            Destroy(pickup);
+        }
 
     }
+
 
 
     public TileStruct[][] newMap(TileMap map)

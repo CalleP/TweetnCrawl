@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Enemy2
   - Splitter
+  - Pickup
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

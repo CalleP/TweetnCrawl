@@ -81,18 +81,7 @@ public class EnemyRandomizer : Animator {
         dict.Add(new EnemySpriteKey(1, EnemyTypes.Hive, TerrainType.GreyCave), GetSprite("Characters/Player_1", "Player_1_102"));
 
 
-        //IceCave
-        dict.Add(new EnemySpriteKey(0, EnemyTypes.Basic, TerrainType.IceCave), GetSprite("Characters/Elemental_0", "Elemental_0_40"));
-        dict.Add(new EnemySpriteKey(1, EnemyTypes.Basic, TerrainType.IceCave), GetSprite("Characters/Elemental_1", "Elemental_1_40"));
 
-        dict.Add(new EnemySpriteKey(0, EnemyTypes.Teleporter, TerrainType.IceCave), GetSprite("Characters/Elemental_0", "Elemental_0_38"));
-        dict.Add(new EnemySpriteKey(1, EnemyTypes.Teleporter, TerrainType.IceCave), GetSprite("Characters/Elemental_1", "Elemental_1_37"));
-
-        dict.Add(new EnemySpriteKey(0, EnemyTypes.Splitter, TerrainType.IceCave), GetSprite("Characters/Elemental_0", "Elemental_0_41"));
-        dict.Add(new EnemySpriteKey(1, EnemyTypes.Splitter, TerrainType.IceCave), GetSprite("Characters/Elemental_1", "Elemental_1_41"));
-
-        dict.Add(new EnemySpriteKey(0, EnemyTypes.Hive, TerrainType.IceCave), GetSprite("Characters/Elemental_0", "Elemental_0_26"));
-        dict.Add(new EnemySpriteKey(1, EnemyTypes.Hive, TerrainType.IceCave), GetSprite("Characters/Elemental_1", "Elemental_1_26"));
 
 
         //RedCave

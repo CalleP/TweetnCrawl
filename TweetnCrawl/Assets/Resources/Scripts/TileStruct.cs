@@ -18,8 +18,7 @@ public enum TerrainType
     RedCave,
     GreyCave,
     BlackCave,
-    BlueCastle,
-    IceCave
+    BlueCastle
 }
 
 public enum DecorType
@@ -141,10 +140,6 @@ public class TileStruct{
             case TerrainType.BlueCastle:
                 FloorTerrainType = "BlackCave";
                 WallTerrainType = "BlueCastle";
-                break;
-            case TerrainType.IceCave:
-                FloorTerrainType = "BlackCave";
-                WallTerrainType = "IceCave";
                 break;
 
             default:

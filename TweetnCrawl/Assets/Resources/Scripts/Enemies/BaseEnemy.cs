@@ -75,16 +75,22 @@ public class BaseEnemy : MonoBehaviour {
 
     public IEnumerator OnDeathEffect()
     {
-        yield return new WaitForSeconds(0.006f);
-        renderer.enabled = false;
-        yield return new WaitForSeconds(0.006f);
+        var shadow = gameObject.transform.FindChild("Shadow");
 
-        renderer.enabled = true;
         yield return new WaitForSeconds(0.006f);
         renderer.enabled = false;
+        shadow.renderer.enabled = false;
         yield return new WaitForSeconds(0.006f);
+        shadow.renderer.enabled = true;
         renderer.enabled = true;
         yield return new WaitForSeconds(0.006f);
+        shadow.renderer.enabled = false;
+        renderer.enabled = false;
+        yield return new WaitForSeconds(0.006f);
+        shadow.renderer.enabled = true;
+        renderer.enabled = true;
+        yield return new WaitForSeconds(0.006f);
+        shadow.renderer.enabled = false;
         renderer.enabled = false;
         Destroy(gameObject);
 

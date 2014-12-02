@@ -92,15 +92,7 @@ public class ServerConnector : MonoBehaviour {
 
         if (OfflineMode)
         {
-            System.Random rand = new System.Random();
-            string output = "{";
-            for (int i = 0; i < 10; i++)
-            {
-                output = output + "#LostInTwitter" + rand.Next(0, 5000) + ", ";
-            }
-            output = output + "#LostInTwitter}";
-
-            return output;
+             return GenerateOfflineString();
 
         }
 
@@ -113,8 +105,8 @@ public class ServerConnector : MonoBehaviour {
         }
         catch (Exception)
         {
-            
-            throw;
+            OfflineMode = true;
+            return GenerateOfflineString();
         }
        
 
@@ -123,6 +115,19 @@ public class ServerConnector : MonoBehaviour {
 
         var outputString = Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
         return outputString;
+    }
+
+    public string GenerateOfflineString()
+    {
+        System.Random rand = new System.Random();
+        string output = "{";
+        for (int i = 0; i < 10; i++)
+        {
+            output = output + "#LostInTwitter" + rand.Next(0, 5000) + ", ";
+        }
+        output = output + "#LostInTwitter}";
+
+        return output;
     }
 
     public string[] ParseHashtag(string hashtagSet)

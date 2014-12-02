@@ -22,9 +22,10 @@ public class ScatterProjectile : BaseProjectile {
         if (coll.gameObject.tag == "Wall" || coll.gameObject.tag == "Enemy")
         {
             Scatter();
+            Destroy(gameObject);
         }
-          
-        base.OnTriggerEnter2D(coll);
+
+        
     }
 
     public override void FixedUpdate()

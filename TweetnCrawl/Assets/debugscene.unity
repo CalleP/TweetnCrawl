@@ -1714,7 +1714,7 @@ GameObject:
   - 114: {fileID: 1776098812}
   m_Layer: 0
   m_Name: Pickup3
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1856,7 +1856,7 @@ GameObject:
   - 114: {fileID: 1975780068}
   m_Layer: 0
   m_Name: Pickup1
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2135,7 +2135,7 @@ GameObject:
   - 114: {fileID: 2080686170}
   m_Layer: 0
   m_Name: Pickup2
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

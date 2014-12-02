@@ -754,6 +754,11 @@ public class TileMap : MonoBehaviour {
             spawnMonster(eastOrNorth, currentTT, "HiveEnemy", EnemyTypes.Hive);
         }
 
+        Array values = Enum.GetValues(typeof(WeaponTypes));
+        WeaponTypes randomBar = (WeaponTypes)values.GetValue(rand.Next(values.Length-1));
+
+        spawnWeaponPickup(eastOrNorth, randomBar);
+
     }
 
     private void spawnMonster(bool eastOrNorth, TerrainType currentTT, string enemyPrefab, EnemyTypes enemyType)
@@ -773,6 +778,29 @@ public class TileMap : MonoBehaviour {
         var obj = (GameObject)Instantiate(Resources.Load(enemyPrefab), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
         obj.GetComponent<EnemyRandomizer>().RandomizeFrames(enemyType, currentTT);
         obj.GetComponent<BaseEnemy>().terrainType = currentTT;
+        monsters.Add(obj);
+    }
+
+    private void spawnWeaponPickup(bool eastOrNorth, WeaponTypes weaponType)
+    {
+
+
+
+        TileStruct tile = null;
+        if (Width > Height)
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, -30, 0);
+            else tile = ObjectPlacer.findAvailableTile(this, 30, 0);
+        }
+        else
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, 0, -30);
+            else tile = ObjectPlacer.findAvailableTile(this, 0, 30);
+        }
+
+        var obj = (GameObject)Instantiate(Resources.Load("Pickup"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+        obj.GetComponent<PickupWeapon>().selectedWeapon = weaponType;
+
         monsters.Add(obj);
     }
 
