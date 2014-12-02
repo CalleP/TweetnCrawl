@@ -411,6 +411,7 @@ GameObject:
   - 82: {fileID: 316957764}
   - 114: {fileID: 316957757}
   - 114: {fileID: 316957765}
+  - 114: {fileID: 316957766}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -673,6 +674,28 @@ MonoBehaviour:
   w: 150
   h: 100
   mat: {fileID: 2100000, guid: a533ff7b8740aba4a9e225793f564834, type: 2}
+--- !u!114 &316957766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 316957756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cab2913ddfc524398fe2247cabe083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: a0f311beae5259240a175a48a5f0473e, type: 3}
+  - {fileID: 8300000, guid: 1cf9b10462034e2408551b5b7107c8e9, type: 3}
+  x1: 770
+  y1: 410
+  x2: 770
+  y2: 480
+  Onclick: {fileID: 8300000, guid: 24557835899d8304aa51c5b7751f00f8, type: 3}
+  Restart: {fileID: 2800000, guid: c2020caf5f171ea4ca0b1d49021246c6, type: 3}
+  MainMenu: {fileID: 2800000, guid: 594527c7d3dba4241806d065a0e8e199, type: 3}
+  Panel: {fileID: 505834578}
 --- !u!1 &325165669
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,8 +920,6 @@ GameObject:
   - 4: {fileID: 505834581}
   - 131: {fileID: 505834580}
   - 114: {fileID: 505834579}
-  - 114: {fileID: 505834582}
-  - 82: {fileID: 505834583}
   m_Layer: 0
   m_Name: Game_Over_Panel
   m_TagString: Untagged
@@ -953,86 +974,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
---- !u!114 &505834582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505834578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cab2913ddfc524398fe2247cabe083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: a0f311beae5259240a175a48a5f0473e, type: 3}
-  - {fileID: 8300000, guid: 1cf9b10462034e2408551b5b7107c8e9, type: 3}
-  x1: 770
-  y1: 410
-  x2: 770
-  y2: 480
-  Onclick: {fileID: 8300000, guid: 24557835899d8304aa51c5b7751f00f8, type: 3}
-  Restart: {fileID: 2800000, guid: c2020caf5f171ea4ca0b1d49021246c6, type: 3}
-  MainMenu: {fileID: 2800000, guid: 594527c7d3dba4241806d065a0e8e199, type: 3}
-  Panel: {fileID: 505834578}
---- !u!82 &505834583
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505834578}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &549815834
 GameObject:
   m_ObjectHideFlags: 0
