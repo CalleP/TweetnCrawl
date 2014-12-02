@@ -456,9 +456,9 @@ public class Hub :TileMap {
             }
         }
 
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            StepUp();
+            PreInstantiateAll();
 
 
             //Copy(WestMap.map, newMap(WestMap));
