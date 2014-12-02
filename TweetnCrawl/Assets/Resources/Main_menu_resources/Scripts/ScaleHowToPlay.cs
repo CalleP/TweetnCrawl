@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ScaleHowToPlay : MonoBehaviour 
-{
+{	
 	public Texture2D Image;
 	public Texture2D CloseImage;
 	public Texture2D Instructions;
@@ -28,7 +28,7 @@ public class ScaleHowToPlay : MonoBehaviour
 		if (GUI.Button (new Rect (x2, y2, CloseImage.width, CloseImage.height), CloseImage)) {
 
 			print ("closing");
-			audio.PlayOneShot(Onclick);
+			audio.PlayOneShot(Onclick);		
 			HowTo.GetComponent<ScaleHowToPlay>().enabled = false;
 		}
 
