@@ -28,6 +28,7 @@ public class CharacterHealth : MonoBehaviour {
 	void Start () {
 		
 		Player = transform;
+
 	}
 	
 	// Update is called once per frame
@@ -46,6 +47,7 @@ public class CharacterHealth : MonoBehaviour {
 			//no damage method is implemented yet so the enemy cannot die as of now.
 			print("Blaaah you killed me!");
 			PlayerDeath();
+			GameObject.Find("Game_Over_Panel").GetComponent<GameOver>().gameover();
 			
 		}
 		

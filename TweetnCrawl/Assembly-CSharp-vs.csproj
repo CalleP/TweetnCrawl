@@ -69,6 +69,7 @@
      <Compile Include="Assets\Resources\Scripts\EnemyRandomizer.cs" />
      <Compile Include="Assets\Resources\Scripts\ExplosionScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Extensions.cs" />
+     <Compile Include="Assets\Resources\Scripts\GameOver.cs" />
      <Compile Include="Assets\Resources\Scripts\Hub.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\JsonHelper.cs" />

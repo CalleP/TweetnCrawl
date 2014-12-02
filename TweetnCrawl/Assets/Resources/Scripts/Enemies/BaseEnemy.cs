@@ -157,9 +157,9 @@ public class BaseEnemy : MonoBehaviour {
 
 	//TODO this method needs more tweaking
 	protected virtual IEnumerator RandomPlayerSpottedSound() {
-		if (distance < chaseRange - 10 && !audio.isPlaying && spotted == false) {
+		if (distance < chaseRange - 15 && !audio.isPlaying && spotted == false) {
 			yield return new WaitForSeconds(5);
-						audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
+			audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
 			spotted = true;
 				}
 		yield return null;
