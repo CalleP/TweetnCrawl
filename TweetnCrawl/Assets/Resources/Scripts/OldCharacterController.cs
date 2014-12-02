@@ -32,6 +32,7 @@ public class OldCharacterController : MonoBehaviour {
 				print("MainMenu pressed");
 				audio.PlayOneShot(Onclick);
 				Panel.GetComponent<ScaleGUI>().enabled = false;
+				DestroyAllGameObjects();
 				Time.timeScale = 1;
 				Escape = false;
 				Application.LoadLevel(0);
@@ -142,7 +143,56 @@ public class OldCharacterController : MonoBehaviour {
 	}
 
 
-	
+	public void DestroyAllGameObjects()
+	{
+		GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+		
+		for (int i = 0; i < GameObjects.Length; i++)
+		{
+		
+			Destroy(GameObjects[i]);
+
+		}
+
+		Transform[] Transforms = (FindObjectsOfType<Transform>() as Transform[]);
+		
+		for (int i = 0; i < Transforms.Length; i++)
+		{
+			
+			Destroy(Transforms[i]);
+			
+		}
+
+		Collider[] Colliders = (FindObjectsOfType<Collider>() as Collider[]);
+		
+		for (int i = 0; i < Colliders.Length; i++)
+		{
+			
+			Destroy(Colliders[i]);
+
+		}
+
+		Collider2D[] Colliders2d = (FindObjectsOfType<Collider2D>() as Collider2D[]);
+		
+		for (int i = 0; i < Colliders2d.Length; i++)
+		{
+			
+			Destroy(Colliders2d[i]);
+			
+		}
+
+		Texture2D[] Textures2d = (FindObjectsOfType<Texture2D>() as Texture2D[]);
+		
+		for (int i = 0; i < Textures2d.Length; i++)
+		{
+			
+			Destroy(Textures2d[i]);
+			
+		}
+
+
+	}
+
 }
 
 
