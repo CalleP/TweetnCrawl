@@ -32,6 +32,13 @@ public class PickupWeapon : PickupBase
     void Start()
     {
             Item = instantiateWeaponType(selectedWeapon);
+            textMesh = transform.GetChild(0).GetComponent<TextMesh>();
+    }
+
+    TextMesh textMesh;
+    public void Update() 
+    {
+        textMesh.text = Enum.GetName(typeof(WeaponTypes), selectedWeapon);
     }
 
     public static BaseWeapon instantiateWeaponType(WeaponTypes type)

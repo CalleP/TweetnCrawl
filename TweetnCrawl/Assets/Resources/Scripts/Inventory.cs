@@ -11,8 +11,10 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         weapons = new List<BaseWeapon>();
+        player = GameObject.Find("Player");
         weapons.Add(new DualRevolvers());
         EquipWeapon(0);
+
         
 	}
 	
@@ -59,10 +61,15 @@ public class Inventory : MonoBehaviour {
 
 	}
 
+    private GameObject player;
     public void EquipWeapon(int index) 
     {
         if (weapons.Count >= 0 && index <= weapons.Count-1)
         {
+            var obj = (GameObject)Instantiate(Resources.Load("EquipEffect"));
+            obj.transform.parent = transform;
+            obj.transform.position = transform.position+new Vector3(-1.3f,1.5f, 0);
+            GameObject.Find("WeaponSwap").GetComponent<AudioSource>().Play();
             currentWeapon = weapons[index];
         }
 

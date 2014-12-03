@@ -24,6 +24,9 @@ TextureImporter:
     21300038: Teleport1
     21300040: Teleport2
     21300042: Teleport3
+    21300044: Equip3
+    21300046: Equip2
+    21300048: Equip1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -282,6 +285,36 @@ TextureImporter:
         y: 169
         width: 17
         height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Equip3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 169
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Equip2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 150
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Equip1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 133
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
