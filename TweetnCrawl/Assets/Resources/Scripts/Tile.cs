@@ -61,6 +61,15 @@ public class Tile : MonoBehaviour {
         //    transform.position = new Vector3(TileData.X * 3.2f, transform.position.y);
         //}
 
+        if (TileData.Debug)
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
+
         if (Visited == "Visited")
         {
             sr.color = Color.red;

@@ -101,6 +101,7 @@ public class Hub :TileMap {
 
         CenterMap.map = newHub(CenterMap);
 
+        
 
         CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
 
@@ -133,6 +134,8 @@ public class Hub :TileMap {
 
 
         //Debug.Log(CenterMap.TilesBeside(0,WestMap.EndPointY,direction.right,TileType.Rock));
+
+        PlaceAllRoadSigns();
 
 
 
@@ -196,9 +199,17 @@ public class Hub :TileMap {
 
         if (mapGenComplete)
         {
+            var signs = GameObject.FindGameObjectsWithTag("Sign");
+            foreach (var item in signs)
+            {
+                Destroy(item);
+            }
+            PlaceAllRoadSigns();
 
             PreInstantiateAll();
+
             mapGenComplete = false;
+
 
 
 
@@ -1024,6 +1035,8 @@ public class Hub :TileMap {
     
     }
 
+    
+
     public string[] getHashtags()
     {
         var connect = new ServerConnector();
@@ -1040,6 +1053,101 @@ public class Hub :TileMap {
 
      float native_width = 1920;
      float native_height = 1080;
+
+
+
+
+
+     public void PlaceRoadsign(TileStruct[][] map, TileStruct start, string hash)
+     {
+
+
+         Queue<TileStruct> stack = new Queue<TileStruct>();
+         
+         foreach (var item in map)
+         {
+             foreach (var item2 in item)
+             {
+                 item2.Visited = false;
+             }
+         }
+         stack.Enqueue(start);
+
+         while (stack.Count != 0)
+         {
+             var tile = stack.Dequeue();
+
+
+
+             tile.Debug = true;
+
+             var west = MapHandler.GetTileData(map, tile.X - 1, tile.Y);
+             var east = MapHandler.GetTileData(map, tile.X + 1, tile.Y);
+             var north = MapHandler.GetTileData(map, tile.X, tile.Y + 1);
+             var south = MapHandler.GetTileData(map, tile.X, tile.Y - 1);
+
+             if (tile.X >= WestMap.Width-1)
+             {
+                 west = MapHandler.GetTileData(map, (tile.X - WestMap.Width) - 1, (tile.Y - SouthMap.Height));
+                 east = MapHandler.GetTileData(map, (tile.X - WestMap.Width) + 1, (tile.Y - SouthMap.Height));
+                 north = MapHandler.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) + 1);
+                 south = MapHandler.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) - 1);
+             }
+
+
+             List<TileStruct> dirts = new List<TileStruct>();
+             if (west.Type  == TileType.Dirt)   dirts.Add(west);
+             if (east.Type  == TileType.Dirt)   dirts.Add(east); 
+             if (north.Type == TileType.Dirt)   dirts.Add(north); 
+             if (south.Type == TileType.Dirt)   dirts.Add(south); 
+
+             if (dirts.Count >= 3)
+             {
+                 foreach (var dirt in dirts)
+                 {
+                     if (tile.X != start.X && tile.Y != start.Y)
+                     {
+                        if(tile.X >= WestMap.Width-1)
+                        {
+                            var obj = (GameObject)Instantiate(Resources.Load("RoadSign"), new Vector3((tile.X) * 3.2f, (tile.Y) * 3.2f, -0.5f), Quaternion.identity);
+                            obj.transform.GetChild(0).GetComponent<RoadSignBehaviour>().text = hash;
+                            return;
+                        }
+                        else
+	                    {
+                            var obj = (GameObject)Instantiate(Resources.Load("RoadSign"), new Vector3((tile.X + WestMap.Width) * 3.2f, (tile.Y + SouthMap.Height) * 3.2f, -0.5f), Quaternion.identity);
+                            obj.transform.GetChild(0).GetComponent<RoadSignBehaviour>().text = hash;
+                            return;
+	                    }
+
+                         
+
+                     }
+                 }
+             }
+
+             if (west.Visited == false && west.Type == TileType.Dirt)   stack.Enqueue(west);
+             if (east.Visited == false && east.Type == TileType.Dirt)   stack.Enqueue(east);
+             if (north.Visited == false && north.Type == TileType.Dirt) stack.Enqueue(north);
+             if (south.Visited == false && south.Type == TileType.Dirt) stack.Enqueue(south);
+
+
+
+         }
+
+
+     }
+
+     private void PlaceAllRoadSigns()
+     {
+         PlaceRoadsign(CenterMap.map, CenterMap.map[WestMap.EndPointY][0], WestHubHashtag);
+         PlaceRoadsign(CenterMap.map, CenterMap.map[EastMap.StartPointY][CenterMap.Width - 1], EastHubHashtag);
+
+         PlaceRoadsign(CenterMap.map, CenterMap.map[0][SouthMap.EndPointX], SouthHubHashtag);
+         PlaceRoadsign(CenterMap.map, CenterMap.map[CenterMap.Width - 1][NorthMap.StartPointX], NorthHubHashtag);
+     }
+
+
 
 
      public GUIStyle style;

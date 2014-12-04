@@ -37,6 +37,7 @@ public class TileStruct{
 
     public bool Visited = false;
 
+    public bool Debug = false;
 
     public string WallTerrainType = "YellowCave";
     public string FloorTerrainType = "YellowCave";

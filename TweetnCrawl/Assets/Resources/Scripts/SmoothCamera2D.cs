@@ -21,6 +21,12 @@ public class SmoothCamera2D : MonoBehaviour
     private Vector3 Center;
     float ViewDistance  = 5.0f;
 
+    void Start()
+    { 
+        //camera.orthographicSize = Screen.width / 64 / 2;
+
+    }
+
     void Update()
     {
         var mousePos = Input.mousePosition;
