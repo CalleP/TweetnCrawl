@@ -282,7 +282,7 @@ MonoBehaviour:
   player: {fileID: 0}
   Follower: {fileID: 0}
   distance: 0
-  health: 100
+  health: 30
   PrevSpeed: 0
   ch: {fileID: 0}
   attackTime: 0
@@ -296,8 +296,9 @@ MonoBehaviour:
   qTo: {x: 0, y: 0, z: 0, w: 0}
   Projectile: {fileID: 100000, guid: 455387560834aff4c92a845abd1c5345, type: 2}
   idleInterval: .5
+  PlayerSpottedSounds: []
   ProjectileSpeed: 30
-  ProjectileDamage: 1
+  ProjectileDamage: 10
   ProjectileSpread: 20
 --- !u!114 &11400002
 MonoBehaviour:

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInSpeed: .100000001
-  fadeOutSpeed: .200000003
+  fadeOutSpeed: .0500000007
   text: ' #5thcpccf'
 --- !u!212 &21200000
 SpriteRenderer:

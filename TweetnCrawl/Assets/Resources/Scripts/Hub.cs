@@ -319,6 +319,7 @@ public class Hub :TileMap {
             if (readyToAddPoint)
             {
                 Points++;
+                UpDifficulty();
                 previouslyVisitedHubs.Add(CenterMap.Hashtag);
                 readyToAddPoint = false;
             }
@@ -1167,7 +1168,23 @@ public class Hub :TileMap {
  
      }
 
+     public void UpDifficulty()
+     {
+         ModifyEnemyspawn(WestMap);
+         ModifyEnemyspawn(EastMap);
+         ModifyEnemyspawn(NorthMap);
+         ModifyEnemyspawn(SouthMap);
+     }
+     public void ModifyEnemyspawn(TileMap map)
+     {
+         map.BasicsAmount += 5;
+         map.SpecialistAmount += 2;
 
+         map.BasicsAmount = Mathf.Clamp(map.BasicsAmount, 0, 20);
+         map.SpecialistAmount = Mathf.Clamp(map.SpecialistAmount, 0, 10);
+
+
+     }
 
  
 }

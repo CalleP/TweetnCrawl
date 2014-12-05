@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class RoadSignBehaviour : MonoBehaviour {
 
     public float fadeInSpeed = 0.1f;
-    public float fadeOutSpeed = 0.2f;
+    public float fadeOutSpeed = 0.01f;
 
 	// Use this for initialization
     public string text;
@@ -53,7 +53,7 @@ public class RoadSignBehaviour : MonoBehaviour {
     void OnMouseOver() 
     {
         mouseOver = true;
-        transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+
 
 
 

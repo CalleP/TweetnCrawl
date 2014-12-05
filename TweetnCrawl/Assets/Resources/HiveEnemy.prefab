@@ -419,11 +419,11 @@ MonoBehaviour:
   player: {fileID: 0}
   Follower: {fileID: 0}
   distance: 0
-  health: 100
+  health: 400
   PrevSpeed: 0
   ch: {fileID: 0}
   attackTime: 0
-  AttackDelay: 1
+  AttackDelay: .20000000298023224
   rotationSpeed: 50
   rotationTime: 5
   jab: {fileID: 0}
@@ -433,11 +433,12 @@ MonoBehaviour:
   qTo: {x: 0, y: 0, z: 0, w: 0}
   Projectile: {fileID: 100000, guid: 455387560834aff4c92a845abd1c5345, type: 2}
   idleInterval: .5
-  ProjectileSpeed: 40
-  ProjectileDamage: 1
-  ProjectileSpread: 0
+  PlayerSpottedSounds: []
+  ProjectileSpeed: 24
+  ProjectileDamage: 5
+  ProjectileSpread: 30
   SpawnEffect: {fileID: 100000, guid: a540af7b1ec76a74186f9e6be97555bf, type: 2}
-  MaxSpawns: 10
+  MaxSpawns: 4
   SpawnedMonster: {fileID: 100000, guid: fbf89799d46047c4083c739c62d751f4, type: 2}
   SpawnCooldown: 10
 --- !u!114 &11400004

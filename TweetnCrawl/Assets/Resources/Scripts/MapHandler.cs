@@ -633,7 +633,11 @@ public class MapHandler
         {
             for (int x = 0; x < map[0].Length; x++)
             {
-
+                if (map[y][x].Type == type && x < bestValue)
+                {
+                    bestValue = x;
+                    bestMatch = map[y][x];
+                }
                 if (map[y][x].Type == type && x < bestValue)
                 {
                     bestValue = x;
@@ -641,15 +645,22 @@ public class MapHandler
                 }
             }
         }
-
-
-        return bestMatch;
+        List<TileStruct> bestMatches = new List<TileStruct>();
+        for (int i = 0; i < map.Length; i++)
+        {
+            if (map[i][bestValue].Type == TileType.Dirt)
+            {
+                bestMatches.Add(map[i][bestValue]);
+            }
+        }
+        return bestMatches[rand.Next(0, bestMatches.Count - 1)];
     }
 
 
     public TileStruct ClosestToBorderXReverse(TileStruct[][] map, TileType type)
     {
         int bestValue = 0;
+        //List<TileStruct> bestMatches = new List<TileStruct>();
         TileStruct bestMatch = null;
         for (int y = map.Length - 1; y >= 0; y--)
         {
@@ -659,10 +670,30 @@ public class MapHandler
                 {
                     bestValue = map[y][x].X;
                     bestMatch = map[y][x];
+
+
+
+                    //if (bestMatches.Count == 0 || bestValue < bestMatches[bestMatches.Count - 1].X)
+                    //{
+                    //    bestMatches = new List<TileStruct>();
+                    //    bestMatches.Add(bestMatch);
+                    //}
+                    //else if (bestValue == bestMatches[bestMatches.Count - 1].X)
+                    //{
+                    //    bestMatches.Add(bestMatch);
+                    //}
                 }
             }
         }
-        return bestMatch;
+        List<TileStruct> bestMatches = new List<TileStruct>();
+        for (int i = 0; i < map.Length; i++)
+        {
+            if (map[i][bestValue].Type == TileType.Dirt)
+            {
+                bestMatches.Add(map[i][bestValue]);
+            }
+        }
+        return bestMatches[rand.Next(0, bestMatches.Count-1)];
     }
 
     public TileStruct ClosestToBorderY(TileStruct[][] map, TileType type)
@@ -680,7 +711,17 @@ public class MapHandler
                 }
             }
         }
-        return bestMatch;
+
+        List<TileStruct> bestMatches = new List<TileStruct>();
+        for (int i = 0; i < map[0].Length; i++)
+        {
+            if (map[bestValue][i].Type == TileType.Dirt)
+            {
+                bestMatches.Add(map[bestValue][i]);
+            }
+        }
+        return bestMatches[rand.Next(0, bestMatches.Count - 1)];
+
     }
 
     public TileStruct ClosestToBorderYReverse(TileStruct[][] map, TileType type)
@@ -698,7 +739,15 @@ public class MapHandler
                 }
             }
         }
-        return bestMatch;
+        List<TileStruct> bestMatches = new List<TileStruct>();
+        for (int i = 0; i < map[0].Length; i++)
+        {
+            if (map[bestValue][i].Type == TileType.Dirt)
+            {
+                bestMatches.Add(map[bestValue][i]);
+            }
+        }
+        return bestMatches[rand.Next(0, bestMatches.Count - 1)];
     }
 
 
