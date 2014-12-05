@@ -15,6 +15,10 @@ public class Animator : MonoBehaviour {
     private SpriteRenderer sr;
     private int index;
     private float time;
+
+
+    public List<List<Sprite>> specialFrames = new List<List<Sprite>>();
+
     public virtual void Start () {
         
         time = Time.time;
@@ -31,7 +35,10 @@ public class Animator : MonoBehaviour {
         }
 
     }
-	
+
+    public void PlaySpecialAnimation()
+    { 
+    }
 	
     void FixedUpdate()
     {

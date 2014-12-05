@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\DemoTweet.cs" />
      <Compile Include="Assets\LayerHack.cs" />
+     <Compile Include="Assets\Outline.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Exit.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs" />
@@ -108,6 +109,7 @@
      <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />
      <Compile Include="Assets\RoadSignBehaviour.cs" />
      <Compile Include="Assets\ScalingScript.cs" />
+     <Compile Include="Assets\TextOutline.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

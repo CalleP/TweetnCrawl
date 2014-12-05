@@ -61,9 +61,12 @@ public class CharacterHealth : MonoBehaviour {
 	}
 	
 	public void PlayerDeath () {
-		
-		Vector3 pos = Player.transform.position;
-		Instantiate(Resources.Load("BlueExplosion"), pos, Quaternion.identity);
+
+        Player.GetComponent<SpriteRenderer>().sprite = Player.GetComponent<OldCharacterController>().DeathState;
+        Player.renderer.enabled = true;
+        Player.transform.GetChild(0).renderer.enabled = false;
+		//Vector3 pos = Player.transform.position;
+		//Instantiate(Resources.Load("BlueExplosion"), pos, Quaternion.identity);
 	}
 
     public IEnumerator OnHitEffect()
@@ -71,15 +74,19 @@ public class CharacterHealth : MonoBehaviour {
 
         yield return new WaitForSeconds(0.003f);
         renderer.enabled = false;
+
         yield return new WaitForSeconds(0.003f);
         renderer.material.color = Color.red;
+        Player.GetComponent<SpriteRenderer>().sprite = Player.GetComponent<OldCharacterController>().HurtState;
         renderer.enabled = true;
         yield return new WaitForSeconds(0.003f);
         renderer.enabled = false;
         yield return new WaitForSeconds(0.003f);
+        Player.GetComponent<SpriteRenderer>().sprite = Player.GetComponent<OldCharacterController>().HurtState;
         renderer.material.color = Color.black;
         renderer.enabled = true;
         yield return new WaitForSeconds(0.003f);
+        Player.GetComponent<SpriteRenderer>().sprite = Player.GetComponent<OldCharacterController>().HurtState;
         renderer.material.color = Color.white;
 
         yield return null;

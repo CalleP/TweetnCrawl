@@ -72,7 +72,7 @@ public class ServerConnector : MonoBehaviour {
     void Start(){
         //var time = Time.realtimeSinceStartup;
         //Connect();
-        //var output = Send("GetTopList");
+        //var output = Send("GetRandomTweet");
 
         //Debug.Log("Took: " + (Time.realtimeSinceStartup - time));
         //Close();

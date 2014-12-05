@@ -53,12 +53,16 @@ public class OldCharacterController : MonoBehaviour {
 	public Texture2D MainMenu;
     public Sprite IdleState1;
     public Sprite IdleState2;
+    public Sprite HurtState;
+    public Sprite DeathState;
     private bool state = true;
     private SpriteRenderer sr;
 	private bool Escape = false;
 	public GameObject HowTo;
 	public GameObject Panel;
 
+
+    private int health;
 
     public float idleInterval = 0.5f;
     private float time;
@@ -72,15 +76,17 @@ public class OldCharacterController : MonoBehaviour {
 
     void Update()
     {
-
-
-        if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+        health = GetComponent<CharacterHealth>().health;
+        if (health > 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
         rigidbody2D.isKinematic = true;
         rigidbody2D.isKinematic = false;
@@ -118,6 +124,10 @@ public class OldCharacterController : MonoBehaviour {
 
         if (Time.time >= time)
         {
+            if (health <= 0)
+            {
+                sr.sprite = DeathState;
+            }
             if (state == true)
             {
                 state = false;
