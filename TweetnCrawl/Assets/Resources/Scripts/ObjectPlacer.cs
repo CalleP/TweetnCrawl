@@ -48,9 +48,17 @@ public class ObjectPlacer : MonoBehaviour {
         GameObject player = GameObject.Find("Player");
         var playerTile = map.GetTileData((int)(player.transform.position.x / 3.2f), (int)(player.transform.position.y / 3.2f));
         var tile = map.GetTileData(playerTile.X + Random.Range(-maxDistance, maxDistance), playerTile.Y + Random.Range(-maxDistance, maxDistance));
-        while (tile.Type != TileType.Dirt)
+        
+        int sentinel = 0;
+        while (tile.Type != TileType.Dirt )
         {
+
             tile = map.GetTileData(playerTile.X + Random.Range(-maxDistance, maxDistance), playerTile.Y + Random.Range(-maxDistance, maxDistance));
+            sentinel++;
+            if (sentinel > 100)
+            {
+                return playerTile;
+            }
         }
 
         return tile;

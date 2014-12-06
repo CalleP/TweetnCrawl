@@ -1074,8 +1074,11 @@ public class Hub :TileMap {
          }
          stack.Enqueue(start);
 
-         while (stack.Count != 0)
+         int sentinel = 0;
+         while (stack.Count != 0 || sentinel > 400)
          {
+             sentinel++;
+
              var tile = stack.Dequeue();
 
 

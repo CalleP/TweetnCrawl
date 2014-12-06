@@ -80,6 +80,12 @@ public class BaseProjectile : MonoBehaviour {
         {
             StartCoroutine(OnDeath());
         }
+        if (coll.gameObject.tag == "Sign")
+        {
+            StartCoroutine(OnDeath());
+            Destroy(coll.gameObject);
+        }
+
     }
 
 

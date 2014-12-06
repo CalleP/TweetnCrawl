@@ -423,7 +423,7 @@ MonoBehaviour:
   PrevSpeed: 0
   ch: {fileID: 0}
   attackTime: 0
-  AttackDelay: .20000000298023224
+  AttackDelay: .5
   rotationSpeed: 50
   rotationTime: 5
   jab: {fileID: 0}

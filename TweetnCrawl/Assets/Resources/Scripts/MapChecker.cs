@@ -42,8 +42,10 @@ class MapChecker
         bool firstTime = true;
         int count = 0;
 
-        while (x != EndPoint.X || y != EndPoint.Y)
+ 
+        while ((x != EndPoint.X || y != EndPoint.Y) && count < 3000)
         {
+
             VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
 
             if (count >= 1000)

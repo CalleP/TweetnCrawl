@@ -14,7 +14,7 @@ class MachineGun : Revolver
         coolDown = 0.12f;
         altCoolDown = 0.6f;
         Spread = 8;
-        altDamage = 100;
+        altDamage = 50;
         SemiAuto = false;
         type = WeaponTypes.machineGun;
     }
