@@ -8,6 +8,7 @@ using UnityEngine;
 class MachineGun : Revolver
 {
     protected string LaserPrefabString;
+    public float LaserWidth = 1.5f;
     private System.Random rand = new System.Random();
     public MachineGun() : base()
     {
@@ -20,6 +21,7 @@ class MachineGun : Revolver
         altDamage = 50;
         SemiAuto = false;
         type = WeaponTypes.machineGun;
+        
     }
 
     public override void AltFire()
@@ -85,6 +87,7 @@ class MachineGun : Revolver
             //Quaternion outRotation2 = Quaternion.Euler(new Vector3(0, 0, angle2));
 
             var laser = (GameObject)Instantiate(Resources.Load(LaserPrefabString));
+            laser.GetComponent<LaserFade>().width = LaserWidth;
 
             var line = laser.GetComponent<LineRenderer>();
 

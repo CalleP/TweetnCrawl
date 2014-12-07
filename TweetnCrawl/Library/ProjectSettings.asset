@@ -13,7 +13,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: TweetnCrawl
   defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 64, y: 64}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960

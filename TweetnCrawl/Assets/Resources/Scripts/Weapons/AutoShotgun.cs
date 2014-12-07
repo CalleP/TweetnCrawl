@@ -16,4 +16,9 @@ class AutoShotgun : ShotgunWeapon
         altFireEnabled = false;
         
     }
+
+    public override void AltFire()
+    {
+        Fire();
+    }
 }

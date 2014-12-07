@@ -24,7 +24,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .300000012
+        second: .100000001
     m_Colors:
       data:
         first:

@@ -26,6 +26,9 @@ class ShotgunWeapon : BaseProjectileWeapon
         type = WeaponTypes.shotgun;
         altCoolDown = 0.7f;
 
+        ShakeMagnitude = 0.3f;
+        ShakeDuration = 0.6f;
+
     }
 
     public override void Start()

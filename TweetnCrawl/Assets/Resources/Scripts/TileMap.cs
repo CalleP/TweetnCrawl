@@ -754,8 +754,13 @@ public class TileMap : MonoBehaviour {
             spawnMonster(eastOrNorth, currentTT, "HiveEnemy", EnemyTypes.Hive);
         }
 
-        Array values = Enum.GetValues(typeof(WeaponTypes));
-        WeaponTypes randomBar = (WeaponTypes)values.GetValue(rand.Next(values.Length-1));
+        WeaponTypes randomBar = WeaponTypes.revolver;
+        while (randomBar == WeaponTypes.revolver)
+        {
+            Array values = Enum.GetValues(typeof(WeaponTypes));
+            randomBar = (WeaponTypes)values.GetValue(rand.Next(values.Length - 1));
+        }
+
 
         spawnWeaponPickup(eastOrNorth, randomBar);
 

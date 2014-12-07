@@ -5,6 +5,8 @@ public abstract class BaseWeapon : ScriptableObject {
 
     protected AudioSource[] audios;
 
+
+    public GameObject camera = GameObject.Find("Camera");
     public bool SemiAuto = false;
     public Vector3 AimPoint;
     public GameObject wielder = GameObject.Find("Player");
@@ -14,8 +16,9 @@ public abstract class BaseWeapon : ScriptableObject {
     protected float altCoolDown = 1f;
     protected float timeStamp = 0f;
     public WeaponTypes type;
-    protected bool altFireEnabled = true; 
-
+    protected bool altFireEnabled = true;
+    protected float ShakeMagnitude = 0.1f;
+    protected float ShakeDuration = 0.1f;
 
     public BaseWeapon()
     {
@@ -36,6 +39,7 @@ public abstract class BaseWeapon : ScriptableObject {
     public virtual void Fire()
     {
         timeStamp = Time.time + coolDown;
+        camera.GetComponent<SmoothCamera2D>().shake(ShakeMagnitude, ShakeDuration);
         PlayFireSound();
     }
 
@@ -44,6 +48,7 @@ public abstract class BaseWeapon : ScriptableObject {
         if (altFireEnabled)
         {
             timeStamp = Time.time + altCoolDown;
+            camera.GetComponent<SmoothCamera2D>().shake(ShakeMagnitude, ShakeDuration);
             PlayAltFireSound();
         }
 

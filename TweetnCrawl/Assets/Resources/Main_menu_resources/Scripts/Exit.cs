@@ -8,8 +8,14 @@ public class Exit : MonoBehaviour
 	public AudioClip Onhover;
 	public AudioClip Onclick;
 	Vector2 mouse;
-	public Rect rect; 
-	
+	public Rect rect;
+
+    void Awake()
+    {
+        Screen.showCursor = true;
+
+    }
+
 	void OnGUI()
 	{
 		 rect = new Rect (x, y, Image.width, Image.height);
@@ -31,6 +37,8 @@ public class Exit : MonoBehaviour
 
 	//TODO play sound when mouse is hovering this code is unfinished
 	void start() {
+
+
 		rect = new Rect (x, y, Image.width, Image.height);
 		}
 

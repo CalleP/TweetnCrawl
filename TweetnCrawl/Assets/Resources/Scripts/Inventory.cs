@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour {
 
+    public Texture2D Cursor;
     private BaseWeapon currentWeapon;
     public List<BaseWeapon> weapons;
     public int WeaponPackSize = 3;
@@ -14,7 +15,7 @@ public class Inventory : MonoBehaviour {
         player = GameObject.Find("Player");
         weapons.Add(new DualRevolvers());
         EquipWeapon(0);
-
+        //UnityEngine.Cursor.SetCursor(Cursor, new Vector2(32,32), CursorMode.Auto);
         
 	}
 	
