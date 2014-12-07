@@ -10,7 +10,7 @@ class BaseProjectileWeapon : BaseWeapon
     UnityEngine.Object projectile;
     public List<BaseProjectile> projectiles = new List<BaseProjectile>();
 
-    public float BulletSpeed;
+    public float BulletSpeed = 60f;
    
 
     public BaseProjectile SpawnProjectile(Vector3 direction, Quaternion rotation, string projectilePrefab, float speed)

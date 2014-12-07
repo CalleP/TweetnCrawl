@@ -18,7 +18,7 @@ class Revolver : BaseProjectileWeapon
         fireSound = Resources.Load<AudioClip>("Sounds/RevolverFireSound");
         reloadSound = null;
         Spread = 3;
-        BulletSpeed = 55f;
+        BulletSpeed = 60f;
         coolDown = 0.15f;
         SemiAuto = true;
     }

@@ -7,12 +7,15 @@ using UnityEngine;
 
 class MachineGun : Revolver
 {
+    protected string LaserPrefabString;
     private System.Random rand = new System.Random();
     public MachineGun() : base()
     {
+        LaserPrefabString = "Lazor";
         fireSound = null;
         coolDown = 0.12f;
         altCoolDown = 0.6f;
+        BulletSpeed = 60f;
         Spread = 8;
         altDamage = 50;
         SemiAuto = false;
@@ -21,7 +24,7 @@ class MachineGun : Revolver
 
     public override void AltFire()
     {
-        if (canFire())
+        if (canFire() && altFireEnabled)
         {
             var objectPos = wielder.transform.position;
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -81,7 +84,7 @@ class MachineGun : Revolver
 
             //Quaternion outRotation2 = Quaternion.Euler(new Vector3(0, 0, angle2));
 
-            var laser = (GameObject)Instantiate(Resources.Load("Lazor"));
+            var laser = (GameObject)Instantiate(Resources.Load(LaserPrefabString));
 
             var line = laser.GetComponent<LineRenderer>();
 

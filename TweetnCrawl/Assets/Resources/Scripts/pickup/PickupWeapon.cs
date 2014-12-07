@@ -13,7 +13,12 @@ public enum WeaponTypes
     shotgun,
     machineGun,
     revolver,
-    laserMiniGun
+    AutoShotgun,
+    SawnOff,
+    RailGun,
+    MiniGun,
+    RaveGun,
+    Launcher
 }
 public class PickupWeapon : PickupBase
 {
@@ -21,8 +26,13 @@ public class PickupWeapon : PickupBase
     { 
         {WeaponTypes.revolver, typeof(DualRevolvers)},
         {WeaponTypes.machineGun, typeof(MachineGun)},
-        {WeaponTypes.laserMiniGun, typeof(LaserMinigun)},
-        {WeaponTypes.shotgun, typeof(ShotgunWeapon)}
+        {WeaponTypes.MiniGun, typeof(Minigun)},
+        {WeaponTypes.shotgun, typeof(ShotgunWeapon)},
+        {WeaponTypes.AutoShotgun, typeof(AutoShotgun)},
+        {WeaponTypes.SawnOff, typeof(SawnOff)},
+        {WeaponTypes.RailGun, typeof(RailGun)},
+        {WeaponTypes.Launcher, typeof(Launcher)},
+        {WeaponTypes.RaveGun, typeof(RaveGun)}
     };
 
     public WeaponTypes selectedWeapon = WeaponTypes.revolver;

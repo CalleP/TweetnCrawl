@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
@@ -1553,7 +1553,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
@@ -1898,7 +1898,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 0
+  selectedWeapon: 5
 --- !u!61 &1132636553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2319,7 +2319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 1
+  selectedWeapon: 7
 --- !u!61 &1376495779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 3
+  selectedWeapon: 7
 --- !u!61 &2023597512
 BoxCollider2D:
   m_ObjectHideFlags: 0

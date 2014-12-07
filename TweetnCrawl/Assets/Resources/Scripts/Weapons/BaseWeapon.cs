@@ -14,7 +14,7 @@ public abstract class BaseWeapon : ScriptableObject {
     protected float altCoolDown = 1f;
     protected float timeStamp = 0f;
     public WeaponTypes type;
-    
+    protected bool altFireEnabled = true; 
 
 
     public BaseWeapon()
@@ -41,8 +41,12 @@ public abstract class BaseWeapon : ScriptableObject {
 
     public virtual void AltFire()
     {
-        timeStamp = Time.time + altCoolDown;
-        PlayAltFireSound();
+        if (altFireEnabled)
+        {
+            timeStamp = Time.time + altCoolDown;
+            PlayAltFireSound();
+        }
+
     }
 
     protected AudioClip fireSound = Resources.Load<AudioClip>("Sounds/ShotGunFire");
@@ -86,7 +90,7 @@ public abstract class BaseWeapon : ScriptableObject {
     }
 
 
-    public bool canFire()
+    public virtual bool canFire()
     {
         if (timeStamp <= Time.time)
         {

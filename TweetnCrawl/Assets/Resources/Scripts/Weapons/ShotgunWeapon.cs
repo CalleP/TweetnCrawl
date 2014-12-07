@@ -18,7 +18,7 @@ class ShotgunWeapon : BaseProjectileWeapon
     public ShotgunWeapon()
     {
         coolDown = 0.7f;
-        BulletSpeed = 35f;
+        BulletSpeed = 60f;
         Spread = 20;
         ProjectileAmount = 8;
         damage = 35;
@@ -66,8 +66,9 @@ class ShotgunWeapon : BaseProjectileWeapon
         var mousePos = AimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var rotation = Vector3.Angle(wielder.transform.position, mousePos);
         var velocity = Vector3.up;
-        if (canFire())
+        if (canFire() && altFireEnabled) 
         {
+            
             projectiles.Add(SpawnProjectile(BulletSpeed, "ShotgunAltProjectile"));
             projectiles[projectiles.Count-1].transform.Rotate(new Vector3(0, 0, 0));
             

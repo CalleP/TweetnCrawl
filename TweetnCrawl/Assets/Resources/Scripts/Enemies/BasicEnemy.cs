@@ -51,7 +51,7 @@ class BasicEnemy : BaseEnemy
 
 
         distance = Vector3.Distance(Follower.position, player.position);
-        if (time2 <= Time.time && distance <= 60)
+        if (time2 <= Time.time && distance <= 54)
         {
             if (isPlayerInLineOfSight())
 			{	patrol();
