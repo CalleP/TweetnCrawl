@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BulletFade.cs" />
      <Compile Include="Assets\CursorBehaviour.cs" />
      <Compile Include="Assets\DemoTweet.cs" />
      <Compile Include="Assets\LayerHack.cs" />
+     <Compile Include="Assets\OnHitEffect.cs" />
      <Compile Include="Assets\Outline.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Exit.cs" />

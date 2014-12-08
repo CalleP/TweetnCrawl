@@ -6,6 +6,7 @@ public abstract class BaseWeapon : ScriptableObject {
     protected AudioSource[] audios;
 
 
+    public GameObject shell = (GameObject)Resources.Load("Shell");
     public GameObject camera = GameObject.Find("Camera");
     public bool SemiAuto = false;
     public Vector3 AimPoint;
@@ -19,6 +20,7 @@ public abstract class BaseWeapon : ScriptableObject {
     protected bool altFireEnabled = true;
     protected float ShakeMagnitude = 0.1f;
     protected float ShakeDuration = 0.1f;
+    public float PauseOnHit = 0.02f;
 
     public BaseWeapon()
     {
@@ -107,7 +109,6 @@ public abstract class BaseWeapon : ScriptableObject {
         return false;
 
     }
-        
 
 
 

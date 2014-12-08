@@ -8,11 +8,13 @@ class DualRevolvers : Revolver {
     public DualRevolvers()
     {
         firstFire = true;
-        coolDown = 0.15f;
+        coolDown = 0f;
         altCoolDown = 0.15f;
         type = WeaponTypes.revolver;
         ShakeMagnitude = 0.1f;
         ShakeDuration = 0.1f;
+        BulletSpeed = 100;
+
     }
 
     public override void Fire()

@@ -17,15 +17,16 @@ class ShotgunWeapon : BaseProjectileWeapon
 
     public ShotgunWeapon()
     {
+        shell = Resources.Load<GameObject>("ShotgunShell");
         coolDown = 0.7f;
-        BulletSpeed = 60f;
+        BulletSpeed = 70f;
         Spread = 20;
         ProjectileAmount = 8;
         damage = 35;
         SemiAuto = true;
         type = WeaponTypes.shotgun;
         altCoolDown = 0.7f;
-
+        VelocityVariation = 5;
         ShakeMagnitude = 0.3f;
         ShakeDuration = 0.6f;
 

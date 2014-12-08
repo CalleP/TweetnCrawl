@@ -4,9 +4,12 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: ShotgunPellets
     21300002: Shotgun_1
-    21300004: Bullet
+    21300004: EnergyAmmo_1
     21300006: MachineGunBullet
     21300008: Ammo_4
+    21300010: Shell_0
+    21300012: Shell_1
+    21300014: EnergyAmmo_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -68,7 +71,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Bullet
+    - name: EnergyAmmo_1
       rect:
         serializedVersion: 2
         x: 4
@@ -95,6 +98,36 @@ TextureImporter:
         y: 17
         width: 9
         height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shell_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 85
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shell_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: EnergyAmmo_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 5
+        width: 8
+        height: 6
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -11,7 +11,7 @@ class BaseProjectileWeapon : BaseWeapon
     public List<BaseProjectile> projectiles = new List<BaseProjectile>();
 
     public float BulletSpeed = 60f;
-   
+    public float VelocityVariation = 1f;
 
     public BaseProjectile SpawnProjectile(Vector3 direction, Quaternion rotation, string projectilePrefab, float speed)
     {
@@ -19,7 +19,7 @@ class BaseProjectileWeapon : BaseWeapon
         var projectile = (GameObject)Instantiate(prefab, wielder.transform.position, rotation);
         var projectileScript = projectile.GetComponent<BaseProjectile>();
 
-        projectileScript.Init(direction, rotation, speed, damage);
+        projectileScript.Init(direction, rotation, speed + UnityEngine.Random.Range(-VelocityVariation,VelocityVariation), damage, this);
 
         return projectileScript;
 
@@ -43,6 +43,10 @@ class BaseProjectileWeapon : BaseWeapon
         return SpawnProjectile(outDirection, outRotation, projectilePrefab, speed);
 
     }
+
+
+
+
 
     
 

@@ -10,5 +10,10 @@ class Minigun : MachineGun {
         type = WeaponTypes.MiniGun;
         altFireEnabled = false;
     }
+
+    public override void AltFire()
+    {
+        base.Fire();
+    }
     
 }

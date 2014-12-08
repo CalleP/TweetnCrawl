@@ -7,6 +7,8 @@ public class BaseProjectile : MonoBehaviour {
     public Vector2 direction;
     public Quaternion rotation;
     public float speed;
+    public BaseWeapon weapon = null;
+
 
     public GameObject onDeathPrefab;
 
@@ -31,7 +33,7 @@ public class BaseProjectile : MonoBehaviour {
         Damage = damage;
         this.direction = direction;
         this.rotation = rotation;
-        
+
         this.speed = speed;
         transform.rotation = rotation;
         var rand = new System.Random();
@@ -40,6 +42,13 @@ public class BaseProjectile : MonoBehaviour {
         this.direction = direction;
         //rigidbody2D.velocity = direction * speed;
         //rigidbody2D.velocity = direction;
+
+    }
+
+    public void Init(Vector2 direction, Quaternion rotation, float speed, int damage, BaseWeapon weapon)
+    {
+        Init(direction,rotation,speed,damage);
+        this.weapon = weapon;
 
     }
 
@@ -57,41 +66,48 @@ public class BaseProjectile : MonoBehaviour {
 
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
+        
         if (coll.gameObject.tag == "Enemy")
         {
             coll.GetComponent<BaseEnemy>().receiveDamage(Damage);
-            StartCoroutine(OnDeath());
+            coll.rigidbody2D.AddExplosionForce(100f, transform.position, 200f);
+
+            StartCoroutine(OnDeath(true));
             
         }
 
 		if (coll.gameObject.tag == "Enemy2")
 		{
 			coll.GetComponent<EnemyScript2>().receiveDamage(Damage);
-            StartCoroutine(OnDeath());
+            StartCoroutine(OnDeath(true));
 		}
 		if (coll.gameObject.tag == "Splitter")
 		{
 			coll.GetComponent<Splitter>().receiveDamage(Damage);
-            StartCoroutine(OnDeath());
+            StartCoroutine(OnDeath(true));
 		}
 
 
         if (coll.gameObject.tag == "Wall")
         {
-            StartCoroutine(OnDeath());
+            StartCoroutine(OnDeath(false));
         }
         if (coll.gameObject.tag == "Sign")
         {
-            StartCoroutine(OnDeath());
+            StartCoroutine(OnDeath(true));
             Destroy(coll.gameObject);
         }
 
     }
 
 
-    protected virtual IEnumerator OnDeath()
+    protected virtual IEnumerator OnDeath(bool hitEnemy)
     {
-        spawnDeathAnim();
+
+        spawnDeathAnim(hitEnemy);
+
+
+
         renderer.enabled = false;
         collider2D.enabled = false;
         while (audio.isPlaying)
@@ -100,17 +116,28 @@ public class BaseProjectile : MonoBehaviour {
         }
         Destroy(gameObject);
 
+
     }
 
 
     private static System.Random rand = new System.Random(); 
-    protected void spawnDeathAnim()
+    protected void spawnDeathAnim(bool hitEnemy)
     {
         if (onDeathPrefab != null)
         {
 
             var obj = (GameObject)Instantiate(onDeathPrefab, new Vector3(transform.position.x,transform.position.y, -0), Quaternion.identity);
             obj.transform.Rotate(new Vector3(0, 0, rand.Next(0,360)));
+
+            if (weapon != null && hitEnemy)
+            {
+                obj.GetComponent<OnHitEffect>().PauseTime = weapon.PauseOnHit;
+                obj.GetComponent<OnHitEffect>().HitEnemy = hitEnemy;
+            }
+                
+
+
+            
         }
 
     }

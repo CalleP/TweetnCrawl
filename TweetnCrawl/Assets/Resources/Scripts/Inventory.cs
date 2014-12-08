@@ -9,6 +9,9 @@ public class Inventory : MonoBehaviour {
     private BaseWeapon currentWeapon;
     public List<BaseWeapon> weapons;
     public int WeaponPackSize = 3;
+    public Transform ShellEjectionPoint;
+
+
 	// Use this for initialization
 	void Start () {
         weapons = new List<BaseWeapon>();
@@ -39,11 +42,21 @@ public class Inventory : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count != 0)
             {
+                if (currentWeapon.canFire())
+                {
+                    spawnShell();
+                }
                 currentWeapon.Fire();
+
+
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse1) && weapons.Count != 0)
             {
+                if (currentWeapon.canFire())
+                {
+                    spawnShell();
+                }
                 currentWeapon.AltFire();
             }
         }
@@ -51,11 +64,21 @@ public class Inventory : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.Mouse0) && weapons.Count != 0)
             {
+                if (currentWeapon.canFire())
+                {
+                    spawnShell();
+                }
                 currentWeapon.Fire();
+
+
             }
 
             if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0)
             {
+                if (currentWeapon.canFire())
+                {
+                    spawnShell();
+                }
                 currentWeapon.AltFire();
             }
         }
@@ -118,6 +141,20 @@ public class Inventory : MonoBehaviour {
        
         var pickupScript = pickup.GetComponent<PickupWeapon>();
         pickupScript.selectedWeapon = PickupWeapon.TypeToWeaponType(weapon.GetType());
+    }
+
+    public void spawnShell()
+    {
+        if (currentWeapon.shell != null)
+        {
+            var shell = (GameObject)Instantiate(currentWeapon.shell, transform.position, Quaternion.identity);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            ShellEjectionPoint.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+            ShellEjectionPoint.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(70f,120f)));
+            shell.rigidbody2D.AddForce(ShellEjectionPoint.up * UnityEngine.Random.Range(2000f,2500f));
+            shell.transform.rotation = ShellEjectionPoint.rotation;
+            Physics2D.IgnoreCollision(shell.collider2D, player.collider2D);
+        }
     }
 
 

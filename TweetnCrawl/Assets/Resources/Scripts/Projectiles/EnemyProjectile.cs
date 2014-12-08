@@ -12,14 +12,14 @@ class EnemyProjectile : BaseProjectile
 
         if (coll.gameObject.tag == "Wall")
         {
-            spawnDeathAnim();
+            spawnDeathAnim(false);
             Destroy(gameObject);
         }
 
         if (coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponent<CharacterHealth>().receiveDamage(Damage);
-            spawnDeathAnim();
+            spawnDeathAnim(false);
             Destroy(gameObject);
         }
             

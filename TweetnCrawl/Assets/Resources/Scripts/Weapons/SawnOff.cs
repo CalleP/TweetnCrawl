@@ -13,6 +13,8 @@ class SawnOff : ShotgunWeapon
         Spread = 30;
         BulletSpeed = 45;
 
+        VelocityVariation = 10;
+
     }
 }
 

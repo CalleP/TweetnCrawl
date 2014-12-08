@@ -758,11 +758,14 @@ public class TileMap : MonoBehaviour {
         while (randomBar == WeaponTypes.revolver)
         {
             Array values = Enum.GetValues(typeof(WeaponTypes));
-            randomBar = (WeaponTypes)values.GetValue(rand.Next(values.Length - 1));
+            randomBar = (WeaponTypes)values.GetValue(rand.Next(0,values.Length - 1));
         }
 
 
+
         spawnWeaponPickup(eastOrNorth, randomBar);
+
+
 
     }
 

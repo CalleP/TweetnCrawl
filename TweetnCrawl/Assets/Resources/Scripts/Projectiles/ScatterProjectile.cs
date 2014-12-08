@@ -53,7 +53,7 @@ public class ScatterProjectile : BaseProjectile {
 
                 var projectileScript = proj.GetComponent<BaseProjectile>();
 
-                projectileScript.Init(transform.position, proj.transform.rotation, 35, 30);
+                projectileScript.Init(transform.position, proj.transform.rotation, 35, 30, weapon);
                 proj.transform.Rotate(new Vector3(0, 0, i * 30f + rand.Next(spread*-1, spread)));
 
 

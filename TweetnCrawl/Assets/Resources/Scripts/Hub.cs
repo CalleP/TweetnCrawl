@@ -717,6 +717,8 @@ public class Hub :TileMap {
 
         var pickups = GameObject.FindGameObjectsWithTag("Pickup");
 
+        var shells = GameObject.FindGameObjectsWithTag("Shell");
+
         foreach (var enemy in enemies)
         {
             enemy.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
@@ -729,6 +731,11 @@ public class Hub :TileMap {
         foreach (var pickup in  pickups)
         {
             pickup.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        }
+
+        foreach (var shell in shells)
+        {
+            shell.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
         
     }
