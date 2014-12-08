@@ -33,6 +33,7 @@ public class BaseEnemy : MonoBehaviour {
 	bool spotted = false;
 	protected float _posX;
 	public AudioClip[] PlayerSpottedSounds;
+	public AudioClip[] MonsterHitSounds;
 
 
 
@@ -53,6 +54,19 @@ public class BaseEnemy : MonoBehaviour {
 			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/2"), 
 			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/3"), 
 			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/4")};
+
+
+		
+		MonsterHitSounds =  new AudioClip[]{(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m1"),
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m2"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m3"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m4"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m5"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m6"),
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m7"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m8"), 
+			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterHits/m9")};
+
 		}
 
 
@@ -60,6 +74,7 @@ public class BaseEnemy : MonoBehaviour {
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
+		StartCoroutine (Monsterhit());
         StartCoroutine(OnHitEffect());
 	}
 
@@ -162,6 +177,15 @@ public class BaseEnemy : MonoBehaviour {
 			yield return new WaitForSeconds(wait);
 			audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
 				}
+		yield return null;
+		
+	}
+
+
+	protected virtual IEnumerator Monsterhit() {
+
+		AudioSource.PlayClipAtPoint(MonsterHitSounds [Random.Range (0, MonsterHitSounds.Length)], transform.position);
+
 		yield return null;
 		
 	}

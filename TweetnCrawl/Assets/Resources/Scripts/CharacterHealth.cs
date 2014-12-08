@@ -5,6 +5,7 @@ public class CharacterHealth : MonoBehaviour {
 	
 	public int health = 100;
 	public Texture2D HB;
+	public Texture2D HBOutline;
 	public Transform Player;
 	public AudioClip[] list;
 
@@ -21,6 +22,7 @@ public class CharacterHealth : MonoBehaviour {
 		if (Event.current.type.Equals(EventType.Repaint)) {
 			Rect box = new Rect(x, y, w, h);
 			Graphics.DrawTexture(box, HB, mat);
+			Graphics.DrawTexture(box, HBOutline, mat);
 		}
 		}
 	
