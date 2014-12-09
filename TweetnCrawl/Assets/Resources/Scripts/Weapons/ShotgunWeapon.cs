@@ -29,6 +29,7 @@ class ShotgunWeapon : BaseProjectileWeapon
         VelocityVariation = 5;
         ShakeMagnitude = 0.3f;
         ShakeDuration = 0.6f;
+        PauseOnHit = 0.003f;
 
     }
 

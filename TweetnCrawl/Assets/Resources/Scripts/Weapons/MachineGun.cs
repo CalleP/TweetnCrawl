@@ -21,6 +21,7 @@ class MachineGun : Revolver
         altDamage = 50;
         SemiAuto = false;
         type = WeaponTypes.machineGun;
+        PauseOnHit = 0f;
         
     }
 
@@ -75,6 +76,7 @@ class MachineGun : Revolver
                 if (hits[i].collider.gameObject.tag == "Enemy" && distance <= closestHit)
                 {
                     hits[i].collider.gameObject.GetComponent<BaseEnemy>().receiveDamage(altDamage);
+                
                     hitEnemy = true;
                 }
             }

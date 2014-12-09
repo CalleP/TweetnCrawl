@@ -21,6 +21,10 @@ public class OnHitEffect : MonoBehaviour {
 
     private IEnumerator ImpactPause()
     {
+        if (PauseTime == 0)
+        {
+            yield return null;
+        }
         Time.timeScale = 0;
         float pauseEndTime = Time.realtimeSinceStartup + PauseTime;
         while (Time.realtimeSinceStartup < pauseEndTime)

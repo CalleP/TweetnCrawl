@@ -35,6 +35,8 @@ public class BaseEnemy : MonoBehaviour {
 	public AudioClip[] PlayerSpottedSounds;
 	public AudioClip[] MonsterHitSounds;
 
+    
+
 
 
 	
@@ -74,6 +76,7 @@ public class BaseEnemy : MonoBehaviour {
 	public void receiveDamage (int dmg) {
 		health = health - dmg;
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
+        InterruptPatrol();
 		StartCoroutine (Monsterhit());
         StartCoroutine(OnHitEffect());
 	}
@@ -139,14 +142,19 @@ public class BaseEnemy : MonoBehaviour {
 		
 		if (waiting == false)
 		{
-			//print("stopped patrol");
-			StopCoroutine (patrolUpdate ());
-			StartCoroutine (patrolUpdate ());
+
+                StopCoroutine(patrolUpdate());
+                StartCoroutine(patrolUpdate());
+
+
 		}
 		else
 		{
-            var newPos =  Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
-            rigidbody2D.MovePosition(newPos);
+            if (timer <= Time.time)
+            {
+                var newPos = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
+                rigidbody2D.MovePosition(newPos);
+            }
 
 			//transform.position = Vector3.Lerp (transform.position, randomPosition, Time.deltaTime);
 			//transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime);
@@ -166,9 +174,18 @@ public class BaseEnemy : MonoBehaviour {
 		}
 		waiting = true;
 		yield return new WaitForSeconds(randomWait);
+
 		waiting = false;
 		
 	}
+
+    private float timer;
+    private float interruptTime = 0.75f;
+
+    public void InterruptPatrol()
+    {
+        timer = Time.time + interruptTime;
+    }
 
 	//TODO this method needs more tweaking
 	protected virtual IEnumerator RandomPlayerSpottedSound() {

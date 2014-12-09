@@ -9,7 +9,7 @@ public class BaseProjectile : MonoBehaviour {
     public float speed;
     public BaseWeapon weapon = null;
 
-
+    public float ForceMultiplier = 12f;
     public GameObject onDeathPrefab;
 
     public int Damage = 50;
@@ -70,7 +70,8 @@ public class BaseProjectile : MonoBehaviour {
         if (coll.gameObject.tag == "Enemy")
         {
             coll.GetComponent<BaseEnemy>().receiveDamage(Damage);
-            coll.rigidbody2D.AddExplosionForce(100f, transform.position, 200f);
+            coll.rigidbody2D.AddForce(rigidbody2D.velocity*ForceMultiplier);
+
 
             StartCoroutine(OnDeath(true));
             
