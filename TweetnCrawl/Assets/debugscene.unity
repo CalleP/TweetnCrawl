@@ -463,7 +463,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: HBOutline
       value: 
-      objectReference: {fileID: 2800000, guid: eb8a7edc568b77b438132aadf9a51610, type: 3}
+      objectReference: {fileID: 2800000, guid: f3361d3a9647344458dba4ceb94ea13f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_RootGameObject: {fileID: 316957756}
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   HB: {fileID: 2800000, guid: 5f9cc70e8977f89499ab9ae987f89453, type: 3}
-  HBOutline: {fileID: 2800000, guid: eb8a7edc568b77b438132aadf9a51610, type: 3}
+  HBOutline: {fileID: 2800000, guid: f3361d3a9647344458dba4ceb94ea13f, type: 3}
   Player: {fileID: 0}
   list:
   - {fileID: 8300000, guid: 3f21efb28bb6aee4e9738181d4ca7b9d, type: 3}
