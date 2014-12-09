@@ -37,40 +37,45 @@ public class TextOutline : MonoBehaviour
         }
     }
 
+    private Vector3 oldPos;
     void LateUpdate()
     {
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-
-        outlineColor.a = textMesh.color.a * textMesh.color.a;
-
-        // copy attributes
-        for (int i = 0; i < transform.childCount; i++)
+        if (oldPos != null && transform.position != oldPos)
         {
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-            TextMesh other = transform.GetChild(i).GetComponent<TextMesh>();
-            other.color = outlineColor;
-            other.text = textMesh.text;
-            other.alignment = textMesh.alignment;
-            other.anchor = textMesh.anchor;
-            other.characterSize = textMesh.characterSize;
-            other.font = textMesh.font;
-            other.fontSize = textMesh.fontSize;
-            other.fontStyle = textMesh.fontStyle;
-            other.richText = textMesh.richText;
-            other.tabSize = textMesh.tabSize;
-            other.lineSpacing = textMesh.lineSpacing;
-            other.offsetZ = textMesh.offsetZ;
+            outlineColor.a = textMesh.color.a * textMesh.color.a;
 
-            bool doublePixel = resolutionDependant && (Screen.width > doubleResolution || Screen.height > doubleResolution);
-            Vector3 pixelOffset = GetOffset(i) * (doublePixel ? 2.0f * pixelSize : pixelSize);
-            Vector3 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint + pixelOffset);
-            other.transform.position = worldPoint;
+            // copy attributes
+            for (int i = 0; i < transform.childCount; i++)
+            {
 
-            MeshRenderer otherMeshRenderer = transform.GetChild(i).GetComponent<MeshRenderer>();
-            otherMeshRenderer.sortingLayerID = meshRenderer.sortingLayerID;
-            otherMeshRenderer.sortingLayerName = meshRenderer.sortingLayerName;
-            otherMeshRenderer.sortingOrder = SortingOrder;
+                TextMesh other = transform.GetChild(i).GetComponent<TextMesh>();
+                other.color = outlineColor;
+                other.text = textMesh.text;
+                other.alignment = textMesh.alignment;
+                other.anchor = textMesh.anchor;
+                other.characterSize = textMesh.characterSize;
+                other.font = textMesh.font;
+                other.fontSize = textMesh.fontSize;
+                other.fontStyle = textMesh.fontStyle;
+                other.richText = textMesh.richText;
+                other.tabSize = textMesh.tabSize;
+                other.lineSpacing = textMesh.lineSpacing;
+                other.offsetZ = textMesh.offsetZ;
+
+                bool doublePixel = resolutionDependant && (Screen.width > doubleResolution || Screen.height > doubleResolution);
+                Vector3 pixelOffset = GetOffset(i) * (doublePixel ? 2.0f * pixelSize : pixelSize);
+                Vector3 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint + pixelOffset);
+                other.transform.position = worldPoint;
+
+                MeshRenderer otherMeshRenderer = transform.GetChild(i).GetComponent<MeshRenderer>();
+                otherMeshRenderer.sortingLayerID = meshRenderer.sortingLayerID;
+                otherMeshRenderer.sortingLayerName = meshRenderer.sortingLayerName;
+                otherMeshRenderer.sortingOrder = SortingOrder;
+            }
         }
+        oldPos = transform.position;
     }
 
     Vector3 GetOffset(int i)

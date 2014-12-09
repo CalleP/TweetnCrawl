@@ -46,73 +46,46 @@ public class Tile : MonoBehaviour {
 
     void Update() 
     {
-        decor = TileData.DecorType;
-        
-        surroundingTiles = TileData.test;
-        TerrainType = TileData.GetTerrainType();
-        TileData = map.GetTileData(TileData.X, TileData.Y);
-        Type = TileData.Type;
-        x = TileData.X;
-        y = TileData.Y;
+        if (Oldposition != transform.position)
+        {
+            TileData = map.GetTileData(TileData.X, TileData.Y);
+            Type = TileData.Type;
+            x = TileData.X;
+            y = TileData.Y;    
 
-
-        //if (transform.position.x != TileData.X * 3.2)
-        //{
-        //    transform.position = new Vector3(TileData.X * 3.2f, transform.position.y);
-        //}
-
-        if (TileData.Debug)
-        {
-            sr.color = Color.red;
+            if (!ReferenceEquals(oldTileData, TileData))
+            {
+                if (TileData.Type == TileType.Dirt)
+                {
+                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    sr.sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
+                    gameObject.tag = "Tile";
+                    //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
+                }
+                else if (TileData.Type == TileType.Rock)
+                {
+                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+                    sr.sprite = SpriteHandler.GetTexture(TileData, map);
+                    gameObject.tag = "Wall";
+                    //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
+                }
+                else if (TileData.Type == TileType.Wood)
+                {
+                    sr.sprite = rock;
+                }
+                else
+                {
+                    sr.sprite = dirt;
+                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                }
+            }
         }
-        else
-        {
-            sr.color = Color.white;
-        }
-
-        if (Visited == "Visited")
-        {
-            sr.color = Color.red;
-        }
-        else
-        {
-            sr.color = Color.white;
-        }
-
-        if (decor == DecorType.Grass)
-        {
-            //sr.color = Color.blue;
-        }
-        else
-        {
-            //sr.color = Color.white;
-        }
-
-        if (TileData.Type == TileType.Dirt)
-        {
-            //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            sr.sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
-            gameObject.tag = "Tile";
-            //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
-        }
-        else if (TileData.Type == TileType.Rock)
-        {
-            //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
-            sr.sprite = SpriteHandler.GetTexture(TileData, map);
-            gameObject.tag = "Wall";
-            //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
-        }
-        else if (TileData.Type == TileType.Wood)
-        {
-            sr.sprite = rock;
-        }
-        else
-        {
-            sr.sprite = dirt;
-            //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-        }
+        oldTileData = TileData;
+        Oldposition = transform.position;
     }
+    private Vector3 Oldposition;
+    private TileStruct oldTileData;
 
     void OnTriggerEnter2D(Collider2D coll){
         CollidingWithPlayer = true;

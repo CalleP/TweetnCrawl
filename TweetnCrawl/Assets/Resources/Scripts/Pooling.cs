@@ -114,14 +114,15 @@ public class Pooling : MonoBehaviour {
         Debug.Log("pooling after" + Time.realtimeSinceStartup);
     }
 
+    public GameObject camera;
     void Update()
     {
 
-        var test = TileMap.CropMap(map.map,CenterPointX - ((ViewPortWidth / 2) + ViewPortWidth % 2), CenterPointY - ((ViewPortHeight / 2) + ViewPortHeight % 2), CenterPointX + (ViewPortWidth / 2), CenterPointY + (ViewPortHeight / 2));
+        //var test = TileMap.CropMap(map.map,CenterPointX - ((ViewPortWidth / 2) + ViewPortWidth % 2), CenterPointY - ((ViewPortHeight / 2) + ViewPortHeight % 2), CenterPointX + (ViewPortWidth / 2), CenterPointY + (ViewPortHeight / 2));
 
         //TODO This is inefficent, change
-        GameObject player = GameObject.Find("Camera");
-        MoveToMapPos(((int)(player.transform.position.x / 3.2f)) , (int)(player.transform.position.y / 3.2f));
+        
+        MoveToMapPos(((int)(camera.transform.position.x / 3.2f)) , (int)(camera.transform.position.y / 3.2f));
 
     }
 
@@ -227,13 +228,5 @@ public class Pooling : MonoBehaviour {
         }
     }
 
-    void OnGUI() {
-        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        p.z = 0;
-        //var mapPos = map.GetTileDataCoords(p.x, p.y);
-        var rect = new Rect(10, 10, 100, 20);
-        var rect2 = new Rect(10, 30, 1000, 20);
-        //GUI.Label(rect, mapPos.X.ToString() + ",  " + mapPos.Y.ToString());
-        GUI.Label(rect2, p.x/3.2 + ",  " + p.y/3.2);
-    }
+
 }
