@@ -1149,7 +1149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_TagString
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 0
+  selectedWeapon: 6
 --- !u!61 &532303498
 BoxCollider2D:
   m_ObjectHideFlags: 0

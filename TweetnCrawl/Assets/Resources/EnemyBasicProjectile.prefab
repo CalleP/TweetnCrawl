@@ -191,6 +191,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   speed: 40
+  weapon: {fileID: 0}
   onDeathPrefab: {fileID: 100000, guid: 8348ef7dd39cb9c4f8be17d215573b85, type: 2}
   Damage: 1
   SpriteRotation: -90
@@ -220,7 +221,7 @@ MonoBehaviour:
   loop: 0
   interval: .0500000007
   sprites:
-  - {fileID: 21300022, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
+  - {fileID: 21300036, guid: 28f4a2435bf5948439018a81e5511e13, type: 3}
   - {fileID: 21300020, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300018, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
   - {fileID: 21300016, guid: 1c451144a2a828d468c2580efbc49a8d, type: 3}
