@@ -734,6 +734,9 @@ public class TileMap : MonoBehaviour {
 
     public bool ReadyToPopulate = true;
 
+    public int HealthPackAmount = 1;
+    public GameObject HealthPack;
+
     public void PopulateMap(bool eastOrNorth)
     {
         var currentTT = map[0][0].terrainType; 
@@ -758,15 +761,43 @@ public class TileMap : MonoBehaviour {
         while (randomBar == WeaponTypes.revolver)
         {
             Array values = Enum.GetValues(typeof(WeaponTypes));
-            randomBar = (WeaponTypes)values.GetValue(rand.Next(0,values.Length - 1));
+            randomBar = (WeaponTypes)values.GetValue(UnityEngine.Random.Range(0, values.Length-1));
         }
-
-
-
         spawnWeaponPickup(eastOrNorth, randomBar);
 
+        for (int i = 0; i < ammoPickupAmount; i++)
+        {
+            spawnPickup(eastOrNorth, AmmoPickup);
+            
+        }
+
+        for (int i = 0; i < HealthPackAmount; i++)
+        {
+            spawnPickup(eastOrNorth, HealthPack);
+
+        }
+
+    }
 
 
+    public GameObject AmmoPickup;
+    public int ammoPickupAmount = 3;
+    private void spawnPickup(bool eastOrNorth, GameObject Prefab)
+    {
+        TileStruct tile = null;
+        if (Width > Height)
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, -30, 0);
+            else tile = ObjectPlacer.findAvailableTile(this, 30, 0);
+        }
+        else
+        {
+            if (!eastOrNorth) tile = ObjectPlacer.findAvailableTile(this, 0, -30);
+            else tile = ObjectPlacer.findAvailableTile(this, 0, 30);
+        }
+
+        var obj = (GameObject)Instantiate(Prefab, new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
+        monsters.Add(obj);
     }
 
     private void spawnMonster(bool eastOrNorth, TerrainType currentTT, string enemyPrefab, EnemyTypes enemyType)

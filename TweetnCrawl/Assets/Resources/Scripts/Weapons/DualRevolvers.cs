@@ -14,7 +14,7 @@ class DualRevolvers : Revolver {
         ShakeMagnitude = 0.1f;
         ShakeDuration = 0.1f;
         BulletSpeed = 100;
-
+        AmmoCost = 0;
     }
 
     public override void Fire()

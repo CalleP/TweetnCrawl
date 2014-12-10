@@ -10,7 +10,13 @@ public class Inventory : MonoBehaviour {
     public List<BaseWeapon> weapons;
     public int WeaponPackSize = 3;
     public Transform ShellEjectionPoint;
-
+    [SerializeField]
+    private int ammo = 100;
+    public int Ammo
+    {
+        get { return ammo; }  // Getter
+        set { ammo = value; StartCoroutine(PickupFlash()); } // Setter
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -40,45 +46,52 @@ public class Inventory : MonoBehaviour {
 
         if (currentWeapon.SemiAuto == true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count != 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count != 0 && ammo >= currentWeapon.AmmoCost)
             {
                 if (currentWeapon.canFire())
                 {
                     spawnShell();
+                    ammo -= currentWeapon.AmmoCost;
                 }
                 currentWeapon.Fire();
 
 
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse1) && weapons.Count != 0)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && weapons.Count != 0 && ammo >= currentWeapon.AmmoCost)
             {
                 if (currentWeapon.canFire())
                 {
                     spawnShell();
+                    ammo -= currentWeapon.AmmoCost;
                 }
+
                 currentWeapon.AltFire();
             }
         }
         else
         {
-            if (Input.GetKey(KeyCode.Mouse0) && weapons.Count != 0)
+            if (Input.GetKey(KeyCode.Mouse0) && weapons.Count != 0 && ammo >= currentWeapon.AmmoCost)
             {
                 if (currentWeapon.canFire())
                 {
                     spawnShell();
+                    ammo -= currentWeapon.AmmoCost;
                 }
+
                 currentWeapon.Fire();
 
 
             }
 
-            if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0)
+            if (Input.GetKey(KeyCode.Mouse1) && weapons.Count != 0 && ammo >= currentWeapon.AmmoCost)
             {
                 if (currentWeapon.canFire())
                 {
                     spawnShell();
+                    ammo -= currentWeapon.AmmoCost;
                 }
+
                 currentWeapon.AltFire();
             }
         }
@@ -141,6 +154,24 @@ public class Inventory : MonoBehaviour {
        
         var pickupScript = pickup.GetComponent<PickupWeapon>();
         pickupScript.selectedWeapon = PickupWeapon.TypeToWeaponType(weapon.GetType());
+    }
+
+    public Material PickUpFlashMaterial;
+    public Color PickUpFlashColor;
+    public float PickUpFlashDuration = 2f;
+    public IEnumerator PickupFlash()
+    {
+        var oldMaterial = renderer.material;
+        var oldColor = renderer.material.color;
+        renderer.material = PickUpFlashMaterial;
+        renderer.material.color = PickUpFlashColor;
+
+        yield return new WaitForSeconds(PickUpFlashDuration);
+
+        renderer.material = oldMaterial;
+        renderer.material.color = oldColor;
+
+        yield return null;
     }
 
     public void spawnShell()

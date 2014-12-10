@@ -101,4 +101,36 @@ public class CharacterHealth : MonoBehaviour {
 		
 	}
 
+    public void Heal(int amount) 
+    {
+        if (health + amount > 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += amount;
+        }
+
+        StartCoroutine(PickupFlash());
+    }
+
+    public Material PickUpFlashMaterial;
+    public Color PickUpFlashColor;
+    public float PickUpFlashDuration = 2f;
+    public IEnumerator PickupFlash()
+    {
+        var oldMaterial = renderer.material;
+        var oldColor = renderer.material.color;
+        renderer.material = PickUpFlashMaterial;
+        renderer.material.color = PickUpFlashColor;
+
+        yield return new WaitForSeconds(PickUpFlashDuration);
+
+        renderer.material = oldMaterial;
+        renderer.material.color = oldColor;
+
+        yield return null;
+    }
+
 }

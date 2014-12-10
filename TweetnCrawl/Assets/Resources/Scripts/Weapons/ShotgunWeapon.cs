@@ -30,6 +30,7 @@ class ShotgunWeapon : BaseProjectileWeapon
         ShakeMagnitude = 0.3f;
         ShakeDuration = 0.6f;
         PauseOnHit = 0.003f;
+        AmmoCost = 3;
 
     }
 

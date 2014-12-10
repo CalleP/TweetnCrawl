@@ -17,6 +17,7 @@ class RailGun : MachineGun
         ShakeDuration = 1f;
         LaserWidth = 2.2f;
         PauseOnHit = 0.1f;
+        AmmoCost = 5;
     
     }
 

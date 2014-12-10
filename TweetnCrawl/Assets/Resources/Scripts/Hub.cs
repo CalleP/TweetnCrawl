@@ -66,7 +66,7 @@ public class Hub :TileMap {
 
         connect.Connect();
 
-            Debug.Log("Failed to connect starting offlineMode");
+
 
 
         arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
@@ -151,11 +151,12 @@ public class Hub :TileMap {
         {
             PreInstantiateAll();
         }
-
         
 
         ObjectPlacer.testStart();
         previouslyVisitedHubs.Add(CenterMap.Hashtag);
+
+
 
         //NorthMap.PopulateMap(true);
         //WestMap.PopulateMap(false);
@@ -205,6 +206,7 @@ public class Hub :TileMap {
                 Destroy(item);
             }
             PlaceAllRoadSigns();
+
 
             PreInstantiateAll();
 
@@ -264,6 +266,7 @@ public class Hub :TileMap {
         }
         else if (playerX < WestMap.map[0][WestMap.Width - 1].X - 5 && WestMap.ReadyToPopulate)
         {
+            
             WestMap.PopulateMap(false);
             WestMap.ReadyToPopulate = false;
 
@@ -316,18 +319,21 @@ public class Hub :TileMap {
         }
         else if ((playerY < NorthMap.map[0][0].Y && playerY > SouthMap.map[SouthMap.Height-1][0].Y) && (playerX > WestMap.map[0][WestMap.Width-1].X && playerX < EastMap.map[0][0].X))
         {
+            
             if (readyToAddPoint)
             {
                 Points++;
                 UpDifficulty();
                 previouslyVisitedHubs.Add(CenterMap.Hashtag);
                 readyToAddPoint = false;
+
             }
 
             SouthMap.ReadyToPopulate = true;
             EastMap.ReadyToPopulate = true;
             WestMap.ReadyToPopulate = true;
             NorthMap.ReadyToPopulate = true;
+
 
             DestroyAll();
 
@@ -719,6 +725,8 @@ public class Hub :TileMap {
 
         var shells = GameObject.FindGameObjectsWithTag("Shell");
 
+        var pickupAmmos = GameObject.FindGameObjectsWithTag("PickupAmmo");
+
         foreach (var enemy in enemies)
         {
             enemy.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
@@ -737,7 +745,23 @@ public class Hub :TileMap {
         {
             shell.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
+
+        foreach (var ammos in pickupAmmos)
+        {
+            ammos.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
+        }
         
+    }
+
+    public void DestroyAmmoPickups()
+    {
+        var pickups = GameObject.FindGameObjectsWithTag("PickupAmmo");
+
+        foreach (var pickup in pickups)
+        {
+            Destroy(pickup);
+        }
+    
     }
 
     public void DestroyAll()
@@ -759,6 +783,8 @@ public class Hub :TileMap {
         }
 
     }
+
+
 
 
 
@@ -1199,6 +1225,10 @@ public class Hub :TileMap {
 
 
      }
+
+
+
+
 
  
 }

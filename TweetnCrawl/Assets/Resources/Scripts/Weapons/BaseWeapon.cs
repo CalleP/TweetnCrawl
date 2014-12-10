@@ -21,11 +21,13 @@ public abstract class BaseWeapon : ScriptableObject {
     protected float ShakeMagnitude = 0.1f;
     protected float ShakeDuration = 0.1f;
     public float PauseOnHit = 0.02f;
+    public int AmmoCost = 1;
 
     public BaseWeapon()
     {
         
         audios = wielder.GetComponents<AudioSource>();
+        
     }
 
     // Use this for initialization

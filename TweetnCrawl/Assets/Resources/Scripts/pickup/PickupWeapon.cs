@@ -31,8 +31,8 @@ public class PickupWeapon : PickupBase
         {WeaponTypes.AutoShotgun, typeof(AutoShotgun)},
         {WeaponTypes.SawnOff, typeof(SawnOff)},
         {WeaponTypes.RailGun, typeof(RailGun)},
-        {WeaponTypes.Launcher, typeof(Launcher)},
-        {WeaponTypes.RaveGun, typeof(RaveGun)}
+        {WeaponTypes.RaveGun, typeof(RaveGun)},
+        {WeaponTypes.Launcher, typeof(Launcher)}
     };
 
     public WeaponTypes selectedWeapon = WeaponTypes.revolver;

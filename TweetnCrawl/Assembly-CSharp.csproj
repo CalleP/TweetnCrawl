@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\BulletFade.cs" />
      <Compile Include="Assets\CursorBehaviour.cs" />
-     <Compile Include="Assets\DemoTweet.cs" />
      <Compile Include="Assets\LayerHack.cs" />
      <Compile Include="Assets\OnHitEffect.cs" />
      <Compile Include="Assets\Outline.cs" />
@@ -94,7 +93,6 @@
      <Compile Include="Assets\Resources\Scripts\Room.cs" />
      <Compile Include="Assets\Resources\Scripts\ScreenShake.cs" />
      <Compile Include="Assets\Resources\Scripts\ServerConnector.cs" />
-     <Compile Include="Assets\Resources\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Resources\Scripts\SmoothCamera2D.cs" />
      <Compile Include="Assets\Resources\Scripts\SpriteHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\Tile.cs" />
@@ -113,6 +111,8 @@
      <Compile Include="Assets\Resources\Scripts\Weapons\Revolver.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\SawnOff.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
+     <Compile Include="Assets\Resources\Scripts\pickup\AmmoPickup.cs" />
+     <Compile Include="Assets\Resources\Scripts\pickup\HealthPickup.cs" />
      <Compile Include="Assets\Resources\Scripts\pickup\PickupBase.cs" />
      <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />
      <Compile Include="Assets\RoadSignBehaviour.cs" />
