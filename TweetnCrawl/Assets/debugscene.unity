@@ -213,7 +213,7 @@ GameObject:
   - 4: {fileID: 78339723}
   - 212: {fileID: 78339726}
   - 114: {fileID: 78339724}
-  - 58: {fileID: 78339725}
+  - 58: {fileID: 78339727}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -249,17 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
   selectedWeapon: 3
---- !u!58 &78339725
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 78339722}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: 2.61999989
-  m_Center: {x: 0, y: 0}
 --- !u!212 &78339726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -283,6 +272,18 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300002, guid: 7d67b1a18a8491946b73475c825cc019, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &78339727
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 334349556}
+  m_GameObject: {fileID: 78339722}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 2.36999989
+  m_Center: {x: 0, y: 0}
 --- !u!1 &130101132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1226,8 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
   m_RootGameObject: {fileID: 532303496}
   m_IsPrefabParent: 0
@@ -1278,7 +1280,7 @@ Prefab:
       value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
   m_RootGameObject: {fileID: 78339722}
   m_IsPrefabParent: 0
@@ -1590,8 +1592,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 532303500}
   - 212: {fileID: 532303499}
-  - 61: {fileID: 532303498}
   - 114: {fileID: 532303497}
+  - 58: {fileID: 532303501}
+  - 58: {fileID: 532303498}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -1613,17 +1616,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
   selectedWeapon: 6
---- !u!61 &532303498
-BoxCollider2D:
+--- !u!58 &532303498
+CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 330065540}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532303496}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 2.83999991, y: 2.97000003}
+  m_Radius: 2.36999989
   m_Center: {x: 0, y: 0}
 --- !u!212 &532303499
 SpriteRenderer:
@@ -1662,6 +1664,18 @@ Transform:
   - {fileID: 1246710428}
   m_Father: {fileID: 0}
   m_RootOrder: 19
+--- !u!58 &532303501
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 330065540}
+  m_GameObject: {fileID: 532303496}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 2.36999989
+  m_Center: {x: 0, y: 0}
 --- !u!1 &549815834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3740,8 +3754,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2062982723}
   - 212: {fileID: 2062982726}
-  - 61: {fileID: 2062982725}
   - 114: {fileID: 2062982724}
+  - 58: {fileID: 2062982725}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -3777,17 +3791,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
   selectedWeapon: 4
---- !u!61 &2062982725
-BoxCollider2D:
+--- !u!58 &2062982725
+CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
+  m_PrefabParentObject: {fileID: 5800000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc,
     type: 2}
   m_PrefabInternal: {fileID: 845880804}
   m_GameObject: {fileID: 2062982722}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 2.83999991, y: 2.97000003}
+  m_Radius: 2.36999989
   m_Center: {x: 0, y: 0}
 --- !u!212 &2062982726
 SpriteRenderer:

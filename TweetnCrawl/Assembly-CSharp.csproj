@@ -80,7 +80,6 @@
      <Compile Include="Assets\Resources\Scripts\LaserFade.cs" />
      <Compile Include="Assets\Resources\Scripts\MapChecker.cs" />
      <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
-     <Compile Include="Assets\Resources\Scripts\MapHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\MapPopulator.cs" />
      <Compile Include="Assets\Resources\Scripts\MouseFollower.cs" />
      <Compile Include="Assets\Resources\Scripts\NewTile.cs" />

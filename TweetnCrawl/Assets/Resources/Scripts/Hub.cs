@@ -790,14 +790,14 @@ public class Hub :TileMap {
 
     public TileStruct[][] newMap(TileMap map)
     {
-        var gen = new MapHandler(map.Width, map.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag + map.Hashtag)), stringToSeed(Hashtag + map.Hashtag));
+        var gen = new MapGen(map.Width, map.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag + map.Hashtag)), stringToSeed(Hashtag + map.Hashtag));
         return gen.createMap(ref map.StartPointX, ref map.StartPointY, ref map.EndPointX, ref map.EndPointY);
     }
 
     public TileStruct[][] newHub(TileMap centerMap)
     {
 
-        var gen = new MapHandler(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(centerMap.Hashtag)), stringToSeed(centerMap.Hashtag));
+        var gen = new MapGen(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(centerMap.Hashtag)), stringToSeed(centerMap.Hashtag));
         return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
     
     }
@@ -1118,17 +1118,17 @@ public class Hub :TileMap {
 
              tile.Debug = true;
 
-             var west = MapHandler.GetTileData(map, tile.X - 1, tile.Y);
-             var east = MapHandler.GetTileData(map, tile.X + 1, tile.Y);
-             var north = MapHandler.GetTileData(map, tile.X, tile.Y + 1);
-             var south = MapHandler.GetTileData(map, tile.X, tile.Y - 1);
+             var west = MapGen.GetTileData(map, tile.X - 1, tile.Y);
+             var east = MapGen.GetTileData(map, tile.X + 1, tile.Y);
+             var north = MapGen.GetTileData(map, tile.X, tile.Y + 1);
+             var south = MapGen.GetTileData(map, tile.X, tile.Y - 1);
 
              if (tile.X >= WestMap.Width-1)
              {
-                 west = MapHandler.GetTileData(map, (tile.X - WestMap.Width) - 1, (tile.Y - SouthMap.Height));
-                 east = MapHandler.GetTileData(map, (tile.X - WestMap.Width) + 1, (tile.Y - SouthMap.Height));
-                 north = MapHandler.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) + 1);
-                 south = MapHandler.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) - 1);
+                 west = MapGen.GetTileData(map, (tile.X - WestMap.Width) - 1, (tile.Y - SouthMap.Height));
+                 east = MapGen.GetTileData(map, (tile.X - WestMap.Width) + 1, (tile.Y - SouthMap.Height));
+                 north = MapGen.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) + 1);
+                 south = MapGen.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) - 1);
              }
 
 
@@ -1205,6 +1205,7 @@ public class Hub :TileMap {
             //example
             GUI.Label(new Rect(5,210,200,200),CurrentHashtagGUI.guiText.text, style);
             GUI.Label(new Rect(5, 260, 200, 200), Points.ToString(), style);
+
         } 
      }
 

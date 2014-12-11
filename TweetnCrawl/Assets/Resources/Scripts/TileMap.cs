@@ -60,15 +60,6 @@ public class TileMap : MonoBehaviour {
 
 	}
 
-    /// <summary>
-    /// Clear the map and create initialize a new one
-    /// </summary>
-    /// <param name="seed">The seed.</param>
-    public void Restart(int seed) {
-        Clear();
-        var rand = new System.Random(seed);
-        new MapGen(seed, Height, Width);
-    }
 
     /// <summary>
     /// Modify the index of the map at specified coordinates

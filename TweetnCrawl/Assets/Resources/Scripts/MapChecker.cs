@@ -46,13 +46,13 @@ class MapChecker
         while ((x != EndPoint.X || y != EndPoint.Y) && count < 3000)
         {
 
-            VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
+            VisitedTiles.Add(MapGen.GetTileData(map, x, y));
 
             if (count >= 1000)
             {
                 return false;
             }
-            if (MapHandler.GetTileData(map,x, y).Type == TileType.None)
+            if (MapGen.GetTileData(map,x, y).Type == TileType.None)
             {
                 return false;
             }
@@ -65,7 +65,7 @@ class MapChecker
             if (canGoForward())
             {
                 goForward();
-                VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
+                VisitedTiles.Add(MapGen.GetTileData(map, x, y));
                 //generator.GetTileData(map,x, y).test = (int)currentDirection;
             }
             else
@@ -89,7 +89,7 @@ class MapChecker
                     }
                     
                     goForward();
-                    VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
+                    VisitedTiles.Add(MapGen.GetTileData(map, x, y));
                     //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 else
@@ -97,7 +97,7 @@ class MapChecker
                     
                     turnLeft();
                     goForward();
-                    VisitedTiles.Add(MapHandler.GetTileData(map, x, y));
+                    VisitedTiles.Add(MapGen.GetTileData(map, x, y));
                    //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
                 }
                 
@@ -174,19 +174,19 @@ class MapChecker
     {
         if (currentDirection == direction.down)
         {
-            if (MapHandler.GetTileData(map, x, y - 1).Type == TileType.Rock) return true; 
+            if (MapGen.GetTileData(map, x, y - 1).Type == TileType.Rock) return true; 
         }
         else if (currentDirection == direction.right)
         {
-            if (MapHandler.GetTileData(map, x + 1, y).Type == TileType.Rock) return true;
+            if (MapGen.GetTileData(map, x + 1, y).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (MapHandler.GetTileData(map, x, y + 1).Type == TileType.Rock) return true;
+            if (MapGen.GetTileData(map, x, y + 1).Type == TileType.Rock) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (MapHandler.GetTileData(map, x - 1, y).Type == TileType.Rock) return true;
+            if (MapGen.GetTileData(map, x - 1, y).Type == TileType.Rock) return true;
         }  
 
         return false;
@@ -196,19 +196,19 @@ class MapChecker
     {
         if (currentDirection == direction.down)
         {
-            if (MapHandler.GetTileData(map, x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapGen.GetTileData(map, x + 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         } 
         else if (currentDirection == direction.right)
         {
-            if (MapHandler.GetTileData(map, x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapGen.GetTileData(map, x, y + 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.up)
         {
-            if (MapHandler.GetTileData(map, x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapGen.GetTileData(map, x - 1, y).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
         else if (currentDirection == direction.left)
         {
-            if (MapHandler.GetTileData(map, x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
+            if (MapGen.GetTileData(map, x, y - 1).Type == TileType.Rock && !isTileInFrontBlocking()) return true;
         }
 
         return false;
