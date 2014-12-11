@@ -15,11 +15,13 @@ class BasicEnemy : BaseEnemy
     public int ProjectileDamage;
     public float ProjectileSpread;
 
+
     protected float time2;
     void Start()
     {
 
         baseReferences();
+
         //InvokeRepeating("base.patrol", 1f, 2f); 
 
 
@@ -35,7 +37,9 @@ class BasicEnemy : BaseEnemy
         if (health <= 0)
         {
             print("Blaaah you killed me!");
+			ShowMessage();
             StartCoroutine(OnDeathEffect());
+
         }
 
         //Updates constantly the distance between the follower and the player
@@ -127,6 +131,10 @@ class BasicEnemy : BaseEnemy
 
         //print("shooting at player");
     }
+
+
+
+
 
 
 }

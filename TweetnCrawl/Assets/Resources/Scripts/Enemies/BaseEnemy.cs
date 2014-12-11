@@ -34,6 +34,10 @@ public class BaseEnemy : MonoBehaviour {
 	protected float _posX;
 	public AudioClip[] PlayerSpottedSounds;
 	public AudioClip[] MonsterHitSounds;
+	Font ArialFont;
+	public bool isCreated;
+	GameObject instantiatedObj;
+
 
     
 
@@ -42,6 +46,8 @@ public class BaseEnemy : MonoBehaviour {
 	
 	//Method containing the basereferences for the enemies
 	public void baseReferences() {
+		isCreated = false;
+		ArialFont = (Font)Resources.GetBuiltinResource (typeof(Font), "Arial.ttf");
 		player = GameObject.Find("Player").transform; //Reference and find the playerobject
 		attackTime = Time.time; //Attacktime is set to actual time
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> (); //Reference to the players health
@@ -51,6 +57,7 @@ public class BaseEnemy : MonoBehaviour {
 		PrevSpeed = speed; //Stores the speed if we need to resume that speed later.
 		rigidbody2D.fixedAngle = true;
 		_posX = transform.position.x;
+		
 
 		PlayerSpottedSounds =  new AudioClip[]{(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/1"),
 			(AudioClip)Resources.Load("Sounds/MonsterSounds/MonsterSpotPlayer/2"), 
@@ -187,13 +194,107 @@ public class BaseEnemy : MonoBehaviour {
         timer = Time.time + interruptTime;
     }
 
-	//TODO this method needs more tweaking
+	public void ShowMessage() {
+		
+		int wait = Random.Range(3,4);
+		int message = Random.Range(1,6);
+
+		//The boolean is VERY important if it's removed it will cause duplicates of the message
+			if(message == 1 && isCreated == false) {
+				isCreated = true;
+				GameObject DeathMessage = new GameObject("SomeGUIText");
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
+
+				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
+				myText.font = ArialFont;
+				myText.renderer.sharedMaterial = ArialFont.material;
+				myText.fontSize = 10;
+				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.text = "Shamefur Display";
+				//yield return new WaitForSeconds(wait);
+				Destroy(clone);
+								
+			}
+
+			else if(message == 2 && isCreated == false) {
+
+				isCreated = true;
+				GameObject DeathMessage = new GameObject("SomeGUIText");
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
+
+				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
+				myText.font = ArialFont;
+				myText.renderer.sharedMaterial = ArialFont.material;
+				myText.fontSize = 10;
+				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.text = "M-M-M-M-MONSTER KILL!";
+				//yield return new WaitForSeconds(wait);
+				Destroy(clone);
+
+			}
+
+			else if(message == 3 && isCreated == false) {
+				isCreated = true;
+				GameObject DeathMessage = new GameObject("SomeGUIText");
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
+		
+				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
+				myText.font = ArialFont;
+				myText.renderer.sharedMaterial = ArialFont.material;
+				myText.fontSize = 10;
+				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.text = "BLAHHH!";
+				//yield return new WaitForSeconds(wait);
+				Destroy(clone);
+			}
+
+			else if(message == 4 && isCreated == false) {
+				isCreated = true;
+				GameObject DeathMessage = new GameObject("SomeGUIText");
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
+
+				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
+				myText.font = ArialFont;
+				myText.renderer.sharedMaterial = ArialFont.material;
+				myText.fontSize = 10;
+				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.text = "NOOOOO!";
+				//yield return new WaitForSeconds(wait);
+				Destroy(clone);
+			}
+
+			else if(message == 5 && isCreated == false) {
+				isCreated = true;
+				GameObject DeathMessage = new GameObject("SomeGUIText");
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
+		
+				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
+				myText.font = ArialFont;
+				myText.renderer.sharedMaterial = ArialFont.material;
+				myText.fontSize = 10;
+				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.text = "RAGEQUIT!";
+				//yield return new WaitForSeconds(wait);
+				Destroy(clone);
+				
+			}
+
+		//yield return null;
+		
+	}
+
+
+		
+		
+
+
+
 	protected virtual IEnumerator RandomPlayerSpottedSound() {
 		if (distance < chaseRange - 25 && !audio.isPlaying) {
-			int wait = Random.Range(3,20);
+			int wait = Random.Range(3,15);
 			yield return new WaitForSeconds(wait);
 			audio.PlayOneShot (PlayerSpottedSounds [Random.Range (0, PlayerSpottedSounds.Length)]);
-				}
+		}
 		yield return null;
 		
 	}
