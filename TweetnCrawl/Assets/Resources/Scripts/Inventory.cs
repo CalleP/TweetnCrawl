@@ -190,4 +190,11 @@ public class Inventory : MonoBehaviour {
     }
 
 
+    void OnGUI()
+    {
+        GUI.Label(new Rect(5, 310, 200, 200), Ammo.ToString());
+
+    }
+
+
 }

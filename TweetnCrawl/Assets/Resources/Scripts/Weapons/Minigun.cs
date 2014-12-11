@@ -10,6 +10,8 @@ class Minigun : MachineGun {
         type = WeaponTypes.MiniGun;
         altFireEnabled = false;
         PauseOnHit = 0f;
+        BulletSpeed = 60;
+        Spread = 3;
     }
 
     public override void AltFire()

@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BloodFlow.cs" />
     <Compile Include="Assets\BulletFade.cs" />
     <Compile Include="Assets\CursorBehaviour.cs" />
+    <Compile Include="Assets\GoreExplosion.cs" />
     <Compile Include="Assets\LayerHack.cs" />
     <Compile Include="Assets\OnHitEffect.cs" />
     <Compile Include="Assets\Outline.cs" />
@@ -85,7 +87,6 @@
     <Compile Include="Assets\Resources\Scripts\LaserFade.cs" />
     <Compile Include="Assets\Resources\Scripts\MapChecker.cs" />
     <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
-    <Compile Include="Assets\Resources\Scripts\MapHandler.cs" />
     <Compile Include="Assets\Resources\Scripts\MapPopulator.cs" />
     <Compile Include="Assets\Resources\Scripts\MouseFollower.cs" />
     <Compile Include="Assets\Resources\Scripts\NewTile.cs" />

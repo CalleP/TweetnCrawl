@@ -16,12 +16,14 @@ class MachineGun : Revolver
         fireSound = null;
         coolDown = 0.12f;
         altCoolDown = 0.6f;
-        BulletSpeed = 60f;
+        BulletSpeed = 100f;
         Spread = 8;
         altDamage = 50;
         SemiAuto = false;
+        damage = 40;
         type = WeaponTypes.machineGun;
         PauseOnHit = 0f;
+        Spread = 2;
         
     }
 
