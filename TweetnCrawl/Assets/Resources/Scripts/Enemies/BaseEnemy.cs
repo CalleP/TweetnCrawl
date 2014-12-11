@@ -201,7 +201,7 @@ public class BaseEnemy : MonoBehaviour {
         timer = Time.time + interruptTime;
     }
 
-	public void ShowMessage() {
+	public  IEnumerator ShowMessage() {
 		
 		int wait = Random.Range(3,4);
 		int message = Random.Range(1,6);
@@ -210,7 +210,7 @@ public class BaseEnemy : MonoBehaviour {
 			if(message == 1 && isCreated == false) {
 				isCreated = true;
 				GameObject DeathMessage = new GameObject("SomeGUIText");
-				GameObject clone = (GameObject)Instantiate(DeathMessage);
+			GameObject clone = (GameObject)Instantiate(DeathMessage);
 
 				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
 				myText.font = ArialFont;
@@ -219,7 +219,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "Shamefur Display";
 				//yield return new WaitForSeconds(wait);
-				Destroy(clone);
+			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 								
 			}
 
@@ -227,7 +227,7 @@ public class BaseEnemy : MonoBehaviour {
 
 				isCreated = true;
 				GameObject DeathMessage = new GameObject("SomeGUIText");
-				GameObject clone = (GameObject)Instantiate(DeathMessage);
+			GameObject clone = (GameObject)Instantiate(DeathMessage);
 
 				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
 				myText.font = ArialFont;
@@ -236,14 +236,13 @@ public class BaseEnemy : MonoBehaviour {
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "M-M-M-M-MONSTER KILL!";
 				//yield return new WaitForSeconds(wait);
-				Destroy(clone);
-
+			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
 
 			else if(message == 3 && isCreated == false) {
 				isCreated = true;
 				GameObject DeathMessage = new GameObject("SomeGUIText");
-				GameObject clone = (GameObject)Instantiate(DeathMessage);
+			GameObject clone = (GameObject)Instantiate(DeathMessage);
 		
 				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
 				myText.font = ArialFont;
@@ -252,7 +251,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "BLAHHH!";
 				//yield return new WaitForSeconds(wait);
-				Destroy(clone);
+			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
 
 			else if(message == 4 && isCreated == false) {
@@ -267,13 +266,13 @@ public class BaseEnemy : MonoBehaviour {
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "NOOOOO!";
 				//yield return new WaitForSeconds(wait);
-				Destroy(clone);
+			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
 
 			else if(message == 5 && isCreated == false) {
 				isCreated = true;
 				GameObject DeathMessage = new GameObject("SomeGUIText");
-				GameObject clone = (GameObject)Instantiate(DeathMessage);
+			GameObject clone = (GameObject)Instantiate(DeathMessage);
 		
 				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
 				myText.font = ArialFont;
@@ -282,11 +281,11 @@ public class BaseEnemy : MonoBehaviour {
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "RAGEQUIT!";
 				//yield return new WaitForSeconds(wait);
-				Destroy(clone);
+			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 				
 			}
 
-		//yield return null;
+		yield return null;
 		
 	}
 

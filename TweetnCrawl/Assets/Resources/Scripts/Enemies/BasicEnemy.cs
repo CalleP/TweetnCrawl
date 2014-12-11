@@ -37,7 +37,7 @@ class BasicEnemy : BaseEnemy
         if (health <= 0)
         {
             print("Blaaah you killed me!");
-			ShowMessage();
+			StartCoroutine(ShowMessage());
             StartCoroutine(OnDeathEffect());
 
         }
