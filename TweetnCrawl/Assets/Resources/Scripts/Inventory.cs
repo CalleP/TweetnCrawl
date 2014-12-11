@@ -185,7 +185,7 @@ public class Inventory : MonoBehaviour {
             shell.rigidbody2D.AddForce(ShellEjectionPoint.up * UnityEngine.Random.Range(2000f,2500f));
             shell.transform.rotation = ShellEjectionPoint.rotation;
             shell.transform.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(-70f, -120)));
-            Physics2D.IgnoreCollision(shell.collider2D, player.collider2D);
+            //Physics2D.IgnoreCollision(shell.collider2D, player.collider2D);
         }
     }
 

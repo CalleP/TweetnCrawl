@@ -235,7 +235,7 @@ public class MapGen
         MapChecker checker = new MapChecker(convertedArray);
 
 
-        if (checker.CheckMap(
+        if (checker.IsPointReachable(
             GetTileData(convertedArray, startX, startY),
             GetTileData(convertedArray, endX, endY),
             direction.right))
@@ -373,7 +373,7 @@ public class MapGen
             TerrainType);
 
         MapChecker checker = new MapChecker(map);
-        EastToSouth = checker.CheckMap(SouthPoint, EastPoint, direction.up);
+        EastToSouth = checker.IsPointReachable(SouthPoint, EastPoint, direction.up);
 
 
         //Draw Corridor connecting map and WestMap
@@ -388,7 +388,7 @@ public class MapGen
             TerrainType);
 
         checker = new MapChecker(map);
-        SouthToWest = checker.CheckMap(SouthPoint, WestPoint, direction.right);
+        SouthToWest = checker.IsPointReachable(SouthPoint, WestPoint, direction.right);
 
 
         //Draw Corridor connecting map and NorthMap
@@ -402,7 +402,7 @@ public class MapGen
             TerrainType,
             TerrainType);
         checker = new MapChecker(map);
-        WestToNorth = checker.CheckMap(WestPoint, NorthPoint, direction.right);
+        WestToNorth = checker.IsPointReachable(WestPoint, NorthPoint, direction.right);
     }
 
 

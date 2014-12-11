@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B4376061-9E73-37D2-7E2A-80F154FE8030}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,8 +48,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BloodFlow.cs" />
     <Compile Include="Assets\BulletFade.cs" />
     <Compile Include="Assets\CursorBehaviour.cs" />
+    <Compile Include="Assets\GoreExplosion.cs" />
     <Compile Include="Assets\LayerHack.cs" />
     <Compile Include="Assets\OnHitEffect.cs" />
     <Compile Include="Assets\Outline.cs" />
@@ -89,8 +89,6 @@
     <Compile Include="Assets\Resources\Scripts\NewTile.cs" />
     <Compile Include="Assets\Resources\Scripts\ObjectPlacer.cs" />
     <Compile Include="Assets\Resources\Scripts\OldCharacterController.cs" />
-    <Compile Include="Assets\Resources\Scripts\pickup\AmmoPickup.cs" />
-    <Compile Include="Assets\Resources\Scripts\pickup\HealthPickup.cs" />
     <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
     <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
     <Compile Include="Assets\Resources\Scripts\Projectiles\EnemyProjectile.cs" />
@@ -116,6 +114,8 @@
     <Compile Include="Assets\Resources\Scripts\Weapons\Revolver.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapons\SawnOff.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
+    <Compile Include="Assets\Resources\Scripts\pickup\AmmoPickup.cs" />
+    <Compile Include="Assets\Resources\Scripts\pickup\HealthPickup.cs" />
     <Compile Include="Assets\Resources\Scripts\pickup\PickupBase.cs" />
     <Compile Include="Assets\Resources\Scripts\pickup\PickupWeapon.cs" />
     <Compile Include="Assets\RoadSignBehaviour.cs" />

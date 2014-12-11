@@ -10,7 +10,11 @@ public class BulletFade : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Fade());
+        if (FadeTime >= 0)
+        {
+            StartCoroutine(Fade());
+        }
+
     }
 
     public IEnumerator Fade()

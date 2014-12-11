@@ -139,7 +139,7 @@ public class Hub :TileMap {
 
 
 
-        MergeAll();
+        MergeAllMaps();
         started = true;
 
 
@@ -912,7 +912,7 @@ public class Hub :TileMap {
 
 
 
-    public void MergeAll()
+    public void MergeAllMaps()
     {
         var outArr = new TileStruct[NorthMap.Height+CenterMap.Height+SouthMap.Height][];
         for (int i = 0; i < outArr.Length; i++)

@@ -34,7 +34,7 @@ class MapChecker
     private direction currentDirection;
     private int x;
     private int y;
-    public bool CheckMap(TileStruct startPoint, TileStruct EndPoint, direction startingDirection)
+    public bool IsPointReachable(TileStruct startPoint, TileStruct EndPoint, direction startingDirection)
     {
         currentDirection = startingDirection;
         x = startPoint.X;

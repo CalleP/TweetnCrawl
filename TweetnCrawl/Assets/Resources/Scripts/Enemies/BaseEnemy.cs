@@ -100,28 +100,35 @@ public class BaseEnemy : MonoBehaviour {
         yield return null;
     }
 
+    private bool dead = false;
     public IEnumerator OnDeathEffect()
     {
-        var shadow = gameObject.transform.FindChild("Shadow");
+        if (!dead)
+        {
+            dead = true;
+            var shadow = gameObject.transform.FindChild("Shadow");
 
-        yield return new WaitForSeconds(0.006f);
-        renderer.enabled = false;
-        shadow.renderer.enabled = false;
-        yield return new WaitForSeconds(0.006f);
-        shadow.renderer.enabled = true;
-        renderer.enabled = true;
-        yield return new WaitForSeconds(0.006f);
-        shadow.renderer.enabled = false;
-        renderer.enabled = false;
-        yield return new WaitForSeconds(0.006f);
-        shadow.renderer.enabled = true;
-        renderer.enabled = true;
-        yield return new WaitForSeconds(0.006f);
-        shadow.renderer.enabled = false;
-        renderer.enabled = false;
-        Destroy(gameObject);
+            yield return new WaitForSeconds(0.006f);
+            renderer.enabled = false;
+            shadow.renderer.enabled = false;
+            yield return new WaitForSeconds(0.006f);
+            shadow.renderer.enabled = true;
+            renderer.enabled = true;
+            yield return new WaitForSeconds(0.006f);
+            shadow.renderer.enabled = false;
+            renderer.enabled = false;
+            yield return new WaitForSeconds(0.006f);
+            shadow.renderer.enabled = true;
+            renderer.enabled = true;
+            yield return new WaitForSeconds(0.006f);
+            shadow.renderer.enabled = false;
+            renderer.enabled = false;
+            Instantiate(Resources.Load<GameObject>("Explosion"), transform.position, Quaternion.identity);
+            Destroy(gameObject);
 
-        yield return null;
+            yield return null;
+        }
+
     }
 
 	//Shootattack for the enemies
