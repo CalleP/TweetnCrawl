@@ -55,6 +55,7 @@
      <Compile Include="Assets\Outline.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Exit.cs" />
+     <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HashtagChoice.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HowToPlay.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\MessageScaling.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" />

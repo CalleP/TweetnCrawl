@@ -2487,6 +2487,8 @@ MonoBehaviour:
   Image: {fileID: 2800000, guid: bcf9c8071ba6a114d942ab1d522b56c8, type: 3}
   x: 275
   y: 420
+  x2: 800
+  y2: 450
   guitext: {fileID: 948537819}
   loading: {fileID: 910669690}
   Error: {fileID: 8300000, guid: 1ee793853d056cf4a81c6b9506a5630a, type: 3}
@@ -2647,12 +2649,11 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 878993292}
-  - 20: {fileID: 878993291}
+  - 224: {fileID: 878993294}
   - 92: {fileID: 878993290}
   - 124: {fileID: 878993289}
   - 81: {fileID: 878993288}
-  - 224: {fileID: 878993294}
+  - 20: {fileID: 878993291}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2713,8 +2714,8 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!4 &878993292
-Transform:
+--- !u!224 &878993294
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2725,15 +2726,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!224 &878993294
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 878993287}
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_Position: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &910669688
