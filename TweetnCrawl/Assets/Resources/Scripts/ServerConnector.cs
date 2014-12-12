@@ -5,6 +5,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class ServerConnector : MonoBehaviour {
 	bool socketReady = false;
@@ -26,6 +27,9 @@ public class ServerConnector : MonoBehaviour {
 	void TestSocketConnection(){
 
 	}
+
+
+
 
 	// Use this for initialization
 	public ServerConnector() {
@@ -70,12 +74,12 @@ public class ServerConnector : MonoBehaviour {
 
 
     void Start(){
-        //var time = Time.realtimeSinceStartup;
-        //Connect();
-        //var output = Send("GetTopList");
+        var time = Time.realtimeSinceStartup;
+        Connect();
+        var output = Send("GetTopList");
 
-        //Debug.Log("Took: " + (Time.realtimeSinceStartup - time));
-        //Close();
+        Debug.Log(ParseTopList(output));
+        Close();
 
     }
 
@@ -149,6 +153,37 @@ public class ServerConnector : MonoBehaviour {
         return outArr;
     }
 
+    public List<HashTagSet> ParseTopList(string hashtagSet)
+    {
+        hashtagSet = hashtagSet.Replace("[", "");
+        hashtagSet = hashtagSet.Replace("]", "");
+        
+        //var outArr = hashtagSet.Split('\n');
+
+        Regex r = new Regex(@"{(.+?)}");
+        MatchCollection mc = r.Matches(hashtagSet);
+
+        List<HashTagSet> outList = new List<HashTagSet>();
+
+
+        for (int i = 0; i < mc.Count; i++)
+		{
+			var val = mc[i].Groups[1].Value;
+            val = val.Replace("{","").Replace("}","");
+            var split = val.Split(',');
+            var setValue = split[0].Replace("<<", "").Replace(">>", "");
+            setValue = setValue.Replace("\\", "").Replace("\"", "");
+            var setAmount = split[1];
+            outList.Add(new HashTagSet(setValue,  Int32.Parse(setAmount)));
+
+		}
+
+
+
+
+        return outList;
+    }
+
     public void Close() 
     {
         if (OfflineMode)
@@ -164,5 +199,17 @@ public class ServerConnector : MonoBehaviour {
 	}
 	
 	
+   
 
+}
+
+public class HashTagSet 
+{
+    public string Value;
+    public int Amount;
+    public HashTagSet(string value, int amount)
+    {
+        this.Value = value;
+        this.Amount = amount;
+    }
 }
