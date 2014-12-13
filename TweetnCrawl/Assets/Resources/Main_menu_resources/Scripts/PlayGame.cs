@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayGame : MonoBehaviour 
+public class PlayGame : MonoBehaviour
 {
 	public Texture2D Image;
 	public float x;
@@ -16,6 +16,10 @@ public class PlayGame : MonoBehaviour
 	public AudioClip Onclick;
 	public GameObject HashtagWindow;
 	protected string Hashtag;
+
+	void Awake() {
+		DontDestroyOnLoad (transform.gameObject);
+		}
 	
 	void OnGUI()
 	{
@@ -65,9 +69,21 @@ public class PlayGame : MonoBehaviour
 	public IEnumerator LoadLevel() {
 
 		loading.GetComponent<MessageScaling>().enabled = true;
-		audio.PlayOneShot(ModemConnect);
+		audio.PlayOneShot(ModemConnect);	
+		SaveHashtag ();
 		yield return new WaitForSeconds(5);
+		audio.Stop ();
 		Application.LoadLevel("debugscene");
+
+	}
+
+	public void SaveHashtag() {
+		GameObject go = GameObject.Find ("HashtagWindow");
+		HashtagChoice speedController = go.GetComponent <HashtagChoice> ();
+		string tag = speedController.Hashtag;
+		print (tag);
+		Hashtag = tag;
+		print (Hashtag);
 
 	}
 }

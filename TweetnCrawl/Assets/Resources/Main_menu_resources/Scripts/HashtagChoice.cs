@@ -12,7 +12,7 @@ public class HashtagChoice : MonoBehaviour{
 	public GameObject MainMenuPanelReference;
 	public GameObject SelfReference;
 	public Font f;
-	protected string Hashtag;
+	public string Hashtag;
 
     public List<HashTagSet> PopularHashtags;
     void Start()
