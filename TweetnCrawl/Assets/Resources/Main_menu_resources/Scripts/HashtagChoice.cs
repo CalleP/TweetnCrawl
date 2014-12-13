@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HashtagChoice : MonoBehaviour{
 
@@ -12,6 +13,21 @@ public class HashtagChoice : MonoBehaviour{
 	public GameObject SelfReference;
 	public Font f;
 
+    public List<HashTagSet> PopularHashtags;
+    void Start()
+    {
+        var connect = new ServerConnector();
+
+        connect.Connect();
+
+
+        PopularHashtags = connect.ParseTopList(connect.Send("GetTopList"));
+
+        connect.Close();
+
+        
+
+    }
 
 	// Use this for initialization
 	void OnGUI () {
@@ -19,31 +35,35 @@ public class HashtagChoice : MonoBehaviour{
 		GUI.skin.button.font = f;
 		GUI.Label(new Rect(Screen.width / 4 + 20, Screen.height/4, 500, 50), "Select one of these popular #Hashtags!");
 	
-		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3, 200, 50), "#Hashtag1")) {
+		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3, 200, 50), "#"+PopularHashtags[0].Value)) {
 			print("Choice1");
 			StartLevel();
 
 
 		}
-		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3 + 50, 200, 50), "#Hashtag2")) {
+        if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 50, 200, 50), "#" + PopularHashtags[1].Value))
+        {
 			print("Choice2");
 			StartLevel();
 		
 		}
-		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3 + 100, 200, 50), "#Hashtag3")) {
+        if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 100, 200, 50), "#" + PopularHashtags[2].Value))
+        {
 			print("Choice3");
 			StartLevel();
 		
 		
 		}
-		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3 + 150, 200, 50), "#Hashtag4")) {
+        if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 150, 200, 50), "#" + PopularHashtags[3].Value))
+        {
 			print("Choice4");
 			StartLevel();
 
 	
 
 		}
-		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3 + 200, 200, 50), "#Hashtag5")) {
+        if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 200, 200, 50), "#" + PopularHashtags[4].Value))
+        {
 			print("Choice5");
 			StartLevel();
 
