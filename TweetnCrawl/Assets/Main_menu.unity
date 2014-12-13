@@ -2890,8 +2890,7 @@ MonoBehaviour:
   HowToPlayBoxReference: {fileID: 1538655410}
   MainMenuPanelReference: {fileID: 1690560752}
   SelfReference: {fileID: 970340376}
-  x2: 350
-  y2: 170
+  f: {fileID: 12800000, guid: 4d0dd47d4a0c63e4dabe233b58bfd685, type: 3}
 --- !u!82 &970340378
 AudioSource:
   m_ObjectHideFlags: 0
