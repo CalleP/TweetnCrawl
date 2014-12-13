@@ -10,15 +10,14 @@ public class HashtagChoice : MonoBehaviour{
 	public GameObject HowToPlayBoxReference;
 	public GameObject MainMenuPanelReference;
 	public GameObject SelfReference;
-	public float x2;
-	public float y2;
-
+	public Font f;
 
 
 	// Use this for initialization
 	void OnGUI () {
-
-		GUI.Label(new Rect(Screen.width / 3 + 50, Screen.height/4, 400, 50), "Select one of these popular #Hashtags!");
+		GUI.skin.label.font = f;
+		GUI.skin.button.font = f;
+		GUI.Label(new Rect(Screen.width / 4 + 20, Screen.height/4, 500, 50), "Select one of these popular #Hashtags!");
 	
 		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3, 200, 50), "#Hashtag1")) {
 			print("Choice1");
