@@ -12,6 +12,7 @@ public class HashtagChoice : MonoBehaviour{
 	public GameObject MainMenuPanelReference;
 	public GameObject SelfReference;
 	public Font f;
+	protected string Hashtag;
 
     public List<HashTagSet> PopularHashtags;
     void Start()
@@ -36,27 +37,35 @@ public class HashtagChoice : MonoBehaviour{
 		GUI.Label(new Rect(Screen.width / 4 + 20, Screen.height/4, 500, 50), "Select one of these popular #Hashtags!");
 	
 		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3, 200, 50), "#"+PopularHashtags[0].Value)) {
-			print("Choice1");
+	
+			Hashtag = PopularHashtags[0].Value;
+			print(Hashtag);
 			StartLevel();
 
 
 		}
         if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 50, 200, 50), "#" + PopularHashtags[1].Value))
         {
-			print("Choice2");
+
+			Hashtag = PopularHashtags[1].Value;
+			print(Hashtag);
 			StartLevel();
 		
 		}
         if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 100, 200, 50), "#" + PopularHashtags[2].Value))
         {
-			print("Choice3");
+
+			Hashtag = PopularHashtags[2].Value;
+			print(Hashtag);
 			StartLevel();
 		
 		
 		}
         if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 150, 200, 50), "#" + PopularHashtags[3].Value))
         {
-			print("Choice4");
+
+			Hashtag = PopularHashtags[3].Value;
+			print(Hashtag);
 			StartLevel();
 
 	
@@ -64,7 +73,9 @@ public class HashtagChoice : MonoBehaviour{
 		}
         if (GUI.Button(new Rect(Screen.width / 3 + 50, Screen.height / 3 + 200, 200, 50), "#" + PopularHashtags[4].Value))
         {
-			print("Choice5");
+
+			Hashtag = PopularHashtags[4].Value;
+			print(Hashtag);
 			StartLevel();
 
 		
