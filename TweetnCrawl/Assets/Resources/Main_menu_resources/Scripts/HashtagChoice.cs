@@ -49,7 +49,16 @@ public class HashtagChoice : MonoBehaviour{
 
 		
 		}
+
+
+		if (GUI.Button (new Rect (Screen.width / 3 + 50, Screen.height/3 + 270, 200, 50), "Cancel")) {
+		
+			enableGUI();
+			disableself();
+			
+		}
 	}
+
 
 
 	public void StartLevel() {
@@ -75,6 +84,16 @@ public class HashtagChoice : MonoBehaviour{
 
 		SelfReference.GetComponent<HashtagChoice>().enabled = false;
 
+	}
+
+	public void enableGUI() {
+		PlayReference.GetComponent<PlayGame>().enabled = true;
+		CreditsReference.GetComponent<Credits>().enabled = true;
+		ExitReference.GetComponent<Exit>().enabled = true;
+		HowToPlayReference.GetComponent<HowToPlay>().enabled = true;
+		MainMenuPanelReference.GetComponent<ScaleGUI>().enabled = true;
+		
+		
 	}
 
 	
