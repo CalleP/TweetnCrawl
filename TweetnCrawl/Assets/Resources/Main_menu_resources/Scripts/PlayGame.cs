@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class PlayGame : MonoBehaviour
-{
+{	
 	public Texture2D Image;
 	public float x;
 	public float y;
+	static PlayGame instance;
 
 	WWW www; 
 	public GUITexture guitext;
@@ -15,7 +16,7 @@ public class PlayGame : MonoBehaviour
 	public AudioClip Onhover;
 	public AudioClip Onclick;
 	public GameObject HashtagWindow;
-	protected string Hashtag;
+	protected static string Hashtag;
 
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
@@ -78,11 +79,13 @@ public class PlayGame : MonoBehaviour
 	}
 
 	public void SaveHashtag() {
+
 		GameObject go = GameObject.Find ("HashtagWindow");
-		HashtagChoice speedController = go.GetComponent <HashtagChoice> ();
-		string tag = speedController.Hashtag;
+		HashtagChoice Choicereference = go.GetComponent <HashtagChoice> ();
+		string tag = Choicereference.Hashtag;
 		print (tag);
 		Hashtag = tag;
+
 		print (Hashtag);
 
 	}

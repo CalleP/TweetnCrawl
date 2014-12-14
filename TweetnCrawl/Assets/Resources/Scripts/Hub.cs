@@ -76,8 +76,12 @@ public class Hub :TileMap {
         Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
 
 
+		GameObject go = GameObject.Find ("PlayGameButton");
+		HashtagChoice Choicereference = go.GetComponent <HashtagChoice> ();
 
-        CenterMap.Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
+
+       CenterMap.Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
+		//CenterMap.Hashtag = Choicereference.Hashtag;
         EastHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
         WestHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
         NorthHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
