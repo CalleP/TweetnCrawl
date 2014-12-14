@@ -524,6 +524,35 @@ Prefab:
       propertyPath: PickUpFlashColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_FontSize
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad3a4ede2ac1da8428a5f5edd95b6f71,
+        type: 3}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_WordWrap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_Normal.m_TextColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_Normal.m_TextColor.g
+      value: .5448277
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_Normal.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: AmmoCounterStyle.m_StretchWidth
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
   m_RootGameObject: {fileID: 316957756}
@@ -885,6 +914,65 @@ MonoBehaviour:
   PickUpFlashMaterial: {fileID: 2100000, guid: d390bf41933182d49942fa9c07795bcb, type: 2}
   PickUpFlashColor: {r: .944827557, g: 1, b: 0, a: 1}
   PickUpFlashDuration: .100000001
+  AmmoCounterStyle:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: .5448277, b: 1, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: ad3a4ede2ac1da8428a5f5edd95b6f71, type: 3}
+    m_FontSize: 110
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 0
+    m_StretchHeight: 0
 --- !u!82 &316957763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3438,7 +3526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1441501711
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -189,11 +189,27 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-
+    public GUIStyle AmmoCounterStyle;
     void OnGUI()
     {
-        GUI.Label(new Rect(5, 310, 200, 200), Ammo.ToString());
+        //AutoResize(1920, 1080);
 
+
+
+
+
+        GUI.Label(new Rect(0, Screen.height-115, 200, 200), Ammo.ToString(), AmmoCounterStyle);
+
+        //GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0),
+        //Quaternion.identity, new Vector3(Screen.height / 1080,
+        //Screen.height / 1080, 1));
+
+    }
+
+    public static void AutoResize(int screenWidth, int screenHeight)
+    {
+        Vector2 resizeRatio = new Vector2((float)Screen.width / screenWidth, (float)Screen.height / screenHeight);
+        GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(resizeRatio.x, resizeRatio.y, 1.0f));
     }
 
 
