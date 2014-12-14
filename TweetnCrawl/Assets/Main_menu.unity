@@ -2494,6 +2494,7 @@ MonoBehaviour:
   Onhover: {fileID: 0}
   Onclick: {fileID: 8300000, guid: 24557835899d8304aa51c5b7751f00f8, type: 3}
   HashtagWindow: {fileID: 970340376}
+  Hashtag: 
 --- !u!131 &805661301
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2891,6 +2892,7 @@ MonoBehaviour:
   MainMenuPanelReference: {fileID: 1690560752}
   SelfReference: {fileID: 970340376}
   f: {fileID: 12800000, guid: 4d0dd47d4a0c63e4dabe233b58bfd685, type: 3}
+  Hashtag: 
 --- !u!82 &970340378
 AudioSource:
   m_ObjectHideFlags: 0
