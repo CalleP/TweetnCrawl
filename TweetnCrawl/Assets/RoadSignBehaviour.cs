@@ -26,16 +26,6 @@ public class RoadSignBehaviour : MonoBehaviour {
 
             }
         }
-
-
-        //Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-           
-        //var hitTarget = Physics2D.OverlapCircle(p, 0.1f);
-        //if (hitTarget.gameObject == gameObject)
-        //{
-        //    Debug.Log("Hit");
-        //}
-        
 	}
 
     private string FirstLetterToUpper(string str)
@@ -53,26 +43,16 @@ public class RoadSignBehaviour : MonoBehaviour {
     void OnMouseOver() 
     {
         mouseOver = true;
-
-
-
-
         var outlines = transform.GetChild(0).transform.GetComponentsInChildren<TextMesh>(); 
         foreach (var item in outlines)
         {
             item.color = new Color(item.color.r, item.color.g, item.color.g, item.color.a + fadeInSpeed);
 
         }
-
-
-
-    
     }
     void OnMouseExit()
     {
         mouseOver = false;
-
-
 
     }
 

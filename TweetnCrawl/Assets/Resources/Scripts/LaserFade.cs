@@ -10,7 +10,6 @@ public class LaserFade : MonoBehaviour {
 	}
 
     public float width = 2f;
-	// Update is called once per frame
 	void Update () {
 
         if (width <= 0.1f)

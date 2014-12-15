@@ -14,21 +14,19 @@ public class Inventory : MonoBehaviour {
     private int ammo = 100;
     public int Ammo
     {
-        get { return ammo; }  // Getter
-        set { ammo = value; StartCoroutine(PickupFlash()); } // Setter
+        get { return ammo; }
+        set { ammo = value; StartCoroutine(PickupFlash()); }
     }
 
-	// Use this for initialization
 	void Start () {
         weapons = new List<BaseWeapon>();
         player = GameObject.Find("Player");
         weapons.Add(new DualRevolvers());
         EquipWeapon(0);
-        //UnityEngine.Cursor.SetCursor(Cursor, new Vector2(32,32), CursorMode.Auto);
+
         
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -192,17 +190,7 @@ public class Inventory : MonoBehaviour {
     public GUIStyle AmmoCounterStyle;
     void OnGUI()
     {
-        //AutoResize(1920, 1080);
-
-
-
-
-
         GUI.Label(new Rect(0, Screen.height-115, 200, 200), Ammo.ToString(), AmmoCounterStyle);
-
-        //GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0),
-        //Quaternion.identity, new Vector3(Screen.height / 1080,
-        //Screen.height / 1080, 1));
 
     }
 

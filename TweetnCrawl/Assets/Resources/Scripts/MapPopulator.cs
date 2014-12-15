@@ -11,14 +11,9 @@ public enum EnemyTypes
     Teleporter,
     Melee,
     MeleeSplitter
-
-
 }
 
 public class MapPopulator : MonoBehaviour {
-
-
-
 
     public static Dictionary<EnemyTypes, GameObject> EnemyDict = new Dictionary<EnemyTypes, GameObject> 
     { 
@@ -32,19 +27,8 @@ public class MapPopulator : MonoBehaviour {
 
     public Dictionary<string, GameObject> Enemies = new Dictionary<string, GameObject>();
     
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    
-	}
     public void PopulateMap(TileMap map)
     {
-        //var obj = Instantiate(randomType)
-        //obj.randomizer.randomize(terrainType)
         var currentType = map.map[map.map.Length / 2][map.map[0].Length / 2].FloorTerrainType;
     }
 }

@@ -92,62 +92,20 @@ public class Hub :TileMap {
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-
-
-
         SouthMap.map = newMap(SouthMap);
         NorthMap.map = newMap(NorthMap);
-
-
         EastMap.map = newMap(EastMap);
-
         WestMap.map = newMap(WestMap);
-
         CenterMap.map = newHub(CenterMap);
-
-        
 
         CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
 
-
-
-        //newHub();
-
-
-        //MergeHorizontal(WestMap.map, CenterMap.map);
-
-        //MergeHorizontal(map, EastMap.map);
-
-        //MergeVertical(map, NorthMap.map);
-
-        //MergeVertical(SouthMap.map, map);
-
-        //MergeVertical(CenterMap.map, NorthMap.map);
-
-        //MergeVertical(SouthMap.map, map);
-
-
-
-
-
-        //CenterMap = CropMap2(map, WestMap.Width,0,)
-
-
-        //DrawCorridorHVertical(0, 10, 5, TileType.Rock, TileType.Dirt, TerrainType.BlackCaste, TerrainType.BlackCaste);
-
-
-
-        //Debug.Log(CenterMap.TilesBeside(0,WestMap.EndPointY,direction.right,TileType.Rock));
-
         PlaceAllRoadSigns();
-
-
 
         MergeAllMaps();
         started = true;
 
 
-        //DrawMap(arr);
 
 
 
@@ -159,13 +117,6 @@ public class Hub :TileMap {
 
         ObjectPlacer.testStart();
         previouslyVisitedHubs.Add(CenterMap.Hashtag);
-
-
-
-        //NorthMap.PopulateMap(true);
-        //WestMap.PopulateMap(false);
-        //EastMap.PopulateMap(true);
-        //SouthMap.PopulateMap(false);
 
 	}
 	
@@ -216,9 +167,6 @@ public class Hub :TileMap {
 
             mapGenComplete = false;
 
-
-
-
         }
 
         var playerX = TileStruct.UnityUnitToTileUnit(player.transform.position.x);
@@ -228,29 +176,6 @@ public class Hub :TileMap {
         int West = WestMap.GetTileData(WestMap.Width / 2, 0).X;
         int North = NorthMap.GetTileData(0, NorthMap.Height / 2).Y;
         int South = SouthMap.GetTileData(0, SouthMap.Height / 2).Y;
-
-        //EastMap.SetActiveOnEnemies(true);
-
-        //if (playerX > EastMap.map[0][0].X + 5)
-        //{
-        //    CurrentHashtagGUI.GetComponent<GUIText>().text = EastMap.Hashtag;
-
-        //}
-        //else if (playerX < WestMap.map[0][WestMap.Width - 1].X - 5)
-        //{
-        //    CurrentHashtagGUI.GetComponent<GUIText>().text = WestMap.Hashtag;
-        //}
-
-        //if (playerY > NorthMap.map[0][0].Y + 5)
-        //{
-
-
-        //}
-        //else if (playerY < SouthMap.map[SouthMap.Height - 1][0].Y - 5)
-        //{
-        //    CurrentHashtagGUI.GetComponent<GUIText>().text = SouthMap.Hashtag;
-
-        //}
 
 
         if (playerX > EastMap.map[0][0].X + 5 && EastMap.ReadyToPopulate)
@@ -270,7 +195,6 @@ public class Hub :TileMap {
         }
         else if (playerX < WestMap.map[0][WestMap.Width - 1].X - 5 && WestMap.ReadyToPopulate)
         {
-            
             WestMap.PopulateMap(false);
             WestMap.ReadyToPopulate = false;
 
@@ -351,17 +275,12 @@ public class Hub :TileMap {
         {
             if (playerX > East)
             {
-                
-
-
-                //Time.timeScale = 0;
+               
                 WestMap.ReadyToPopulate = false;
 
                 Thread thread = new Thread(StepRight);
                 thread.Start();
-                //StepRight();
 
-                //ClearColliders();
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.left));
 
 
@@ -386,13 +305,9 @@ public class Hub :TileMap {
 
                 EastMap.ReadyToPopulate = false;
 
-                //Time.timeScale = 0;
                 Thread thread = new Thread(StepLeft);
                 thread.Start();
-                //StepLeft();
 
-
-                //ClearColliders();
 
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.right));
 
@@ -419,13 +334,9 @@ public class Hub :TileMap {
 
 
                 SouthMap.ReadyToPopulate = false;
-                //Time.timeScale = 0;
+
                 Thread thread = new Thread(StepUp);
                 thread.Start();
-                //StepUp();
-
-
-                //ClearColliders();
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.down));
 
                 SouthMap.ClearEnemies();
@@ -451,14 +362,9 @@ public class Hub :TileMap {
 
                 NorthMap.ReadyToPopulate = false;
 
-                //Time.timeScale = 0;
                 Thread thread = new Thread(StepDown);
                 thread.Start();
-                //StepDown();
 
-
-
-                //ClearColliders();
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread,direction.up));
                 NorthMap.ClearEnemies();
                 NorthMap.monsters = SouthMap.monsters;
@@ -476,26 +382,8 @@ public class Hub :TileMap {
 
 
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            PreInstantiateAll();
-
-
-            //Copy(WestMap.map, newMap(WestMap));
-            //Copy(EastMap.map, newMap(EastMap));
-            //Copy(NorthMap.map, newMap(NorthMap));
-            //Copy(SouthMap.map, newMap(SouthMap));
-            //Copy(CenterMap.map, newHub(CenterMap));
-
-                
-
-        }
-
-        
-            
-            
+        }        
+               
     }
 
     direction transitionDir;
@@ -509,12 +397,6 @@ public class Hub :TileMap {
             yield return new WaitForSeconds(.01f);
         }
 
-   
-        //Camera.main.transform.Relocate(relocationDir, WestMap.Width, NorthMap.Height, WestMap.Height);
-        //RelocateAll(relocationDir);
-        //PreInstantiateAll();
-        
-
         yield return null;
         
     }
@@ -525,7 +407,6 @@ public class Hub :TileMap {
     private bool mapGenComplete = false;
     public void StepUp()
     {
-        //Time.timeScale = 0;
         arrOfHashTags = getHashtags();
 
         SouthHubHashtag = CenterMap.Hashtag;
@@ -547,15 +428,10 @@ public class Hub :TileMap {
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
-        //Copy(SouthMap.map, newMap(SouthMap));
 
-
-
-        //TODO: Clone, statement needs to be the last statement
         CopyWithStartPoints(SouthMap, NorthMap);
         transition = true;
 
-        //center map should probably be run on a seperate thread as well
         Copy(NorthMap.map, newMap(NorthMap));
         
         Copy(CenterMap.map, newHub(CenterMap));
@@ -584,7 +460,6 @@ public class Hub :TileMap {
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        //Time.timeScale = 0;
 
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
@@ -633,8 +508,6 @@ public class Hub :TileMap {
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
 
-        //Time.timeScale = 0;
-
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
 
@@ -653,7 +526,6 @@ public class Hub :TileMap {
     public void StepRight()
     {
         rightCount++;
-        //Time.timeScale = 0;
 
 
         arrOfHashTags = getHashtags();
@@ -681,10 +553,6 @@ public class Hub :TileMap {
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
 
-
-
-        
-        //Copy(EastMap.map, newMap(EastMap));
 
         CopyWithStartPoints(WestMap, EastMap);
         transition = true;
@@ -1230,10 +1098,4 @@ public class Hub :TileMap {
 
 
      }
-
-
-
-
-
- 
 }

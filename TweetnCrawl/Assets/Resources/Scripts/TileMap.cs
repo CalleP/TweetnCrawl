@@ -31,8 +31,6 @@ public class TileMap : MonoBehaviour {
     /// <summary>
     /// Work around constructor DO NOT USE
     /// </summary>
-
-
 	public virtual void Start () {
 
 
@@ -294,7 +292,6 @@ public class TileMap : MonoBehaviour {
     }
 
 
-    //Remove?
     public void DrawMap2()
     {
         var prefab = Resources.Load("Tile");
@@ -334,7 +331,6 @@ public class TileMap : MonoBehaviour {
         }
     }
 
-
     public TileStruct ClosestToBorderX(TileType type)
     {
         int bestValue = map[0].Length;
@@ -355,7 +351,6 @@ public class TileMap : MonoBehaviour {
         
         return bestMatch;
     }
-
 
     public TileStruct ClosestToBorderXReverse(TileType type)
     {
@@ -455,17 +450,6 @@ public class TileMap : MonoBehaviour {
                     Wall.SetBoth(TerrainType.BlackCave);
                     Wall.Type = TileType.Dirt;
 
-                    //Wall = GetTileData(location.X + i + 1, location.Y +1);
-                    //Wall.SetBoth(TerrainType.BlackCaste);
-                    //Wall.Type = TileType.Dirt;
-
-                    //Wall = GetTileData(location.X + i + 1, location.Y - 3);
-                    //Wall.SetBoth(TerrainType.BlackCaste);
-                    //Wall.Type = TileType.Dirt;
-
-                    //Wall = GetTileData(location.X + i + 2, location.Y - 3);
-                    //Wall.SetBoth(TerrainType.BlackCaste);
-                    //Wall.Type = TileType.Dirt;
                 }
             }
 	    }
@@ -687,7 +671,6 @@ public class TileMap : MonoBehaviour {
                         }
                         
 
-                        //btime3 = Time.realtimeSinceStartup;
 
 
                         count++;

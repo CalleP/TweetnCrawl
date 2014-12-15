@@ -21,12 +21,6 @@ public class SmoothCamera2D : MonoBehaviour
     private Vector3 Center;
     float ViewDistance  = 5.0f;
 
-    void Start()
-    { 
-        //camera.orthographicSize = Screen.width / 64 / 2;
-
-    }
-
     void Update()
     {
 
@@ -42,11 +36,6 @@ public class SmoothCamera2D : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, Center + new Vector3(0, Height, Offset), Time.deltaTime * Damping);
         transform.position = new Vector3(transform.position.x, transform.position.y, -11);
 
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            //transform.position = new Vector3(transform.position.x + (Mathf.PerlinNoise(UnityEngine.Random.Range(-0.3f, 0.3f), UnityEngine.Random.Range(-0.3f, 0.3f)) / 4), transform.position.y + (Mathf.PerlinNoise(UnityEngine.Random.Range(-0.3f, 0.3f), UnityEngine.Random.Range(-0.3f, 0.3f)) / 4), transform.position.z);
-            
-        }
 
     }
 
@@ -84,8 +73,6 @@ public class SmoothCamera2D : MonoBehaviour
 
             yield return null;
         }
-
-        //Camera.main.transform.position = originalCamPos;
     }
 
 }

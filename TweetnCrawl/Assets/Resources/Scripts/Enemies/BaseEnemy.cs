@@ -130,7 +130,8 @@ public class BaseEnemy : MonoBehaviour {
             yield return new WaitForSeconds(0.006f);
             shadow.renderer.enabled = false;
             renderer.enabled = false;
-            Instantiate(Resources.Load<GameObject>("Explosion"), transform.position, Quaternion.identity);
+            GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Explosion"), transform.position, Quaternion.identity);
+            Physics2D.IgnoreCollision(explosion.collider2D, gameObject.collider2D);
             Destroy(gameObject);
 
             yield return null;

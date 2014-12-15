@@ -78,9 +78,5 @@ public class CharacterController : MonoBehaviour
         {
             maxSpeed = maxSpeed / 2;
         }
-
-
-
-
     }
 }

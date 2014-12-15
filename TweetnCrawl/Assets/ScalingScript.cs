@@ -10,12 +10,6 @@ public class ScalingScript : MonoBehaviour
 
     Matrix4x4 matrix;
 
-
-    void Start()
-    {
-
-    }
-
     public static void AutoResize(int screenWidth, int screenHeight)
     {
         Vector2 resizeRatio = new Vector2((float)Screen.width / screenWidth, (float)Screen.height / screenHeight);

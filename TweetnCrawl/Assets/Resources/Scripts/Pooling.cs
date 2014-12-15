@@ -3,7 +3,7 @@ using System.Collections;
 
 
 /// <summary>
-///  This class controls how far the map will bbe rendered to allow for bigger maps at higher frames per second.
+///  This class controls how far the map will be rendered to allow for bigger maps at higher frames per second.
 /// </summary>
 public class Pooling : MonoBehaviour {
 
@@ -117,10 +117,6 @@ public class Pooling : MonoBehaviour {
     public GameObject camera;
     void Update()
     {
-
-        //var test = TileMap.CropMap(map.map,CenterPointX - ((ViewPortWidth / 2) + ViewPortWidth % 2), CenterPointY - ((ViewPortHeight / 2) + ViewPortHeight % 2), CenterPointX + (ViewPortWidth / 2), CenterPointY + (ViewPortHeight / 2));
-
-        //TODO This is inefficent, change
         
         MoveToMapPos(((int)(camera.transform.position.x / 3.2f)) , (int)(camera.transform.position.y / 3.2f));
 

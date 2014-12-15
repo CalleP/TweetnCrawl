@@ -35,10 +35,6 @@ public class Animator : MonoBehaviour {
         }
 
     }
-
-    public void PlaySpecialAnimation()
-    { 
-    }
 	
     void FixedUpdate()
     {

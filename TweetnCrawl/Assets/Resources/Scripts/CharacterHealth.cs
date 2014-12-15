@@ -9,14 +9,12 @@ public class CharacterHealth : MonoBehaviour {
 	public Transform Player;
 	public AudioClip[] list;
 
-
 	public float x;
 	public float y;
 	public float w;
 	public float h;
 
 	public Material mat;
-
 	
 	void OnGUI() {
 		if (Event.current.type.Equals(EventType.Repaint)) {
@@ -24,16 +22,14 @@ public class CharacterHealth : MonoBehaviour {
 			Graphics.DrawTexture(box, HB, mat);
 			Graphics.DrawTexture(box, HBOutline, mat);
 		}
-		}
+	}
 	
-	// Use this for initialization
 	void Start () {
 		
 		Player = transform;
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		float healthy = 1f-(health/100f);

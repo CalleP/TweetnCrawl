@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -52,7 +52,6 @@
      <Compile Include="Assets\GoreExplosion.cs" />
      <Compile Include="Assets\LayerHack.cs" />
      <Compile Include="Assets\OnHitEffect.cs" />
-     <Compile Include="Assets\Outline.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\Exit.cs" />
      <Compile Include="Assets\Resources\Main_menu_resources\Scripts\HashtagChoice.cs" />
@@ -85,14 +84,12 @@
      <Compile Include="Assets\Resources\Scripts\MapGen.cs" />
      <Compile Include="Assets\Resources\Scripts\MapPopulator.cs" />
      <Compile Include="Assets\Resources\Scripts\MouseFollower.cs" />
-     <Compile Include="Assets\Resources\Scripts\NewTile.cs" />
      <Compile Include="Assets\Resources\Scripts\ObjectPlacer.cs" />
      <Compile Include="Assets\Resources\Scripts\OldCharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\Pooling.cs" />
      <Compile Include="Assets\Resources\Scripts\Projectiles\BaseProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Projectiles\EnemyProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Projectiles\ScatterProjectile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room.cs" />
      <Compile Include="Assets\Resources\Scripts\ScreenShake.cs" />
      <Compile Include="Assets\Resources\Scripts\ServerConnector.cs" />
      <Compile Include="Assets\Resources\Scripts\SmoothCamera2D.cs" />
@@ -121,9 +118,6 @@
      <Compile Include="Assets\ScalingScript.cs" />
      <Compile Include="Assets\TextOutline.cs" />
      <Compile Include="Assets\enemyr.cs" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
- </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

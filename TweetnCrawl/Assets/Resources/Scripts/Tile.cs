@@ -15,7 +15,6 @@ public class Tile : MonoBehaviour {
     public bool CollidingWithPlayer = false;
     public Sprite dirt = Resources.Load<Sprite>("Minecraft_dirt");
     public Sprite rock = Resources.Load<Sprite>("rock");
-    //private static TileMap map = GameObject.Find("Map").GetComponent<TileMap>();
     private TileMap map;
     public int surroundingTiles = 0;
 
@@ -36,12 +35,6 @@ public class Tile : MonoBehaviour {
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = dirt;
 
-        
-
-        //BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
-        //collider.size = sr.sprite.bounds.size;
-
-
 	}
 
     void Update() 
@@ -57,17 +50,13 @@ public class Tile : MonoBehaviour {
             {
                 if (TileData.Type == TileType.Dirt)
                 {
-                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                    sr.sprite = SpriteHandler.GetTexture(TileData, map);//SpriteHandler.GetTexture(TileData, map.map);
+                    sr.sprite = SpriteHandler.GetTexture(TileData, map);
                     gameObject.tag = "Tile";
-                    //gameObject.GetComponent<SpriteRenderer>().sprite = dirt;
                 }
                 else if (TileData.Type == TileType.Rock)
                 {
-                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
                     sr.sprite = SpriteHandler.GetTexture(TileData, map);
                     gameObject.tag = "Wall";
-                    //gameObject.GetComponent<SpriteRenderer>().sprite = rock;
                 }
                 else if (TileData.Type == TileType.Wood)
                 {
@@ -76,8 +65,6 @@ public class Tile : MonoBehaviour {
                 else
                 {
                     sr.sprite = dirt;
-                    //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                    //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
             }
         }
@@ -121,9 +108,6 @@ public class Tile : MonoBehaviour {
         transform.position = transform.position += new Vector3((float)Pooling.TileWidth / (float)(100 * dir / Mathf.Abs(dir)), 0f) * times;
         TileData = map.GetTileData(TileData.X + ((dir / Mathf.Abs(dir))*times), TileData.Y);
     }
-
-
-
 
         
     public void setType(TileType type)

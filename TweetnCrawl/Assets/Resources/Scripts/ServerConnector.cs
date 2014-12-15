@@ -23,55 +23,6 @@ public class ServerConnector : MonoBehaviour {
 
     public bool OfflineMode = false;
 
-	//Test the connection
-	void TestSocketConnection(){
-
-	}
-
-
-
-
-	// Use this for initialization
-	public ServerConnector() {
-
-        //---data to send to the server---
-
-
-        //---create a TCPClient object at the IP and port no.---
-
-
-
-
-        //var hash = ParseHashtag(Send("Test"));
-        //Debug.Log(hash[0]);
-        //---read back the text---
-
-
-
-        //var newString = outputString.Replace("\n", "");
-
-
-        //TweetData = newString;
-
-
-
-        ////Security.PrefetchSocketPolicy(Host, Port);
-        //setupSocket();
-
-
-
-        //writeSocket("Test");
-
-        //var test = readSocket();
-        //Debug.Log(test.ToString());
-
-
-
-        //closeSocket();
-        //test = readSocket();
-        //Debug.Log(test);
-	}
-
 
     void Start(){
         var time = Time.realtimeSinceStartup;
@@ -192,15 +143,6 @@ public class ServerConnector : MonoBehaviour {
         }
         client.Close();
     }
-
-	// Update is called once per frame
-	void Update() {
-		
-	}
-	
-	
-   
-
 }
 
 public class HashTagSet 

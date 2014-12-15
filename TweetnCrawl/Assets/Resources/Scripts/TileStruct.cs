@@ -51,8 +51,6 @@ public class TileStruct{
     public int X;
     public int surroundingDirts = 0;
 
-
-    //remove when finished testing
     public int test = 0;
 
 

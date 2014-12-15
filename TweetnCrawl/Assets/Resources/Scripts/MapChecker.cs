@@ -66,7 +66,6 @@ class MapChecker
             {
                 goForward();
                 VisitedTiles.Add(MapGen.GetTileData(map, x, y));
-                //generator.GetTileData(map,x, y).test = (int)currentDirection;
             }
             else
             {
@@ -90,7 +89,7 @@ class MapChecker
                     
                     goForward();
                     VisitedTiles.Add(MapGen.GetTileData(map, x, y));
-                    //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
+
                 }
                 else
                 {
@@ -98,19 +97,11 @@ class MapChecker
                     turnLeft();
                     goForward();
                     VisitedTiles.Add(MapGen.GetTileData(map, x, y));
-                   //generator.GetTileData(map,x, y).SetBoth(TerrainType.BlackCaste);
+
                 }
-                
-
-
-                //generator.GetTileData(map, x, y).SetBoth(TerrainType.BlackCaste);
-                
-                
             }
 
-            //MapHandler.GetTileData(map, x, y).test = (int)currentDirection;
             firstTime = false;
-            //generator.GetTileData(map, x, y).SetBoth(TerrainType.BlackCaste);
             count++;
 
         }
@@ -120,15 +111,6 @@ class MapChecker
 
 
 
-    //private void HugWall()
-    //{
-    //    if      (currentDirection == direction.down)    while (canGoLeft()) GoLeft();
-    //    else if (currentDirection == direction.right)   while (canGoDown()) GoDown();
-    //    else if (currentDirection == direction.up)      while (canGoRight()) GoRight();
-    //    else if (currentDirection == direction.left)    while (canGoUp()) GoUp();
-
-
-    //}
 
     private void turnLeft()
     {

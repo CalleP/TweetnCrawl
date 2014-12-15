@@ -5,19 +5,17 @@ public class OnHitEffect : MonoBehaviour {
 
     public bool HitEnemy = false;
     public float PauseTime = 0.02f;
-	// Use this for initialization
+    public bool ImpactPauses = false;
+    
+    // Use this for initialization
 	void Start () {
-        if (HitEnemy)
+        if (HitEnemy && ImpactPauses)
         {
             StartCoroutine(ImpactPause());
         }
 
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     private IEnumerator ImpactPause()
     {

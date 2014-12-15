@@ -3,13 +3,11 @@ using System.Collections;
 
 public class ScreenShake : MonoBehaviour 
 {
-
     Vector3 originalCameraPosition;
 
     float shakeAmt = 0;
 
     public Camera mainCamera;
-
 
     void Start()
     {
