@@ -780,8 +780,6 @@ public class MapGen
             pointA.Type = floorType;
             pointA.SetBoth(wallTerrainType);
 
-
-
         }
 
 
@@ -834,16 +832,6 @@ public class MapGen
             }
         }
 
-
-
-
-        
-
-
-
-
-
-
     }
 
     private Dictionary<int[], TileStruct> dict = new Dictionary<int[], TileStruct>();
@@ -856,9 +844,7 @@ public class MapGen
         {
             var tile = stack.Pop();
 
-
             tile.Visited = true;
-
 
             var west = MapGen.GetTileData(map, tile.X - 1, tile.Y);
             var east = MapGen.GetTileData(map, tile.X + 1, tile.Y);
@@ -869,8 +855,6 @@ public class MapGen
             if (east.Visited == false && east.Type == TileType.Dirt) stack.Push(east);
             if (north.Visited == false && north.Type == TileType.Dirt) stack.Push(north);
             if (south.Visited == false && south.Type == TileType.Dirt) stack.Push(south);
-
-
 
         }
 

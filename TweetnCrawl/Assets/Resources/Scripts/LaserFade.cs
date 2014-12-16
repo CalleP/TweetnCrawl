@@ -5,12 +5,14 @@ public class LaserFade : MonoBehaviour {
 
 
     LineRenderer line;
-	void Start () {
+	void Start () 
+    {
         line = GetComponent<LineRenderer>();
 	}
 
     public float width = 2f;
-	void Update () {
+	void Update () 
+    {
 
         if (width <= 0.1f)
         {
@@ -18,6 +20,7 @@ public class LaserFade : MonoBehaviour {
         }
       
 	}
+
     void FixedUpdate()
     {
 

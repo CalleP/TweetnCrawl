@@ -3,15 +3,6 @@ using System.Collections;
 
 public class CharacterController : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-
-    void FixedUpdate()
-    {
-
-    }
 
     float speed = 0f;
     void Update()

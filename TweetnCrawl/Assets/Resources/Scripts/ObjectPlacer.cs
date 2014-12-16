@@ -4,19 +4,9 @@ using System.Collections;
 public class ObjectPlacer : MonoBehaviour {
 
 
-    //TODO: class sf not done. it was hastily scrounged together to make the demo look nicer
 
     private static System.Random rand = new System.Random();
     private static TileMap map = GameObject.Find("Hub").GetComponent<TileMap>(); 
-	// Use this for initialization
-	void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public static TileStruct findAvailableTile()
     {
@@ -64,17 +54,13 @@ public class ObjectPlacer : MonoBehaviour {
         return tile;
     }
 
-
-
-
-
     public static void spawnObject(Object obj)
     {
         var tile = findAvailableTile();
         Instantiate(obj, new Vector3(tile.X*3.2f,tile.Y*3.2f,-0.8f), Quaternion.identity);
     }
 
-    public static void spawnEnemy(/*BaseEnemy enemy*/)
+    public static void spawnEnemy()
     {
         var tile = findAvailableTile();
 
@@ -92,36 +78,16 @@ public class ObjectPlacer : MonoBehaviour {
 
     }
 
-    public static void testStart()
+    public static void StartPlacements()
     {
-        //spawnEnemy ();
 
+        var selectectedMap = GameObject.Find("Hub").GetComponent<Hub>().CenterMap;
+        var checker = new MapChecker(selectectedMap.map);
 
-
-            var selectectedMap = GameObject.Find("Hub").GetComponent<Hub>().CenterMap;
-            var checker = new MapChecker(selectectedMap.map);
-
-            var tile = findAvailableTile(selectectedMap);
-
-            //if (checker.CheckMap(selectectedMap.,))
-            //{
-                
-            //}
-
-
-
+        var tile = findAvailableTile(selectectedMap);
 
         var height = (map.Height / 2) * 3.2f;
         var width = (map.Width / 2) * 3.2f;
         GameObject.Find("Player").transform.position = new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -1);
     }
-
-
-    public static void spawnPickup(BaseWeapon pickup)
-    { 
-        
-    }
-
-    
-    
 }

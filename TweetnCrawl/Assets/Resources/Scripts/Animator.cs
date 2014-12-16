@@ -59,9 +59,8 @@ public class Animator : MonoBehaviour {
                     sr.sprite = sprites[index];
                 }
 
-
-
                 time = Time.time + interval;
+
             }
         }
     }

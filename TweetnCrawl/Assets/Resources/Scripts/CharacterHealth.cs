@@ -21,11 +21,11 @@ public class CharacterHealth : MonoBehaviour {
 			Rect box = new Rect(x, y, w, h);
 			Graphics.DrawTexture(box, HB, mat);
 			Graphics.DrawTexture(box, HBOutline, mat);
+
 		}
 	}
 	
 	void Start () {
-		
 		Player = transform;
 
 	}
@@ -37,9 +37,6 @@ public class CharacterHealth : MonoBehaviour {
 			healthy = 0.1f;
 				}
 		mat.SetFloat ("_Cutoff", healthy);
-	
-
-
 
 		if (health <= 0) {
 			//no damage method is implemented yet so the enemy cannot die as of now.
@@ -48,7 +45,6 @@ public class CharacterHealth : MonoBehaviour {
 			GameObject.Find("Game_Over_Panel").GetComponent<GameOver>().gameover();
 			
 		}
-		
 	}
 	
 	public void receiveDamage (int dmg) {
@@ -56,6 +52,7 @@ public class CharacterHealth : MonoBehaviour {
 		Debug.Log("Recieved this amount of damage "+dmg.ToString()+" now health="+health.ToString() );
 		StartCoroutine(RandomSound());
         StartCoroutine(OnHitEffect());
+
 	}
 	
 	public void PlayerDeath () {
@@ -63,8 +60,7 @@ public class CharacterHealth : MonoBehaviour {
         Player.GetComponent<SpriteRenderer>().sprite = Player.GetComponent<OldCharacterController>().DeathState;
         Player.renderer.enabled = true;
         Player.transform.GetChild(0).renderer.enabled = false;
-		//Vector3 pos = Player.transform.position;
-		//Instantiate(Resources.Load("BlueExplosion"), pos, Quaternion.identity);
+
 	}
 
     public IEnumerator OnHitEffect()

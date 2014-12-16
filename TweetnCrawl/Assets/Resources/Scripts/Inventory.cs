@@ -53,7 +53,6 @@ public class Inventory : MonoBehaviour {
                 }
                 currentWeapon.Fire();
 
-
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse1) && weapons.Count != 0 && ammo >= currentWeapon.AmmoCost)
@@ -119,10 +118,6 @@ public class Inventory : MonoBehaviour {
     {
                 replaceWeapon(weapon, pickup);
     }
-
-        //Add code for other pickups
-
-    
 
     private void replaceWeapon(BaseWeapon weapon, PickupWeapon pickup)
     { 
@@ -199,6 +194,5 @@ public class Inventory : MonoBehaviour {
         Vector2 resizeRatio = new Vector2((float)Screen.width / screenWidth, (float)Screen.height / screenHeight);
         GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(resizeRatio.x, resizeRatio.y, 1.0f));
     }
-
 
 }

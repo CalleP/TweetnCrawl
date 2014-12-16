@@ -80,10 +80,6 @@ public class EnemyRandomizer : Animator {
         dict.Add(new EnemySpriteKey(0, EnemyTypes.Hive, TerrainType.GreyCave), GetSprite("Characters/Player_0", "Player_0_102"));
         dict.Add(new EnemySpriteKey(1, EnemyTypes.Hive, TerrainType.GreyCave), GetSprite("Characters/Player_1", "Player_1_102"));
 
-
-
-
-
         //RedCave
         dict.Add(new EnemySpriteKey(0, EnemyTypes.Basic, TerrainType.RedCave), GetSprite("Characters/Demon_0", "Demon_0_26"));
         dict.Add(new EnemySpriteKey(1, EnemyTypes.Basic, TerrainType.RedCave), GetSprite("Characters/Demon_1", "Demon_1_26"));
@@ -118,11 +114,7 @@ public class EnemyRandomizer : Animator {
 
      static Sprite GetSprite(string TexturePath, string spriteName)
      {
-
-
-
          Sprite[] sprites = Resources.LoadAll<Sprite>(TexturePath);
-         
 
          foreach (var item in sprites)
          {
@@ -141,7 +133,6 @@ public class EnemyRandomizer : Animator {
          base.Start();
          enemy = GetComponent<BaseEnemy>();
 
-         //RandomizeFrames(enemy.EnemyType, enemy.terrainType);
      }
 
     public void RandomizeFrames(EnemyTypes typeOfEnemy, TerrainType associatedTType)

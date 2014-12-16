@@ -8,8 +8,6 @@ public class Hub :TileMap {
 
     public GameObject CurrentHashtagGUI;
 
-    //public GameObject connector;
-
     public string[] friends;
 
     public bool test = false;
@@ -20,15 +18,12 @@ public class Hub :TileMap {
     public TileMap EastMap;
     public TileMap CenterMap;
 
-    //Delete
     public string CenterMapHubHashtag;
 
     public string NorthHubHashtag;
     public string WestHubHashtag;
     public string SouthHubHashtag;
     public string EastHubHashtag;
-
-    
 
     public TileStruct[][] FullMap;
 
@@ -40,7 +35,6 @@ public class Hub :TileMap {
 
     private int originalWidth;
     private int originalLength;
-
 
     private float loadingTimer = 5f;
 
@@ -61,13 +55,9 @@ public class Hub :TileMap {
             base.Start();
         }
 
-
         var connect = new ServerConnector();
 
         connect.Connect();
-
-
-
 
         arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
 
@@ -75,12 +65,9 @@ public class Hub :TileMap {
 
         Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
 
-
 		GameObject go = GameObject.Find ("PlayGameButton");
 		PlayGame Choicereference = go.GetComponent <PlayGame> ();
 
-
-      // CenterMap.Hashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
 		CenterMap.Hashtag = Choicereference.Hashtag;
         EastHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
         WestHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
@@ -105,17 +92,12 @@ public class Hub :TileMap {
         MergeAllMaps();
         started = true;
 
-
-
-
-
         if (MainHub)
         {
             PreInstantiateAll();
         }
         
-
-        ObjectPlacer.testStart();
+        ObjectPlacer.StartPlacements();
         previouslyVisitedHubs.Add(CenterMap.Hashtag);
 
 	}
@@ -162,7 +144,6 @@ public class Hub :TileMap {
             }
             PlaceAllRoadSigns();
 
-
             PreInstantiateAll();
 
             mapGenComplete = false;
@@ -176,7 +157,6 @@ public class Hub :TileMap {
         int West = WestMap.GetTileData(WestMap.Width / 2, 0).X;
         int North = NorthMap.GetTileData(0, NorthMap.Height / 2).Y;
         int South = SouthMap.GetTileData(0, SouthMap.Height / 2).Y;
-
 
         if (playerX > EastMap.map[0][0].X + 5 && EastMap.ReadyToPopulate)
         {
@@ -247,7 +227,6 @@ public class Hub :TileMap {
         }
         else if ((playerY < NorthMap.map[0][0].Y && playerY > SouthMap.map[SouthMap.Height-1][0].Y) && (playerX > WestMap.map[0][WestMap.Width-1].X && playerX < EastMap.map[0][0].X))
         {
-            
             if (readyToAddPoint)
             {
                 Points++;
@@ -262,20 +241,16 @@ public class Hub :TileMap {
             WestMap.ReadyToPopulate = true;
             NorthMap.ReadyToPopulate = true;
 
-
             DestroyAll();
 
             CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
 
-
         }
-
 
         if (time <= Time.time)
         {
             if (playerX > East)
             {
-               
                 WestMap.ReadyToPopulate = false;
 
                 Thread thread = new Thread(StepRight);
@@ -283,10 +258,8 @@ public class Hub :TileMap {
 
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.left));
 
-
                 WestMap.ClearEnemies();
                 WestMap.monsters = EastMap.monsters;
-
 
                 EastMap.monsters = new List<GameObject>();
 
@@ -301,38 +274,26 @@ public class Hub :TileMap {
             }
             else if (playerX < West)
             {
-
-
                 EastMap.ReadyToPopulate = false;
 
                 Thread thread = new Thread(StepLeft);
                 thread.Start();
 
-
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread, direction.right));
-
 
                 EastMap.ClearEnemies();
                 EastMap.monsters = NorthMap.monsters;
-
-
                 WestMap.monsters = new List<GameObject>();
-
                 NorthMap.ClearEnemies();
                 SouthMap.ClearEnemies();
 
-
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
-
-                Debug.Log("Has stepped left:" + leftCount);
 
             }
 
             if (playerY > North)
             {
-
-
                 SouthMap.ReadyToPopulate = false;
 
                 Thread thread = new Thread(StepUp);
@@ -341,25 +302,16 @@ public class Hub :TileMap {
 
                 SouthMap.ClearEnemies();
                 SouthMap.monsters = NorthMap.monsters;
-
-
                 NorthMap.monsters = new List<GameObject>();
-
                 WestMap.ClearEnemies();
                 EastMap.ClearEnemies();
 
-
-                
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
-
 
             }
             else if (playerY < South)
             {
-
-
-
                 NorthMap.ReadyToPopulate = false;
 
                 Thread thread = new Thread(StepDown);
@@ -368,18 +320,12 @@ public class Hub :TileMap {
                 StartCoroutine(WaitForThreadInstantiateRelocate(thread,direction.up));
                 NorthMap.ClearEnemies();
                 NorthMap.monsters = SouthMap.monsters;
-
-
                 SouthMap.monsters = new List<GameObject>();
-
                 WestMap.ClearEnemies();
                 EastMap.ClearEnemies();
 
-
-                
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
-
 
             }
         }        
@@ -398,7 +344,6 @@ public class Hub :TileMap {
         }
 
         yield return null;
-        
     }
 
 
@@ -423,11 +368,8 @@ public class Hub :TileMap {
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-
-
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
-
 
         CopyWithStartPoints(SouthMap, NorthMap);
         transition = true;
@@ -443,7 +385,6 @@ public class Hub :TileMap {
 
     public void StepDown()
     {
-
         arrOfHashTags = getHashtags();
 
         NorthHubHashtag = CenterMap.Hashtag;
@@ -460,17 +401,12 @@ public class Hub :TileMap {
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-
         Copy(WestMap.map, newMap(WestMap));
         Copy(EastMap.map, newMap(EastMap));
 
-
         CopyWithStartPoints(NorthMap, SouthMap);
 
-
         transition = true;
-
-
 
         Copy(SouthMap.map, newMap(SouthMap));
 
@@ -478,8 +414,6 @@ public class Hub :TileMap {
 
         readyToAddPoint = true;
         mapGenComplete = true;
-
-
 
     }
 
@@ -490,13 +424,10 @@ public class Hub :TileMap {
        
         arrOfHashTags = getHashtags();
 
-
-
         EastHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = WestHubHashtag;
 
         System.Random rand = new System.Random();
-
         
         WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
@@ -506,7 +437,6 @@ public class Hub :TileMap {
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
-
 
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
@@ -527,16 +457,12 @@ public class Hub :TileMap {
     {
         rightCount++;
 
-
         arrOfHashTags = getHashtags();
-
-
 
         WestHubHashtag = CenterMap.Hashtag;
         CenterMap.Hashtag = EastHubHashtag;
 
         System.Random rand = new System.Random();
-
 
         EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
         SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
@@ -547,12 +473,8 @@ public class Hub :TileMap {
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-
-
-
         Copy(NorthMap.map, newMap(NorthMap));
         Copy(SouthMap.map, newMap(SouthMap));
-
 
         CopyWithStartPoints(WestMap, EastMap);
         transition = true;
@@ -564,7 +486,6 @@ public class Hub :TileMap {
 
         mapGenComplete = true;
                 
-    //
     }
 
     private TileStruct[][] clone(TileStruct[][] map)
@@ -581,8 +502,6 @@ public class Hub :TileMap {
         }
         return newMap;
     }
-
-    
 
     public void RelocateAll(direction direction)
     {
@@ -622,7 +541,6 @@ public class Hub :TileMap {
         {
             ammos.transform.Relocate(direction, WestMap.Width, NorthMap.Height, WestMap.Height);
         }
-        
     }
 
     public void DestroyAmmoPickups()
@@ -633,15 +551,11 @@ public class Hub :TileMap {
         {
             Destroy(pickup);
         }
-    
     }
 
     public void DestroyAll()
     {
-
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-
         var pickups = GameObject.FindGameObjectsWithTag("Pickup");
 
         foreach (var enemy in enemies)
@@ -653,12 +567,7 @@ public class Hub :TileMap {
         {
             Destroy(pickup);
         }
-
     }
-
-
-
-
 
     public TileStruct[][] newMap(TileMap map)
     {
@@ -668,121 +577,19 @@ public class Hub :TileMap {
 
     public TileStruct[][] newHub(TileMap centerMap)
     {
-
         var gen = new MapGen(centerMap.Width, centerMap.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(centerMap.Hashtag)), stringToSeed(centerMap.Hashtag));
         return gen.createHub(WestMap, EastMap, SouthMap, NorthMap);
-    
     }
 
     public int stringsToSeed(string first, string second)
     {
         return (first + second).GetHashCode();
-         
     }
+
     public int stringToSeed(string first)
     {
         return first.GetHashCode();
-
     }
-
-    
-
-    public void MergeHorizontal(TileStruct[][] map2, TileStruct[][] map1) {
-        var outArr = new TileStruct[map1.Length][];
-        for (int i = 0; i < map1.Length; i++)
-        {
-            outArr[i] = new TileStruct[map1[0].Length + map2[0].Length];
-        }
-
-        for (int y = 0; y < outArr.Length; y++)
-        {
-            for (int x = 0; x < outArr[0].Length; x++)
-            {
-                if (x < map2[0].Length)
-	            {
-                    try
-                    {
-                        outArr[y][x] = map2[y][x];
-                    }
-                    catch (System.Exception)
-                    {
-                        
-                        throw;
-                    }
-
-	            }
-                else
-                {
-                    var tile = map1[y][x - map2[0].Length];
-                    tile.X = x;
-                    //var newTile = new TileStruct(x, tile.Y, tile.Type);
-                    outArr[y][x] = tile;
-                }
-            }
-        }
-        map = outArr;
-        Height = map.Length;
-        Width = map[0].Length;
-    
-    }
-
-    public void MergeVertical(TileStruct[][] map2, TileStruct[][] map1)
-    {
-
-        var outArr = new TileStruct[map2.Length + map1.Length][];
-        for (int i = 0; i < outArr.Length; i++)
-        {
-            outArr[i] = new TileStruct[Width];
-        }
-
-        int count = 0;
-        for (int i = 0; i < map2.Length; i++)
-        {
-            outArr[i] = map2[i];
-            count++;
-        }
-
-        for (int i = 0; i < map1.Length; i++)
-        {
-            var tile = new TileStruct[map1[0].Length];
-            for (int x = 0; x < tile.Length; x++)
-            {
-                try
-                {
-                    var oldTile = map1[i][x];
-                    oldTile.Y = count + oldTile.Y;
-                    tile[x] = oldTile;
-                }
-                catch (System.Exception)
-                {
-                    
-                    throw;
-                }
-
-
-            }
-
-            outArr[i + count] = tile;
-
-
-        }
-
-
-
-        map = outArr;
-       
-        Height = map.Length;
-        Width = map[0].Length;
-
-       
-
-
-    }
-
-
-
-
-
 
     public void MergeAllMaps()
     {
@@ -803,11 +610,8 @@ public class Hub :TileMap {
                 var tile = WestMap.map[y][x];
                 tile.Y = tile.Y + SouthMap.Height;
                 outArr[y + SouthMap.Height][x] = tile;
-                
-
             }
         }
-        //WestMap.StartPointY = WestMap.StartPointY + SouthMap.Height;
 
         for (int y = 0; y < EastMap.Height; y++)
         {
@@ -817,12 +621,8 @@ public class Hub :TileMap {
                 tile.Y = tile.Y + SouthMap.Height;
                 tile.X = tile.X + WestMap.Width + CenterMap.Width;
                 outArr[y + SouthMap.Height][x+WestMap.Width+CenterMap.Width] = tile;
-
-
             }
         }
-        //EastMap.StartPointX = WestMap + EastMap.Width;
-
 
         for (int y = 0; y < CenterMap.Height; y++)
         {
@@ -832,8 +632,6 @@ public class Hub :TileMap {
                 tile.Y = tile.Y + SouthMap.Height;
                 tile.X = tile.X + WestMap.Width;
                 outArr[y + SouthMap.Height][x + WestMap.Width] = tile;
-
-
             }
         }
 
@@ -844,11 +642,8 @@ public class Hub :TileMap {
                 var tile = SouthMap.map[y][x];
                 tile.X = tile.X + WestMap.Width;
                 outArr[y][x + WestMap.Width] = tile;
-
-
             }
         }
-
 
         for (int y = 0; y < NorthMap.Height; y++)
         {
@@ -858,33 +653,13 @@ public class Hub :TileMap {
                 tile.X = tile.X + WestMap.Width;
                 tile.Y = tile.Y + SouthMap.Height + CenterMap.Height;
                 outArr[y + SouthMap.Height + CenterMap.Height][x + WestMap.Width] = tile;
-
-
             }
         }
-
-
         map = outArr;
         Height = map.Length;
         Width = map[0].Length;
+
     }
-
-
-    //public void Copy(TileStruct[][] original, TileStruct[][] newCopy)
-    //{
-    //    for (int y = 0; y < original.Length; y++)
-    //    {
-    //        for (int x = 0; x < original[0].Length; x++)
-    //        {
-    //            var tile = newCopy[y][x];
-    //            original[y][x].Type = tile.Type;
-                
-            
-    //        }
-    //    }
-
-        
-    //}
 
 
     public void CopyWithStartPoints(TileMap target, TileMap template)
@@ -907,19 +682,6 @@ public class Hub :TileMap {
 
     }
 
-
-
-
-
-    public void ClearColliders()
-    {
-
-        Destroy(colliderContainer);
-        colliderContainer = (GameObject)Instantiate(Resources.Load<GameObject>("ColliderContainer"));
-
-    }
-
-
     public void PreInstantiateAll()
     {
         NorthMap.PreInstantiateColliders();
@@ -927,47 +689,24 @@ public class Hub :TileMap {
         CenterMap.PreInstantiateColliders();
         WestMap.PreInstantiateColliders();
         EastMap.PreInstantiateColliders();
+
     }
-
-
-    public void SwapVertical()
-    { 
-    
-    }
-
-    public void GenerateHub()
-    {
-
-    
-    }
-
-    
 
     public string[] getHashtags()
     {
         var connect = new ServerConnector();
-
         connect.Connect();
-
-
         arrOfHashTags = connect.ParseHashtag(connect.Send("Test"));
-
         connect.Close();
-
         return arrOfHashTags;
+
     }
 
      float native_width = 1920;
      float native_height = 1080;
 
-
-
-
-
      public void PlaceRoadsign(TileStruct[][] map, TileStruct start, string hash)
      {
-
-
          Queue<TileStruct> stack = new Queue<TileStruct>();
          
          foreach (var item in map)
@@ -986,8 +725,6 @@ public class Hub :TileMap {
 
              var tile = stack.Dequeue();
 
-
-
              tile.Debug = true;
 
              var west = MapGen.GetTileData(map, tile.X - 1, tile.Y);
@@ -1002,7 +739,6 @@ public class Hub :TileMap {
                  north = MapGen.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) + 1);
                  south = MapGen.GetTileData(map, (tile.X - WestMap.Width), (tile.Y - SouthMap.Height) - 1);
              }
-
 
              List<TileStruct> dirts = new List<TileStruct>();
              if (west.Type  == TileType.Dirt)   dirts.Add(west);
@@ -1028,9 +764,6 @@ public class Hub :TileMap {
                             obj.transform.GetChild(0).GetComponent<RoadSignBehaviour>().text = hash;
                             return;
 	                    }
-
-                         
-
                      }
                  }
              }
@@ -1040,20 +773,16 @@ public class Hub :TileMap {
              if (north.Visited == false && north.Type == TileType.Dirt) stack.Enqueue(north);
              if (south.Visited == false && south.Type == TileType.Dirt) stack.Enqueue(south);
 
-
-
          }
-
-
      }
 
      private void PlaceAllRoadSigns()
      {
          PlaceRoadsign(CenterMap.map, CenterMap.map[WestMap.EndPointY][0], WestHubHashtag);
          PlaceRoadsign(CenterMap.map, CenterMap.map[EastMap.StartPointY][CenterMap.Width - 1], EastHubHashtag);
-
          PlaceRoadsign(CenterMap.map, CenterMap.map[0][SouthMap.EndPointX], SouthHubHashtag);
          PlaceRoadsign(CenterMap.map, CenterMap.map[CenterMap.Width - 1][NorthMap.StartPointX], NorthHubHashtag);
+
      }
 
 
@@ -1062,19 +791,13 @@ public class Hub :TileMap {
      public GUIStyle style;
      void OnGUI ()
      {
-        if (Event.current.type.Equals(EventType.Repaint)) {
+        if (Event.current.type.Equals(EventType.Repaint)) 
+        {
 
-
-		
-            //set up scaling
             var rx = Screen.width / native_width;
             var ry = Screen.height / native_height;
             GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1)); 
  
-            //now create your GUI normally, as if you were in your native resolution
-            //The GUI.matrix will scale everything automatically.
- 
-            //example
             GUI.Label(new Rect(5,210,200,200),CurrentHashtagGUI.guiText.text, style);
             GUI.Label(new Rect(5, 260, 200, 200), Points.ToString(), style);
 
@@ -1087,6 +810,7 @@ public class Hub :TileMap {
          ModifyEnemyspawn(EastMap);
          ModifyEnemyspawn(NorthMap);
          ModifyEnemyspawn(SouthMap);
+
      }
      public void ModifyEnemyspawn(TileMap map)
      {
@@ -1095,7 +819,6 @@ public class Hub :TileMap {
 
          map.BasicsAmount = Mathf.Clamp(map.BasicsAmount, 0, 20);
          map.SpecialistAmount = Mathf.Clamp(map.SpecialistAmount, 0, 10);
-
 
      }
 }

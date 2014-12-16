@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MouseFollower : MonoBehaviour {
 
-	void Update () {
+	void Update () 
+    {
 	    transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 }

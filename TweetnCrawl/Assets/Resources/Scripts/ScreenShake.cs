@@ -13,7 +13,6 @@ public class ScreenShake : MonoBehaviour
     {
         mainCamera = Camera.main;
 
-
     }
 
     public void OnCollisionEnter2D(Collision2D coll) 
@@ -33,6 +32,7 @@ public class ScreenShake : MonoBehaviour
             Vector3 pp = mainCamera.transform.position;
             pp.y+= quakeAmt; // can also add to x and/or z
             mainCamera.transform.position = pp;
+
         }
     }
 
@@ -40,6 +40,7 @@ public class ScreenShake : MonoBehaviour
     {
         CancelInvoke("CameraShake");
         mainCamera.transform.position = originalCameraPosition;
+
     }
 
 }

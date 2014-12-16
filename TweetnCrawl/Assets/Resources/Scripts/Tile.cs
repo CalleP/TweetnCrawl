@@ -37,6 +37,8 @@ public class Tile : MonoBehaviour {
 
 	}
 
+    private Vector3 Oldposition;
+    private TileStruct oldTileData;
     void Update() 
     {
         if (Oldposition != transform.position)
@@ -71,20 +73,6 @@ public class Tile : MonoBehaviour {
         oldTileData = TileData;
         Oldposition = transform.position;
     }
-    private Vector3 Oldposition;
-    private TileStruct oldTileData;
-
-    void OnTriggerEnter2D(Collider2D coll){
-        CollidingWithPlayer = true;
-    }
-
-    void OnTriggerExit2D(Collider2D coll)
-    {
-        CollidingWithPlayer = false;
-    }
-
-
-
 
     /// <summary>
     /// Moves the tile vertically.
@@ -94,7 +82,6 @@ public class Tile : MonoBehaviour {
     {
         transform.position = transform.position += new Vector3(0f, (float)Pooling.TileHeight / (float)(100 * dir / Mathf.Abs(dir)))*times;
         TileData = map.GetTileData(TileData.X, TileData.Y + ((dir / Mathf.Abs(dir))* times));
-        
        
     }
 
