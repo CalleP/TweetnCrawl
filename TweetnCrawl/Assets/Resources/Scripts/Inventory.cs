@@ -177,10 +177,12 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    public GUIStyle WeaponDisplayStyle;
     public GUIStyle AmmoCounterStyle;
     void OnGUI()
     {
-        GUI.Label(new Rect(0, Screen.height-115, 200, 200), Ammo.ToString(), AmmoCounterStyle);
+        GUI.Label(new Rect(0, Screen.height - 115, 200, 200), Ammo.ToString(), AmmoCounterStyle);
+        GUI.Label(new Rect(15, Screen.height - 160, 200, 200), Enum.GetName(typeof(WeaponTypes), currentWeapon.type), WeaponDisplayStyle );
 
     }
 

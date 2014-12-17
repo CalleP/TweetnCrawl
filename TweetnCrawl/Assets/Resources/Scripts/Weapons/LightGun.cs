@@ -13,7 +13,7 @@ class RaveGun : MachineGun
         altCoolDown = 0.1f;
         coolDown = 0.04f;
         AltSpread = 2;
-        type = WeaponTypes.RaveGun;
+        type = WeaponTypes.Ravegun;
         PauseOnHit = 0.008f;
         Shell = null;
         AmmoCost = 1;

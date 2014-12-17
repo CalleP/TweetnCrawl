@@ -12,7 +12,7 @@ class RailGun : MachineGun
         LaserPrefabString = "GreenLazor";
         altCoolDown = 0.7f;
         altDamage = 150;
-        type = WeaponTypes.RailGun;
+        type = WeaponTypes.Railgun;
         ShakeMagnitude = 5;
         ShakeDuration = 1f;
         LaserWidth = 2.2f;

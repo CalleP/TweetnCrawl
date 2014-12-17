@@ -10,32 +10,32 @@ using UnityEngine;
 
 public enum WeaponTypes
 {
-    shotgun,
-    machineGun,
-    revolver,
+    Shotgun,
+    Machinegun,
+    Revolver,
     AutoShotgun,
     SawnOff,
-    RailGun,
-    MiniGun,
-    RaveGun,
+    Railgun,
+    Minigun,
+    Ravegun,
     Launcher
 }
 public class PickupWeapon : PickupBase
 {
     public static Dictionary<WeaponTypes, Type> WepTypes = new Dictionary<WeaponTypes, Type> 
     { 
-        {WeaponTypes.revolver, typeof(DualRevolvers)},
-        {WeaponTypes.machineGun, typeof(MachineGun)},
-        {WeaponTypes.MiniGun, typeof(Minigun)},
-        {WeaponTypes.shotgun, typeof(Shotgun)},
+        {WeaponTypes.Revolver, typeof(DualRevolvers)},
+        {WeaponTypes.Machinegun, typeof(MachineGun)},
+        {WeaponTypes.Minigun, typeof(Minigun)},
+        {WeaponTypes.Shotgun, typeof(Shotgun)},
         {WeaponTypes.AutoShotgun, typeof(AutoShotgun)},
         {WeaponTypes.SawnOff, typeof(SawnOff)},
-        {WeaponTypes.RailGun, typeof(RailGun)},
-        {WeaponTypes.RaveGun, typeof(RaveGun)},
+        {WeaponTypes.Railgun, typeof(RailGun)},
+        {WeaponTypes.Ravegun, typeof(RaveGun)},
         {WeaponTypes.Launcher, typeof(Launcher)}
     };
 
-    public WeaponTypes SelectedWeapon = WeaponTypes.revolver;
+    public WeaponTypes SelectedWeapon = WeaponTypes.Revolver;
     
     private static int test = 0;
     

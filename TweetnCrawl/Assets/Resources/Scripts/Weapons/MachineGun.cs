@@ -21,7 +21,7 @@ class MachineGun : BaseProjectileWeapon
         altDamage = 50;
         SemiAuto = false;
         damage = 40;
-        type = WeaponTypes.machineGun;
+        type = WeaponTypes.Machinegun;
         PauseOnHit = 0f;
         Spread = 2;
         

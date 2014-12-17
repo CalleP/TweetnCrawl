@@ -8,7 +8,7 @@ class DualRevolvers : BaseProjectileWeapon {
     {
         coolDown = 0f;
         altCoolDown = 0.15f;
-        type = WeaponTypes.revolver;
+        type = WeaponTypes.Revolver;
         ShakeMagnitude = 0.1f;
         ShakeDuration = 0.1f;
         BulletSpeed = 100;

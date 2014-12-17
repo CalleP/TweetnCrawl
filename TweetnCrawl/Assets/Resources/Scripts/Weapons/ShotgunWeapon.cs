@@ -24,7 +24,7 @@ class Shotgun : BaseProjectileWeapon
         ProjectileAmount = 8;
         damage = 35;
         SemiAuto = true;
-        type = WeaponTypes.shotgun;
+        type = WeaponTypes.Shotgun;
         altCoolDown = 0.7f;
         VelocityVariation = 5;
         ShakeMagnitude = 0.3f;

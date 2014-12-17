@@ -47,6 +47,8 @@ public class Hub :TileMap {
     private bool readyToAddPoint = false;
     public int Points;
 
+    public GameObject BGMusic;
+
 
 	public override void Start () {
 
@@ -99,6 +101,8 @@ public class Hub :TileMap {
         
         ObjectPlacer.StartPlacements();
         previouslyVisitedHubs.Add(CenterMap.Hashtag);
+
+        BGMusic.audio.Play();
 
 	}
 	

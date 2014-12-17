@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 3
+  SelectedWeapon: 2
 --- !u!212 &78339726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -552,6 +552,31 @@ Prefab:
     - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
       propertyPath: AmmoCounterStyle.m_StretchWidth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad3a4ede2ac1da8428a5f5edd95b6f71,
+        type: 3}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_StretchWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_StretchHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_Normal.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
+      propertyPath: WeaponDisplayStyle.m_Normal.m_TextColor.g
+      value: .545098066
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d650a80703600a41b767aeda98b1957, type: 2}
@@ -914,6 +939,65 @@ MonoBehaviour:
   PickUpFlashMaterial: {fileID: 2100000, guid: d390bf41933182d49942fa9c07795bcb, type: 2}
   PickUpFlashColor: {r: .944827557, g: 1, b: 0, a: 1}
   PickUpFlashDuration: .100000001
+  WeaponDisplayStyle:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: .545098066, b: 1, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: ad3a4ede2ac1da8428a5f5edd95b6f71, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 0
+    m_StretchHeight: 0
   AmmoCounterStyle:
     m_Name: 
     m_Normal:
@@ -1657,7 +1741,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a67fe1db6a3aee3468f032d385053a21, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: .104000002
   m_Pitch: 1
   Loop: 1
@@ -1886,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 6
+  SelectedWeapon: 2
 --- !u!58 &532303498
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3952,6 +4036,7 @@ MonoBehaviour:
   MainHub: 1
   previouslyVisitedHubs: []
   Points: 0
+  BGMusic: {fileID: 444254733}
   player: {fileID: 316957756}
   rightCount: 0
   style:
@@ -4174,7 +4259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 0
+  SelectedWeapon: 2
 --- !u!58 &2062982725
 CircleCollider2D:
   m_ObjectHideFlags: 0
