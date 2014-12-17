@@ -15,7 +15,7 @@ class RaveGun : MachineGun
         AltSpread = 2;
         type = WeaponTypes.RaveGun;
         PauseOnHit = 0.008f;
-        shell = null;
+        Shell = null;
         AmmoCost = 1;
         
     }

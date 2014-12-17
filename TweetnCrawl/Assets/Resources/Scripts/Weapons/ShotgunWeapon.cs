@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 
 
-class ShotgunWeapon : BaseProjectileWeapon
+class Shotgun : BaseProjectileWeapon
 {
 
     public int ProjectileAmount;
@@ -15,9 +15,9 @@ class ShotgunWeapon : BaseProjectileWeapon
 
     System.Random rand = new System.Random();
 
-    public ShotgunWeapon()
+    public Shotgun()
     {
-        shell = Resources.Load<GameObject>("ShotgunShell");
+        Shell = Resources.Load<GameObject>("ShotgunShell");
         coolDown = 0.7f;
         BulletSpeed = 70f;
         Spread = 20;
@@ -31,12 +31,15 @@ class ShotgunWeapon : BaseProjectileWeapon
         ShakeDuration = 0.6f;
         PauseOnHit = 0.003f;
         AmmoCost = 3;
+        fireSound = Resources.Load<AudioClip>("Sounds/ShotGunFire");
+        reloadSound = Resources.Load<AudioClip>("Sounds/ShotGunReload");
 
     }
 
     public override void Start()
     {
         base.Start();
+
     }
 
 
@@ -69,18 +72,20 @@ class ShotgunWeapon : BaseProjectileWeapon
 
     public override void AltFire()
     {
-        var mousePos = AimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var rotation = Vector3.Angle(wielder.transform.position, mousePos);
-        var velocity = Vector3.up;
         if (canFire() && altFireEnabled) 
         {
-            
-            projectiles.Add(SpawnProjectile(BulletSpeed, "ShotgunAltProjectile"));
-            projectiles[projectiles.Count-1].transform.Rotate(new Vector3(0, 0, 0));
-            
-            base.AltFire();
+
+            FireBomb();
         }
 
+    }
+
+    public void FireBomb()
+    {
+        projectiles.Add(SpawnProjectile(BulletSpeed, "ShotgunAltProjectile"));
+        projectiles[projectiles.Count - 1].transform.Rotate(new Vector3(0, 0, 0));
+
+        base.AltFire();
     }
 
 

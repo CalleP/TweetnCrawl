@@ -2,12 +2,10 @@
 using System.Collections;
 
 
-class DualRevolvers : Revolver {
+class DualRevolvers : BaseProjectileWeapon {
 
-    bool firstFire;
     public DualRevolvers()
     {
-        firstFire = true;
         coolDown = 0f;
         altCoolDown = 0.15f;
         type = WeaponTypes.revolver;
@@ -17,33 +15,11 @@ class DualRevolvers : Revolver {
         AmmoCost = 0;
     }
 
-    public override void Fire()
-    {
-        if (firstFire)
-        {
-            timeStamp = Time.time;
-        }
-        if (canFire())
-        {
-            firstFire = false;
-            base.Fire();
-        }
-
-    }
 
     public override void AltFire()
     {
-        if (!firstFire)
-        {
-            timeStamp = Time.time;
-        }
-        if (canFire())
-        {
-            firstFire = true;
-            base.Fire();
-
-        }
-
+        base.Fire();
     }
+
 
 }

@@ -812,7 +812,7 @@ public class TileMap : MonoBehaviour {
         }
 
         var obj = (GameObject)Instantiate(Resources.Load("Pickup"), new Vector3(tile.X * 3.2f, tile.Y * 3.2f, -0.15f), Quaternion.identity);
-        obj.GetComponent<PickupWeapon>().selectedWeapon = weaponType;
+        obj.GetComponent<PickupWeapon>().SelectedWeapon = weaponType;
 
         monsters.Add(obj);
     }

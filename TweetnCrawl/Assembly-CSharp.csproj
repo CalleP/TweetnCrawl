@@ -107,7 +107,6 @@
      <Compile Include="Assets\Resources\Scripts\Weapons\Minigun.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\OrbitalWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\RailGun.cs" />
-     <Compile Include="Assets\Resources\Scripts\Weapons\Revolver.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\SawnOff.cs" />
      <Compile Include="Assets\Resources\Scripts\Weapons\ShotgunWeapon.cs" />
      <Compile Include="Assets\Resources\Scripts\pickup\AmmoPickup.cs" />

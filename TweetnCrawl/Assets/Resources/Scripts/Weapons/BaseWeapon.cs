@@ -6,7 +6,7 @@ public abstract class BaseWeapon : ScriptableObject {
     protected AudioSource[] audios;
 
 
-    public GameObject shell = (GameObject)Resources.Load("Shell");
+    public GameObject Shell = (GameObject)Resources.Load("Shell");
     public GameObject camera = GameObject.Find("Camera");
     public bool SemiAuto = false;
     public Vector3 AimPoint;

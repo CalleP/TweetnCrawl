@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-class SawnOff : ShotgunWeapon
+class SawnOff : Shotgun
 {
     public SawnOff() : base()
     {

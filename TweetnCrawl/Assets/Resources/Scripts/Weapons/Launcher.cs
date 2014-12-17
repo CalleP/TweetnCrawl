@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-class Launcher : ShotgunWeapon
+class Launcher : Shotgun
 {
     public Launcher() : base()
     {

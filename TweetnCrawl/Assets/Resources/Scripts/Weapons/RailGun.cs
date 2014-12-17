@@ -7,7 +7,7 @@ class RailGun : MachineGun
 {
     public RailGun() : base()
     {
-        shell = null;
+        Shell = null;
         SemiAuto = true;
         LaserPrefabString = "GreenLazor";
         altCoolDown = 0.7f;

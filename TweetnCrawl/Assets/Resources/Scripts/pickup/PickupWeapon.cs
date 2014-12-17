@@ -27,7 +27,7 @@ public class PickupWeapon : PickupBase
         {WeaponTypes.revolver, typeof(DualRevolvers)},
         {WeaponTypes.machineGun, typeof(MachineGun)},
         {WeaponTypes.MiniGun, typeof(Minigun)},
-        {WeaponTypes.shotgun, typeof(ShotgunWeapon)},
+        {WeaponTypes.shotgun, typeof(Shotgun)},
         {WeaponTypes.AutoShotgun, typeof(AutoShotgun)},
         {WeaponTypes.SawnOff, typeof(SawnOff)},
         {WeaponTypes.RailGun, typeof(RailGun)},
@@ -35,23 +35,23 @@ public class PickupWeapon : PickupBase
         {WeaponTypes.Launcher, typeof(Launcher)}
     };
 
-    public WeaponTypes selectedWeapon = WeaponTypes.revolver;
+    public WeaponTypes SelectedWeapon = WeaponTypes.revolver;
     
     private static int test = 0;
     
     void Start()
     {
-            Item = instantiateWeaponType(selectedWeapon);
+            Item = instantiateWeaponType(SelectedWeapon);
             textMesh = transform.GetChild(0).GetComponent<TextMesh>();
     }
 
     TextMesh textMesh;
     public void Update() 
     {
-        textMesh.text = Enum.GetName(typeof(WeaponTypes), selectedWeapon);
+        textMesh.text = Enum.GetName(typeof(WeaponTypes), SelectedWeapon);
     }
 
-    public static BaseWeapon instantiateWeaponType(WeaponTypes type)
+   private static BaseWeapon instantiateWeaponType(WeaponTypes type)
     {
         return  (BaseWeapon)Activator.CreateInstance(WepTypes[type]);
     }
@@ -66,11 +66,16 @@ public class PickupWeapon : PickupBase
     {
         if (coll.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.E) && timeStamp <= Time.time)
         {
-            Debug.Log("KeyDown");
-            coll.gameObject.GetComponent<Inventory>().PickUpWeapon(instantiateWeaponType(selectedWeapon), this);
-            timeStamp = Time.time + 0.5f;
-            
+            GiveWeapon(coll.gameObject.GetComponent<Inventory>());
+  
         }
     }
+
+    protected void GiveWeapon(Inventory inv)
+    {
+            inv.PickUpWeapon(instantiateWeaponType(SelectedWeapon), this);
+            timeStamp = Time.time + 0.5f;
+    }
+
 }
 

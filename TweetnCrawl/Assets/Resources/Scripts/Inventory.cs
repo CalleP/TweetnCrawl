@@ -109,11 +109,6 @@ public class Inventory : MonoBehaviour {
 
     }
 
-    public void FireWeapon()
-    {
-        currentWeapon.Fire();
-    }
-
     public void PickUpWeapon(BaseWeapon weapon, PickupWeapon pickup) 
     {
                 replaceWeapon(weapon, pickup);
@@ -146,7 +141,7 @@ public class Inventory : MonoBehaviour {
     {
        
         var pickupScript = pickup.GetComponent<PickupWeapon>();
-        pickupScript.selectedWeapon = PickupWeapon.TypeToWeaponType(weapon.GetType());
+        pickupScript.SelectedWeapon = PickupWeapon.TypeToWeaponType(weapon.GetType());
     }
 
     public Material PickUpFlashMaterial;
@@ -169,9 +164,9 @@ public class Inventory : MonoBehaviour {
 
     public void spawnShell()
     {
-        if (currentWeapon.shell != null)
+        if (currentWeapon.Shell != null)
         {
-            var shell = (GameObject)Instantiate(currentWeapon.shell, new Vector3(transform.position.x, transform.position.y, -0.25f), Quaternion.identity);
+            var shell = (GameObject)Instantiate(currentWeapon.Shell, new Vector3(transform.position.x, transform.position.y, -0.25f), Quaternion.identity);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ShellEjectionPoint.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
             ShellEjectionPoint.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(70f,120f)));

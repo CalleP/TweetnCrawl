@@ -1478,6 +1478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BloodMaterial: {fileID: 2100000, guid: 2845755998b8930418624d993b541db1, type: 2}
   BloodColor: {r: .529411793, g: 0, b: 0, a: .0980392173}
+  TimeBetweenSplash: .100000001
 --- !u!58 &396735373
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2454,7 +2455,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: selectedWeapon
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 0b3bffa9b0b516d4e941907b08b7c6bc, type: 2}
       propertyPath: m_TagString
@@ -4173,7 +4174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
-  selectedWeapon: 4
+  selectedWeapon: 0
 --- !u!58 &2062982725
 CircleCollider2D:
   m_ObjectHideFlags: 0
