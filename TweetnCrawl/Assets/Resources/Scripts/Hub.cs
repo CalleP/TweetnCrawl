@@ -798,12 +798,10 @@ public class Hub :TileMap {
         if (Event.current.type.Equals(EventType.Repaint)) 
         {
 
-            var rx = Screen.width / native_width;
-            var ry = Screen.height / native_height;
-            GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1)); 
+
  
-            GUI.Label(new Rect(5,210,200,200),CurrentHashtagGUI.guiText.text, style);
-            GUI.Label(new Rect(5, 260, 200, 200), Points.ToString(), style);
+            GUI.Label(new Rect(16, Screen.height - 210, 200,200),CurrentHashtagGUI.guiText.text, style);
+            GUI.Label(new Rect(16, Screen.height - 185, 200, 200), "Points: " + Points.ToString(), style);
 
         } 
      }

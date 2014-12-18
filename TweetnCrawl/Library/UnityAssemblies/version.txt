@@ -1,2 +1,1 @@
-4.6.0f3:1.9.2.0
-C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll
+4.5.4f1:1.9.2.0
