@@ -17,6 +17,8 @@ public class PlayGame : MonoBehaviour
 	public GameObject HashtagWindow;
 	public string Hashtag;
 
+
+
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
 		}
@@ -27,7 +29,6 @@ public class PlayGame : MonoBehaviour
 		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
 
 			print("Play game pressed");
-			www = new WWW("www.google.com");
 			StartCoroutine(checkConnection());
 
 				}
@@ -43,11 +44,19 @@ public class PlayGame : MonoBehaviour
 
 	IEnumerator checkConnection()
 	{
-		www = new WWW("www.google.com");
-		yield return www;
+		//www = new WWW("www.google.com");
+		//yield return www;
 		guitext.GetComponent<MessageScaling>().enabled = false;
+		Ping pinger = new Ping("195.178.179.176"); //Pings the server
 
-		if(www.error != null)
+		while(!pinger.isDone){  //Checks if ping is not done
+			yield return 0;
+		}
+		yield return pinger;
+		int ping = pinger.time;
+		print (ping);
+
+		if(ping > 200) //If ping is more than 2 second then retry
 		{
 			guitext.GetComponent<MessageScaling>().enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
