@@ -47,7 +47,7 @@ public class BaseEnemy : MonoBehaviour {
 	//Method containing the basereferences for the enemies
 	public void baseReferences() {
 		isCreated = false;
-		ArialFont = (Font)Resources.GetBuiltinResource (typeof(Font), "Arial.ttf");
+		ArialFont = (Font)Resources.Load("SDS_8x8");
 		player = GameObject.Find("Player").transform; //Reference and find the playerobject
 		attackTime = Time.time; //Attacktime is set to actual time
 		CharacterHealth ch = GameObject.Find ("Player").GetComponent<CharacterHealth> (); //Reference to the players health
@@ -218,7 +218,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
-				myText.color = Color.magenta;
+				myText.color = Color.cyan;
 				myText.text = "Shamefur Display";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -237,7 +237,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
-				myText.color = Color.green;
+				myText.color = Color.cyan;
 				myText.text = "M-M-M-M-MONSTER KILL!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -254,7 +254,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
-				myText.color = Color.magenta;
+				myText.color = Color.cyan;
 				myText.text = "BLAHHH!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -288,7 +288,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
-				myText.color = Color.red;
+				myText.color = Color.cyan;
 				myText.text = "RAGEQUIT!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
