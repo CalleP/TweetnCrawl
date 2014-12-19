@@ -69,7 +69,7 @@ public class PlayGame : MonoBehaviour
 		int ping = pinger.time;
 		print (ping);
 
-		if(ping > 200 || Timeout == true || ping == -1) //If ping fails or has too high latency then show fail message
+		if( Timeout == true || ping == -1) //If ping fails or has too high latency then show fail message
 		{
 			guitext.GetComponent<MessageScaling>().enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
