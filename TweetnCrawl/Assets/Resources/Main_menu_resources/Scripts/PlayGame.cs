@@ -16,6 +16,8 @@ public class PlayGame : MonoBehaviour
 	public AudioClip Onclick;
 	public GameObject HashtagWindow;
 	public string Hashtag;
+	public bool Timeout = false;
+	public int time;
 
 
 
@@ -29,6 +31,7 @@ public class PlayGame : MonoBehaviour
 		if (GUI.Button (new Rect (x, y, Image.width, Image.height), Image)) {
 
 			print("Play game pressed");
+			StopAllCoroutines();
 			StartCoroutine(checkConnection());
 
 				}
@@ -44,6 +47,7 @@ public class PlayGame : MonoBehaviour
 
 	IEnumerator checkConnection()
 	{
+
 		//www = new WWW("www.google.com");
 		//yield return www;
 		guitext.GetComponent<MessageScaling>().enabled = false;
@@ -51,12 +55,21 @@ public class PlayGame : MonoBehaviour
 
 		while(!pinger.isDone){  //Checks if ping is not done
 			yield return 0;
+
+			print("Still pinging server!");
+
+			time = time + 1;
+
+			if(time > 20) {
+				break;
+			 Timeout = true;
+			}
 		}
 		yield return pinger;
 		int ping = pinger.time;
 		print (ping);
 
-		if(ping > 200) //If ping is more than 2 second then retry
+		if(ping > 200 || Timeout == true || ping == -1) //If ping fails or has too high latency then show fail message
 		{
 			guitext.GetComponent<MessageScaling>().enabled = true;
 			print("faild to connect to internet, trying after 2 seconds.");
