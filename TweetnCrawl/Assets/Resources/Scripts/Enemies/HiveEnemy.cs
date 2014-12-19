@@ -19,7 +19,6 @@ class HiveEnemy : BasicEnemy
     {
 
         baseReferences();
-        //InvokeRepeating("patrol", 1f, 2f); 
 
     }
 

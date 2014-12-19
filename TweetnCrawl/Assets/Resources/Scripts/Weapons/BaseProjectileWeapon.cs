@@ -16,6 +16,11 @@ class BaseProjectileWeapon : BaseWeapon
     public int Spread;
     public int AltSpread;
 
+    public virtual void Start()
+    { 
+    
+    }
+
     public BaseProjectileWeapon()
     {
 

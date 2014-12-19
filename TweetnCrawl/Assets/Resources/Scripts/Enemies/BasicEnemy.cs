@@ -22,11 +22,6 @@ class BasicEnemy : BaseEnemy
 
         baseReferences();
 
-        //InvokeRepeating("base.patrol", 1f, 2f); 
-
-
-       // speed = 0.3f;
-
     }
 
     public virtual void Update()
@@ -42,16 +37,6 @@ class BasicEnemy : BaseEnemy
 
         }
 
-        //Updates constantly the distance between the follower and the player
-
-
-        
-       // randomPosition = new Vector3(transform.position.x + Random.Range(10f, -10f), transform.position.y + Random.Range(8f, -8f), 0f);
-
-
-
-
-        //if the distance gets within the chaseRange the follower will start following the player
 
 
         distance = Vector3.Distance(Follower.position, player.position);
@@ -74,45 +59,6 @@ class BasicEnemy : BaseEnemy
         }
     }
 
-   
-
-
-
-
-
-    
-
-    //public override void patrol()
-   // {
-   //     StartCoroutine(patrolUpdate());
-   // }
-
-
-
-   // protected override IEnumerator patrolUpdate()
-   // {
-
-     //   while (true)
-      //  {
-        //    float randomWait = Random.Range(2f, 3f);
-         //   point = new Vector3(Random.Range(0.1f, -0.1f), Random.Range(0.1f, -0.1f), 0f);
-          //  point = point.normalized;
-           // InvokeRepeating("MoveToPoint", 0f, 0.1f);
-           // yield return new WaitForSeconds(randomWait);
-           // CancelInvoke("MoveToPoint");
-           // randomWait = Random.Range(0.2f, 0.5f);
-            //yield return new WaitForSeconds(randomWait);
-        //}
-
-    //}
-
-    //private Vector3 point;
-
-   // public void MoveToPoint()
-    //{
-     //   rigidbody2D.MovePosition(transform.position + point);// = Vector3.MoveTowards(transform.position, point, speed);
-    //}
-
 
     public void ShootAtPlayer()
     {
@@ -129,13 +75,6 @@ class BasicEnemy : BaseEnemy
 
         script.Init((player.position - transform.position).normalized, outRotation, ProjectileSpeed, ProjectileDamage);
 
-        //print("shooting at player");
     }
-
-
-
-
-
-
 }
 

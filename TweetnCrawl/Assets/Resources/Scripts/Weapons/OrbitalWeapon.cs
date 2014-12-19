@@ -10,11 +10,6 @@ public class OrbitalWeapon : BaseWeapon {
         coolDown = 1f;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-
-	}
 
     public override void Fire()
     {

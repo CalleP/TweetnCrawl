@@ -105,8 +105,6 @@ public class Hub :TileMap {
         BGMusic.audio.Play();
 
 	}
-	
-	// Update is called once per frame
 
     private float time;
     public GameObject player;

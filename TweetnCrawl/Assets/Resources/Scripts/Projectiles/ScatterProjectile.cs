@@ -10,7 +10,7 @@ public class ScatterProjectile : BaseProjectile {
     public int spread = 3;
 
     System.Random rand = new System.Random();
-	// Use this for initialization
+
 	void Start () {
         speed = 40;
 	}

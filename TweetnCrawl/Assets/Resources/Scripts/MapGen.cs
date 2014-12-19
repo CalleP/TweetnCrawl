@@ -419,7 +419,6 @@ public class MapGen
 
 
             var closest2 = ClosestToBorderYReverse(map, TileType.Dirt);
-            //SpawnStartExitPoint(ClosestToBorderX(TileType.Dirt), false);
             DrawCorridorHVertical(map, map.Length, closest2.Y, closest2.X, TileType.Rock, TileType.Dirt, TerrainType, TerrainType);
 
             endX = closest2.X;

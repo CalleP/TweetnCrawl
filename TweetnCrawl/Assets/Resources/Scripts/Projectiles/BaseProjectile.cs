@@ -13,7 +13,6 @@ public class BaseProjectile : MonoBehaviour {
     public GameObject onDeathPrefab;
 
     public int Damage = 50;
-	// Use this for initialization
     public int SpriteRotation = -90;
 
     void Start()
@@ -40,8 +39,6 @@ public class BaseProjectile : MonoBehaviour {
         transform.Rotate(new Vector3(0, 0, -90));
 
         this.direction = direction;
-        //rigidbody2D.velocity = direction * speed;
-        //rigidbody2D.velocity = direction;
 
     }
 

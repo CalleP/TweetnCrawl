@@ -20,7 +20,6 @@ public class BloodFlow : MonoBehaviour {
             bloodSpot.GetComponent<SpriteRenderer>().color = BloodColor;
             bloodSpot.GetComponent<BloodFlow>().enabled = false;
             bloodSpot.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.01f);
-            //bloodSpot.transform.parent = gameObject.transform;
             time = Time.time + TimeBetweenSplash;
 
         }

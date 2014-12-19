@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Animator : MonoBehaviour {
 
-	// Use this for initialization
+
     
     public bool loop;
     public float interval;

@@ -4,8 +4,6 @@ using System.Collections;
 public class PickupBase : MonoBehaviour {
 
     public Object Item;
-	// Use this for initialization
-
 
 
 	

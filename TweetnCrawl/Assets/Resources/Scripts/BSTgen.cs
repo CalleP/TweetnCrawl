@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+//Unused map generation class
 class BSTgen
 {
 

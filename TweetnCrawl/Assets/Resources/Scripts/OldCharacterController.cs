@@ -88,8 +88,8 @@ public class OldCharacterController : MonoBehaviour {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
         }
-        //rigidbody2D.isKinematic = true;
-        //rigidbody2D.isKinematic = false;
+        rigidbody2D.isKinematic = true;
+        rigidbody2D.isKinematic = false;
     }
 	// Update is called once per frame
 	void FixedUpdate () {
