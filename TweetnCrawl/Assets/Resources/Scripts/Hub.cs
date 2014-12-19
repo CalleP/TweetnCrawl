@@ -49,6 +49,7 @@ public class Hub :TileMap {
 
     public GameObject BGMusic;
 
+    private HashtagGrid grid;
 
 	public override void Start () {
 
@@ -70,24 +71,26 @@ public class Hub :TileMap {
 		GameObject go = GameObject.Find ("PlayGameButton");
 		PlayGame Choicereference = go.GetComponent <PlayGame> ();
 
-		CenterMap.Hashtag = Choicereference.Hashtag;
-        EastHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
-        WestHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
-        NorthHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
-        SouthHubHashtag = arrOfHashTags[Random.Range(0, arrOfHashTags.Length - 1)];
+		CenterMap.Hashtag = Choicereference.Hashtag.Replace("#", "");
+
+        grid = HashtagChoice.Grid;
+        EastHubHashtag = grid.EastNeighbour();
+        WestHubHashtag = grid.WestNeighbour();
+        NorthHubHashtag = grid.NorthNeighbour();
+        SouthHubHashtag = grid.SouthNeighbour();
 
         SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        SouthMap.map = newMap(SouthMap);
-        NorthMap.map = newMap(NorthMap);
-        EastMap.map = newMap(EastMap);
-        WestMap.map = newMap(WestMap);
+        SouthMap.map = newMap(SouthMap, CenterMap.Hashtag, SouthHubHashtag);
+        NorthMap.map = newMap(NorthMap, CenterMap.Hashtag, NorthHubHashtag);
+        EastMap.map = newMap(EastMap, CenterMap.Hashtag, EastHubHashtag);
+        WestMap.map = newMap(WestMap, CenterMap.Hashtag, WestHubHashtag);
         CenterMap.map = newHub(CenterMap);
 
-        CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
+        CurrentHashtagGUI.GetComponent<GUIText>().text = "#" + CenterMap.Hashtag;
 
         PlaceAllRoadSigns();
 
@@ -172,7 +175,7 @@ public class Hub :TileMap {
             SouthMap.ReadyToPopulate = true;
             SouthMap.ClearEnemies();
 
-            CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag + " - " + EastHubHashtag;
+            CurrentHashtagGUI.GetComponent<GUIText>().text = "#" + CenterMap.Hashtag + " - " + "#" + EastHubHashtag;
             
         }
         else if (playerX < WestMap.map[0][WestMap.Width - 1].X - 5 && WestMap.ReadyToPopulate)
@@ -189,7 +192,7 @@ public class Hub :TileMap {
             SouthMap.ReadyToPopulate = true;
             SouthMap.ClearEnemies();
 
-            CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag + " - " + WestHubHashtag;
+            CurrentHashtagGUI.GetComponent<GUIText>().text = "#" + CenterMap.Hashtag + " - " + "#" + WestHubHashtag;
 
         }
 
@@ -207,7 +210,7 @@ public class Hub :TileMap {
             SouthMap.ReadyToPopulate = true;
             SouthMap.ClearEnemies();
 
-            CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag + " - " + NorthHubHashtag;
+            CurrentHashtagGUI.GetComponent<GUIText>().text = "#" + CenterMap.Hashtag + " - " + "#" + NorthHubHashtag;
 
         }
         else if (playerY < SouthMap.map[SouthMap.Height - 1][0].Y - 5 && SouthMap.ReadyToPopulate)
@@ -224,7 +227,7 @@ public class Hub :TileMap {
             NorthMap.ReadyToPopulate = true;
             NorthMap.ClearEnemies();
 
-            CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag + " - " + SouthHubHashtag;
+            CurrentHashtagGUI.GetComponent<GUIText>().text = "#" + CenterMap.Hashtag + " - " + "#" + SouthHubHashtag;
 
         }
         else if ((playerY < NorthMap.map[0][0].Y && playerY > SouthMap.map[SouthMap.Height-1][0].Y) && (playerX > WestMap.map[0][WestMap.Width-1].X && playerX < EastMap.map[0][0].X))
@@ -245,7 +248,7 @@ public class Hub :TileMap {
 
             DestroyAll();
 
-            CurrentHashtagGUI.GetComponent<GUIText>().text = CenterMap.Hashtag;
+            CurrentHashtagGUI.GetComponent<GUIText>().text = '#' + CenterMap.Hashtag;
 
         }
 
@@ -270,8 +273,6 @@ public class Hub :TileMap {
 
                 Time.timeScale = 1;
                 time = Time.time + loadingTimer;
-
-                Debug.Log("Has stepped right:" + rightCount);
 
             }
             else if (playerX < West)
@@ -354,29 +355,36 @@ public class Hub :TileMap {
     private bool mapGenComplete = false;
     public void StepUp()
     {
-        arrOfHashTags = getHashtags();
+    
 
-        SouthHubHashtag = CenterMap.Hashtag;
+
         CenterMap.Hashtag = NorthHubHashtag;
 
-        System.Random rand = new System.Random();
+        grid.MoveNorth();
 
-        EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+        CenterMap.Hashtag = grid.CurrentHashtag;
+        SouthHubHashtag = grid.SouthNeighbour();
+        EastHubHashtag = grid.EastNeighbour();
+        WestHubHashtag = grid.WestNeighbour();
+        NorthHubHashtag = grid.NorthNeighbour();
 
         SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        Copy(WestMap.map, newMap(WestMap));
-        Copy(EastMap.map, newMap(EastMap));
+        //SouthMap.map = newMap(SouthMap, CenterMap.Hashtag, SouthHubHashtag);
+        //NorthMap.map = newMap(NorthMap, CenterMap.Hashtag, NorthHubHashtag);
+        //EastMap.map = newMap(EastMap, CenterMap.Hashtag, EastHubHashtag);
+        //WestMap.map = newMap(WestMap, CenterMap.Hashtag, WestHubHashtag);
+
+        Copy(WestMap.map, newMap(WestMap, CenterMap.Hashtag, WestHubHashtag));
+        Copy(EastMap.map, newMap(EastMap, CenterMap.Hashtag, EastHubHashtag));
 
         CopyWithStartPoints(SouthMap, NorthMap);
         transition = true;
 
-        Copy(NorthMap.map, newMap(NorthMap));
+        Copy(NorthMap.map, newMap(NorthMap, CenterMap.Hashtag, NorthHubHashtag));
         
         Copy(CenterMap.map, newHub(CenterMap));
 
@@ -387,30 +395,29 @@ public class Hub :TileMap {
 
     public void StepDown()
     {
-        arrOfHashTags = getHashtags();
 
-        NorthHubHashtag = CenterMap.Hashtag;
-        CenterMap.Hashtag = SouthHubHashtag;
 
-        System.Random rand = new System.Random();
+        grid.MoveSouth();
 
-        EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+        CenterMap.Hashtag = grid.CurrentHashtag;
+        SouthHubHashtag = grid.SouthNeighbour();
+        EastHubHashtag = grid.EastNeighbour();
+        WestHubHashtag = grid.WestNeighbour();
+        NorthHubHashtag = grid.NorthNeighbour();
 
         SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        Copy(WestMap.map, newMap(WestMap));
-        Copy(EastMap.map, newMap(EastMap));
+        Copy(WestMap.map, newMap(WestMap, CenterMap.Hashtag, WestHubHashtag));
+        Copy(EastMap.map, newMap(EastMap, CenterMap.Hashtag, EastHubHashtag));
 
         CopyWithStartPoints(NorthMap, SouthMap);
 
         transition = true;
 
-        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(SouthMap.map, newMap(SouthMap, CenterMap.Hashtag, SouthHubHashtag));
 
         Copy(CenterMap.map, newHub(CenterMap));
 
@@ -419,34 +426,28 @@ public class Hub :TileMap {
 
     }
 
-    int leftCount = 0;
     public void StepLeft()
     {
-        leftCount++;
-       
-        arrOfHashTags = getHashtags();
+        grid.MoveWest();
 
-        EastHubHashtag = CenterMap.Hashtag;
-        CenterMap.Hashtag = WestHubHashtag;
-
-        System.Random rand = new System.Random();
-        
-        WestHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+        CenterMap.Hashtag = grid.CurrentHashtag;
+        SouthHubHashtag = grid.SouthNeighbour();
+        EastHubHashtag = grid.EastNeighbour();
+        WestHubHashtag = grid.WestNeighbour();
+        NorthHubHashtag = grid.NorthNeighbour();
 
         SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        Copy(NorthMap.map, newMap(NorthMap));
-        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(NorthMap.map, newMap(NorthMap, CenterMap.Hashtag, NorthHubHashtag));
+        Copy(SouthMap.map, newMap(SouthMap, CenterMap.Hashtag, SouthHubHashtag));
 
         CopyWithStartPoints(EastMap, WestMap);
         transition = true;
 
-        Copy(WestMap.map, newMap(WestMap));
+        Copy(WestMap.map, newMap(WestMap, CenterMap.Hashtag, WestHubHashtag));
         Copy(CenterMap.map, newHub(CenterMap));
 
         readyToAddPoint = true;
@@ -454,34 +455,30 @@ public class Hub :TileMap {
 
     }
 
-    public int rightCount = 0;
+
     public void StepRight()
     {
-        rightCount++;
 
-        arrOfHashTags = getHashtags();
+        grid.MoveEast();
 
-        WestHubHashtag = CenterMap.Hashtag;
-        CenterMap.Hashtag = EastHubHashtag;
-
-        System.Random rand = new System.Random();
-
-        EastHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        SouthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
-        NorthHubHashtag = arrOfHashTags[rand.Next(0, arrOfHashTags.Length - 1)];
+        CenterMap.Hashtag = grid.CurrentHashtag;
+        SouthHubHashtag = grid.SouthNeighbour();
+        EastHubHashtag = grid.EastNeighbour();
+        WestHubHashtag = grid.WestNeighbour();
+        NorthHubHashtag = grid.NorthNeighbour();
 
         SouthMap.Hashtag = CenterMap.Hashtag + " - " + SouthHubHashtag;
         WestMap.Hashtag = CenterMap.Hashtag + " - " + WestHubHashtag;
         NorthMap.Hashtag = CenterMap.Hashtag + " - " + NorthHubHashtag;
         EastMap.Hashtag = CenterMap.Hashtag + " - " + EastHubHashtag;
 
-        Copy(NorthMap.map, newMap(NorthMap));
-        Copy(SouthMap.map, newMap(SouthMap));
+        Copy(NorthMap.map, newMap(NorthMap, CenterMap.Hashtag, NorthHubHashtag));
+        Copy(SouthMap.map, newMap(SouthMap, CenterMap.Hashtag, SouthHubHashtag));
 
         CopyWithStartPoints(WestMap, EastMap);
         transition = true;
 
-        Copy(EastMap.map, newMap(EastMap));
+        Copy(EastMap.map, newMap(EastMap, CenterMap.Hashtag, EastHubHashtag));
         Copy(CenterMap.map, newHub(CenterMap));
 
         readyToAddPoint = true;
@@ -571,9 +568,18 @@ public class Hub :TileMap {
         }
     }
 
-    public TileStruct[][] newMap(TileMap map)
+    private string HashtagSort(string hashtag1, string hashtag2)
     {
-        var gen = new MapGen(map.Width, map.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(Hashtag + map.Hashtag)), stringToSeed(Hashtag + map.Hashtag));
+        List<string> hashtags = new List<string>() { hashtag1, hashtag2 };
+        hashtags.Sort();
+        Debug.Log("Map:" + hashtags[0] + hashtags[1]);
+        return hashtags[0] + hashtags[1];
+
+    }
+
+    public TileStruct[][] newMap(TileMap map, string seed1, string seed2)
+    {
+        var gen = new MapGen(map.Width, map.Height, 48, TileStruct.getRandomTerrainType(stringToSeed(HashtagSort(seed1, seed2))), stringToSeed(HashtagSort(seed1, seed2)));
         return gen.createMap(ref map.StartPointX, ref map.StartPointY, ref map.EndPointX, ref map.EndPointY);
     }
 
@@ -798,7 +804,7 @@ public class Hub :TileMap {
 
 
  
-            GUI.Label(new Rect(16, Screen.height - 210, 200,200),CurrentHashtagGUI.guiText.text, style);
+            GUI.Label(new Rect(16, Screen.height - 210, 200,200), CurrentHashtagGUI.guiText.text, style);
             GUI.Label(new Rect(16, Screen.height - 185, 200, 200), "Points: " + Points.ToString(), style);
 
         } 

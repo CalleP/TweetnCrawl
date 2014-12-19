@@ -34,7 +34,7 @@ public class RoadSignBehaviour : MonoBehaviour {
             return null;
 
         if (str.Length > 1)
-            return "#" + char.ToUpper(str[1]) + str.Substring(2);
+            return "#" + char.ToUpper(str[0]) + str.Substring(1);
 
         return str.ToUpper();
     }
