@@ -2656,6 +2656,7 @@ GameObject:
   - 124: {fileID: 878993289}
   - 81: {fileID: 878993288}
   - 20: {fileID: 878993291}
+  - 4: {fileID: 878993292}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2716,21 +2717,27 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!4 &878993292
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878993287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.18999958}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!224 &878993294
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878993287}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10.0299997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_Position: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &910669688
@@ -3151,7 +3158,7 @@ TextMesh:
   m_Text: "TweetNCrawl\r\nIn a galaxy \r\nfar far away in the deep web\r\nSome awesome
     creators \r\nmade a game using twitter\r\nWilliam Bergendahl\r\nCalle Persson\r\nMagnus
     Johansson\r\nJohan Hermansson\r\nAlexander Bartha\r\nLudwig Bj\xF6rk\r\nJonathan
-    Klemetz\r\n"
+    Klemetz\r\nAnd extra thanks to: \r\nJon Eriksson(Player sprite)\r\nDragonDePlatino(sprites)\r\nDawnBringer(sprites) "
   m_OffsetZ: 0
   m_CharacterSize: .5
   m_LineSpacing: 1
