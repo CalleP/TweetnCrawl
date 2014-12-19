@@ -211,7 +211,7 @@ public class BaseEnemy : MonoBehaviour {
 			if(message == 1 && isCreated == false) {
 				isCreated = true;
 				GameObject DeathMessage = new GameObject("SomeGUIText");
-			GameObject clone = (GameObject)Instantiate(DeathMessage);
+				GameObject clone = (GameObject)Instantiate(DeathMessage);
 
 				TextMesh myText = DeathMessage.AddComponent<TextMesh>();
 				myText.font = ArialFont;
@@ -219,6 +219,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "Shamefur Display";
+				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
 			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 								
@@ -236,6 +237,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "M-M-M-M-MONSTER KILL!";
+				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
 			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
@@ -251,6 +253,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "BLAHHH!";
+				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
 			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
@@ -266,6 +269,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "NOOOOO!";
+				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
 			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 			}
@@ -281,6 +285,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
 				myText.text = "RAGEQUIT!";
+				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
 			DestroyObject(GameObject.Find("SomeGUIText"), 0.5f);
 				

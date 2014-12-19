@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Enemies\BasicEnemy.cs">
     <Files>
+      <File FileName="Assets\Resources\Scripts\Enemies\BaseEnemy.cs" Line="288" Column="5" />
       <File FileName="Assets\Resources\Main_menu_resources\Scripts\PlayGame.cs" Line="86" Column="19" />
-      <File FileName="Assets\Resources\Scripts\Hub.cs" Line="84" Column="44" />
+      <File FileName="Assets\Resources\Scripts\Hub.cs" Line="84" Column="41" />
+      <File FileName="Assets\Resources\Scripts\Enemies\BasicEnemy.cs" Line="35" Column="4" />
+      <File FileName="Assets\Resources\Scripts\DestroySelf.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
