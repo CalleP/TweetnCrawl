@@ -14,6 +14,8 @@ public class HashtagChoice : MonoBehaviour{
 	public Font f;
 	public string Hashtag;
 
+    public static HashtagGrid Grid;
+
     public List<HashTagSet> PopularHashtags;
     void Start()
     {
@@ -23,6 +25,9 @@ public class HashtagChoice : MonoBehaviour{
 
 
         PopularHashtags = connect.ParseTopList(connect.Send("GetTopList"));
+
+        Grid = new HashtagGrid(PopularHashtags, 10);
+
 
         connect.Close();
 
@@ -39,6 +44,7 @@ public class HashtagChoice : MonoBehaviour{
 		if (GUI.Button (new Rect (Screen.width / 3 + 100, Screen.height/3, 300, 50), "#"+PopularHashtags[0].Value)) {
 	
 			Hashtag = PopularHashtags[0].Value;
+            Grid.MoveToHashtag(PopularHashtags[0].Value);
 			print(Hashtag);
 			StartLevel();
 
@@ -48,6 +54,7 @@ public class HashtagChoice : MonoBehaviour{
         {
 
 			Hashtag = PopularHashtags[1].Value;
+            Grid.MoveToHashtag(PopularHashtags[1].Value);
 			print(Hashtag);
 			StartLevel();
 		
@@ -56,6 +63,7 @@ public class HashtagChoice : MonoBehaviour{
         {
 
 			Hashtag = PopularHashtags[2].Value;
+            Grid.MoveToHashtag(PopularHashtags[2].Value);
 			print(Hashtag);
 			StartLevel();
 		
@@ -65,6 +73,7 @@ public class HashtagChoice : MonoBehaviour{
         {
 
 			Hashtag = PopularHashtags[3].Value;
+            Grid.MoveToHashtag(PopularHashtags[3].Value);
 			print(Hashtag);
 			StartLevel();
 
@@ -75,6 +84,7 @@ public class HashtagChoice : MonoBehaviour{
         {
 
 			Hashtag = PopularHashtags[4].Value;
+            Grid.MoveToHashtag(PopularHashtags[4].Value);
 			print(Hashtag);
 			StartLevel();
 
