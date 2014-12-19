@@ -34,9 +34,9 @@ public class HashtagChoice : MonoBehaviour{
 	void OnGUI () {
 		GUI.skin.label.font = f;
 		GUI.skin.button.font = f;
-		GUI.Label(new Rect(Screen.width / 4 + 20, Screen.height/4, 500, 50), "Select one of these popular #Hashtags!");
+		GUI.Label(new Rect(Screen.width / 3 + 30, Screen.height/4, 500, 50), "Select one of these popular #Hashtags!");
 	
-		if (GUI.Button (new Rect (Screen.width / 3, Screen.height/3, 300, 50), "#"+PopularHashtags[0].Value)) {
+		if (GUI.Button (new Rect (Screen.width / 3 + 100, Screen.height/3, 300, 50), "#"+PopularHashtags[0].Value)) {
 	
 			Hashtag = PopularHashtags[0].Value;
 			print(Hashtag);
@@ -44,7 +44,7 @@ public class HashtagChoice : MonoBehaviour{
 
 
 		}
-        if (GUI.Button(new Rect(Screen.width / 3, Screen.height / 3 + 50, 300, 50), "#" + PopularHashtags[1].Value))
+        if (GUI.Button(new Rect(Screen.width / 3 +100, Screen.height / 3 + 50, 300, 50), "#" + PopularHashtags[1].Value))
         {
 
 			Hashtag = PopularHashtags[1].Value;
@@ -52,7 +52,7 @@ public class HashtagChoice : MonoBehaviour{
 			StartLevel();
 		
 		}
-        if (GUI.Button(new Rect(Screen.width / 3, Screen.height / 3 + 100, 300, 50), "#" + PopularHashtags[2].Value))
+        if (GUI.Button(new Rect(Screen.width / 3 + 100, Screen.height / 3 + 100, 300, 50), "#" + PopularHashtags[2].Value))
         {
 
 			Hashtag = PopularHashtags[2].Value;
@@ -61,7 +61,7 @@ public class HashtagChoice : MonoBehaviour{
 		
 		
 		}
-        if (GUI.Button(new Rect(Screen.width / 3, Screen.height / 3 + 150, 300, 50), "#" + PopularHashtags[3].Value))
+        if (GUI.Button(new Rect(Screen.width / 3 + 100, Screen.height / 3 + 150, 300, 50), "#" + PopularHashtags[3].Value))
         {
 
 			Hashtag = PopularHashtags[3].Value;
@@ -71,7 +71,7 @@ public class HashtagChoice : MonoBehaviour{
 	
 
 		}
-        if (GUI.Button(new Rect(Screen.width / 3, Screen.height / 3 + 200, 300, 50), "#" + PopularHashtags[4].Value))
+        if (GUI.Button(new Rect(Screen.width / 3 + 100, Screen.height / 3 + 200, 300, 50), "#" + PopularHashtags[4].Value))
         {
 
 			Hashtag = PopularHashtags[4].Value;
@@ -82,7 +82,7 @@ public class HashtagChoice : MonoBehaviour{
 		}
 
 
-		if (GUI.Button (new Rect (Screen.width / 3, Screen.height/3 + 270, 300, 50), "Cancel")) {
+		if (GUI.Button (new Rect (Screen.width / 3 + 100, Screen.height/3 + 270, 300, 50), "Cancel")) {
 		
 			enableGUI();
 			disableself();
