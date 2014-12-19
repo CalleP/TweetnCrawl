@@ -1,6 +1,9 @@
 TweetnCrawl
 ===========
 The files for the game client
+runnable files https://www.dropbox.com/sh/bcbh8g89vr4dp2h/AAAkpXk8wghIU852OJcenEU-a?dl=0
+
+NOTE: A few users have reported that they have needed to restart the game for it to function.
 
 
 Follow these steps to make unity work properly with github
