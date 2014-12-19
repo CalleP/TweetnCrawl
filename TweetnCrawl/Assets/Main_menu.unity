@@ -2495,6 +2495,8 @@ MonoBehaviour:
   Onclick: {fileID: 8300000, guid: 24557835899d8304aa51c5b7751f00f8, type: 3}
   HashtagWindow: {fileID: 970340376}
   Hashtag: 
+  Timeout: 0
+  time: 0
 --- !u!131 &805661301
 GUITexture:
   m_ObjectHideFlags: 0
