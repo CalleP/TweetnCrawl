@@ -6,7 +6,7 @@ runnable files:
 
 https://www.dropbox.com/sh/bcbh8g89vr4dp2h/AAAkpXk8wghIU852OJcenEU-a?dl=0
 
-NOTE: A few users have reported that they have needed to restart the game for it to function.
+NOTE: A few users have reported that they have needed to restart the game for it to function. Also the server needs to be running otherwise the game will not be able to retrieve the data from twitter.
 
 
 Follow these steps to make unity work properly with github
