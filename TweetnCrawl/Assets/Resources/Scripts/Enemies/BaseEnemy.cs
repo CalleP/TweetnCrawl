@@ -218,6 +218,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.color = Color.magenta;
 				myText.text = "Shamefur Display";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -236,6 +237,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.color = Color.green;
 				myText.text = "M-M-M-M-MONSTER KILL!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -252,6 +254,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.color = Color.magenta;
 				myText.text = "BLAHHH!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -268,6 +271,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.color = Color.cyan;
 				myText.text = "NOOOOO!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
@@ -284,6 +288,7 @@ public class BaseEnemy : MonoBehaviour {
 				myText.renderer.sharedMaterial = ArialFont.material;
 				myText.fontSize = 10;
 				myText.transform.position = new Vector3(transform.position.x,transform.position.y,-0.15f);
+				myText.color = Color.red;
 				myText.text = "RAGEQUIT!";
 				DeathMessage.AddComponent<DestroySelf>();
 				//yield return new WaitForSeconds(wait);
