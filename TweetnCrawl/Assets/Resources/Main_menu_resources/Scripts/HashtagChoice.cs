@@ -19,17 +19,30 @@ public class HashtagChoice : MonoBehaviour{
     public List<HashTagSet> PopularHashtags;
     void Start()
     {
-        var connect = new ServerConnector();
+        //var connect = new ServerConnector();
 
-        connect.Connect();
-
-
-        PopularHashtags = connect.ParseTopList(connect.Send("GetTopList"));
-
-        Grid = new HashtagGrid(PopularHashtags, 10);
+        //connect.Connect();
 
 
-        connect.Close();
+        
+
+        List<HashTagSet> hashTagSet = new List<HashTagSet>();
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int y = 0; y < 10; y++)
+			{
+                hashTagSet.Add(new HashTagSet(Random.Range(100000, 199999).ToString(), Random.Range(100,1000)));
+			}
+            
+        }
+
+        PopularHashtags = hashTagSet;
+
+        Grid = new HashtagGrid(hashTagSet, 10);
+
+
+        //connect.Close();
 
         
 
