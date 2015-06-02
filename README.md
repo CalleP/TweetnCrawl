@@ -13,7 +13,7 @@ Web player(Does not work on default google chrome):
 http://tiny.cc/TweetNCrawl
 
 
-NOTE: A few users have reported that they have needed to restart the game for it to function. Also the server needs to be running otherwise the game will not be able to retrieve the data from twitter.
+NOTE: A few users have reported that they have needed to restart the game for it to function.
 
 
 Follow these steps to make unity work properly with github
